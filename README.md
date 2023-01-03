@@ -1,10 +1,11 @@
-# HackingintoCyberSecurity
-Hacking into Cyber Security is an open-source book for professionals and beginner's who want to crack into Information security field. 
+---
+description: >-
+  Hacking into Cyber Security is an open-source book for professionals and
+  beginner's who want to crack into Information security field. Ultimate career
+  Guide into Cyber Security for everyone.
+---
 
-Note: We are waiting approval from GitBook; as soon as we get it approved. This book will be published on Gitbook as open-source book.
-
-# Summary
-
+# Hacking into Cyber Security
 
 In this fast transitioning world of technology, there is a clear view that the whole world will be soon digitalized. Talking about the developing countries, we can see how fast this process is occurring. Businesses are getting digitalized, banks are getting branch-less, and even the whole departments of public and private sectors are transferring into the digital world.
 
@@ -17,12 +18,3 @@ Cybersecurity is not only among the top ratted fields in terms of chances of get
 Cybersecurity has many fields for professionals according to the demands of the market. Some of the most demanded professions in this field of cybersecurity are Cyber Analysts, Network Engineers, Hackers, Consultants, and Network Administrators playing the roles of Application Security, Data Loss Prevention, Forensics, Incident Response, Network Security, Security Architecture, Threat Intelligence, and Vulnerability Management.
 
 Getting into this field requires firm knowledge and skills in Networking, Programming, System Administration, Operating Systems, Network Security Control, Coding, Cloud Security, Blockchain Security, Internet of Things, (IoT), Artificial Intelligence, and Security Incident Handling & Response.
-
-
-# Table of Content
-
-![image](https://user-images.githubusercontent.com/10022590/179204733-727fbaed-25cf-4648-b746-6782dacb6891.png)
-
-
-
-
