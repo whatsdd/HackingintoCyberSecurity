@@ -3,7 +3,7 @@
 * [Hacking into Cyber Security](README.md)
 * [Table of content](table-of-content.md)
 * [Credits](credits.md)
-* [Page 12](page-12.md)
+* [Summary](summary.md)
 
 ## Group 1
 
