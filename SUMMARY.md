@@ -5,64 +5,74 @@
 * [Credits](credits.md)
 * [Summary](page-12.md)
 
-## Group 1
+## CHAPTER 1
 
-* [2](group-1/2/README.md)
-  * [1](group-1/2/1.md)
-  * [Page 4](group-1/2/page-4.md)
-  * [Page 5](group-1/2/page-5.md)
+* [Page 1](chapter-1/page-1.md)
+* [Page 2](chapter-1/page-2.md)
+* [Page 3](chapter-1/page-3.md)
+* [Page 4](chapter-1/page-4.md)
+* [Page 5](chapter-1/page-5.md)
+* [Page 6](chapter-1/page-6.md)
 
-## Group 2
+## CHAPTER 2
 
-* [Page 1](group-2/page-1.md)
-* [Page 2](group-2/page-2.md)
-* [Page 3](group-2/page-3.md)
+* [Page 11](chapter-2/page-11.md)
+* [Page 10](chapter-2/page-10/README.md)
+  * [Page 8](chapter-2/page-10/page-8.md)
+* [Page 9](chapter-2/page-9.md)
+* [Page 7](chapter-2/page-7.md)
+* [Page 6](chapter-2/page-6.md)
 
-## Group 3
+## CHAPTER 3
 
-* [Page 11](group-3/page-11.md)
-* [Page 10](group-3/page-10/README.md)
-  * [Page 8](group-3/page-10/page-8.md)
-* [Page 9](group-3/page-9.md)
-* [Page 7](group-3/page-7.md)
-* [Page 6](group-3/page-6.md)
+* [Page 14](chapter-3/page-14.md)
+* [Page 13](chapter-3/page-13.md)
 
-## Group 4
+## CHAPTER 4
 
-* [Page 14](group-4/page-14.md)
-* [Page 13](group-4/page-13.md)
+* [Page 15](chapter-4/page-15.md)
+* [Page 16](chapter-4/page-16.md)
+* [Page 17](chapter-4/page-17.md)
 
-## Group 5
+## CHAPTER 5
 
-* [Page 15](group-5/page-15.md)
-* [Page 16](group-5/page-16.md)
-* [Page 17](group-5/page-17.md)
+* [Page 18](chapter-5/page-18.md)
+* [Page 19](chapter-5/page-19.md)
 
-## Group 6
+## CHAPTER 6
 
-* [Page 18](group-6/page-18.md)
-* [Page 19](group-6/page-19.md)
+* [Page 20](chapter-6/page-20.md)
 
-***
+## CHAPTER 7
 
-* [document page ?](document-page.md)
+* [Page 21](chapter-7/page-21.md)
 
-## Group 7
+## CHAPTER 8
 
-* [Page 20](group-7/page-20.md)
+* [Page 22](chapter-8/page-22.md)
 
-## Group 8
+## CHAPTER 9
 
-* [Page 21](group-8/page-21.md)
+* [Page 23](chapter-9/page-23.md)
 
-## Group 9
+## CHAPTER 10
 
-* [Page 22](group-9/page-22.md)
+* [Page 24](chapter-10/page-24.md)
+* [Page 12](chapter-10/page-12.md)
 
-## Group 10
+## CHAPTER 11
 
-* [Page 23](group-10/page-23.md)
+* [Page 25](chapter-11/page-25.md)
+* [Page 26](chapter-11/page-26.md)
 
-## Group 11
+## CHAPTER 12
 
-* [Page 24](group-11/page-24.md)
+* [Page 27](chapter-12/page-27.md)
+
+## CHAPTER 13
+
+* [Page 28](chapter-13/page-28.md)
+
+## CHAPTER 14&#x20;
+
+* [Page 29](chapter-14/page-29.md)
