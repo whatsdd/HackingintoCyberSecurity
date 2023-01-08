@@ -34,14 +34,13 @@
 
 * [Chapter 2](chapter-2/chapter-2.md)
 
+***
+
+* [Page 30](page-30.md)
+
 ## CHAPTER 3
 
-* [Page 1](chapter-3/page-1.md)
-* [Page 2](chapter-3/page-2.md)
-* [Page 3](chapter-3/page-3.md)
-* [Page 4](chapter-3/page-4.md)
-* [Page 5](chapter-3/page-5.md)
-* [Page 6](chapter-3/page-6.md)
+* [Chapter 3](chapter-3/chapter-3.md)
 
 ## CHAPTER 4
 
