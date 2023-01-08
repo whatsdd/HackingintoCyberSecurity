@@ -36,8 +36,12 @@
 
 ## CHAPTER 3
 
-* [Page 14](group-4/page-14.md)
-* [Page 13](group-4/page-13.md)
+* [Page 1](chapter-3/page-1.md)
+* [Page 2](chapter-3/page-2.md)
+* [Page 3](chapter-3/page-3.md)
+* [Page 4](chapter-3/page-4.md)
+* [Page 5](chapter-3/page-5.md)
+* [Page 6](chapter-3/page-6.md)
 
 ## CHAPTER 4
 
