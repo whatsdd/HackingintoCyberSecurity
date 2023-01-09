@@ -8,4 +8,4 @@ Individuals in the United States work within a society that transmits central as
 
 We argued the importance of integrating clients’ context into career counseling earlier in this chapter. In this section, we discuss a model that helps career counselors explicitly incorporate culture in counseling. The culturally appropriate career counseling model (CACCM) specifically assesses the impact of cultural variables in each step of career counseling (Figure 4.2). The CACCM is an extension of models originally proposed by Ward and Bingham (1993; Bingham & Ward, 1994).
 
-<figure><img src="../.gitbook/assets/Picture 1.png" alt=""><figcaption><p>Fig. Culturally Appropriate Career Counseling Model - Source: Fouad &#x26; Bingham (1995).</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Picture 1 (1).png" alt=""><figcaption><p>Fig. Culturally Appropriate Career Counseling Model - Source: Fouad &#x26; Bingham (1995).</p></figcaption></figure>

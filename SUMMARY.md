@@ -40,14 +40,11 @@
 
 ## CHAPTER 4
 
-* [Page 15](group-5/page-15.md)
-* [Page 16](group-5/page-16.md)
-* [Page 17](group-5/page-17.md)
+* [CHAPTER 4](chapter-4/chapter-4.md)
 
 ## CHAPTER 5
 
-* [Page 18](group-6/page-18.md)
-* [Page 19](group-6/page-19.md)
+* [CHAPTER 5](chapter-5/chapter-5.md)
 
 ## CHAPTER 6
 
