@@ -34,13 +34,9 @@
 
 * [Chapter 2](chapter-2/chapter-2.md)
 
-***
-
-* [Page 30](page-30.md)
-
 ## CHAPTER 3
 
-* [Chapter 3](chapter-3/chapter-3.md)
+* [CHAPTER 3](chapter-3/chapter-3.md)
 
 ## CHAPTER 4
 
