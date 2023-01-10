@@ -4,11 +4,11 @@
 
 **(** [Cybersecurity Career Master Plan: Proven techniques and effective tips to help you advance in your cybersecurity career](https://www.amazon.com/Cybersecurity-Career-Master-Plan-cybersecurity/dp/1801073562/ref=sr\_1\_8?crid=39GPFAUDFZC6\&keywords=career+in+cyber+security\&qid=1649311705\&s=books\&sprefix=career+in+cyber+security%2Cstripbooks-intl-ship%2C311\&sr=1-8\&asin=1801073562\&revisionId=\&format=4\&depth=1) **)**
 
-Cybersecurity is the hot new career field. It might even be hotter than the Kardashians. Why, you ask? To put it simply, technology is spearheading global growth. With new technology such as artificial intelligence and machine learning comes more cybersecurity demand. It's the whole supply and demand concept you learned in high school.
+Cybersecurity is an increasingly popular career field due to the growing demand for technology and the corresponding need for cybersecurity measures. As technology continues to advance, the demand for cybersecurity professionals is likely to increase. These professionals play a crucial role in protecting and securing remote, virtual, and automated jobs.&#x20;
 
-While more jobs are becoming remote, virtual, or replaced by robots, how do you think they are protected and secured? Cybersecurity is more than an IT helpdesk or the hackers you see on TV. It's a broad spectrum within all aspects of technology that has made cybersecurity an upward slope for careers, which will not change anytime soon.
+Cybersecurity is not limited to IT helpdesk roles or the portrayal hackers in media. It is a broad field that spans many aspects of technology and offers a range of career opportunities with good pay and a relaxed work environment. It is important for professionals in this field to stay up-to-date with the latest developments, as the field is constantly evolving and changing.
 
-What we know today will drastically change from what we know 1 year from now. We know that cybersecurity professionals make great money and get to wear hoodies and flip-flops to work. With all the positives do come some negatives you will learn about within this chapter.
+With all the positives do come some negatives you will learn about within this chapter.
 
 In this chapter, we will explore cybersecurity by breaking it down into the following sections:
 
@@ -18,13 +18,7 @@ In this chapter, we will explore cybersecurity by breaking it down into the foll
 
 **Learning about the Current State of the Industry**
 
-Cybersecurity is rapidly growing because of emerging technology that is producing an ever-changing threat-scape.
-
-As you may have heard in history class, history educates us about our future. This is true even within cybersecurity. The world leaders are driven by one thing, what is that? Power! How has power historically been obtained? Typically, and sometimes the most prevalent example is war. As cyber has emerged, so has a new type of warfare called cyberwar, which is ongoing.
-
-The battlespace and the soldiers have changed. As technology emerges and grows, so have the world powers seated at the executive table. China in 2019 was the first country to send an unmanned rover to the far side of the moon. We have self-driving cars and the prediction is that in 5 years, we could take trips to Mars. Technology is growing and maturing in unimaginable ways.
-
-Understanding why cybersecurity is advancing in all sectors to include phone apps and smart TVs will help you grasp the projected technological growth and prepare you for a cyber career. It's crucial you understand the maturing threat-scape and vulnerabilities that exist everywhere.
+Cybersecurity is a rapidly growing field due to the increasing use of technology and the corresponding emergence of new cyber threats. The concept of cyberwarfare is a relatively new phenomenon, but it is an ongoing concern for world powers. The battlespace and the soldiers have changed with the evolution of technology. As technology continues to advance and mature, it is important for professionals in the cybersecurity field to understand the evolving threat landscape and the vulnerabilities that exist in all sectors, including phone apps and smart TVs. Understanding these trends and developments can help individuals prepare for a career in cybersecurity and stay up-to-date with the latest threats and best practices for protection.
 
 Here are some things to consider related to the cybersecurity industry:
 
@@ -144,7 +138,7 @@ _“Scripting really helps you to understand how hardware and software works. It
 
 There are many high-paying, dynamic full-time jobs within the cybersecurity industry. Due to the [global talent shortage](https://www.isc2.org/-/media/ISC2/Research/2020/Workforce-Study/ISC2ResearchDrivenWhitepaperFINAL.ashx?la=en\&hash=2879EE167ACBA7100C330429C7EBC623BAF4E07B), many employers are offering average salaries between $70,000 and $90,000 for entry-level roles. More experienced cybersecurity professionals such as cybersecurity directors and chief information security officers (CISOs) can earn over $150,000 annually.
 
-![](<../.gitbook/assets/0 (3)>)
+![](<../.gitbook/assets/0 (1)>)
 
 With so much demand for cybersecurity professionals, now has never been a better time to get into the field. Here are some of the highest paying and most in demand cybersecurity jobs today:
 

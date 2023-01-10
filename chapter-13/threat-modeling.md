@@ -66,7 +66,7 @@ The resulting tree can be used to assist in making decisions, identifying vulner
 
 The cyber threat modeling method with the longest history, the STRIDE model was developed in 1999 by Microsoft employees Loren Kohnfleder and Praerit Garg. STRIDE directly links to the CIA triad and is an acronym that represents:
 
-![](<../.gitbook/assets/1 (4)>)
+![](../.gitbook/assets/1)
 
 The STRIDE threat modeling methodology aligns with Microsoft’s default security and privacy initiative, Trustworthy Computing, and is designed to give software developers the tools needed to integrate security directly into the software design phase.
 
@@ -78,7 +78,7 @@ Developed by Carnegie Mellon University’s Software Engineering Institute (SEI)
 
 Using the OCTAVE model, organizations move through three phases. First, all of the assets involved in storing, processing and transferring information across the organization as well as the associated datasets are captured, and attributes are assigned based on the type and sensitivity of the data. Next, the specific technical components and their associated vulnerabilities are documented. Finally, the information from Phase 1 and Phase 2 are evaluated, a security strategy and required resources are developed and identified and decisions to address or take action on them can be made by organizational leadership.
 
-![](<../.gitbook/assets/2 (1)>)
+![](../.gitbook/assets/2)
 
 **MITRE**
 
@@ -108,7 +108,7 @@ While the “product” MITRE ATT\&CK framework is different from many other thr
 
 The Process for Attack Simulation and Threat Analysis (PASTA) is a risk-centric threat modeling framework first introduced in 2012. The PASTA threat model includes seven stages, each with their own respective activities, with outputs that are aligned with business objectives, compliance standards and technical requirements, which makes it a model that is more strategic than it is tactical.
 
-![](<../.gitbook/assets/3 (1)>)
+![](../.gitbook/assets/3)
 
 To begin, organizations define their assets. Then each asset is walked through the seven-step process, incorporating feedback from operations, management, technology and development stakeholders. As the PASTA threat model incorporates business and impact analysis components, key organizational decision makers and staff from outside of the IT department are involved in the process. At the end of the process, a summary of threat options, severity scores and potential remediations are produced for each asset.
 
@@ -116,7 +116,7 @@ To begin, organizations define their assets. Then each asset is walked through t
 
 Persona non Grata (PnG) is another creative model that utilizes an imaginary dangerous persona to perform malicious, unwanted behavior against a system or to a piece of software. When using PnG, organizations first define the appropriate or typical use case that an asset is to be used and, for each step of the process, document the security measure in place. Finally, an alternative and malicious method or use case is identified that can be used to exploit it.
 
-![](<../.gitbook/assets/4 (1)>)
+![](../.gitbook/assets/4)
 
 ### Bringing it all together <a href="#_qm5i3ak9vpp8" id="_qm5i3ak9vpp8"></a>
 

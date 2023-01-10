@@ -88,7 +88,7 @@ For example, what happens if a data breach (confidentiality) occurs? Do you then
 
 Let’s assume your goal is to obtain ISO 27001 certification, whilst complying with GDPR. We’ll craft our information security risk methodology with that in mind.
 
-![](<../.gitbook/assets/0 (7)>)
+![](<../.gitbook/assets/0 (6)>)
 
 * **Risk identification**
 
@@ -150,7 +150,7 @@ Let’s also remember that this process needs to be business objectives led (i.e
 
 If you are taking a top-down approach, earlier in the ISO requirements you’ll have considered the context and purpose of your organisation with the issues facing it (4.1), interested parties (4.2), scope (4.3), information assets etc, which is illustrated in the image below (this is an extract from our ISO 27001 Virtual Coach programme within _ISMS.online_. This is the most logical approach to take.)
 
-![](<../.gitbook/assets/1 (1)>)
+![](<../.gitbook/assets/1 (2)>)
 
 **The organisation has to plan how to address the risks threats and opportunities. ISO 27001 is also very interested in:**
 

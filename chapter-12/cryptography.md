@@ -55,7 +55,7 @@ While 3DES remains an approved algorithm for some uses, its expected useful life
 
 AES implements a block cipher called the Rijndael Block Cipher with a variable block length and a key length of 128, 192, or 256 bits. Experts estimate that the special computer used by the Electronic Frontier Foundation to crack DES within a couple of days would require approximately 4,698,864 quintillion years (4,698,864,000,000,000,000,000) to crack AES. To learn more about AES, see the nearby Technical Details feature.
 
-![](<../.gitbook/assets/0 (5)>)
+![](<../.gitbook/assets/0 (7)>)
 
 **Asymmetric Encryption**
 
@@ -73,7 +73,7 @@ One of the most popular public-key cryptosystems is RSA, whose name is derived f
 
 The problem with asymmetric encryption, as shown earlier in Figure 8-6, is that holding a single conversation between two parties requires four keys. Moreover, if four organizations want to exchange communications, each party must manage its private key and four public keys. In such scenarios, determining which public key is needed to encrypt a particular message can become a rather confusing problem, and with more organizations in the loop, the problem expands. This is why asymmetric encryption is sometimes regarded by experts as inefficient. Compared with symmetric encryption, asymmetric encryption is also not as efficient in terms of CPU computations. Consequently, hybrid systems, such as those described later in this chapter in the “public key infrastructure (PKI)” section, are more commonly used than pure asymmetric systems.
 
-![](<../.gitbook/assets/1 (3)>)
+![](<../.gitbook/assets/1 (1)>)
 
 **Encryption Key Size**
 
@@ -91,7 +91,7 @@ One thing to keep in mind is that even though the estimated time to crack grows 
 
 Why, then, do encryption systems such as DES incorporate multiple elements or operations? Consider this: If a cryptosystem uses the same operation (XOR, substitution, or transposition) multiple consecutive times, it gains no additional benefit. For example, using a substitution cipher and substituting B for A, then R for B, and then Q for R, has the same effect as substituting Q for A. Similarly, by transposing a character in position 1, then position 4, then position 3, a cryptosystem could more easily have transposed the character from position 1 to position 3. There is no net advantage for sequential operations unless each subsequent operation is different. Therefore, to substitute, then transpose, then XOR, then substitute again, the cryptosystem will have dramatically scrambled, substituted, and recoded the original plaintext with ciphertext, which the cryptosystem hopes is unbreakable without the key.
 
-![](../.gitbook/assets/2)
+![](<../.gitbook/assets/2 (1)>)
 
 ### Cryptographic Tools. <a href="#_99wcrou4z1gj" id="_99wcrou4z1gj"></a>
 
@@ -147,7 +147,7 @@ Two popular certificate types are created using Pretty Good Privacy (PGP) and ap
 
 Except in digital certificates, asymmetric key encryption in its pure form is not widely used. However, it is often used in conjunction with symmetric key encryption—in other words, as part of a hybrid encryption system. The most common hybrid system is based on the DiffieHellman key exchange, which uses asymmetric encryption to exchange session keys. These are limited-use symmetric keys that allow two entities to conduct quick, efficient, secure communications based on symmetric encryption, which is more efficient than asymmetric encryption for sending messages. Diffie-Hellman provides the foundation for subsequent developments in public-key encryption. It protects data from exposure to third parties, which is sometimes a problem when keys are exchanged out of band.
 
-![](../.gitbook/assets/3)
+![](<../.gitbook/assets/3 (1)>)
 
 A hybrid encryption approach is illustrated in Figure 8-9, and it works as follows: Alex at XYZ Corp. wants to communicate with Rachel at ABC Corp., so Alex first creates a session key. Alex encrypts a message with this session key, and then gets Rachel’s public key. Alex uses Rachel’s public key to encrypt both the session key and the message, which is already encrypted. Alex transmits the entire package to Rachel, who uses her private key to decrypt the package containing the session key and the encrypted message, and then uses the session key to decrypt the message. Rachel can then continue to use only this session key for electronic communications until the session key expires. The asymmetric session key is used in the much more efficient processes of symmetric encryption and decryption. After the session key expires, usually in a few minutes, a new session key is chosen and shared using the same process.
 
@@ -193,7 +193,7 @@ Secure Multipurpose Internet Mail Extensions (S/MIME) builds on the encoding for
 
 The first commonly used Internet e-mail standard was SMTP/RFC 822, also called SMTP, but this standard has problems and limitations, such as an inability to transmit executable files or binary objects and an inability to handle character sets other than 7-bit ASCII. These limitations make SMTP unwieldy for organizations that need greater security and support for international character sets. MIME, whose message header fields are shown in Table 8-7, was developed to address the problems associated with SMTP. In the table, you can see that MIME’s message header fields were designed to identify and describe the e-mail message and to handle a variety of e-mail content. In addition to the message header fields, the MIME specification includes predefined content types and conversion transfer encodings, such as 7-bit, 8-bit, binary, and radix-64, which it uses to deliver e-mail messages reliably across a wide range of systems.
 
-![](../.gitbook/assets/4)
+![](<../.gitbook/assets/4 (1)>)
 
 S/MIME, an extension to MIME, is the second generation of enhancements to the SMTP standard. MIME and S/MIME have the same message header fields, except for those added to support new functionality. Like MIME, S/MIME uses a canonical form format, which allows it to standardize message content type among systems, but it has the additional ability to sign, encrypt, and decrypt messages. Table 8-8 summarizes the functions and algorithms used by S/MIME. It should be mentioned that PGP is functionally similar to S/MIME, incorporates some of the same algorithms, and can interoperate with S/MIME to some degree.
 

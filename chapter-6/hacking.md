@@ -108,7 +108,7 @@ For example, whenever you browse the Web, the Ethernet cable and card make up th
 
 The web traffic itself uses HTTP (Hypertext Transfer Protocol) to communicate, which is in the top layer of the OSI model. When you browse the Web, the web browser on your network is communicating across the Internet with the web server located on a different private network. When this happens, the data packets are encapsulated down to the physical layer where they are passed to a router. Since the router isn’t concerned with what’s actually in the packets, it only needs to implement protocols up to the network layer. The router sends the packets out to the Internet, where they reach the other network’s router. This router then encapsulates this packet with the lower layer protocol headers needed for the packet to reach its final destination. This process is shown in the following illustration.
 
-![](<../.gitbook/assets/0 (1)>)
+![](<../.gitbook/assets/0 (5)>)
 
 All of this packet encapsulation makes up a complex language that hosts on the Internet (and other types of networks) use to communicate with each other. These protocols are programmed into routers, firewalls, and your computer’s operating system so they can communicate. Programs that use networking, such as web browsers and email clients, need to interface with the operating system which handles the network communications. Since the operating system takes care of the details of network encapsulation, writing network programs is just a matter of using the network interface of the OS.
 
