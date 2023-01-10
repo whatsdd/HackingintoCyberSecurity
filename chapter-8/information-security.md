@@ -174,7 +174,7 @@ Consistency includes protection against unauthorized changes (additions, deletio
 
 Availability is the protection of a system’s ability to make software systems and data fully available when a user needs it (or at a specified time). The purpose of availability is to make the technology infrastructure, the applications and the data available when they are needed for an organizational process or for an organization’s customers.
 
-![](../.gitbook/assets/0)
+![](<../.gitbook/assets/0 (4)>)
 
 ### Information Security vs Cybersecurity <a href="#_yy9l0b9la2cm" id="_yy9l0b9la2cm"></a>
 

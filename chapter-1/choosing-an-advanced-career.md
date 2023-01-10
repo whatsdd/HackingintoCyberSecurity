@@ -220,7 +220,7 @@ But the relationship between individuals’ interests, abilities, and values and
 
 The third dimension is the broader society in which individuals live. Some individuals may feel they belong to the majority culture in the United States and their cultural values, such as achievement, recognition or helping others, influence their work choices and decisions. For others, the predominant values in their culture of origin differ from the majority culture, and these differences influence work decisions as well (including acculturation, discrimination, and cultural barriers). This third dimension also includes the societal effects such as educational systems, the labor market, and the economy.
 
-![](<../.gitbook/assets/0 (3)>)
+![](<../.gitbook/assets/0 (5)>)
 
 **Fig. Fouad and Kantamneni’s Three-Dimensional Model - Source: Fouad and Kantamneni (2008)**
 
@@ -276,7 +276,7 @@ As we noted earlier, the U.S. mainstream culture emphasizes doing rather than be
 
 We argued the importance of integrating clients’ context into career counseling earlier in this chapter. In this section, we discuss a model that helps career counselors explicitly incorporate culture in counseling. The culturally appropriate career counseling model (CACCM) specifically assesses the impact of cultural variables in each step of career counseling (Figure 4.2). The CACCM is an extension of models originally proposed by Ward and Bingham (1993; Bingham & Ward, 1994).
 
-![](<../.gitbook/assets/1 (3)>)
+![](<../.gitbook/assets/1 (2)>)
 
 **Fig. Culturally Appropriate Career Counseling Model - Source: Fouad & Bingham (1995).**
 

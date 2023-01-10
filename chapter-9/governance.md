@@ -349,7 +349,7 @@ There are nine groups of personnel involved in developing and sustaining an effe
 8. Board audit committee
 9. Internal and external audit personnel
 
-![](<../.gitbook/assets/0 (4)>)
+![](../.gitbook/assets/0)
 
 ### &#x20;<a href="#_7wbef22j78wl" id="_7wbef22j78wl"></a>
 
@@ -389,7 +389,7 @@ Once you have identified your requirements, you can select the appropriate frame
 
 Going back to our SOC 2 vs. HIPAA example, consider the requirements for information system authentication under each standard, and compare to authentication requirements under PCI, which is an IT compliance framework designed specifically for entities that process and store credit card data:
 
-![](<../.gitbook/assets/1 (4)>)
+![](<../.gitbook/assets/1 (1)>)
 
 The requirements are written differently, but all address a similar objective to verify that a user accessing a system is properly authenticated. As you can see, the requirements under SOC 2 and HIPAA are more generally stated, while the requirements under PCI are more specific. If your organization is required to be compliant with each of these frameworks, your information security governance model would consider the requirements under each standard and establish a policy around user authentication that requires the most specific elements to be met. Similarly, you would then implement a control around user authentication that requires a unique user ID, password, and multifactor authentication, so that all frameworks are met using the most stringent criteria, rather than implementing three separate controls aligned to each framework.
 
