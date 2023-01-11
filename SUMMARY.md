@@ -22,9 +22,13 @@
 
 * [Career as a Cyber Security Professional](chapter-4/career-as-a-cyber-security-professional.md)
 
-## CHAPTER 5
+## Chapter 5
 
-* [Professions in Cyber Security](group-6/page-18.md)
+* [Page 1](chapter-5/page-1.md)
+
+***
+
+* [Professions in Cyber Security](professions-in-cyber-security.md)
 
 ## CHAPTER 6
 
