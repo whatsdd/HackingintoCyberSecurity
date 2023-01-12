@@ -211,19 +211,19 @@ Malware is a term that describes a variety of intrusive and hostile software, in
 
 **Master Program**
 
-**Master programs are those programs that black hat hackers use to transmit commands into zombie drones (explained later in the chapter). These drones carry spam attacks or denial-of-service attacks.............................................**
+Master programs are those programs that black hat hackers use to transmit commands into zombie drones (explained later in the chapter). These drones carry spam attacks or denial-of-service attacks.
 
 **Phishing**
 
-Phishing is a fraud method where the hacker sends an email out to the target. The hacker will use this email to gather some personal or financial information from the user.
+Phishing is a tactic utilized by hackers in which they send a fraudulent email to a target in order to obtain personal or financial information from the user.
 
 **Phreaker**
 
-A phreaker is a normal computer hacker. These hackers often break into telephone networks and either tap the phone lines or make long-distance phone calls.
+A phreaker is a type of hacker who specializes in breaking into telephone networks, either by tapping phone lines or making unauthorized long-distance calls..
 
 **Rootkit**
 
-Rootkit is a software that is often malicious. A hacker designs this software to hide some processes or programs from any normal detection method. This will ensure that the rootkit is stored on a system and has privileged access to the system
+A rootkit is a type of malicious software that is designed to hide processes or programs from detection methods. This allows the hacker to gain privileged access to a system and maintain it undetected.
 
 **Shrink Wrap Code**
 
@@ -231,7 +231,7 @@ A shrink wrap code attack is a way to exploit the holes in a poorly configured o
 
 **Social Engineering**
 
-A hacker uses social engineering to deceive another person. The hacker uses this technique to acquire some personal information about the user, like credit card details or passwords.
+Social engineering is a tactic used by hackers to deceive individuals in order to obtain personal information such as credit card details or passwords.
 
 **Spam**
 
@@ -239,43 +239,43 @@ Spam is an unsolicited email. This is also called junk email and is often sent t
 
 **Spoofing**
 
-Spoofing is a technique that a hacker uses to gain access to a system or network. The hacker will send a message to the computer using an IP address, and this address will indicate to the system that the message is being sent from a trusted host.
+Spoofing refers to the act of tricking a person or system into believing that a communication or message is coming from a legitimate source, when in fact it is not. Spoofing can take many forms, such as email spoofing, where an attacker sends an email from a fake address that appears to be from a legitimate sender, or caller ID spoofing, where a caller alters their caller ID to make it appear as though they are calling from a different phone number. Spoofing can be used for a variety of malicious purposes, such as phishing scams, identity theft, and spreading malware.
 
 **Spyware**
 
-Spyware is a software that’s used to gather information about an organization or person without their knowledge. This software can be utilized to send sensitive information to any entity without the consent of the customer. It can also be used to assert control over a system.
+Spyware is a type of software that is used to secretly collect information about an individual or organization without their knowledge or consent. This information can include sensitive data such as login credentials, personal information, and browsing history. Once obtained, this data can be sent to a third party, and the spyware can also be used to gain control over the target's device or network.
 
 **SQL Injection**
 
-SQL injection is an injection technique code that is written in SQL. This tool is used to attack any data-driven application. It includes some malicious SQL statements that are entered into a field in the data. An example of an SQL injection would be dumping all data into the attacker’s folders.
+SQL injection is a method of attacking a data-driven application by injecting malicious SQL code into an input field. This technique is used to exploit vulnerabilities in the application's database and gain unauthorized access to sensitive information. An example of an SQL injection attack would be the insertion of malicious SQL statements into a login form, allowing an attacker to dump all the data from the database into their own folders.
 
 **Threat**
 
-Threats are possible dangers to a system or network. These can be used by hackers to exploit a vulnerability and compromise the security of a network or system.
+Threat: A potential danger or risk to a system or network that can be exploited by attackers to compromise its security. Trojan: A type of malware that disguises itself as a legitimate program, but once executed can perform malicious actions such as stealing sensitive information or altering files.
 
 **Trojan**
 
-A Trojan horse, or Trojan, is a program that is designed to look like a normal program. Differentiating between a Trojan and a regular program is difficult. This tool can be used to alter information, destroy files and steal sensitive information like passwords.
+A type of malware that disguises itself as a legitimate program, but once executed can perform malicious actions such as stealing sensitive information or altering files.
 
 **Virus**
 
-A virus is a piece of code or a full program that is malicious. It copies itself in the system and has a detrimental effect on it as a result. A virus can both destroy data and corrupt the system.
+A piece of malicious code or program that is designed to replicate itself and cause harm to a computer system, such as by destroying data or corrupting the system.
 
 **Vulnerability**
 
-A vulnerability is a weakness in the system or network that allows a hacker to compromise the security of that system or network.
+A weakness or flaw in a system or network that can be exploited by an attacker to gain unauthorized access or cause damage.
 
 **Worms**
 
-Worms are like every other virus in the sense that it can replicate itself in the system. It only resides in the active memory but does not make any changes to the files and will only duplicate itself.
+A type of malware that replicates itself in a computer system and can spread to other systems on a network, but typically does not make changes to files.
 
 **Cross-Site Scripting**
 
-Cross-site scripting, or XSS, is a security vulnerability that is often found in a web application. This vulnerability gives the hacker the ability to inject some script into a web page that is viewed by users.
+A security vulnerability in web applications that allows attackers to inject malicious scripts into a website, which can be executed by unsuspecting users
 
 **Zombie Drone**
 
-A zombie drone is used by hackers as a soldier to perform malicious activity. This drone is a hijacked computer that is used by some hackers to distribute unwanted spam emails.
+A hijacked computer that is controlled remotely by a hacker to perform malicious activities such as sending spam emails or participating in Distributed Denial of Service (DDoS) attacks.
 
 ### Ethical Hacking Tools. <a href="#_m62xecjelf9l" id="_m62xecjelf9l"></a>
 
@@ -283,7 +283,7 @@ Now that you know what ethical hacking is, let’s look at some of the different
 
 **Nmap**
 
-Nmap, or Network Mapper, is a tool that is used for security auditing and network discovery. It is an open source tool that was designed to scan a large network. It also works well with single hosts. A network administrator is used for different tasks, including managing service upgrade schedules and network inventory and monitoring service or host uptime.
+Nmap, short for Network Mapper, is an open-source tool that is used for security auditing and discovering the hosts and services on a computer network. It can scan large networks as well as individual hosts. Network administrators use Nmap for various tasks, such as managing service upgrade schedules, maintaining network inventory, and monitoring the uptime of hosts and services.
 
 Nmap can determine the following using raw IP packets:
 
@@ -296,7 +296,7 @@ This tool can run on most operating systems, including Linux, Windows and Mac OS
 
 **Metasploit**
 
-Metasploit, another powerful exploitation tool, is a Rapid7 product. Many of the resources used can be found on the source website: www.metasploit.com . The tool has a commercial and free version and can be used with Web UI or command prompt.
+Metasploit is a powerful exploitation tool created by Rapid7. It is widely used by security professionals and can be found on the official website: www.metasploit.com. The tool comes in both a commercial and a free version and can be operated via a web interface or through the command prompt.
 
 You can perform the following operations using Metasploit:
 
@@ -307,11 +307,11 @@ You can perform the following operations using Metasploit:
 
 **Burp Suite**
 
-Burp Suite is a tool that’s used by both malicious and ethical hackers to perform a security test of any web application. This suite has different tools that work together to support the process of testing, right from the mapping to the analysis of the application’s surface. It’s often used to exploit or locate any vulnerabilities in the application. This suite is simple to use and gives an administrator full control to combine different techniques to improve testing. Burp can be configured easily, and it has different features that can help an experienced tester with their work.
+Burp Suite is a software toolkit used by both malicious and ethical hackers to perform security testing on web applications. The suite includes various tools that work together to support the process of testing, from mapping the application to analyzing its surface. It is commonly used to identify and exploit vulnerabilities in web applications. The suite is user-friendly and offers administrators the ability to combine different techniques for improved testing. It can be easily configured and has various features to assist experienced testers in their work.
 
 **Angry IP Scanner**
 
-Angry IP scanner is a cross-platform and lightweight port and IP address scanner. This tool can scan an IP address in any range and can be used or copied anywhere. It utilizes a multithreading approach to increase the speed of scanning. In this approach, a separate scanning thread is employed for every address. Angry IP scanner checks if an IP address is active by pinging the address, and it will then determine the MAC address and scan ports and resolve the hostname. The data that is gathered using this tool can be saved to an XML, TXT, IP-Port List or CSV file. You can gather information about any IP using this tool.
+Angry IP Scanner is a lightweight and cross-platform tool that scans IP addresses and ports. It can scan a range of IP addresses and can be used or copied on any device. The tool employs a multithreading approach to increase the speed of scanning by using a separate thread for each IP address. It verifies the active status of an IP address by pinging it, and then it retrieves the MAC address, scans ports and resolves the hostname. The collected data can be saved in various file formats such as XML, TXT, IP-Port List or CSV. This tool can be used to gather information about any IP address.
 
 **Cain and Abel**
 
@@ -330,11 +330,11 @@ This is a tool that most professional penetration testers and security consultan
 
 **Ettercap**
 
-Ettercap, or Ethernet capture, is a network security tool that’s used for a man-in-the-middle attack. This tool can sniff live connections, filter any content on the fly and perform other interesting activities. Ettercap has numerous features that can be used for host and network analysis and supports the dissection of protocols (both active and passive). It runs on many operating systems, including Mac OS X, Linux and Windows.
+Ettercap, short for Ethernet Capture, is a network security tool used for man-in-the-middle attacks. It can intercept and sniff live network connections, filter content on the fly, and perform other actions. The tool has a variety of features for host and network analysis and supports the dissection of both active and passive protocols. It is compatible with a range of operating systems such as Mac OS X, Linux, and Windows.
 
 **EtherPeek**
 
-EtherPeek is a tool that helps to simplify network analysis that is performed on a heterogeneous network environment. This is a very small tool that can be installed on any system in a few minutes. One can use this tool to sniff the traffic packets on any network and supports different protocols, including IP, AppleTalk, UDP, NBT packets, IP Address Resolution Protocol (ARP), NetBEUI, TCP and NetWare
+EtherPeek is a tool that simplifies the analysis of networks in a heterogeneous environment. It is small in size and can be installed on any system quickly. The tool can be used to capture and analyze network traffic packets on any network and supports various protocols including IP, AppleTalk, UDP, NBT packets, IP Address Resolution Protocol (ARP), NetBEUI, TCP, and NetWare.
 
 **SuperScan**
 
@@ -350,27 +350,27 @@ SuperScan is a powerful tool that can be used to resolve hostnames and scan any 
 
 **QualysGuard**
 
-QualysGuard is a suite of tools that can be used to lower the cost of compliance and simplify any security operations. This tool can automate the full area of compliance, auditing and protection for web applications and IT systems. QualysGuard can deliver some critical security intelligence and includes a variety of tools that can be used to detect, monitor and protect the network.
+QualysGuard is a collection of tools designed to reduce the cost of compliance and simplify security operations. It automates the process of compliance, auditing, and protection for web applications and IT systems. QualysGuard provides essential security intelligence and includes a range of tools to detect, monitor, and protect networks.
 
 **WebInspect**
 
-WebInspect is a tool used to assess an application’s security. This helps to identify any unknown and known vulnerabilities that exist in the application layer for any tool. It can also be used to check if a server has been configured correctly and helps to test the vulnerability of a system using attacks like cross-site scripting, parameter injection, directory traversal and others.
+WebInspect is a tool used to evaluate the security of web applications. It helps to identify both known and unknown vulnerabilities in the application layer. It can also be used to verify that a server is configured correctly and to test the system's vulnerability to attacks such as cross-site scripting, parameter injection, and directory traversal, among others.
 
 **LC4**
 
-LC4 (formerly called L0phtCrack) is a password recovery and auditing application. This tool is used to test the strength of passwords and to sometimes recover a password on Microsoft Windows by using hybrid, brute- force and dictionary attacks. LC4 is used to retrieve lost Windows passwords, which will help to streamline the process of migration. It also assists in retrieving a lost password for an account.
+LC4 (formerly known as L0phtCrack) is a password recovery and auditing tool. It is used to evaluate the strength of passwords and to potentially recover lost or forgotten passwords on Microsoft Windows by using a combination of hybrid, brute-force, and dictionary attacks. LC4 can be used to retrieve lost Windows passwords, which can simplify the process of migration and assist in recovering lost passwords for an account.
 
 **LANguard Network Security Scanner**
 
-A LANguard network security scanner scans a network to identify the devices connected to it. It also provides some information about every node in the network. Using the LANguard network scanner, one can obtain any information about the operating system that’s used by every system connected to the network. This tool is also utilized to detect any registry issues and can provide a report in HTML format. You can obtain information regarding the NetBIOS name table, the MAC address and the user logged into the network using this tool.
+LANguard Network Security Scanner is a tool that scans a network to identify the devices connected to it and provide information about each node on the network. It can gather information about the operating system used by each system connected to the network. The scanner can also detect any registry issues and generate a report in HTML format. It can provide information such as the NetBIOS name table, MAC address, and the user logged into the network.
 
 **Network Stumbler**
 
-Network Stumbler is a WiFi monitor and scanner that is used on the Windows Operating System. This tool allows a network professional to detect a wide area network. Most hackers utilize this tool to find a wireless network that is not used for broadcasting. Network Stumbler can help you verify if a network has been configured well, detect any interference between wireless networks and test the signal coverage and strength. Additionally, it can be used on any unauthorized connections.
+Network Stumbler is a WiFi monitoring and scanning tool that is used on the Windows operating system. This tool allows network professionals to detect wireless networks in a wide area. Hackers often use this tool to find wireless networks that are not broadcasting. Network Stumbler can help verify if a network is properly configured, detect interference between wireless networks, test signal coverage and strength, and detect any unauthorized connections.
 
 **ToneLOC**
 
-ToneLOC, or Tone Locator, is a program that was written in the early 90s for MS-DOS. It was used in war dialing computer programs. Through war dialing, one can scan phone numbers using a modem and dial every number that has the same area code. Malicious hackers use this tool to breach security by identifying modems that can be used to enter a network or computer system or guess a user’s account. Ethical hackers can use it to detect any unauthorized device on the computer’s network.
+ToneLOC, or Tone Locator, is a program written in the early 90s for MS-DOS. It was originally used in war dialing computer programs which scan phone numbers using a modem and dials every number that has the same area code. Malicious hackers use this tool to breach security by identifying modems that can be used to gain unauthorized access to a network or computer system or guessing a user's account. Ethical hackers can also use it to detect any unauthorized device on a computer network.
 
 ### Ethical Hacking Skills. <a href="#_xv1ihbfifkiq" id="_xv1ihbfifkiq"></a>
 
@@ -378,65 +378,65 @@ This chapter covers the ten most important skills every hacker needs to possess 
 
 **Basic Computer Skills**
 
-You are probably laughing at this skill; however, it is extremely important for a hacker to understand the basic functions of a computer. You’ll need to learn how to use command lines in windows and also understand how to edit the registry and set the networking parameters. These may seem like simple skills, but they’re actually very difficult to master.
+Having a strong understanding of basic computer functions is crucial for a hacker. This includes knowledge of command lines in windows, editing the registry, and setting networking parameters. These may seem like basic skills, but they are actually quite difficult to master.&#x20;
 
-If you make an error in the command line, you will mess up the entire hacking process and make the system more vulnerable than it initially was. This is a skill that professional hackers build on every chance they get. They believe that there is always room for improvement. Amateurs, on the other hand, may believe they have learned everything there is to know about computers and rarely build on the knowledge they already have.
+A mistake in the command line can disrupt the entire hacking process and make the system even more vulnerable. Professional hackers continuously strive to improve their skills, while amateurs may believe they have learned everything there is to know about computers and fail to build on their knowledge.
 
 **Networking Skills**
 
-Once you have mastered your computer skills, you’ll need to improve your skills with networking. It’s important to know how a network functions and how to tweak it to make it better. The skills mentioned in this section are important to know; DNS, NAT, subnetting, DHCP, IPv4, IPv6, and routers and switches are all things you need to know about. You can learn many of the skills addressed in this section online.
+Once you have a solid understanding of basic computer skills, it's important to improve your knowledge of networking. It's essential to know how networks function and how to optimize them. Skills such as DNS, NAT, subnetting, DHCP, IPv4, IPv6, and routers and switches are all important to know. Many of these skills can be learned online.&#x20;
 
-As previously mentioned, oftentimes, amateurs are unaware of the different networking skills they will need to build upon. They may learn one or two of the skills mentioned and then fumble while hacking if they come across a different network. Therefore, any hacker who wants to improve should be aware of the various networking skills they need to have.
+As mentioned earlier, amateurs may lack knowledge of the various networking skills that they need to develop, and may struggle when facing different networks. Therefore, any hacker who wishes to improve their abilities should be aware of the different networking skills they need to possess.
 
 **Linux Skills**
 
-Hackers often use Linux as their operating system. In fact, most tools developed for hackers are only designed for the Linux operating system. Linux can help the hacker achieve his end goal, unlike Windows. So, it’s always a good idea to learn Linux. Any professional hacker should be adept at using Linux to hack into a system and identify its vulnerabilities.
+Many hackers prefer to use Linux as their operating system because most hacking tools are developed specifically for Linux. The flexibility of Linux allows hackers to more easily achieve their goals, compared to using Windows. Therefore, it is highly recommended for any professional hacker to have proficiency in using Linux to hack into systems and identify vulnerabilities.
 
 **Wireshark**
 
-Wireshark is a packet analyzer that is an open source tool. It’s used by hackers to troubleshoot any network issues, analyze software and communications protocols and also to develop certain protocols for the system. Expert hackers are versed in utilizing this analyzer to create protocols with ease for the system they are hacking into.
+Wireshark is an open-source packet analyzer tool. It is used by hackers to troubleshoot network issues, analyze software and communication protocols, and develop new protocols for a system. Skilled hackers are proficient in using this analyzer to easily create new protocols for the system they are attempting to hack.
 
 **Virtualization**
 
-Virtualization is the art of making a virtual version of anything, like a server, storage device, operating system or networking resource. This helps the hacker test the attack that is going to take place before making it live. This also helps the hacker check if he or she has made any mistakes and revise the attack.
+Virtualization is the process of creating a virtual version of a server, storage device, operating system, or networking resource. It allows hackers to test an attack before implementing it in real life. This also allows them to identify and fix any errors in their attack plan. Professional hackers use this technique to maximize the impact of their hack while protecting themselves.&#x20;
 
-Professional hackers use this skill to enhance the effect of the hack they are about to perform. This gives them a perspective on the damage they can do to the software while protecting themselves. An amateur hacker usually does not learn how to cover his tracks. A perfect example for this is the boy from Mumbai who released an episode of Game of Thrones from season 7. Had he covered his tracks better, he would have been able to protect himself. This is why it’s important to learn all about virtualization.
+However, amateur hackers often lack this skill and may leave traces of their actions, making themselves vulnerable to being caught. This is why it is essential for hackers to learn about virtualization and how to cover their tracks. A real-world example of this is the case of the hacker from Mumbai who leaked an episode of Game of Thrones from season 7. If he had covered his tracks better, he could have protected himself from being caught.
 
 **Security Concepts**
 
-It’s vital that a hacker learns about different security concepts and understands the changes made to technology. A person who has a strong hold on security will be able to control different barriers set by the security administrators for the system they are hacking into. Learning skills like Secure Sockets Layer (SSL), Public Key Infrastructure (PKI), firewalls, Intrusion Detection System (IDS) and other skills are important for hackers to learn. If you’re an amateur, it is advised that you take courses like Security +.
+It's essential for a hacker to have a thorough understanding of various security concepts and keep up with the latest advancements in technology. A hacker who has a strong understanding of security will be able to bypass security measures set by system administrators. To achieve this, learning skills such as Secure Sockets Layer (SSL), Public Key Infrastructure (PKI), firewalls, Intrusion Detection System (IDS), and other related skills is crucial. For amateur hackers, it's recommended to take courses such as Security+.
 
 **Wireless Technology**
 
-This is a technology everybody is familiar with – information is sent using invisible waves as the medium. If you are trying to hack into a wireless device, you have to understand the functioning of that device. Therefore, it’s vital that you learn the following encryption algorithms: WPA2, WPA WEP, WPS and the four-way handshake. It is also pertinent to understand the protocol connections, authentication and restrictions that surround wireless technology.
+Wireless technology is a widely recognized method of transmitting information through invisible waves. If a hacker wants to gain access to a wireless device, they must have a thorough understanding of how the device functions. This includes learning various encryption algorithms such as WPA2, WPA, WEP, WPS, and the four-way handshake. Understanding protocol connections, authentication, and restrictions surrounding wireless technology is also crucial.
 
 **Scripting**
 
-This is a skill that every hacker must possess, especially the professionals. If a hacker were to use the scripts written by another hacker, he or she would be discredited for that. Security administrators are always vigilant about any hacking attempt and will identify a new tool, which will help them cope with that attack.
+Scripting is a necessary skill for all hackers, particularly professionals. Using scripts written by other hackers can lead to discreditation and lack of credibility. Security administrators are always on the lookout for new tools and techniques used in hacking attempts.&#x20;
 
-A professional hacker needs to build on this skill and ensure that he or she is good at scripting. Amateurs often depend on the scripts written by other hackers. They may or may not understand the script, which would land them in big trouble.
+Therefore, professional hackers should develop their scripting skills and ensure they are proficient in writing their own scripts. Amateurs often rely on scripts created by other hackers, which can lead to problems if they do not fully understand the script.
 
 **Database**
 
-A database helps a user store data in a structured manner on a computer that can be accessed in various ways. If a hacker wishes to hack into a system’s database, he or she would need to be adept at different databases and also understand their functioning. Databases often use SQL to retrieve information whenever necessary. Therefore, it’s important to learn these skills before you decide to hack into a database. Professional hackers always need to know their way around a database to ensure that they make no mistakes and avoid getting caught.
+A database is a way to store data in a structured manner on a computer that can be accessed in various ways. If a hacker wants to hack into a system's database, they must have a strong understanding of different databases and their functions. Most databases use SQL to retrieve information when needed. Therefore, it's important for a hacker to learn these skills before attempting to hack into a database. Professional hackers must have a good grasp of databases to ensure they make no errors and avoid detection.
 
 **Web Applications**
 
-Web applications are software through which you can access the Internet via your browser (Chrome, Firefox, etc.). Over the years, web applications have also become a prime target for hackers. It is extremely advisable that you spend some time understanding the functioning of web applications, as well as the databases that back those applications.
+Web applications are software that allows users to access the internet through their web browser. These have become a popular target for hackers over the years. It is essential for hackers to spend time understanding the functions of web applications, as well as the databases that support them. This knowledge will help them create their own websites for phishing or other purposes.&#x20;
 
-This will help you make websites of your own either for phishing or for any other use. The skills mentioned in this chapter are most important for hackers to develop. Professional hackers work to improve these skills right from the beginning and therefore are adept at hacking into any system easily. It’s important for amateurs to build up these skills.
+The skills mentioned in this section are essential for hackers to develop. Professional hackers continuously work to improve these skills, making it easier for them to hack into any system. It is important for amateur hackers to also develop these skills.
 
 ### Ethical Hacking Process. <a href="#_ronur7a8vh3n" id="_ronur7a8vh3n"></a>
 
-Like every IT project, ethical hacking should always be planned. You have to determine the strategic and tactical issues in the process. Regardless of what the test is (whether it be a simple password-cracking test or a penetration test on an application on the Internet), you must plan the process.
+As with any IT project, ethical hacking should always be well-planned. It's important to identify both the strategic and tactical aspects of the process. Whether the test is a simple password-cracking test or a penetration test on an internet-based application, it is crucial to plan the process thoroughly.
 
 **Formulating the Plan**
 
-It is essential that you get approval before you begin the ethical hacking process. You have to ensure that what you are doing is known and visible to the system owners. The first step to working on the project is to obtain sponsorship. You can connect with an executive, manager, customer or even with yourself if you are your own boss. All you need is to have someone who can back you up and sign off on your plan. Otherwise, there’s a possibility that someone may call everything off, stating that they never permitted you to test the devices.
+It is crucial to obtain approval before starting the ethical hacking process. It's important to make sure that the system owners are aware and approve of the testing that will be conducted. Obtaining sponsorship is the first step in working on the project. This can be obtained from an executive, manager, customer, or even from oneself if you are your own boss. It is important to have someone who can support and approve your plan, as without it, the testing process may be called off, and you could be held responsible for unauthorized testing. When testing systems in an office environment, it is necessary to have a memo from your boss giving permission to perform the tests.&#x20;
 
-If you’re testing the systems in your office, you need a memo from your boss that gives you permission to perform them. If you are testing for a customer, you must ensure that you have a signed contract that states the customer’s approval. It is pertinent that you obtain written approval so your effort and time don’t go to waste. Also, this way, you will learn more about what you need to do to ensure that you stay out of trouble.
+For testing for a customer, it is important to have a signed contract that shows the customer's approval. Obtaining written approval will ensure that your efforts and time are not wasted, and it will also help you understand what you need to do to avoid any legal issues. It's essential to have a detailed plan as one mistake can cause the systems to crash.
 
-It’s essential to have a detailed plan, because if you make one mistake, the systems can crash. However, this doesn’t mean that you need to include the different testing procedures you intend on using. A well-defined plan or scope should include the following information:
+However, this doesn’t mean that you need to include the different testing procedures you intend on using. A well-defined plan or scope should include the following information:
 
 * Which systems need to be tested
 * The risks involved
@@ -446,7 +446,7 @@ It’s essential to have a detailed plan, because if you make one mistake, the s
 * What you’ll do if you come across a major vulnerability
 * The deliverables, like security-assessment reports, high-level reporting of general vulnerabilities that the company should address and countermeasures that the organization should implement
 
-You must always begin the testing with the most vulnerable and critical systems. For example, it is best to start with social engineering attacks or test computer passwords before you move on to more detailed issues. It’s always a good idea to have a contingency plan in mind if something goes awry. There’s a possibility that you may take the firewall down when you are assessing it, or you may close a web application while testing it; this will reduce employee productivity and system performance since the system would then be unavailable for use. There have been times when this has led to bad publicity, loss of data and loss of data integrity.
+It is important to prioritize testing on the most vulnerable and critical systems first. This can include starting with social engineering attacks or testing computer passwords before moving on to more complex issues. Having a contingency plan in place is crucial in case something goes wrong during the testing process. This can help minimize the potential impact on employee productivity and system performance if a system becomes unavailable due to testing. It also helps to prevent bad publicity, data loss, and loss of data integrity.
 
 You should handle DoS and social engineering attacks carefully. You have to determine how these attacks will affect the system you’re testing and the organization. You must also carefully determine when the tests should be performed. Do you want to test during business hours? Would it be better to test the systems early in the morning or late at night to avoid affecting the production of employees? Is it ideal to involve the people in the organization to be certain that they approve of the timing?
 
