@@ -4,39 +4,39 @@
 
 ### An Introduction to Ethical Hacking. <a href="#_xe3zvxhir6zv" id="_xe3zvxhir6zv"></a>
 
-This book focuses solely on ethical hacking. It will detail how you can use different techniques to test your system or network for any vulnerabilities and then fix those vulnerabilities before a cracker exploits them. Most people misuse the word “ethical”, often not understanding what it even means. The definition given in the Merriam Webster dictionary suits the purpose of this book. An ethical hacker can perform the different tests mentioned in the book once the system owner gives him or her permission to perform the hack.
+This book is dedicated to the topic of ethical hacking, which involves identifying and addressing vulnerabilities in systems and networks through authorized testing methods. The purpose of this book is to provide guidance on how to detect and remediate vulnerabilities before they can be exploited by malicious actors. It is important to note that the term "ethical" is often misused, therefore the definition provided by Merriam Webster is appropriate for the context of this book. Ethical hacking is only permissible when the system owner grants permission for the testing to take place.
 
-**How Do Hackers Beget Ethical Hackers?**
+**Origins of Ethical Hacking:**&#x20;
 
-Everyone has heard about hackers, and many people have even suffered losses because of the actions of a hacker. So, who is a hacker, and why is it important for people to learn more about what a hacker does? The next few sections in the book will help you understand the process of hacking and the different types of hackers in the industry.
+Understanding Hackers The term "hacker" has a negative connotation for many, as it is often associated with cybercrime and losses suffered by individuals and organizations. In this book, we will delve into the subject of hacking to better understand what it entails and the different types of hackers in the industry. Additionally, we will explore the emergence of ethical hacking and how it has evolved from traditional hacking methods. Understanding the origins and motivations of hackers is crucial in order to effectively combat malicious activities and protect against potential threats.
 
 **Who Is a Hacker?**
 
-The word “hacker” can be defined in two ways. A hacker is someone who tinkers with software and electronic systems to understand how they work. They also look for ways to improve the functioning of a network and electronic system. They love the challenge of discovering new ways to make systems work. In recent times, the term “hacker” has taken on a new meaning. Hackers are people who want to break into a system or network for malicious purposes. These hackers are called crackers or criminal hackers. A cracker will only break into a system or network to steal, delete or modify some confidential information, which can lead to huge losses for an organization or individual.
+The term "hacker" can have multiple meanings. Historically, a hacker was someone who was fascinated with understanding and improving software and electronic systems, often through exploration and experimentation. However, in recent times, the term has taken on a negative connotation, referring to individuals who engage in unauthorized access to systems or networks for malicious purposes, also known as "crackers" or "criminal hackers".
 
-This book will use the terms “hacker” and “ethical hacker”, so it’s important that you understand what each means and that they differ from one another. A hacker is someone who attacks a system with malicious intent, while an ethical hacker will attack a system to test and fix the vulnerabilities.
+This book uses the terms "hacker" and "ethical hacker" interchangeably, but it's important to note that they have distinct meanings. Hackers attack systems with the intent to cause harm, while ethical hackers, also known as "white hat hackers", test and fix vulnerabilities with the authorization of the system or network owner.
 
-An ethical hacker, or a white hat hacker, does not like to be called a hacker because people perceive the word negatively. Crackers claim that they are only helping the system or network owner by hacking it, but that’s untrue since they are electronic thieves.
+Ethical hackers may take offense to being referred to as hackers due to the negative connotation associated with the term. It's important to note that crackers, or criminal hackers, often justify their actions by claiming they are helping the system or network owner, but their actions are illegal and harmful.
 
-Hackers will always attack a system that they believe they can compromise. Most hackers like to attack a prestigious or well-protected system since it’s like a game for them. Also, when a hacker can attack a critical website or database, his or her status will increase in the hacker circle.
+Hackers will always look for ways to compromise a system, and often enjoy the challenge of penetrating high-profile or well-protected systems. In some cases, a hacker's reputation within the community can be elevated by successfully attacking a prestigious or critical website or database.
 
 **What Is Ethical Hacking?**
 
-Every system or network must always be updated and patched to protect it from a cracker. An ethical hacker is someone who knows how to protect the system or network. An ethical hacker possesses the mindset, tools and the skills of a hacker, but this type of hacker is trustworthy as they only hack systems to run security tests.
+Proper maintenance and updates are crucial in protecting systems and networks from malicious actors. Ethical hackers, also known as penetration testers or white hat hackers, possess the knowledge and skills to safeguard these systems. They use the same tactics and tools as a hacker, but with the legal and authorized permission of the system or network owner.
 
-Ethical hacking (also called penetration testing or white hat hacking) uses the same tricks, techniques and tools to test the system. The major difference is that ethical hacking is legal. This type of hacking is performed only when the owner grants the hacker permission. As mentioned earlier, ethical hacking helps the system’s owner discover the vulnerabilities in the system from a hacker’s perspective, helping to improve the system’s security. This process is one part of the risk management program, which helps the organization or the system owner enhance the system’s security. Ethical hacking backs a vendor’s claim that the products being sold by the vendor are legitimate.
+Ethical hacking is an integral part of risk management, as it allows the system owner to identify vulnerabilities from the perspective of a hacker and make necessary improvements to enhance security. It also helps to validate the legitimacy of products offered by vendors.
 
-If you want to hack your system the way a cracker would, you should know how they think. After all, it’s always important for you to be familiar with your enemy.
+It's important to have an understanding of the methods and mindset of malicious hackers in order to effectively defend against them. This is why ethical hacking is an important tool for understanding and protecting against potential security threats.
 
 **Why Should You Hack Your System?**
 
-You must remember that the law of averages does not work in favor of security. The number of hackers and the amount of knowledge they have is increasing by the day. If you combine that knowledge with the number of vulnerabilities in the system, there will come a time when every computer system is compromised in one way or another. Protecting your system from a cracker is important. However, this does not mean that you should only look at the general vulnerabilities that people are aware of. Once you know how a cracker works, you will know how vulnerable your system really is.
+It's important to keep in mind that relying on the law of averages for security is not effective. As the number of hackers and their level of expertise continues to grow, it's increasingly likely that any given computer system will eventually be compromised. To protect your system, it's essential to stay aware of known vulnerabilities, but also to be mindful of the ways in which a hacker might exploit it. By understanding how a hacker thinks and operates, you can better assess the true vulnerabilities of your system.
 
-Ethical hacking helps you identify weak security practices and discover any areas needing attention. Encryption, Virtual Private Networks (VPN) and firewalls can often create a false sense of security. However, these systems only focus on traffic and viruses through a firewall, which does not affect the work of a cracker. If you want to make your systems more secure, you should carry out the attack in the same way a cracker would. This is the only way you can harden the security of your system. If you fail to identify these weaknesses, it’s only a matter of time before the system’s vulnerabilities will surface.
+Ethical hacking involves identifying vulnerabilities in a system by simulating an attack, similar to how a malicious hacker would. This helps to reveal any weak security practices and pinpoint areas that need improvement. While encryption, VPNs, and firewalls can provide a sense of security, they only focus on traffic and viruses passing through the firewall. To truly strengthen a system's security, it is essential to test it from the perspective of a potential attacker. If these weaknesses go undetected, it increases the likelihood of the system being compromised.
 
-You should expand your knowledge in the same way a hacker does. You should think like one of them if you want to effectively protect your system. As an ethical hacker, you should understand the activities that a cracker will carry out and then identify ways to end their efforts. You must always ensure that you are aware of what you’re looking for. That being said, you cannot expect to protect your system from everything - that’s impossible. The only way you can protect your system from absolutely all threats is to unplug it and lock it up in a cupboard to ensure that it’s never touched. Let’s face it, that isn’t the best approach to secure your information. You should only learn to protect your system from common cracker attacks and other well-known vulnerabilities. Some cracker attacks are still unknown, but that doesn’t mean that you should give up on testing your system. Try to use different combinations and test the entire system instead of looking at the individual units alone. You will discover more vulnerabilities in your system when you test it as a whole.
+To effectively protect your system, it is important to adopt a hacker's mindset and expand your knowledge of their techniques. As an ethical hacker, your goal is to understand the methods used by malicious actors and find ways to counteract them. It's important to always be aware of what you are looking for, but it's impossible to protect a system from every potential threat. A more practical approach is to focus on defending against common attacks and known vulnerabilities. While some attacks may be unknown, it's still essential to regularly test and evaluate your system as a whole, using different combinations of methods. This will increase the chances of discovering any vulnerabilities that may exist in the system.
 
-It’s advisable that you don’t take ethical hacking too far. For example, if you don’t have too many people working in an office and don’t have an internal web server, you needn’t worry too much about an attack through the web. However, you should never forget about any malicious employees who will threaten the security of your company.
+It's important to keep a balance when it comes to ethical hacking. While it's important to test and evaluate your system's security, it's not always necessary to go to great lengths. For example, if you have a small office with no internal web server, the risk of a web attack is relatively low. However, it's important to always be aware of potential threats from malicious insiders, such as employees who may pose a security risk to your company.
 
 All in all, your goals as an ethical hacker should be as follows:
 
@@ -46,32 +46,30 @@ All in all, your goals as an ethical hacker should be as follows:
 
 **Ethical Hacking Commandments**
 
-There are a few commandments that an ethical hacker must abide by. If a hacker does not abide by those commandments, there will be negative consequences. In the cases that an ethical hacker doesn’t follow these commandments, the results are not beneficial.
+As an ethical hacker, it's important to abide by certain principles to ensure that your actions align with ethical standards. Failure to do so can result in negative consequences. It is important to follow these principles to avoid any unintended negative outcomes.
 
-.**Working Ethically**
+**Working Ethically**
 
-In this context, the word “ethical” refers to working with high morals and principles. Regardless of whether you are performing ethical hacking tests on your system or someone hired you to test their system, you must ensure that the steps you take support the goals of the individual or organization. In other words, you cannot have a hidden agenda. You have to ensure that you are honest and never should you misuse any information you find on the system; that is precisely what crackers do
+"Ethical" in the context of hacking refers to conducting tests and evaluations with integrity and high moral standards. Whether you are performing these tests on your own system or on behalf of another organization, it's essential to ensure that your actions align with the goals of the individual or organization. This means being transparent and not having any hidden motives. Additionally, any information discovered during the testing process should be handled responsibly and not misused, as this is a common tactic employed by malicious hackers.
 
 **Respecting Privacy**
 
-You must always respect the information that you gather. All the data to which you are granted access during testing should be kept private, right from clear-text passwords to web-application log files. You should never use this information to peek into confidential information or people’s private lives. If you sense that there is an issue, you should share that information with the right person. Additionally, you should make a habit of involving other people in your process to ensure that the owner of the system can trust you.
+As an ethical hacker, it's important to handle all information gathered during testing with care and respect. This includes keeping all data accessed during the process, such as clear-text passwords and log files, confidential. The information should never be used to invade people's privacy or access confidential information. If any issues are detected, it is important to share them with the appropriate parties. Additionally, involving other stakeholders in the process can help to build trust with the system owner.
 
 **Not Crashing Systems**
 
-Many people crash their systems because they don’t have a plan in mind when they begin their testing. These testers have either misunderstood the documentation or have not read it whatsoever. As a result, they don’t know how to use different tools to test the security of their systems. If you run too many tests on your system, you can create a DoS condition that causes a system lockup. You should never rush into it or assume that a specific host or network can bear the beating that the vulnerability assessment and network scanner tools dish out.
+Many people inadvertently cause damage to their systems by not having a clear plan in place before beginning testing. This is often due to a lack of understanding of the documentation or not reading it at all. This lack of knowledge can lead to misuse of tools and cause a Denial of Service (DoS) condition resulting in a system lockup. It's important to approach testing with caution and not rush into it, as well as being mindful of the capacity of the host or network to handle the tools used for vulnerability assessment and network scanning.
 
-Many security assessment tools control how tests are performed on systems at the same time. These tools are handy if you need to run a test on systems during business hours. You can create a system lockout condition or lock the account by forcing someone to change their password. These people will not realize that they have agreed to lock their system.
+&#x20;Additionally, some security assessment tools have built-in controls to manage how tests are performed on systems simultaneously. These tools can be useful when testing systems during business hours, but it's important to be aware that they can also accidentally cause system lockouts or force users to change their passwords. This can cause confusion and frustration for the user.
 
 **Advantages of Hacking**
 
-Hacking is a useful process when you:
+The benefits of ethical hacking include:
 
-* Perform a penetration test to identify any vulnerabilities in the network and computer security
-* Recover any lost information, mainly in the case of a lost password
-* Identify protection or preventive measures that can be implemented to prevent any breaches in security
-* Prevent any unauthorized access from malicious hackers
-
-**Disadvantages of Hacking**
+* Identifying vulnerabilities in network and computer security through penetration testing.
+* Recovering lost information, particularly in the case of forgotten passwords.
+* Identifying and implementing protective measures to prevent security breaches.
+* Preventing unauthorized access from malicious hackers.
 
 Hacking is a useful process when you:
 
@@ -93,47 +91,51 @@ If hacking is done with negative intention, it can lead to the following issues:
 
 ### Types of Hackers. <a href="#_h4o4pmrfawz4" id="_h4o4pmrfawz4"></a>
 
-A hacker can be placed into one of the following categories: black hat, grey hat or white hat. Each hacker is classified based on their intent. These terms are borrowed from the Old West when a good cowboy would wear a white hat while a bad cowboy would don a black hat.
+There are several different types of hackers, each with their own distinct motivations and methods. Some common types include:
 
 **White Hat Hackers**
 
-A white hat hacker, who is also called an ethical hacker, does not want to harm the system. His motive is to identify the weakness in any network system or computer through different vulnerability assessments and penetration testing. Ethical hacking is legal, and, in fact, many companies hire ethical hackers to find vulnerabilities.
+Also known as ethical hackers, these individuals use their hacking skills for defensive purposes, such as identifying and addressing vulnerabilities in a system or network.
 
 **Black Hat Hackers**
 
-A black hat hacker, who is also known as a cracker, is someone who wants to hack a network or a system to gain unauthorized access. This type of hacker wishes to harm the system or steal some sensitive information. Black hat hacking is illegal since the person who is hacking the system does it with bad intentions. This includes violating privacy, blocking any communication on the network, stealing corporate data, damaging systems, etc.
+These are the individuals often associated with the term "hacker," as they engage in illegal and malicious activities, such as stealing sensitive information or disrupting systems.
 
 **Gray Hat Hackers**
 
-A gray hat hacker is a blend of both a white hat and a black hat hacker. These hackers do not have any malicious intent but hack a network or a system merely for fun. They want to exploit the vulnerabilities in the system without actually taking permission from the owner. Usually, their goal is to inform the owner of any weaknesses and gain appreciation and/or a sum of money from them.
+These hackers fall in between white hat and black hat, often identifying vulnerabilities in systems and networks but not always seeking permission before attempting to exploit them.
 
-**Miscellaneous Hackers**
+**Miscellaneous Hackers:**
 
 Apart from the list of hackers detailed above, there are a few other categories of hackers that should be mentioned. These include script kiddies, intermediate hackers, elite hackers, hacktivists, cyberterrorists, and hackers involved in organized crime.
 
 **Script Kiddies**
 
-These hackers are computer novices who use the different tools and documentation available on the Internet to perform a hack. They do not know what happens behind the scenes and only comprehend enough to cause minimal harm. They are often sloppy, so they leave digital fingerprints everywhere. These are the hackers you hear about in the news. They need very minimal skills to attack a system since they use what is already made available to them.
+These are individuals who use pre-existing tools and scripts to engage in hacking activities, often with little understanding of the underlying technology.
 
 **Intermediate Hackers**
 
-These hackers know just enough to cause some serious issues. They have knowledge about networks and computers and use this knowledge to carry out well-known exploits. Some intermediate hackers want to be experts at the process; if they put in some effort, they can certainly become elite hackers.
+Intermediate hackers possess a level of knowledge that allows them to cause significant damage to systems and networks. They have a basic understanding of computer systems and networks, and use this knowledge to execute common exploits. These hackers are not necessarily malicious in their intentions but can cause serious problems, They may have the desire to improve their skills and become advanced or elite hackers with the right effort and dedication.
 
 **Elite Hackers**
 
-Elite hackers are experts. They’re the people who develop several hacking tools and write scripts and programs. Script kiddies use these very tools and programs to perform their own attacks. Elite hackers write codes to develop malware like worms and viruses. They know how to break into a system and cover their tracks or pretend that someone else was responsible for the attack. Elite hackers are secretive and only share information if they believe that their subordinates are worthy. For some lower-level hackers to be evaluated as worthy, they should possess some special information that an elite hacker can use to perform an attack on a high-profile system. Elite hackers are the worst type of hackers. However, there are not too many of them in the world when compared to the number of script kiddies.
+Elite hackers are experts in the field, who have a deep understanding of computer systems and networks. They are often the creators of various hacking tools and scripts, which are then used by less skilled hackers, known as script kiddies. Elite hackers have the ability to develop malware such as worms and viruses, and they know how to infiltrate a system while covering their tracks and making it appear as if someone else is responsible for the attack. They are secretive and only share information with those they deem worthy. To be considered worthy by an elite hacker, an individual must possess specific information or skills that can be used to target high-profile systems. Although elite hackers are considered the most dangerous type of hacker, they are relatively few in number compared to script kiddies.
 
 **Hacktivists**
 
-These hackers disseminate social or political messages through their attacks. A hacktivist always finds a way to raise awareness about a given issue. Some examples of hacktivism are the many websites that had the “Free Kevin” messages. These hacktivists wanted the government to release hacker Kevin Mitnick from prison. Some other cases include the protests against the U.S. Navy Spy Plane that collided with a Chinese fighter jet in 2001, attacks against the U.S. White House website for years, hacker attacks between Pakistan and India and messages supporting the legalization of marijuana.
+Hacktivists are a type of hacker who use their skills to spread social or political messages through their attacks. They aim to raise awareness about specific issues, using hacking as a means to amplify their message. Examples of hacktivism include campaigns to secure the release of individuals like hacker Kevin Mitnick, protests against government actions or policies, and support for social or political causes. Hacktivist campaigns have taken many forms, from defacing websites to launching Distributed Denial of Service (DDoS) attacks. These types of hackers are known to use hacking as a tool for activism and to deliver their message to the public. Hacktivism has been a contentious topic, as it raises questions about the morality of hacking for a political cause.
 
 **Cyberterrorists**
 
-Cyberterrorists attack government computers or other public utility infrastructures like air-traffic control towers and power grids. They steal classified government information or crash some critical systems. Countries have started to take cyberterrorist threats seriously, ensuring that power companies and other similar industries always have information-security controls in place. These controls will protect systems from such attacks.
+Cyberterrorists are hackers who target government computers and other critical infrastructure systems such as power grids, air traffic control towers, and transportation systems with the intent to steal classified information or disrupt the functioning of these systems. The goal of cyberterrorists is to cause fear and chaos among the public, and their actions can have severe consequences.&#x20;
+
+Governments and critical infrastructure operators have begun to take cyberterrorist threats seriously by implementing security controls to protect against these types of attacks. These controls include measures such as regular security assessments, penetration testing, incident response planning and employee awareness training. These security measures are designed to detect, prevent and respond to cyber attacks and protect the systems from being compromised, to avoid severe damage and loss of lives.
 
 **Organized Crime**
 
-Some groups of hackers can be hired to perform organized crime. In 2003, the Korean police busted one of the largest hacking rings on the Internet. This ring had close to 4,400 members. In addition to that group, the Philippine police busted a multimillion-dollar hacking ring that sold cheap phone calls made through the lines that the ring had hacked into. These types of hackers are always hired for a large amount of money.
+Some groups of hackers can be hired by criminal organizations to carry out illegal activities. These organized hacking groups can be quite large, with many members, and can be involved in various types of cybercrime such as identity theft, credit card fraud, and money laundering. In 2003, for example, the Korean police broke up one of the largest hacking rings on the internet, which had close to 4,400 members.
+
+Similarly, the Philippine police also dismantled a multimillion-dollar hacking ring that sold cheap phone calls made through the lines they had hacked into. These types of hackers are often motivated by financial gain and are willing to engage in illegal activities for a large sum of money. These type of hackers are more dangerous since they are well-organized and have the resources to carry out sophisticated cyber-attacks.
 
 ### Ethical Hacking Terminologies. <a href="#_18w2op67fg40" id="_18w2op67fg40"></a>
 
@@ -185,7 +187,7 @@ DDos stands for distributed denial-of-service attack.
 
 **Exploit Kit**
 
-An exploit kit is a system that a hacker designs to run on some web servers. This system is used to identify any vulnerabilities in a client machine that is communicating with the web server. It will then exploit those vulnerabilities and afterwards, execute some malicious code in the system.
+An exploit kit is a tool that hackers use to exploit vulnerabilities in client machines that are communicating with a web server. The kit is designed to run on a web server and is used to identify vulnerabilities in the client machine. Once vulnerabilities are identified, the exploit kit can exploit them and execute malicious code on the system. These kits are often sold or leased on underground marketplaces and can be used to deliver malware, steal personal information, or take control of the infected machine.&#x20;
 
 **Exploit**
 
@@ -197,19 +199,19 @@ A firewall is a type of filter that is placed on a network. This filter helps to
 
 **Keystroke Logging**
 
-Keystroke logging is a process during which a hacker tracks how the keys are pressed on the keypad. This process will help the hacker develop a blueprint of the human interface. It is often used by both black and gray hat hackers to record some passwords. A keylogger is most commonly delivered onto a system using a phishing email or a Trojan horse.
+Keystroke logging, also known as keylogging or keyboard capturing, is a method of tracking and recording the keys that are pressed on a keyboard. Keyloggers can be hardware or software-based and are often used by cybercriminals to steal personal information such as passwords, credit card numbers, and other sensitive data. Keyloggers can be installed on a computer through malware or by physically connecting a hardware keylogger to a computer.
 
 **Logic Bomb**
 
-A logic bomb is a type of virus that is added to a system that will trigger a malicious attack if some conditions are met. A common example of a logic bomb virus is a time bomb.
+A logic bomb, also known as a time bomb, is a type of malware that is designed to trigger a harmful action when specific conditions are met. A time bomb is an example of a logic bomb, which is activated at a specific date and time. Once the conditions are met, the logic bomb will execute the attack, it can be a deletion of data, corrupting a software, or activating a ransomware.
 
 **Malware**
 
-Malware is a term that describes a variety of intrusive and hostile software, including Trojan horses, spyware, scareware, adware, virus, ransomware, worms and any other malicious programs.
+Malware is a term that describes a variety of intrusive and hostile software, including Trojan horses, spyware, scareware, adware, virus, ransomware, worms and any other malicious programs. Malware is often spread through email attachments, infected software downloads, and other means, it can also be spread through exploit kits and other malicious websites that can exploit vulnerabilities in a computer or mobile device
 
 **Master Program**
 
-Master programs are those programs that black hat hackers use to transmit commands into zombie drones (explained later in the chapter). These drones carry spam attacks or denial-of-service attacks.
+**Master programs are those programs that black hat hackers use to transmit commands into zombie drones (explained later in the chapter). These drones carry spam attacks or denial-of-service attacks.............................................**
 
 **Phishing**
 
