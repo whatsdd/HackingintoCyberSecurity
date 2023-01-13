@@ -448,25 +448,27 @@ However, this doesn’t mean that you need to include the different testing proc
 
 It is important to prioritize testing on the most vulnerable and critical systems first. This can include starting with social engineering attacks or testing computer passwords before moving on to more complex issues. Having a contingency plan in place is crucial in case something goes wrong during the testing process. This can help minimize the potential impact on employee productivity and system performance if a system becomes unavailable due to testing. It also helps to prevent bad publicity, data loss, and loss of data integrity.
 
-You should handle DoS and social engineering attacks carefully. You have to determine how these attacks will affect the system you’re testing and the organization. You must also carefully determine when the tests should be performed. Do you want to test during business hours? Would it be better to test the systems early in the morning or late at night to avoid affecting the production of employees? Is it ideal to involve the people in the organization to be certain that they approve of the timing?
+When it comes to testing for DoS and social engineering attacks, it's important to consider the potential impact on the system and organization. This includes evaluating when the tests should be conducted. For example, would it be more appropriate to perform the tests during non-business hours to minimize disruption to employees and operations?
 
-You have to remember that crackers do not attack your system during a limited period. Therefore, you should also use the unlimited attack approach. In this approach, you can run any type of test aside from social engineering, physical and DoS tests. You should never stop with one security hole since that will lead to a false sense of security. You have to continue to test to see what other vulnerabilities you can discover. This doesn’t imply that you should continue to hack until all your systems crash. You should simply pursue the path you are on and hack until you can no longer hack the system.
+Additionally, it may be beneficial to involve key stakeholders within the organization to ensure that the timing of the tests aligns with their approval and expectations. Careful planning and consideration can help ensure that the testing process is as effective and efficient as possible, while minimizing negative impact on the organization.
 
-One of the goals you should keep in mind when you perform these tests is to ensure that nobody detects the attack. For instance, you can perform your tests on a remote system or from a remote office when you’re trying to avoid letting system users know what you’re doing. If the users are aware of what you’re up to, it will affect the outcome as they will then be on their best behavior.
+It's important to remember that real-world attacks on systems can occur at any time, and not just during a limited period. For this reason, it's essential to take an unlimited attack approach to testing. This approach allows you to test for a wide range of vulnerabilities, beyond just social engineering, physical, and DoS attacks. It's also important to recognize that discovering one security hole does not mean that the system is completely secure. Instead, you should continue testing to identify any other potential vulnerabilities. However, it's important to be mindful of not causing any damage or disrupting operations while testing. It's best to stop the testing once you can no longer hack the system, and report and fix the vulnerabilities that were discovered.
 
-You must be confident that you understand the system well enough to perform the hack. This will help to ensure that you protect the systems when you are testing them. If you are hacking your own system, it’s not difficult to understand it. If you are hacking a customer’s system, you will need to spend some time trying to understand how the system functions. Customers will never ask you to give them a blind assessment, because people are scared of these assessments. You should base all the tests you want to perform on the customer’s needs and these assessments.
+When conducting security testing, one of the key goals is to ensure that the attack goes unnoticed. This can be accomplished by performing tests on remote systems or from remote locations, to avoid alerting system users to your actions. It's important to keep in mind that if users are aware of the testing, it can skew the results as they may be on their best behavior.
+
+In order to effectively test a system, it's important to have a good understanding of how it functions. This is especially important when testing a customer's system, as it may take some time to familiarize yourself with it. It's important to keep in mind that customers may not always want a blind assessment and it's important to base tests on their specific needs and requirements. Additionally, it is important to ensure that the system is protected while performing the testing.
 
 **Selecting Tools**
 
-As with any project, you have to select the right tools if you want to complete the task successfully. That being said, you will not necessarily identify all the vulnerabilities in the system simply because you use the right tools. You must know the technical and personal limitations of your customer. Many security assessment tools generate negative outcomes and false positives. Some tests won’t locate the vulnerabilities. For example, if you perform a social engineering test or a physical-security test, it is easy to miss some weaknesses.
+As with any project, selecting the right tools is crucial to its success. However, it's important to keep in mind that simply using the right tools does not guarantee that all vulnerabilities in a system will be identified. It's also important to understand the technical and personal limitations of your customer.
 
-Certain tools focus only on specific tests, but no one tool can be used for everything. You cannot use a word processor to scan the network for any open ports, because that does not make sense. It is for this reason that you need specific tools for the test you wish to perform. Your ethical hacking efforts become easier when you have more tools at your disposal.
+It's worth noting that many security assessment tools can produce negative results and false positives, and some tests may not uncover all vulnerabilities. For example, social engineering and physical security tests can sometimes miss weaknesses. It is important to have a well-rounded approach when testing for vulnerabilities, using a combination of different tools and techniques to ensure that all potential vulnerabilities are identified. Additionally, it's important to keep in mind that security assessment is not a one-time task, it must be an ongoing process.
 
-However, it is vital that you remember to choose the right tool for the task. You need to use tools like pwdump, LC4 or John the Ripper to crack passwords. SuperScan, which is a general port scanner, will not crack all passwords. If you want to perform an in-depth analysis of a web application, you should use tools like WebInspect or Whisker since they’re more appropriate when compared to network analyzers like Ethereal.
+It's important to remember that different tools are designed for specific tasks and no one tool can be used for everything. For example, a word processor would not be useful for scanning a network for open ports. Therefore, it's important to have a variety of tools at your disposal to make ethical hacking efforts more efficient.
 
-When you need to select the right tools for a task, you should ask for advice from other ethical hackers, or you can post your questions on online forums and decide on the best tool to use.
+When selecting tools for a specific task, it's important to choose the right one for the job. For example, tools such as pwdump, LC4, and John the Ripper are specifically designed for cracking passwords, while a general port scanner like SuperScan may not be as effective. Similarly, for in-depth analysis of web applications, tools like WebInspect or Whisker would be more appropriate than network analyzers like Ethereal. The key is to have knowledge of different tools and its capabilities so that they can be used to their full potential.
 
-Another option is using security portals like SearchSecurity.com, SecurityFocus.com and ITSecurity.com, or a simple Google search, to learn more about the different tools available for your tests. Experts provide their feedback and also give insights on the different types of tests an ethical hacker can perform.
+When selecting the right tools for a specific task, it can be helpful to seek advice from other ethical hackers or to post your questions on online forums to get feedback and suggestions. There are also many security portals, such as SearchSecurity.com, SecurityFocus.com and ITSecurity.com, that provide information and reviews on different tools that can be used for testing. Additionally, a simple Google search can also reveal a plethora of information on the different types of tools available and the type of tests that can be performed. Consulting experts and researching the different options can help you make an informed decision on which tools are best suited for your specific needs.
 
 Let’s look at a list of some freeware, open-source and commercial security tools:
 
@@ -480,42 +482,41 @@ Let’s look at a list of some freeware, open-source and commercial security too
 * Network Stumbler
 * ToneLoc
 
-We will learn more about some of the tools listed above over the course of the book when we look at different types of hack attacks. Most people often misunderstand the capabilities of these hacking and security tools. This is because of the incorrect assumption that tools like Nmap (Network Mapper) and SATAN (Security Administrator Tool for Analyzing Networks) have gained bad publicity.
+As we delve deeper into the different types of hack attacks throughout the book, we will learn more about the specific tools that can be used to perform them. It's important to note that many people misunderstand the capabilities of these hacking and security tools, often due to misconceptions or bad publicity.
 
-Some of these tools are complex, and you should familiarize yourself with each before you begin to use them. Here are some ways to do just that:
+Some of these tools can be complex and it's essential to familiarize yourself with each one before using them. Here are a few ways to do that:
 
-* Read the online help files or the readme files for the tools.
-* Go through the user guide for any commercial tool.
+* Read the online help files or the readme files for the tools.&#x20;
+* Go through the user guide for any commercial tool.&#x20;
 * Join an online or formal class to learn more about the tool.
 
 **Executing the Plan**
 
-You need to be patient and have enough time on your hands to perform the hack. You also have to be careful while performing the hack. An employee looking over your shoulder or a hacker in the network will always watch what’s going on, and this person will use the information they have obtained against you.
+It is essential to approach ethical hacking with caution and patience. It is important to ensure that you have adequate time to perform the hack and that you are aware of potential risks, such as the presence of other employees or hackers in the network. To maintain the confidentiality of your actions, it is crucial to keep all information private and secure.&#x20;
 
-You cannot expect to perform an ethical hack when there are no crackers in the network, because that does not happen. You have to ensure that you keep everything private and quiet. This is critical when you are deriving, transmitting and storing the results of the test. You should try to encrypt these files and emails using tools like Pretty Good Privacy (PGP) and others. The least you can do is to protect the files using a password.
+This includes encrypting files and emails using tools like Pretty Good Privacy (PGP) and protecting them with a password. Additionally, it's important to keep in mind that performing a hack in an ethical way, means you should be well aware of the company's policies and regulations, and should be authorized to perform the hack.
 
-You’re on a mission to get as much information as you can about the system you’re testing. This is what a cracker will do. You should begin with a broad perspective and then narrow your focus:
+As an ethical hacker, the first step is to gather as much information as possible about the target system. This process should start with a broad perspective, collecting general information such as the organization's name, the computer and network system, and the IP address. This information can be gathered through various sources such as the company's website, public records, and even a simple Google search.&#x20;
 
-* Look for the name of the organization, computer, network system and the IP Address; this information will often be available on Google.
-* Now, narrow the scope and target the systems that you’re testing. A casual assessment will turn up some information about the system, regardless of whether you are assessing web applications or physical-security.
-* Narrow the focus with a critical eye and perform an actual scan. You should also perform detailed tests on the system.
-* If you want to perform an attack, do it now.
+Once a general understanding of the system has been established, it's important to narrow the scope and focus on specific areas for testing. This may include a casual assessment of the system, a detailed scan of the system, and potentially even a controlled attack to identify vulnerabilities.
+
+Throughout the process, it's crucial to maintain the integrity of the system and the company's information security policies and regulations.
 
 **Evaluating the Results**
 
-You should now assess the results of your hack to identify what you’ve discovered. It’s advised that you make the assumption that these vulnerabilities were never uncovered before; this is where the results count. You need more experience to evaluate the results and identify the correlation between the vulnerabilities, and then you’ll know your systems better than anybody else. This will make the evaluation process simpler going forward. The final step is to submit a formal report to your customer or to the upper management and outline your results. You must always keep both parties in the loop to show them that their money was well spent.
+After conducting an ethical hack, it's important to evaluate the results to identify any vulnerabilities that have been discovered. It's beneficial to approach the evaluation process with the assumption that these vulnerabilities have not been previously identified. This will allow for a thorough and comprehensive evaluation. With experience, you will be better equipped to identify the correlation between vulnerabilities and understand the system better. Once the evaluation process is complete, it's important to submit a formal report to the customer or upper management. This report should outline the results of the hack and any vulnerabilities that were identified. It's crucial to keep both parties informed and transparent throughout the process to demonstrate that their investment in the ethical hack was worthwhile.
 
 **Moving On**
 
-When you have finished the ethical hacking test, you’ll need to implement the analysis and also give the customer some recommendations. This will help to ensure the security of your systems. When you run these tests, new security vulnerabilities will appear. The information systems will always change, and these will become more complex. You’ll uncover new hacker exploits and more security vulnerabilities as time goes on.
+After completing an ethical hack, it's important to implement the findings and provide recommendations to the customer to help improve the security of their systems. It's important to keep in mind that new security vulnerabilities may emerge over time as the system and technology evolves.&#x20;
 
-A security test is a snapshot of how secure your systems are. You should remember that things can change at any time, especially when you add a new system, apply patches or upgrade the software. That’s why it’s important to have a plan by which you perform regular tests to assess the system’s security.
+Therefore, it's important to have a plan in place to regularly conduct security assessments to ensure the continued protection of the system. These assessments can reveal new hacker exploits and vulnerabilities, and should be run whenever new systems are added, patches are applied, or software is upgraded. It's important to remember that a security assessment is only a snapshot of the system's security and regular testing is necessary to ensure the continued protection of the system.
 
 ### Distributed Denial-of-Service Attacks. <a href="#_dsf3r6tyo6dq" id="_dsf3r6tyo6dq"></a>
 
 [3 in 1- A Comprehensive Beginner's Guide + Complete Tips And Tricks To Ethical Hacking + Learn Penetration Testing, Cybersecurity with Advanced Ethical Hacking Techniques and Methods Kindle Edition](https://www.amazon.com/Ethical-Hacking-Comprehensive-Penetration-Cybersecurity-ebook/dp/B08NCQZ61P/ref=sr\_1\_7?crid=3BMIU3O7QWDA0\&keywords=ethical+hacking+career\&qid=1649665551\&sprefix=ethical+hacking+caree%2Caps%2C591\&sr=8-7\&asin=B08NCQZ61P\&revisionId=ef7a237f\&format=1\&depth=1)
 
-A distributed denial-of-service, or DDoS, attack is performed by overloading a network or server with large volumes of traffic from different users and sources. Unlike a DoS, or denial-of-service, attack where only one Internet connection and one computer is used, different Internet connections and different computers are employed during a DDoS attack.
+A Distributed Denial of Service (DDoS) attack is a malicious attempt to disrupt the normal traffic of a network or server by overwhelming it with a large volume of traffic from multiple sources. Unlike a Denial of Service (DoS) attack, which uses a single internet connection and computer to overload a network or server, a DDoS attack uses multiple internet connections and computers to flood the target with traffic. This makes DDoS attacks more difficult to detect and mitigate because the traffic appears to come from multiple, legitimate sources. The goal of a DDoS attack is to make the targeted website or service unavailable to its intended users by overwhelming its server and network resources.
 
 **Types of Attacks**
 
@@ -526,31 +527,39 @@ A DDoS attack can be placed in one of two categories:
 
 **Volume-Based Attacks**
 
-A volume-based DDoS attack includes ICMP floods, UDP Floods, spoofed packet floods and TCP floods. These attacks are commonly known as Layer 3 and 4 attacks. The magnitude of an attack is measured in bits per second (bps).
+A volume-based DDoS attack is a type of DDoS attack that aims to overwhelm a network or server by flooding it with a large volume of traffic. This type of attack includes several specific methods such as:
 
-**UDP Flood**
+ICMP floods: This attack floods a network with ICMP echo request (ping) packets, overwhelming the target with a large number of requests.&#x20;
 
-A UDP flood attack is often used to flood any random port on a remote host server. This attack is performed by sending UDP packets to the server, especially to the port number 53. You can use a specialized firewall to block or filter out any malicious UDP packets of data.
+**UDP floods:**&#x20;
 
-**ICMP Flood**
+This attack floods a network with UDP packets to consume available bandwidth and exhaust the target's resources.&#x20;
 
-This type of attack is similar to the UDP flood and is often used to attack a remote host by sending several ICMP echo requests. In this type of attack, both the incoming and outgoing bandwidth is used, and a large number of ping requests will slow the system down.
+**Spoofed packet floods:**&#x20;
 
-**HTTP Flood**
+This attack floods a network with spoofed packets, making it difficult to trace the source of the attack.&#x20;
 
-In an HTTP flood attack, the hacker will send an HTTP POST and HTTP GET request to the target system or network in large volumes. The server cannot handle these volumes, and this will lead to a denial of any additional connections from a legitimate client.
+**TCP floods:**&#x20;
 
-**Amplification Attack**
+This attack floods a network with a high number of TCP connection requests, overwhelming the target's resources and causing a denial of service.
 
-In an amplification attack, a hacker will request the server, website or network to generate a large response and include a DNS request for PDFs, HTTP GET requests for images, TXT records and other data files.
+These attacks are commonly known as Layer 3 and 4 attacks because they target the network and transport layers of the OSI Model. The magnitude of an attack is measured in bits per second (bps) and are typically used to saturate the bandwidth of the targeted server or network. It is important to note that DDoS mitigation methods and technologies have evolved over the years, so these types of attacks can be mitigated by using a combination of on-premise and cloud-based solutions.
+
+**An amplification attack :**
+
+An amplification attack is a type of DDoS attack that amplifies the traffic directed towards a targeted server, website, or network. This is achieved by using a technique called reflector amplification, where a hacker sends a small request to a server or network with a spoofed source IP address that is set to the target's IP address. The server or network then sends a large response to the target, amplifying the attack traffic.
 
 **Application Layer Attacks**
 
-There are many types of application layer attacks, including DDoS attacks targeting Apache or Windows, zero-day DDoS attacks, Slowloris, and others. The goal of the hacker is to crash the web server. The magnitude of the attack is measured in requests per second.
+Application layer attacks are a type of DDoS attack that targets the application layer of the OSI Model. These attacks are designed to crash a web server by overwhelming it with a large number of requests. Some common types of application layer attacks include:
 
-**Slowloris**
+**DDoS attacks targeting Apache or Windows servers:**&#x20;
 
-The attacker will send numerous HTTP headers to the target network or server, but no request is ever complete. The target server will need to keep all these connections open, which will lead to an overflow in the connection pool. This will ensure that the server does not accept any additional connections.
+These attacks exploit vulnerabilities in specific web server software to crash the server.&#x20;
+
+**Zero-day DDoS attacks:**
+
+These attacks exploit unknown vulnerabilities in a web server to crash it.
 
 **Application Attack**
 
@@ -560,17 +569,35 @@ An application attack (also known as a Layer 7 attack) is where the hacker will 
 
 In this type of attack, the hacker will exploit the NTP as it’s accessible to the public. The hacker will perform actions that aim to overwhelm the target server.
 
-**Zero-Day DDoS Attacks**
+**Slowloris**:&#x20;
 
-A zero-day vulnerability is a flaw in either the application or the system that was unknown to the user, and this vulnerability has not yet been patched or fixed. There are many types of attacks that are currently being identified that explore different vulnerabilities in the system.
+This type of attack opens a large number of connections to a web server and then sends requests very slowly, overwhelming the server with a large number of open connections.
+
+The goal of application layer attacks is to crash the targeted web server by overwhelming it with a large number of requests. The magnitude of the attack is measured in requests per second (RPS).
+
+Application layer attacks can be mitigated by implementing rate limiting on the targeted server or network, filtering incoming traffic based on source IP address, and by deploying DDoS protection solutions that can detect and block incoming traffic.&#x20;
+
+It's also important to keep the web server software and application up to date, as well as to properly configure the web server to prevent known vulnerabilities from being exploited.
+
+It is important to note that Application layer attacks are more sophisticated than other types of DDoS attacks, as they are designed to exploit vulnerabilities in web servers and applications, making them more difficult to detect and mitigate.
 
 **How to Overcome a DDoS Attack**
 
-There are numerous DDoS protection tools that one can use depending on the type of attack. You can prevent a DDoS by identifying the vulnerabilities in an operating system and closing them. You also must ensure that you close every port connected to your system, thereby removing the probability of unwanted access to the system. You can also hide the system behind a VPN or a proxy server.
+There are various DDoS protection tools and techniques that can be used to prevent or mitigate DDoS attacks, depending on the type and magnitude of the attack. Some common methods include:
 
-If the DDoS attack is low, you can use a firewall to filter out all the traffic that was sent to the network for the purpose of DDoS. If the magnitude of the attack is high, you should use a DDoS protection service provider. This tool will offer a proactive, genuine and holistic approach. You should always be careful when you select a DDoS protection service provider since there are quite a few who only want to take advantage of your situation. These providers will offer you numerous services at high costs if you let them know that your system was a victim of a DDoS attack.
+**Identifying and closing vulnerabilities in the operating system:** This can prevent an attacker from exploiting known vulnerabilities to launch a DDoS attack.&#x20;
 
-You should look for a DDoS protection service provider that can be used to configure the CNAME and A records for the website. You should also look for a CDN provider that can monitor and analyze the DDoS traffic and will protect your system from an attack.
+**Closing unnecessary ports:** This can prevent unwanted access to the system and reduce the attack surface.&#x20;
+
+**Using a VPN or proxy server:** This can hide the system's IP address and make it more difficult for an attacker to target the system.&#x20;
+
+**Firewall**: Low-magnitude DDoS attacks can be filtered out by using a firewall to block traffic that is intended for DDoS.&#x20;
+
+**DDoS protection service provider:** For high-magnitude DDoS attacks, a DDoS protection service provider can offer a proactive, genuine and holistic approach. This service provider can monitor and analyze the DDoS traffic and will protect your system from an attack.&#x20;
+
+**CDN provider:** CDN providers can also monitor and analyze DDoS traffic and protect your website from an attack.&#x20;
+
+It's important to be careful when selecting a DDoS protection service provider, as some providers may take advantage of your situation and charge high costs for their services. To select the best provider it's important to look for a DDoS protection service provider that can be used to configure the CNAME and A records for the website, that can monitor and analyze DDoS traffic, and that will protect your system from an attack.
 
 Let’s assume that the IP address you’re using is AAA.BBB.CCC.DDD. You should configure the address in the following way:
 
@@ -584,4 +611,4 @@ At this time, it’s advised that you let the CDN provider handle the attack on 
 
 **Quick Fix**
 
-A DDoS attack is one of the most prevalent attacks performed on vulnerable networks and systems. Unfortunately, there’s no way to fix this problem quickly. If the system is under an attack, you should never panic, but instead start looking at the matter step by step.
+DDoS attacks are common and target vulnerable networks and systems. There is no quick solution to this issue. If your system is under attack, it is important to stay calm and methodically address the problem.
