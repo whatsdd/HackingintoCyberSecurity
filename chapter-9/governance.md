@@ -6,18 +6,17 @@
 
 **(**[Information Security Governance | EDUCAUSE](https://www.educause.edu/focus-areas-and-initiatives/policy-and-security/cybersecurity-program/resources/information-security-guide/toolkits/information-security-governance#InformationSecurityGovernance-what) **)**
 
-IT security governance is the system by which an organization directs and controls IT security (adapted from ISO 38500). IT security governance should not be confused with IT security management. IT security management is concerned with making decisions to mitigate risks; governance determines who is authorized to make decisions. Governance specifies the accountability framework and provides oversight to ensure that risks are adequately mitigated, while management ensures that controls are implemented to mitigate risks. Management recommends security strategies. Governance ensures that security strategies are aligned with business objectives and consistent with regulations.
+IT security governance is the system by which an organization directs and controls IT security, as defined by ISO 38500. It is distinct from IT security management, which involves making decisions to mitigate risks. Governance, on the other hand, establishes who is authorized to make those decisions and sets the accountability framework. It also provides oversight to ensure that risks are adequately mitigated while management ensures that controls are implemented to mitigate risks. Management makes recommendations for security strategies, while governance ensures that those strategies align with business objectives and comply with regulations. In summary, IT security governance sets the overall direction and framework for IT security, while IT security management is responsible for implementing specific controls and procedures to protect the organization's IT assets. Together, governance and management work together to ensure that an organization's IT security aligns with its overall business objectives and is compliant with relevant laws and regulations.
 
-NIST describes IT governance as the process of establishing and maintaining a framework to provide assurance that information security strategies are aligned with and support business objectives, are consistent with applicable laws and regulations through adherence to policies and internal controls, and provide assignment of responsibility, all in an effort to manage risk.
+NIST (National Institute of Standards and Technology) defines IT governance as the process of establishing and maintaining a framework that provides assurance that information security strategies align with and support business objectives, comply with applicable laws and regulations, and are supported by policies and internal controls, all with the goal of managing risk. Enterprise security governance is the responsibility of leadership to meet fiduciary requirements and ensure reasonable standards of care. This is based on legal rationale and the duty of care that leaders owe to their organization.
 
-Enterprise security governance results from the duty of care owed by leadership towards fiduciary requirements. This position is based on judicial rationale and reasonable standards of care. The five general governance areas are:
+&#x20;In other words, IT governance is a framework that ensures that an organization's information security efforts align with its overall business objectives, comply with relevant laws and regulations, and are supported by policies and internal controls. It also assigns responsibility for decision-making and risk management and ensures that the organization is meeting its fiduciary requirements and reasonable standards of care. The five general governance areas are:
 
-*
-  1. Govern the operations of the organization and protect its critical assets
-  2. Protect the organization's market share and stock price (perhaps not appropriate for education)
-  3. Govern the conduct of employees (educational AUP and other policies that may apply for the use of technology resources, data handling, etc.)
-  4. Protect the reputation of the organization
-  5. Ensure compliance requirements are met
+1. Govern the operations of the organization and protect its critical assets
+2. Protect the organization's market share and stock price (perhaps not appropriate for education)
+3. Govern the conduct of employees (educational AUP and other policies that may apply for the use of technology resources, data handling, etc.)
+4. Protect the reputation of the organization
+5. Ensure compliance requirements are met
 
 "Governing for enterprise security means viewing adequate security as a non-negotiable requirement of being in business."
 
@@ -45,14 +44,15 @@ They are:
 
 some excellent comparisons of effective and ineffective governance characteristics from the CERT GES
 
-The following principles describe preferred behavior to guide governance decision making
+IT Governance is the overall framework that ensures that an organization's IT strategy aligns with its overall business objectives, and is supported by policies and internal controls. It also assigns responsibility for decision-making and risk management. The five main components of IT Governance, as per COBIT (Control Objectives for Information and related Technology) framework are:
 
-* **Responsibility:** Individuals and groups within the organization understand and accept their responsibilities in respect of both the supply of, and demand for IT. Those with responsibility for actions also have the authority to perform those actions.
-* **Strategy:** The organization's business strategy takes into account the current and future capabilities of IT; the strategic plans for IT satisfy the current and ongoing needs of the organization's business strategy.
-* **Acquisition:** IT acquisitions are made for valid reasons, on the basis of appropriate and ongoing analysis, with clear and transparent decision-making. There is an appropriate balance between benefits, opportunities, costs, and risks, in both the short term and the long term.
-* **Performance:** IT is fit for purpose in supporting the organization, providing the services, levels of service, and service quality required to meet current and future business requirements.
-* **Conformance:** IT complies with all mandatory legislation and regulations. Policies and practices are clearly defined, implemented, and enforced.
-* **Human Behavior:** IT policies, practices, and decisions demonstrate respect for Human Behavior, including the current and evolving needs of all the 'people in the process'.
+* **Strategy:** IT strategy aligns with the organization's overall business strategy, and meets the current and future needs of the business.
+* **Acquisition:** IT acquisitions are made for valid reasons and are based on appropriate analysis, with clear and transparent decision-making.
+* **Performance:** IT supports the organization and provides the required services, levels of service, and service quality to meet current and future business requirements.
+* **Conformance:** IT complies with all mandatory legislation and regulations, and policies and practices are clearly defined, implemented and enforced.
+* **Human Behavior:** IT policies, practices and decisions demonstrate respect for human behavior and the current and evolving needs of all people involved in the process.
+
+In summary, IT governance is the overarching framework that ensures that an organization's IT strategy aligns with its overall business objectives and complies with relevant laws and regulations. It also assigns responsibility for decision-making and risk management, and balances the benefits, costs, opportunities, and risks of IT investments in the short and long term.
 
 Listed below are challenges of ineffective governance \[1]. These challenges can be very useful in presenting rationale to leadership for implementing an effective institution security governance model.
 
