@@ -107,39 +107,39 @@ Identifying potential threats and vulnerabilities that could impact the CIA of i
 
 Once you know the risks, you need to consider the likelihood and impact (LI) to allow you to distinguish between (say) low likelihood and low impact, versus higher ones.
 
-* **Risk evaluation.>>>>>>>>**
+* **Risk evaluation.**
 
-**After analysing the risk, you can then prioritise investments where needed the most, and conduct reviews based on the LI positioning. You have to document what each position means so that it can be applied by anyone following the method. We use a 5 x 5 grid system in our easy to follow information security risk management tool within ISMS.online. (Tip: It also includes a risk bank with popular risks and treatments too, saving huge amounts of time).**
-
-**The criteria includes a range from very low to very high for likelihood. It has an explanation of what that means e.g. very low is no history of occurrence and would need specialist skills and high investment to occur. Impact criteria range from very low with insignificant consequences and costs, all the way up to very high being almost certain death of the business. You get the picture. Its not hard, just needs clarity and documenting; otherwise my 3×4 might be different to yours and we end up back where we started at the top of the page.**
+Once you have assessed the risks, it is important to prioritize investments where they are needed the most. This can be done by utilizing a risk management tool, such as the 5x5 grid system offered by ISMS.online. This system allows for easy identification of potential risks and their potential impact on the business. The grid includes a likelihood range from very low to very high, with corresponding explanations for each level. For example, a very low likelihood indicates that there is no history of occurrence and that it would require specialized skills and high investment to occur. The impact criteria range from very low, with insignificant consequences and costs, to very high, which could lead to the potential failure of the business. By clearly documenting the meaning of each position on the grid, it ensures that the method can be applied consistently by anyone who uses it. Additionally, the tool also includes a risk bank with popular risks and corresponding treatments, saving a significant amount of time.
 
 * **Risk treatment**
 
-Treatment of the risk, which is also known as ‘risk response planning’ must include the evidence behind the risk treatment.
+The process of addressing risk, also referred to as "risk response planning," must be supported by evidence. Risk treatment can take various forms, including internal measures to control and tolerate the risk, transferring the risk to a third party, or completely eliminating the risk.
 
-In simple terms ‘risk treatment’ can be work you are doing internally to control and tolerate the risk, or it could mean steps you are taking to transfer the risk (e.g. to a supplier), or it could be to terminate a risk entirely.
-
-ISO 27001 is great here too because the Standard also gives you an Annex A set of control objectives to consider in that treatment, which will form the backbone of your Statement of Applicability. The Annex A controls also give you an opportunity to look ‘bottom-up’ and see whether it triggers risks you may not have thought about before too.
+The ISO 27001 standard provides a set of control objectives outlined in Annex A to guide risk treatment and serve as the foundation for the Statement of Applicability. Additionally, these controls offer an opportunity to identify potential risks that may have been previously overlooked.
 
 * **Monitor and review the risk**
 
-The first part of the monitor and review stage of the risk management process is to describe your processes for monitoring and review. This can be broken into the following areas:
+Monitoring and reviewing risk is an essential part of the risk management process. It involves creating processes for monitoring and review, including:
 
 **Staff engagement and awareness**
 
-Get appropriate staff involved in the process regularly and have a forum to give and receive feedback.
-
-You must have an owner for each risk so you might look to delegate that down to the front (first) line as per the broadly recognised ‘3 lines of defence’ model.
+Involving appropriate staff in the process regularly and providing a forum for feedback.
 
 **Management reviews**
 
-Risk reviews are a standard part of that 9.3 agenda and you might decide to have risk owners at this level instead, delegating operational work down to line 1 but retaining ownership.
-
-Your management reviews have to be at least annual, (we encourage far more regular ones) but they might not be long enough to drill into each risk and cover everything else on that agenda too. As such we also recommend a process where the risk owner is tasked to review the review based on its grid position e.g. monthly review for a very high likelihood and very high impact risk, whereas annually is fine for reviewing a very low likelihood and very low impact risk. You then show your auditor that those risk reviews are pragmatic, based on the impact and likelihood, which they like.
+Incorporating risk reviews as a standard part of management meetings, with risk owners present at this level and operational responsibilities delegated to the front line.
 
 **Improvement**
 
-Internal audits and use of the other mechanisms in clause 10 around improvement can be nicely associated with the more strategic risk review process too.
+Utilizing internal audits and other mechanisms in Clause 10 to continuously improve the risk management process.
+
+**Risk ownership**
+
+Assigning an owner for each risk, potentially delegating ownership to the front line according to the "3 lines of defense" model.
+
+**Review frequency**
+
+Conducting management reviews at least annually, with more frequent reviews for higher likelihood and higher impact risks.
 
 ### Risk management requirements of ISO 27001:2013/17 <a href="#_4klf33pk766t" id="_4klf33pk766t"></a>
 
@@ -157,7 +157,7 @@ Let’s also remember that this process needs to be business objectives led (i.e
 * prevent, or reduce the undesired effects
 * achieve continual improvement
 
-If you are taking a top-down approach, earlier in the ISO requirements you’ll have considered the context and purpose of your organisation with the issues facing it (4.1), interested parties (4.2), scope (4.3), information assets etc, which is illustrated in the image below (this is an extract from our ISO 27001 Virtual Coach programme within _ISMS.online_. This is the most logical approach to take.)
+When implementing ISO requirements, it is best to begin with a top-down approach. This approach involves considering the overall context and purpose of your organization, as well as the specific challenges it faces. This includes assessing interested parties, determining the scope of the project, and identifying important information assets. This approach is illustrated in the image provided in the ISO 27001 Virtual Coach program within ISMS.online and is considered the most logical method to take.
 
 ![](<../.gitbook/assets/1 (3)>)
 
@@ -166,6 +166,6 @@ If you are taking a top-down approach, earlier in the ISO requirements you’ll 
 1. How the risks integrate into the wider information security management system
 2. How actions are taken, and evaluating the effectiveness of the actions taken on the way
 
-As with the example above about risk prioritisation and conflict, there is a bit more detail too. 6.1 also includes a need to document risk acceptance criteria for performing risk assessments and how those all produce consistent, valid and comparable results around the CIA of information assets in scope.
+In addition to the top-down approach, ISO 27001 also requires a thorough documentation of risk acceptance criteria for performing risk assessments. This ensures that the results of the assessments are consistent, valid, and comparable, and that they effectively address the confidentiality, integrity, and availability of the information assets within scope.&#x20;
 
-An external auditor will expect to see a methodology that explains all these things well and have increased confidence for seeing how easily the ISMS operates in a joined-up fashion. It’s a thing of beauty when your information assets link nicely to the risks and they, in turn, connect to the policies and controls being used to address them.
+An external auditor will expect to see a methodology that clearly explains these processes, and will have increased confidence in the overall efficiency and effectiveness of the ISMS. When information assets are linked to risks, and risks are linked to the policies and controls implemented to address them, the ISMS operates in a seamless and cohesive manner.
