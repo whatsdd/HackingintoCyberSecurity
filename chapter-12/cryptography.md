@@ -190,7 +190,7 @@ Before the 9/11 terrorist attacks, U.S. federal agencies believed that terrorist
 
 **(**[Amazon.com: Principles of Information Security eBook : Whitman, Michael E., Mattord, HerbertJ.:Books](https://www.amazon.com/Principles-Information-Security-Michael-Whitman-ebook/dp/B07124FYGZ/ref=sr\_1\_1?keywords=Principles+of+Information+Security\&qid=1650443715\&s=books\&sr=1-1)**)**
 
-Most of the software applications currently used to protect the confidentiality of information are not true cryptosystems. Instead, they are applications to which cryptographic protocols have been added. This is perhaps particularly true of Internet protocols; some experts claim that the Internet and its corresponding protocols were designed without any consideration for security, which was added later as an afterthought. Whether or not this is true, the lack of threats in the environment in which the Internet was launched allowed it to grow rapidly. But, as the number of threats grew, so did the need for additional security measures.
+**Most of the software applications currently used to protect the confidentiality of information are not true cryptosystems. Instead, they are applications to which cryptographic protocols have been added. This is perhaps particularly true of Internet protocols; some experts claim that the Internet and its corresponding protocols were designed without any consideration for security, which was added later as an afterthought. Whether or not this is true, the lack of threats in the environment in which the Internet was launched allowed it to grow rapidly. But, as the number of threats grew, so did the need for additional security measures.**
 
 **Securing Internet Communication with S-HTTP and SSL**
 
