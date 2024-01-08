@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Hacking into Cyber Security](README.md)
+* [Breaking into Cyber Security](README.md)
 * [Table of content](table-of-content.md)
   * [TABLE OF CONTENT](table-of-content/table-of-content.md)
 * [Credits](credits.md)
@@ -24,11 +24,7 @@
 
 ## Chapter 5
 
-* [Page 1](chapter-5/page-1.md)
-
-***
-
-* [Professions in Cyber Security](professions-in-cyber-security.md)
+* [Professions in Cyber Security](chapter-5/professions-in-cyber-security.md)
 
 ## CHAPTER 6
 

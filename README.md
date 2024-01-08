@@ -1,13 +1,19 @@
 ---
 description: >-
-  Hacking into Cyber Security is an open-source book for professionals and
+  Breaking into Cyber Security is an open-source book for professionals and
   beginner's who want to crack into Information security field. Ultimate career
   Guide into Cyber Security for everyone.
+cover: .gitbook/assets/cover.png
+coverY: 0
 ---
 
-# Hacking into Cyber Security
+# Breaking into Cyber Security
+
+A book by Ahmad Abdur Rehman
 
 In this fast transitioning world of technology, there is a clear view that the whole world will be soon digitalized. Talking about the developing countries, we can see how fast this process is occurring. Businesses are getting digitalized, banks are getting branch-less, and even the whole departments of public and private sectors are transferring into the digital world.
+
+
 
 Billion dollars businesses, information of internet users from all over the world, sensitive state secrets, and military information are also getting vulnerable day by day. Their absolute safety and security are still questioned. Large enterprises, online applications, social media, and intelligence secrets of the states now require more security and their protection is now even more inevitable.
 
@@ -19,10 +25,9 @@ Cybersecurity has many fields for professionals according to the demands of the 
 
 Getting into this field requires firm knowledge and skills in Networking, Programming, System Administration, Operating Systems, Network Security Control, Coding, Cloud Security, Blockchain Security, Internet of Things, (IoT), Artificial Intelligence, and Security Incident Handling & Response.
 
+Thanks to for sponsering the project:
 
+[Billigetesterpro.no](https://billigetesterpro.no/) & [Navnelapperpro.no](https://navnelapperpro.no/p/navnelapper/)
 
-Thanks to:
+<figure><img src=".gitbook/assets/cover.png" alt=""><figcaption></figcaption></figure>
 
-https://billigetesterpro.no
-&
-https://navnelapperpro.no
