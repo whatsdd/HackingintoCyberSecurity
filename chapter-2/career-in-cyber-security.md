@@ -1,8 +1,6 @@
 # Career in Cyber Security
 
-### Careers in Cyber Security. <a href="#_im3f7xz4ec8a" id="_im3f7xz4ec8a"></a>
-
-**(** [Cybersecurity Career Master Plan: Proven techniques and effective tips to help you advance in your cybersecurity career](https://www.amazon.com/Cybersecurity-Career-Master-Plan-cybersecurity/dp/1801073562/ref=sr\_1\_8?crid=39GPFAUDFZC6\&keywords=career+in+cyber+security\&qid=1649311705\&s=books\&sprefix=career+in+cyber+security%2Cstripbooks-intl-ship%2C311\&sr=1-8\&asin=1801073562\&revisionId=\&format=4\&depth=1) **)**
+(Deeper Dive: Cybersecurity Career Master Plan: Proven techniques and effective tips to help you advance in your cybersecurity career **)**
 
 The field of cybersecurity is gaining widespread recognition as technology expands, leading to an increased demand for cybersecurity measures. This trend is likely to continue as technology continues to evolve, making the role of cybersecurity professionals increasingly critical in safeguarding virtual, remote and automated systems.
 
@@ -62,9 +60,9 @@ A "**Threat**" is any possible source of harm or interference to a company's ass
 
 By adopting a proactive approach to cybersecurity, organizations can minimize their risk, reduce the likelihood of data breaches and cyberattacks, and better protect their sensitive information and assets. This includes implementing strong security measures and technologies, such as firewalls, encryption, and access controls, and regularly monitoring and assessing their security posture to identify and address new or emerging risks. It's important for organizations to stay up to date on the latest cybersecurity trends and threats, and to adapt their strategies and practices as the threat-scape evolves.
 
-### How to Figure Out if a Career in Cybersecurity Could Be Right For Me? <a href="#_8mwfx06yp0e" id="_8mwfx06yp0e"></a>
+### How to Figure Out if a Career in Cybersecurity Could Be Right For Me? <a href="#id-8mwfx06yp0e" id="id-8mwfx06yp0e"></a>
 
-**(**[https://www.securityadvisoralliance.org/wp-content/uploads/2020/04/Cybersecurity-Career-Guide-Workbook.pdf](https://www.securityadvisoralliance.org/wp-content/uploads/2020/04/Cybersecurity-Career-Guide-Workbook.pdf) **)**
+(Deeper Dive: Cybersecurity-Career-Guide-Workbook**)**
 
 Cyber attacks come in many forms and can target individuals, businesses, governments, schools and more. Thus, it's vital for everyone to secure their information. Cybersecurity experts play a critical role in stopping breaches, tracking down cybercriminals, and improving defenses through learning from past attacks. With the growing significance of cybersecurity, careers in this field offer ample opportunities for those with relevant skills and knowledge. If you have a passion for technology, solving problems and safeguarding information, consider a career in cybersecurity.
 
@@ -100,7 +98,7 @@ These seven categories are:
 
 These categories may intersect, based on an individual's skill set or an organization's structure and requirements. Cybersecurity experts often shift between jobs with responsibilities spanning across two or more categories. This offers numerous opportunities for learning and diversity throughout a cybersecurity career.
 
-### Cybersecurity Career Paths and Domains. <a href="#_kj8yb0431bl5" id="_kj8yb0431bl5"></a>
+### Cybersecurity Career Paths and Domains. <a href="#kj8yb0431bl5" id="kj8yb0431bl5"></a>
 
 Cybersecurity career paths, similar to fields like data science or supply chain management, can be diverse and ever-changing. There are many roles that act as stepping stones, such as positions in networking, software development, financial and risk analysis, that can eventually lead to an entry-level cybersecurity role.
 
@@ -112,9 +110,9 @@ For instance, you could be a host systems defender responsible for defending a s
 
 &#x20;When thinking about cybersecurity, it's common to initially think of those experts who specialize in ethical hacking or red teaming, who concentrate on evaluating and testing network and system security. But that's just the surface. Cybersecurity encompasses a vast array of subdomains and specialized areas, which can be broadly divided into two major categories: managing security and risk and managing infrastructure.
 
-### What Skills Do I Need For Cybersecurity? <a href="#_9btz96agnl5f" id="_9btz96agnl5f"></a>
+### What Skills Do I Need For Cybersecurity? <a href="#id-9btz96agnl5f" id="id-9btz96agnl5f"></a>
 
-### Although cybersecurity jobs might seem hyper-technical and math-intensive, cybersecurity professionals are jacks-of-all-trades. They should be competent in both hard skills (networking, scripting, system administration) and soft skill sets (communication, creative thinking, listening). <a href="#_7a9j511kjj2k" id="_7a9j511kjj2k"></a>
+### Although cybersecurity jobs might seem hyper-technical and math-intensive, cybersecurity professionals are jacks-of-all-trades. They should be competent in both hard skills (networking, scripting, system administration) and soft skill sets (communication, creative thinking, listening). <a href="#id-7a9j511kjj2k" id="id-7a9j511kjj2k"></a>
 
 _"It's the ability to constantly reinvent yourself, learn new things, and adapt to changes. That's very important for cybersecurity specialists."_
 
@@ -129,7 +127,7 @@ Core cybersecurity technical skills you need to excel in your career:
 
 _“Scripting really helps you to understand how hardware and software works. It's important, even if you don't want to be a programmer, to understand enough so you can read code,” -_ said **Olmsted**, [who also teaches in two other NYU MicroBachelors programs](https://blog.edx.org/meet-instructor-passion-databases-exploring-career-paths?hsLang=en): Computer Science Fundamentals and Intro to Databases.
 
-### The Top Cybersecurity Jobs: From Entry-Level to Senior Level ( [The Ultimate Guide to Cybersecurity Careers](https://blog.edx.org/cybersecurity-career-guide) ) <a href="#_8e9u15jg4otf" id="_8e9u15jg4otf"></a>
+### The Top Cybersecurity Jobs: From Entry-Level to Senior Level ( [The Ultimate Guide to Cybersecurity Careers](https://blog.edx.org/cybersecurity-career-guide) ) <a href="#id-8e9u15jg4otf" id="id-8e9u15jg4otf"></a>
 
 There are many high-paying, dynamic full-time jobs within the cybersecurity industry. Due to the [global talent shortage](https://www.isc2.org/-/media/ISC2/Research/2020/Workforce-Study/ISC2ResearchDrivenWhitepaperFINAL.ashx?la=en\&hash=2879EE167ACBA7100C330429C7EBC623BAF4E07B), many employers are offering average salaries between $70,000 and $90,000 for entry-level roles. More experienced cybersecurity professionals such as cybersecurity directors and chief information security officers (CISOs) can earn over $150,000 annually.
 
@@ -147,7 +145,7 @@ If you want to become a soc analyst, you will need to earn a few cybersecurity c
 
 A Vulnerability Assessment Analyst is a key professional in the field of cybersecurity, responsible for identifying and evaluating vulnerabilities in an organization's IT systems, applications, and infrastructure. They use a variety of tools and techniques, such as vulnerability scanners, to identify potential weaknesses and vulnerabilities that could be exploited by cyber attackers.
 
-Vulnerability Assessment Analyst is a demanding and challenging role, but also a highly rewarding one, that offers many career opportunities for those with the right skills and experience. It is one of the most important roles in the cybersecurity ecosystem as it covers a lot of responsibilities and can help organizations avoid serious security breaches, which will protect the organizations from a huge financial or reputation loss. Prospective vulnerability analysts should have a strong grasp of both Java and HTML and a few certifications such as the [Certified Ethical Hacker](https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/) (CEH) and the [GIAC Web Application Penetration.](https://www.giac.org/certification/web-application-penetration-tester-gwapt)
+Vulnerability Assessment Analyst is a demanding and challenging role, but also a highly rewarding one, that offers many career opportunities for those with the right skills and experience. It is one of the most important roles in the cybersecurity ecosystem as it covers a lot of responsibilities and can help organizations avoid serious security breaches, which will protect the organizations from a huge financial or reputation loss. Prospective vulnerability analysts should have a strong grasp of both Java and HTML and a few certifications such as the Certified Ethical Hacker (CEH) and the GIAC Web Application Penetration.
 
 **3. Cybersecurity Engineer**
 
@@ -165,9 +163,9 @@ Penetration testers use a variety of tools and techniques to perform their tests
 
 Penetration testers can be independent consultants, or they can work for an organization's security team. They typically have a background in computer science, computer engineering, or a related field, and may also hold certifications such as the Certified Ethical Hacker (CEH) or Offensive Security Certified Professional (OSCP)
 
-### Skills & Rolls we need for a Cyber Security Career. <a href="#_mejbcqpvz13c" id="_mejbcqpvz13c"></a>
+### Skills & Rolls we need for a Cyber Security Career. <a href="#mejbcqpvz13c" id="mejbcqpvz13c"></a>
 
-**(** [Amazon.com: Cybersecurity: The Beginner's Guide: A comprehensive guide to getting started in cybersecurity: 9781789616194](https://www.amazon.com/Cybersecurity-Beginners-comprehensive-getting-cybersecurity/dp/1789616190/ref=sr\_1\_7?keywords=cyber+security\&qid=1649394601\&s=books\&sprefix=cyber+securit%2Cstripbooks%2C562\&sr=1-7\&asin=1789616190\&revisionId=\&format=4\&depth=1) **)**
+**(**Deeper Dive:   Cybersecurity: The Beginner's Guide: A comprehensive guide to getting started in cybersecurity: 9781789616194 **)**
 
 The field of cybersecurity is ever-evolving, and staying relevant requires continuous learning and development. As new techniques and tactics are used by cybercriminals, cybersecurity professionals must adapt and develop new skills to counter them. For example, in the past, the ability to remove malware was a highly sought-after skill. However, with advancements in automation, this task can now be performed by security tools, making the skill less essential. Similarly, different types of attacks can also shift the emphasis on certain skills. For example, the WannaCry and NotPetya attacks of 2016 brought increased attention to the importance of cryptography. Whether you are just starting in the cybersecurity industry or looking to expand your skill set, there are many skills to consider acquiring.
 
@@ -265,9 +263,9 @@ Cybercrime incidents can be costly for organizations, not just in terms of finan
 
 System security specialists are specialized computer hardware and software experts who focus on cybersecurity. They perform a variety of tasks to ensure the overall security of an organization. This includes not just digital threats but also physical ones such as theft of servers. System security specialists are responsible for ensuring the physical security of digital assets within an organization, such as servers and workstations, testing security measures in place, and implementing security patches and testing software for potential vulnerabilities. They also conduct independent assessments to identify vulnerabilities in systems and ensure that critical systems have backup systems that can be activated during an attack to maintain business operations. These specialists are well-versed in using common tools used to identify vulnerabilities in systems.
 
-### CompTIA, the best Cyber Security Certifications to Boost Your Career. <a href="#_9aspk0lfud01" id="_9aspk0lfud01"></a>
+### CompTIA, the best Cyber Security Certifications to Boost Your Career. <a href="#id-9aspk0lfud01" id="id-9aspk0lfud01"></a>
 
-**(** [CYBER SECURITY FOR BEGINNERS: A COMPREHENSIVE AND ESSENTIAL GUIDE FOR EVERY NOVICE TO UNDERSTAND AND MASTER CYBERSECURITY eBook : Smith, Liam: Kindle Store](https://www.amazon.com/CYBER-SECURITY-BEGINNERS-COMPREHENSIVE-CYBERSECURITY-ebook/dp/B09S22HW9N/ref=sr\_1\_1?keywords=cyber+security\&qid=1649394601\&s=books\&sprefix=cyber+securit%2Cstripbooks%2C562\&sr=1-1\&asin=B09S22HW9N\&revisionId=9d16ccfa\&format=1\&depth=1) **)**
+(Deeper Dive: CYBER SECURITY FOR BEGINNERS: A COMPREHENSIVE AND ESSENTIAL GUIDE FOR EVERY NOVICE TO UNDERSTAND AND MASTER CYBERSECURITY - Smith, Liam **)**
 
 Pursuing CompTIA's cyber security certifications can be a smart move for those looking to break into the field or advance their current careers. Among the options available, the following certifications are particularly noteworthy for their comprehensive coverage of industry-standard best practices and their applicability to a wide range of IT roles:
 
