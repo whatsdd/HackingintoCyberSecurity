@@ -2,10 +2,6 @@
 
 ### **Governance** <a href="#im1g6d7ram3o" id="im1g6d7ram3o"></a>
 
-### Introduction: What is Governance in Information Security and what is not. <a href="#raipj2ahy342" id="raipj2ahy342"></a>
-
-**(**[Information Security Governance | EDUCAUSE](https://www.educause.edu/focus-areas-and-initiatives/policy-and-security/cybersecurity-program/resources/information-security-guide/toolkits/information-security-governance#InformationSecurityGovernance-what) **)**
-
 IT security governance is the system by which an organization directs and controls IT security, as defined by ISO 38500. It is distinct from IT security management, which involves making decisions to mitigate risks. Governance, on the other hand, establishes who is authorized to make those decisions and sets the accountability framework. It also provides oversight to ensure that risks are adequately mitigated while management ensures that controls are implemented to mitigate risks. Management makes recommendations for security strategies, while governance ensures that those strategies align with business objectives and comply with regulations. In summary, IT security governance sets the overall direction and framework for IT security, while IT security management is responsible for implementing specific controls and procedures to protect the organization's IT assets. Together, governance and management work together to ensure that an organization's IT security aligns with its overall business objectives and is compliant with relevant laws and regulations.
 
 NIST (National Institute of Standards and Technology) defines IT governance as the process of establishing and maintaining a framework that provides assurance that information security strategies align with and support business objectives, comply with applicable laws and regulations, and are supported by policies and internal controls, all with the goal of managing risk. Enterprise security governance is the responsibility of leadership to meet fiduciary requirements and ensure reasonable standards of care. This is based on legal rationale and the duty of care that leaders owe to their organization.
@@ -52,7 +48,7 @@ IT Governance is the overall framework that ensures that an organization's IT st
 * **Conformance:** IT complies with all mandatory legislation and regulations, and policies and practices are clearly defined, implemented and enforced.
 * **Human Behavior:** IT policies, practices and decisions demonstrate respect for human behavior and the current and evolving needs of all people involved in the process.
 
-In summary, IT governance is the overarching framework that ensures that an organization's IT strategy aligns with its overall business objectives and complies with relevant laws and regulations. It also assigns responsibility for decision-making and risk management, and balances the benefits, costs, opportunities, and risks of IT investments in the short and long term.
+IT governance is the overarching framework that ensures that an organization's IT strategy aligns with its overall business objectives and complies with relevant laws and regulations. It also assigns responsibility for decision-making and risk management, and balances the benefits, costs, opportunities, and risks of IT investments in the short and long term. https://www.educause.edu/cybersecurity-and-privacy-guide#InformationSecurityGovernance-what
 
 Listed below are challenges of ineffective governance \[1]. These challenges can be very useful in presenting rationale to leadership for implementing an effective institution security governance model.
 
@@ -193,7 +189,7 @@ Thought provoking questions that institutional leaders can ask (and should be ab
   3. Are security roles and responsibilities clearly defined and communicated?
   4. Is there a CISO or other officer with sufficient authority and resources to accomplish security objectives?
 
-### How to Govern Information Security. <a href="#vfd0hcvil257" id="vfd0hcvil257"></a>
+### How to Govern Information Security <a href="#vfd0hcvil257" id="vfd0hcvil257"></a>
 
 The role of the Information Security Officer (ISO) is changing from being primarily focused on technical responsibilities to incorporating both technical and management duties. The importance of IT security has become a central concern for organizations, with crucial policy and operational aspects being overseen by senior leaders such as the CIO, general counsel, internal auditor, and executive leadership. While the ISO's responsibilities continue to expand, the authority and challenges to that authority of the role are often handled by senior administrators, legal counsel, or law enforcement. To effectively manage IT security, the ISO must rely on institutional policies and legal compliance.
 
@@ -416,6 +412,6 @@ As we can see, all three standards have similar requirement for secure user auth
 
 ### Why Do You Need An Information Security Governance Framework <a href="#y77sjxvpj4rn" id="y77sjxvpj4rn"></a>
 
-**(**[Cyber Security Management: Trim, Peter - Books](https://www.amazon.com/Cyber-Security-Management-Peter-Trim/dp/036760616X/ref=sr\_1\_6?crid=2PQP93D2I8IQR\&keywords=information+security+and+GRC\&qid=1649738350\&s=books\&sprefix=information+security+and+grc%2Cstripbooks-intl-ship%2C262\&sr=1-6\&asin=036760616X\&revisionId=\&format=4\&depth=1)**)**
+**(Deeper Dive:** Cyber Security Management: Trim, Peter **)**
 
 It is important to remember that the goals of an information security governance framework should be to not only help an organization meet its IT compliance obligations, but to do so in the most efficient way possible. When IT compliance requirements are addressed in an ad hoc manner, redundancy and inefficiency can result, as well as the potential for missed requirements. A holistic, top-down approach, which takes into account an organization's overall strategy, operations, and compliance requirements, will help effectively manage IT compliance within the organization. By using a governance framework, an organization can streamline its compliance efforts, reduce costs and minimize the risk of non-compliance, while also aligning its IT security efforts with its overall business objectives.
