@@ -1,8 +1,6 @@
 # Threat Modeling
 
-### **Threat Modeling** <a href="#_q6d96uvc57u8" id="_q6d96uvc57u8"></a>
-
-### Introduction <a href="#_19r0n5nq3khu" id="_19r0n5nq3khu"></a>
+### Introduction <a href="#id-19r0n5nq3khu" id="id-19r0n5nq3khu"></a>
 
 Threat modeling is a structured approach to identifying and mitigating potential security threats to a system, network or application. It involves analyzing the system's architecture, data flows, and potential attack vectors to identify potential vulnerabilities and the impact of those vulnerabilities. This can include identifying the assets that need to be protected, the threats that could be used to exploit those assets, and the vulnerabilities that could be exploited. Once the potential vulnerabilities have been identified, a risk assessment can be performed to determine the likelihood and impact of each threat, and then mitigation strategies can be developed to address the most significant risks.
 
@@ -17,11 +15,11 @@ The process of threat modeling typically involves several steps, including:
 
 It's important to note that threat modeling is an iterative process, and it should be performed regularly to ensure that the system, network, or application remains secure. And it's also important to involve different teams in the process, such as developers, security professionals, and business stakeholders, as they may have different perspectives and insights that can help identify potential vulnerabilities.
 
-### Threat modeling overview <a href="#_uc2w7omlecru" id="_uc2w7omlecru"></a>
+### Threat modeling overview <a href="#uc2w7omlecru" id="uc2w7omlecru"></a>
 
 Threat modeling is a crucial step in identifying and mitigating potential security threats in an organization's systems or software. It involves walking through a structured process to identify all potential security risks, evaluate their severity, and prioritize them for mitigation. This approach helps organizations to proactively address potential vulnerabilities, rather than waiting for an incident to occur. It also allows organizations to develop a deeper understanding of their systems, which can aid in the early detection and prevention of security issues, resulting in lower costs for remediation and incident response.
 
-### The threat modeling process <a href="#_lkxcii45w1up" id="_lkxcii45w1up"></a>
+### The threat modeling process <a href="#lkxcii45w1up" id="lkxcii45w1up"></a>
 
 As every organization, system and security team is unique, there are a variety of threat modeling methodologies that can be employed to meet their particular needs and goals. While each has their own slightly different naming convention and series of steps, the most prevalent threat models processes encompass roughly the same logical flow at their core.These steps typically include:
 
@@ -34,7 +32,7 @@ As every organization, system and security team is unique, there are a variety o
 
 It's important to note that threat modeling is an ongoing process and not a one-time event. As technology and business requirements change, so too should the threat model be updated to reflect new risks and vulnerabilities. Additionally, threat modeling should be integrated into the development life cycle and not seen as a separate step.
 
-### Main threat modeling frameworks <a href="#_3ymj79xofkxa" id="_3ymj79xofkxa"></a>
+### Main threat modeling frameworks <a href="#id-3ymj79xofkxa" id="id-3ymj79xofkxa"></a>
 
 While a complete breakdown of each of the main threat modeling frameworks is not within the scope of this article, the models introduced below represent ten of the most prevalent. As with other types of risk modeling, quantitative and qualitative analysis combine to demonstrate that threat modeling is still in many ways an art as opposed to a pure scientific process.
 
@@ -122,9 +120,7 @@ PnG is a unique approach to threat modeling as it allows organizations to identi
 
 ![](../.gitbook/assets/4)
 
-### Bringing it all together <a href="#_qm5i3ak9vpp8" id="_qm5i3ak9vpp8"></a>
-
-### ([What is threat modeling? - Infosec Resources](https://resources.infosecinstitute.com/topic/what-is-threat-modeling/)) <a href="#_n0yntyr3x8s8" id="_n0yntyr3x8s8"></a>
+### Bringing it all together <a href="#qm5i3ak9vpp8" id="qm5i3ak9vpp8"></a>
 
 Ultimately, all threat model methodologies can help security professionals identify potential threats to their systems and operations. It is important for organizations to understand the depth, type, and scope of each, so the desired outputs and outcomes match their organization's needs.
 
