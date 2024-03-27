@@ -1,6 +1,6 @@
 # Career as a Cyber Security Professional
 
-1\. Starting a Career in Cyber Security
+## 1. Starting a Career in Cyber Security
 
 ●Keep up to date with the field of Cyber Security:
 
@@ -60,7 +60,7 @@ Networking is an essential aspect of any career, and it is especially important 
 
 <figure><img src="../.gitbook/assets/Picture 1 (1).png" alt=""><figcaption></figcaption></figure>
 
-2\. It's all about Skills:
+## 2. It's all about Skills
 
 [(Introduction to US Cybersecurity Careers | ScienceDirect )](https://www.sciencedirect.com/book/9780128027226/introduction-to-us-cybersecurity-careers)
 
@@ -140,7 +140,7 @@ Analyze and interpret vulnerability and configuration data
 
 ● Develop and deliver presentations on security topics to technical and non-technical audiences.
 
-3.Getting the Job and Entering the Digital Forensic Field:
+## 3.Getting the Job and Entering the Digital Forensic Field
 
 LinkedIn: This is a professional networking platform that allows you to search for jobs based on location, company, industry, and job title. You can also use LinkedIn to connect with other professionals in your field and get recommendations from former colleagues or supervisors.
 
@@ -166,9 +166,9 @@ In addition to researching companies, it's also important to research the specif
 
 <figure><img src="../.gitbook/assets/Picture 2.png" alt=""><figcaption></figcaption></figure>
 
-4.Understanding the Pros and Cons of Cyber Careers:
+## 4.Understanding the Pros and Cons of Cyber Careers
 
-[(Cybersecurity Career Master Plan: Proven techniques and effective tips to help you advance in your cybersecurity career by Dr. Gerald Auger | Goodreads)](https://www.goodreads.com/book/show/58961354-cybersecurity-career-master-plan)
+(Deeper Dive: Cybersecurity Career Master Plan: Proven techniques and effective tips to help you advance in your cybersecurity career by Dr. Gerald Auger | Goodreads)
 
 Earlier in this chapter, we discussed how cybersecurity is the hot new career field and that it's not going away anytime soon. Before stepping into any new industry, it's important to know the pros and cons of that industry.
 
