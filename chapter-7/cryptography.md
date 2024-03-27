@@ -1,8 +1,6 @@
 # Cryptography
 
-### **Cryptography** <a href="#id-5udpkkj43twh" id="id-5udpkkj43twh"></a>
-
-### Introduction to Cryptography. <a href="#id-3uezhdm9mdzq" id="id-3uezhdm9mdzq"></a>
+## Introduction <a href="#id-3uezhdm9mdzq" id="id-3uezhdm9mdzq"></a>
 
 The science of encryption, known as cryptology, encompasses both cryptography and cryptanalysis. Cryptography, derived from the Greek words kryptos meaning "hidden" and graphein meaning "to write," involves the creation and use of codes to secure messages. Cryptanalysis, on the other hand, deals with cracking or breaking encrypted messages to reveal their unencrypted form. Cryptography utilizes mathematical algorithms that are widely known but the protection of the encrypted message lies in the knowledge of the key, a series of characters or bits added to the algorithm along with the original message to create the encrypted message. The process of encryption transforms plaintext into ciphertext, making it unreadable to unauthorized individuals without the key to decrypt the message back into its original form. The field of cryptology is vast and this chapter provides a general overview of the subject and specific information on a few cryptographic tools. It will cover the background of cryptology, key concepts in cryptography, common cryptographic tools, cryptographic protocols and attack methods used against cryptosystems.
 
@@ -33,9 +31,7 @@ To understand the fundamentals of cryptography, you must know the meanings of th
 * **Steganography:** The practice of hiding messages, such as hiding a message within the digital encoding of a picture or graphic, making it almost impossible to detect that the hidden message even exists.
 * **Work factor:** The amount of effort (usually expressed in units of time) required to perform cryptanalysis on an encoded message.
 
-### &#x20;<a href="#g9tlh3rcyl78" id="g9tlh3rcyl78"></a>
-
-### Cryptographic Algorithms & Encryption. <a href="#m815plhnpxi4" id="m815plhnpxi4"></a>
+## Cryptographic Algorithms & Encryption. <a href="#m815plhnpxi4" id="m815plhnpxi4"></a>
 
 Cryptographic algorithms can be divided into two main groups: symmetric and asymmetric. Symmetric algorithms use the same key for both encryption and decryption, while asymmetric algorithms use a pair of keys: a public key for encryption and a private key for decryption. In practice, many modern cryptosystems utilize a combination of both symmetric and asymmetric algorithms for enhanced security. This approach is known as a "hybrid cryptosystem".
 
@@ -119,7 +115,7 @@ For example, using a substitution cipher to replace one letter with another, the
 
 ![](../.gitbook/assets/2)
 
-### Cryptographic Tools. <a href="#id-99wcrou4z1gj" id="id-99wcrou4z1gj"></a>
+### Cryptographic Tools <a href="#id-99wcrou4z1gj" id="id-99wcrou4z1gj"></a>
 
 The ability to conceal the contents of sensitive messages and verify the contents of messages and the identities of their senders can be important in all areas of business. To be useful, these cryptographic capabilities must be embodied in tools that allow IT and information security practitioners to apply the elements of cryptography in the everyday world of computing. This section covers some of the widely used tools that bring the functions of cryptography to the world of information systems.
 
@@ -188,7 +184,7 @@ Before the 9/11 terrorist attacks, U.S. federal agencies believed that terrorist
 
 ### Protocol for Secure Communications. <a href="#pyi0bd7ty465" id="pyi0bd7ty465"></a>
 
-**(**[Amazon.com: Principles of Information Security eBook : Whitman, Michael E., Mattord, HerbertJ.:Books](https://www.amazon.com/Principles-Information-Security-Michael-Whitman-ebook/dp/B07124FYGZ/ref=sr\_1\_1?keywords=Principles+of+Information+Security\&qid=1650443715\&s=books\&sr=1-1)**)**
+**(**Deeper Dive: Amazon.com: Principles of Information Security eBook : Whitman, Michael E., Mattord, HerbertJ.:Books**)**
 
 Many of the tools currently employed to safeguard the secrecy of data are not authentic cryptographic systems. They are, instead, programs to which cryptographic methods have been added as an extra feature. This is particularly prevalent in Internet protocols; some specialists assert that the Internet and its associated protocols were created without any regard for security, and that it was only later that security measures were implemented as an afterthought. Though it is debatable whether or not this claim holds true, the absence of security risks during the early stages of the Internet enabled it to expand rapidly. However, as the number of security threats increased, so did the need for further security measures.
 
