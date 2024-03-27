@@ -13,36 +13,36 @@
 * [Career as a Cyber Security Professional](chapter-1/career-as-a-cyber-security-professional/README.md)
   * [Professions in Cyber Security](chapter-1/career-as-a-cyber-security-professional/professions-in-cyber-security.md)
 
+## CHAPTER 2
+
+* [Introduction to Cyber Security](chapter-2/introduction-to-cyber-security.md)
+* [Information Security](chapter-2/information-security.md)
+
 ## CHAPTER 3
 
-* [Introduction to Cyber Security](chapter-3/introduction-to-cyber-security.md)
-* [Information Security](chapter-3/information-security.md)
+* [Understading Ethical Hacking](chapter-3/ethical-hacking/README.md)
+  * [Hacking Skills](chapter-3/ethical-hacking/hacking.md)
+
+## CHAPTER 4
+
+* [Governance](chapter-4/governance.md)
+
+## CHAPTER 5
+
+* [Risk](chapter-5/risk-management.md)
+
+## CHAPTER 6
+
+* [Compliance](chapter-6/compliance.md)
 
 ## CHAPTER 7
 
-* [Understading Ethical Hacking](chapter-7/ethical-hacking/README.md)
-  * [Hacking Skills](chapter-7/ethical-hacking/hacking.md)
+* [Cryptography](chapter-7/cryptography.md)
+
+## CHAPTER 8
+
+* [Threat Modeling](chapter-8/threat-modeling.md)
 
 ## CHAPTER 9
 
-* [Governance](chapter-9/governance.md)
-
-## CHAPTER 10
-
-* [Risk](chapter-10/risk-management.md)
-
-## CHAPTER 11
-
-* [Compliance](chapter-11/compliance.md)
-
-## CHAPTER 12
-
-* [Cryptography](chapter-12/cryptography.md)
-
-## CHAPTER 13
-
-* [Threat Modeling](chapter-13/threat-modeling.md)
-
-## CHAPTER 14
-
-* [Security Design Principles](chapter-14/security-design-principles.md)
+* [Security Design Principles](chapter-9/security-design-principles.md)
