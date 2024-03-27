@@ -1,10 +1,6 @@
 # Choosing an Advanced Career
 
-### **Choosing an Advanced Career** <a href="#_n7k4gi5va0sq" id="_n7k4gi5va0sq"></a>
-
-### Career Counseling: An Overview <a href="#_pbfij1i142c2" id="_pbfij1i142c2"></a>
-
-**(**[Career Counseling: Holism, Diversity, and Strengths 4th Edition](https://www.amazon.com/Career-Counseling-Holism-Diversity-Strengths/dp/1556203330/ref=sr\_1\_3?keywords=career+counseling\&qid=1649997083\&s=books\&sprefix=career+co%2Cstripbooks-intl-ship%2C509\&sr=1-3) **)**
+### Career Counseling: An Overview <a href="#pbfij1i142c2" id="pbfij1i142c2"></a>
 
 As individuals, our careers are shaped by the choices and actions we take throughout our lives. These careers are not just limited to our professional pursuits, but also encompass the various roles we play in our personal lives. Managing our careers effectively requires a balance between all of these roles, as they work together to create the overall direction and purpose of our lives.
 
@@ -88,11 +84,12 @@ It is important to note that all of the phases and subphases of career counselin
 
 It is possible that there may be unfinished business when the counseling relationship ends in situations where the allotted time is insufficient to complete the full counseling process. Additionally, it is important to note that the suggested phases and subphases of career counseling may not always progress in a linear fashion in practice. It may be necessary to revisit earlier phases or subphases before moving forward again. For example, a client may reach the "taking action" subphase only to realize that additional interventions are needed, which necessitates returning to the "gathering client information" subphase. This back-and-forth flow is a normal part of the counseling process and allows the counselor to address the client's needs and concerns in a comprehensive and holistic manner. To picture this point, you can see that the phases and subphases of career counseling presented in linear outline form in Table 1-1 are placed in a circular format in Figure 1-1. Note how the working alliance evolves and interacts with the phases and subphases and how central it is to the structure of career counseling.&#x20;
 
-It is important to remember that not all clients who seek help want or need to go through the full career counseling process. Some may only need limited assistance, while others may need to be involved in the full process over time but may be resistant to this. Dealing with resistance may be a priority in the initial stages of forming the working alliance. However, it is important to be aware that resistance may reoccur throughout the counseling process as clients struggle with their problems. Dealing with recurring resistance is an important part of the psychological processes involved in career counseling. It is important for the counselor to work with the client to address and resolve any resistance that may arise.
+It is important to remember that not all clients who seek help want or need to go through the full career counseling process. Some may only need limited assistance, while others may need to be involved in the full process over time but may be resistant to this. Dealing with resistance may be a priority in the initial stages of forming the working alliance. However, it is important to be aware that resistance may reoccur throughout the counseling process as clients struggle with their problems. Dealing with recurring resistance is an important part of the psychological processes involved in career counseling. It is important for the counselor to work with the client to address and resolve any resistance that may arise.\
+Recommend reading: Career Counseling: Holism, Diversity, and Strengths 4th Edition&#x20;
 
-### <mark style="color:purple;">Ethics for Career Counseling.</mark> <a href="#_daok1e664b1i" id="_daok1e664b1i"></a>
+### <mark style="color:purple;">Ethics for Career Counseling.</mark> <a href="#daok1e664b1i" id="daok1e664b1i"></a>
 
-**(** [Amazon.com: Career Theory and Practice: Learning Through Case Studies: 9781544333663](https://www.amazon.com/Career-Theory-Practice-Learning-Through/dp/1544333668/ref=sr\_1\_29?crid=16QG3MXF065YJ\&keywords=career\&qid=1649315916\&s=books\&sprefix=care%2Cstripbooks-intl-ship%2C1014\&sr=1-29) **)**
+Recommend reading: Amazon.com: Career Theory and Practice: Learning Through Case Studies: 9781544333663&#x20;
 
 Professional associations, such as the American Counseling Association (ACA), have codes of ethics that guide the behavior of their members. These codes often identify the core values that underpin the profession. For example, the ACA Code of Ethics lays out several principles that counselors must follow, such as promoting human development, honoring diversity, protecting the integrity of the counselor-client relationship, and practicing in a competent and ethical manner. These principles are based on the values of autonomy, nonmaleficence, beneficence, justice, fidelity, and veracity.
 
@@ -224,7 +221,7 @@ Guideline H addresses the ethical conduct of research for career professionals (
 
 The final set of guidelines deals with the procedures and principles for resolving ethical issues. This includes addressing potential conflicts between the Ethics Code and the law (I.1). When ethical violations occur, career professionals are urged to try to resolve the issues informally before reporting the violation (I.2). If formal complaints are necessary, they should be made after professional consultation and making unwarranted complaints is not allowed. Career professionals are also expected to cooperate with state and association ethics committees (I.3).
 
-### Cultural contexts and Career Counseling.? <a href="#_hzozqg8zpurc" id="_hzozqg8zpurc"></a>
+### Cultural contexts and Career Counseling.? <a href="#hzozqg8zpurc" id="hzozqg8zpurc"></a>
 
 Mark, as a White career counselor, recognizes the importance of understanding the cultural values of his clients. In this case, he knows that he needs to be sensitive to the cultural context of his African American lesbian client from a conservative Muslim family. He plans to ask her which cultural factors are most relevant to her (race, sexual orientation, faith, age) and where she is experiencing conflict. He also wants to gain a deeper understanding of her career history and how discrimination may have influenced her choices and perceptions of opportunities. By taking these steps, Mark is demonstrating cultural sensitivity and a commitment to providing culturally responsive counseling to his client.
 
@@ -310,7 +307,7 @@ We previously emphasized the importance of incorporating clients' context into c
 
 **Fig. Culturally Appropriate Career Counseling Model - Source: Fouad & Bingham (1995).**
 
-### Career construction Theory and Life Designing Paradigm. <a href="#_9y3kikl2lnk6" id="_9y3kikl2lnk6"></a>
+### Career construction Theory and Life Designing Paradigm. <a href="#id-9y3kikl2lnk6" id="id-9y3kikl2lnk6"></a>
 
 In recent years, there have been significant changes in the world of work and as a result, new theoretical approaches are emerging in the field of vocational psychology to better understand career and work behavior (Fouad, 2007; Juntunen & Even, 2012; Pope, 2015). Career development theories have moved away from a sole focus on the individual and now recognize the importance of contextual factors. This new perspective is best described as a "person-in-complex-social-and-economic-systems" focus (Blustein et al., in press; Duffy, Blustein, Diemer, & Autin, 2016; Swanson, 2013). These newer approaches have several key features such as: valuing both work and relationship equally, viewing work in a broader context of relational aspects, expanding the consideration of the experience of work beyond that of career, and building on postmodern perspectives of work.
 
@@ -334,7 +331,7 @@ Despite not fully mastering control, she did demonstrate curiosity about her car
 
 In terms of career construction theory, Leslie is currently re-evaluating her occupational story by re-assessing her previous choices and considering whether to continue or change direction. Revisiting the four dimensions of career adaptability, Leslie's decision to pursue career counseling demonstrates her concern about planning for the future and taking control of her future. Combining work and family is a priority for her, given her expressed desire to have a child. Her relationship with Joe is also central to her current career issues, in terms of his reactions to her career concerns. Leslie also seems to have a fair amount of curiosity and confidence about her options. It will be important for her to explore and identify her values, interests, and skills, and how they align with her career aspirations and goals. A career counselor can help her to make a well-informed decision that is fulfilling and satisfying.
 
-### Directions and Implications for Career Counseling <a href="#_tkwb34xa6gpo" id="_tkwb34xa6gpo"></a>
+### Directions and Implications for Career Counseling <a href="#tkwb34xa6gpo" id="tkwb34xa6gpo"></a>
 
 **Goals of Counseling**
 
@@ -352,7 +349,7 @@ The Career Construction Interview is designed to help the client to explore and 
 
 1. **Translate Values into Hard and Soft Skills.**
 
-**(**[What Skills Are Needed to Work in Cyber Security as a Recent Graduate?](https://www.ecpi.edu/blog/what-skills-are-needed-to-work-in-cyber-security-as-a-recent-graduate)**)**
+https://www.ecpi.edu/blog/what-skills-are-needed-to-work-in-cyber-security-as-a-recent-graduate
 
 To secure a job in cybersecurity, it is essential to have a comprehensive understanding of the field and possess the necessary skills. A strong foundation in computer science and technology is essential, as well as knowledge of programming languages such as Python and C++. Understanding of network security, cryptography and penetration testing are also highly valued. Additionally, certifications such as the Certified Information Systems Security Professional (CISSP) and the Certified Ethical Hacker (CEH) can demonstrate expertise and credibility to potential employers.
 
@@ -362,7 +359,7 @@ In summary, to excel in cybersecurity, you need to have a strong foundation in c
 
 Every employer strives to hire cybersecurity professionals with a handful of soft and hard skills, including:
 
-#### **Soft Skills** <a href="#_rgpucfy92728" id="_rgpucfy92728"></a>
+#### **Soft Skills** <a href="#rgpucfy92728" id="rgpucfy92728"></a>
 
 **Strong Research and Writing Skills**
 
@@ -380,7 +377,7 @@ Working in cybersecurity predominantly requires having a passion for learning is
 
 Networking and communication skills are critical tools for cybersecurity professionals. They allow them to connect with others in the industry, build relationships, and collaborate to improve the organization's performance. Additionally, strong communication skills are essential for effectively expressing complex concepts and ideas, and for building trust with others in the organization.
 
-#### **Hard Skills** <a href="#_wp6poc7ficp0" id="_wp6poc7ficp0"></a>
+#### **Hard Skills** <a href="#wp6poc7ficp0" id="wp6poc7ficp0"></a>
 
 **Technical Know-how**
 
@@ -398,9 +395,9 @@ This entails understanding the fine print, how and why various components work t
 
 As an information security expert, Familiarity with common security protocols and technologies such as firewalls, VPNs, and encryption Experience with security incident response and incident management Ability to analyze and interpret security-related data, including network and system logs Knowledge of threat intelligence and threat hunting methodologies. Having strong analytical skills and the ability to think strategically will allow you to evaluate potential threats and implement effective solutions to protect your organization from cyber attacks.
 
-### Identify a Career that Fits your Values. <a href="#_zijtnjsz8vw1" id="_zijtnjsz8vw1"></a>
+### Identify a Career that Fits your Values. <a href="#zijtnjsz8vw1" id="zijtnjsz8vw1"></a>
 
-**(**[**How to Assess Your Career Values**](https://www.thebalancecareers.com/what-are-career-values-with-examples-2059752) **)**
+**(**Deeper Dive: **How to Assess Your Career Values -** thebalancemoney **)**
 
 Some common career values include:
 
@@ -435,7 +432,7 @@ you may choose to rank the terms using:
 * OK not to have
 * Must not have
 
-### Career Counseling in Postmodern Times: Emergence and Narrative and Conception <a href="#_iovob9nk05t2" id="_iovob9nk05t2"></a>
+### Career Counseling in Postmodern Times: Emergence and Narrative and Conception <a href="#iovob9nk05t2" id="iovob9nk05t2"></a>
 
 _“I define postmodern as incredulity toward meta-narratives.”_
 
@@ -445,9 +442,9 @@ For several decades, social, economic, and political forces have aligned to make
 
 In this chapter postmodern career counseling approach acknowledges the societal and organizational narratives that shape people's understanding of work, and how it has changed in the postmodern era. It also recognizes that the traditional psychological contract between worker and employer has been disrupted and how this affects people's identities. This approach proposes a new metanarrative for postmodern society, and takes into account the cultural diversity of individuals. It emphasizes the importance of understanding the context and culture in which a person is making career decisions, and using narrative career counseling to help individuals construct their own career story.
 
-### Postmodern Career Assessments: Advantages & Considerations <a href="#_1ymfrbo4vgj2" id="_1ymfrbo4vgj2"></a>
+### Postmodern Career Assessments: Advantages & Considerations <a href="#id-1ymfrbo4vgj2" id="id-1ymfrbo4vgj2"></a>
 
-**(** [Amazon.com: Postmodern Career Counseling: A Handbook of Culture, Context, and Cases](https://www.amazon.com/Postmodern-Career-Counseling-Handbook-Culture/dp/1556203586/ref=sr\_1\_17?crid=16QG3MXF065YJ\&keywords=career\&qid=1649315916\&s=books\&sprefix=care%2Cstripbooks-intl-ship%2C1014\&sr=1-17\&asin=1556203586\&revisionId=\&format=4\&depth=1) **)**
+**(**  Recommend reading: Postmodern Career Counseling: A Handbook of Culture, Context, and Cases **)**
 
 _“There is no greater agony than bearing an untold story inside you.”_
 
@@ -469,7 +466,7 @@ While qualitative career assessments can provide valuable insights, they also co
 
 Overall, postmodern career counseling and qualitative career assessments offer a unique perspective on career development that emphasizes the importance of understanding the individual's personal narrative and context. While these approaches come with some challenges, they can provide valuable insights that can help individuals make informed career decisions.
 
-### Advantages of Qualitative Career Assessments <a href="#_lzii4vsqegba" id="_lzii4vsqegba"></a>
+### Advantages of Qualitative Career Assessments <a href="#lzii4vsqegba" id="lzii4vsqegba"></a>
 
 Additionally, qualitative career assessments place an emphasis on the counseling relationship and the process of meaning-making, rather than viewing career assessment as a service delivery. This approach encourages active engagement and collaboration between the counselor and client, and allows for flexibility and adaptability when working with clients from diverse backgrounds. It also considers the socio-political and economic context in which the client is operating, making it more oriented towards social justice and accessible to a wider range of clients. Overall, qualitative career assessments offer a holistic and inclusive approach to career counseling that is well-suited for the diverse and ever-changing nature of today's work environment.
 
@@ -486,9 +483,9 @@ The adaptability and flexibility of qualitative career assessments allow for the
 
 Access to career resources and services is an important aspect of social justice (Sampson, Dozier, & Colvin, 2011; Sampson, McClain, Musch, & Reardon, 2011), and this applies to access to career assessments as well (Sampson, 2009). Qualitative career assessments have a more socially just orientation in several ways. Firstly, many qualitative career assessments are freely available, which eliminates the cost barrier that commercially offered quantitative career assessments present for clients. Secondly, as alternative models for staffing and delivery of career services are being explored (Sampson, 2009), some qualitative career assessments offer self-guided activities that can be completed before or after career counseling sessions. Additionally, the integration of counseling for social justice and advocacy competencies can be included in career counseling processes (Butler, 2012; Pope & Pangelinan, 2010) as well as the promotion of prosocial values (Dik, Duffy, & Steger, 2012) and the inclusion of advocacy competencies in career development programs (Gysbers, Lapan, & Cato, 2013).
 
-### Do What Contributes to the world. <a href="#_jisku6z0d6wb" id="_jisku6z0d6wb"></a>
+### Do What Contributes to the world. <a href="#jisku6z0d6wb" id="jisku6z0d6wb"></a>
 
-**(** [80,000 Hours: Find a fulfilling career that does good.: Todd, Benjamin J: 9781537324005](https://www.amazon.com/80-000-Hours-fulfilling-career/dp/1537324004/ref=sr\_1\_7?crid=16QG3MXF065YJ\&keywords=career\&qid=1649311246\&s=books\&sprefix=care%2Cstripbooks-intl-ship%2C1014\&sr=1-7\&asin=1537324004\&revisionId=\&format=4\&depth=1)**)**
+_**(**Deeper Dive: 80,000 Hours: Find a fulfilling career that does good.: Todd, Benjamin J: 9781537324005**)**_
 
 Instead of subscribing to the popular phrase "follow your passion," our approach to a fulfilling career centers around becoming proficient in a skill that positively impacts others. We put emphasis on "getting good" because when you excel in something that others find valuable, you will have a plethora of career opportunities. This increases your chances of finding a job that offers engaging work, supportive colleagues, minimal downsides, and compatibility with the rest of your life. Even if you possess all other factors, work can still feel purposeless without the added component of helping others.&#x20;
 
