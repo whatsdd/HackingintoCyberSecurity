@@ -3,8 +3,7 @@
 * [Breaking into Cyber Security](README.md)
 * [Summary](page-12/README.md)
   * [Credits](page-12/credits.md)
-  * [Table of content](page-12/table-of-content/README.md)
-    * [TABLE OF CONTENT](page-12/table-of-content/table-of-content.md)
+  * [Table of content](page-12/table-of-content.md)
 
 ## CHAPTER 1
 
