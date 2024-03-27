@@ -1,10 +1,6 @@
 # Compliance
 
-### &#x20;<a href="#ioyx4a5w0gqw" id="ioyx4a5w0gqw"></a>
-
-### **Compliance** <a href="#ioyx4a5w0gqw" id="ioyx4a5w0gqw"></a>
-
-### Introduction to Compliance. <a href="#mcu9z6dvhsvt" id="mcu9z6dvhsvt"></a>
+### Introduction <a href="#mcu9z6dvhsvt" id="mcu9z6dvhsvt"></a>
 
 ISO 27001's control objectives are intended to ensure that the organization complies with all applicable criminal and civil laws, as well as any statutory, regulatory, or contractual obligations and security requirements. This includes dealing with legal requirements, compliance with security policies, technical monitoring, and system auditing. The last clause of the standard has two objectives with eight supporting controls. It's important to note that the outline of relevant legislation provided in this section is not intended to be definitive and current legal advice should be sought from qualified specialist legal advisers if an organization wants or needs to rely on any matter discussed here.
 
@@ -12,7 +8,7 @@ Additionally, this section deals with current compliance issues for organization
 
 E-commerce can take place across multiple countries, even if the organization is based in only one jurisdiction, and the laws in this area are constantly evolving. It's important for any organization that operates across the web without any limitations on who can access its website, to seek specialist advice to ensure that their contractual and trading terms are airtight. This includes making sure that issues of jurisdiction, and which laws will apply to any transaction, have been resolved. It's also important to ensure that there is an appropriate acceptance and/or waiver of liability on the website's entrance page. This is especially important for organizations that operate in multiple countries, as they need to comply with the laws of all the countries in which they operate. Organizations should take necessary steps to seek legal advice and make sure that they are in compliance with all relevant laws to avoid any legal issues.
 
-### Identification of Applicable Legislation. <a href="#her69ti1tq5o" id="her69ti1tq5o"></a>
+### Identification of Applicable Legislation <a href="#her69ti1tq5o" id="her69ti1tq5o"></a>
 
 The control of ISO27002 states that the organization should explicitly define and document the statutory, regulatory, and contractual requirements for each of its information systems, and this documentation should be kept up to date to reflect any relevant changes in the legal environment. The specific controls and individual responsibilities to meet these requirements should also be similarly documented and kept up to date. The ISMS should already contain a complete list of all the data assets and processes in the organization, together with ownership details. A practical approach to meeting this requirement is to create a database of applicable legislation, which needs to be updated as laws change, that identifies relevant laws, the specific clauses that may be applicable, and links those specific clauses to individual controls in the ISMS. For each regulatory or contractual requirement on the database, someone in the organization should be allocated the responsibility for ensuring compliance. In an integrated management system, there should be an integrated approach to tracking legal and compliance developments across all components of the system. Information security, health and safety, environment, quality, human resources, commercial and other issues should be systematically tracked and appropriate steps taken towards compliance within the organization.
 
@@ -185,6 +181,6 @@ To obtain competitive prices, a number of organizations should be approached wit
 
 ### Information Systems Audit Consideration. <a href="#id-6bkokt6hr2xi" id="id-6bkokt6hr2xi"></a>
 
-**(**[IT Governance: An International Guide to Data Security and ISO 27001/ISO 27002: Calder, Alan, Watkins, Steve: 9780749496951](https://www.amazon.com/Governance-International-Guide-Security-27001/dp/0749496959/ref=sr\_1\_2?crid=1YUTHHYEXOIJB\&keywords=risk+management%2C+governance+and+compliance+in+information+security\&qid=1649742252\&s=books\&sprefix=risk+management%2C+governance+and+compliance+in+information+securit%2Cstripbooks-intl-ship%2C428\&sr=1-2\&asin=0749496959\&revisionId=\&format=4\&depth=1) **)**
+**(**Deeper Dive: IT Governance: An International Guide to Data Security and ISO 27001/ISO 27002: Calder, Alan, Watkins, Steve: 9780749496951 **)**
 
 Control 12.7.1 of ISO27002 sets out how organizations should prepare for information systems audits, which may include technical compliance checking as well as audits of licenses and software installations. The standard states that such audits should be scheduled so they do not disrupt business activities. While any audit can cause interruption, the goal of this control is to minimize disruption by selecting periods of low or reduced activity and/or demand to carry out the audit. Additionally, testing should be controlled, testers should have preferably read-only access, and all testing logs should be controlled.
