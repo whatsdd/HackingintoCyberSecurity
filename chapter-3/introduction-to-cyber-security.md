@@ -1,8 +1,6 @@
 # Introduction to Cyber Security
 
-**Origin of Cyberspace.**&#x20;
-
-****[**(Cyberspace - New World Encyclopedia):**](https://www.newworldencyclopedia.org/entry/Cyberspace)****
+## Origin of Cyberspace
 
 The concept of "cyberspace" encompasses more than just the Internet. It can also include other forms of digital technology, such as computer networks and virtual reality. In this digital realm, issues related to intellectual property and copyright infringement can arise. Additionally, cyberspace has become a place for building relationships and communities. Some people believe that the ability for people to communicate and share ideas across borders brings the world closer together, while others argue that people will continue to associate with those who have similar interests and backgrounds. Regardless, the Internet and other forms of cyberspace have made it easier to disseminate ideas and values quickly. While the free exchange of information in cyberspace is valuable, it's important to use this space responsibly in order to ensure its value for humanity. This requires a value-based perspective on the use of technology in cyberspace.
 
@@ -10,7 +8,7 @@ The concept of "cyberspace" encompasses more than just the Internet. It can also
 
 The term "cyberspace" was first introduced by science fiction author William Gibson in his 1982 story "Burning Chrome" and gained widespread recognition through its use in his 1984 novel Neuromancer. In the novel, Gibson describes cyberspace as a "consensual hallucination experienced daily by billions of legitimate operators" and a "graphic representation of data abstracted from banks of every computer in the human system." Gibson later commented that he chose the term because it was evocative and buzzworthy, but had no real meaning behind it. Today, the term "cyberspace" is commonly used to refer to the digital realm, including the Internet and other forms of digital technology.
 
-**Cyberspace as an Internet Metaphor:**
+## **Cyberspace as an Internet Metaphor**
 
 The term "cyberspace" is often used to refer to objects and identities that exist within the communication network of the Internet. This interpretation suggests that events taking place on the Internet do not occur in the physical location of the participants or servers, but rather "in cyberspace." In this sense, cyberspace is not meant to be equated with physical space, but rather with the abstract, mathematical concept of space. The concept of cyberspace therefore refers to the possibility of navigating and interacting with different pages and sites on the Internet, and the potential to encounter something unknown or unexpected.
 
@@ -26,9 +24,9 @@ To understand the difference between the two concepts, it can be helpful to cons
 
 It's worth noting that the concept of reality extends beyond physical experiences and can also include non-physical events or phenomena, such as emotions. In this sense, virtual reality may be seen as a false reality that can be experienced virtually. The question of reality raises a number of philosophical questions that go beyond current epistemological models, which tend to prioritize sense perception.
 
-**2. What is Exactly Cyber Security ?**
+## **2. What is Exactly Cyber Security ?**
 
-[( Cybersecurity For Dummies: Steinberg, Joseph: 9781119560326: Amazon.com )](https://www.amazon.com/Cybersecurity-Dummies-Joseph-Steinberg/dp/1119560322/ref=sr\_1\_3?keywords=cyber+security\&qid=1649394601\&s=books\&sprefix=cyber+securit%2Cstripbooks%2C562\&sr=1-3\&asin=1119560322\&revisionId=\&format=4\&depth=1)
+(Deeper Dive: Cybersecurity For Dummies: Steinberg, Joseph: 9781119560326 )
 
 Cybersecurity Means Different Things to Different Folks”
 
@@ -66,11 +64,11 @@ Big data refers to the large amounts of data that are collected, stored, and ana
 
 **3. Understanding Digital Forensic:**
 
-[(Implementing Digital Forensic Readiness | ScienceDirect)](https://www.sciencedirect.com/book/9780128044544/implementing-digital-forensic-readiness)
+(Deeper Dive: Implementing Digital Forensic Readiness | ScienceDirect)
 
 Digital forensics is a fascinating and complex profession that involves using scientific principles, methodologies, and techniques to uncover and analyze digital evidence in the course of legal investigations. While the media may portray this field as glamorous and straightforward, the reality is that it requires a great deal of specialized training and skills to properly apply these principles and techniques. Digital forensics has evolved significantly since the 1960s, as the threat landscape has changed from simple cybercrimes to more sophisticated attacks. Today, it is a well-established discipline that adheres to the principles of forensic science, and is recognized for its comprehensive body of knowledge (CBK) of proven methodologies and techniques. Whether you are a seasoned professional or just starting out in digital forensics, it is an exciting field that offers endless opportunities for growth and development.
 
-**Why is it Important ?**
+## **Why is it Important ?**
 
 According to the Locard exchange principle, every crime leaves behind some form of evidence, and every perpetrator takes something away with them. In the digital world, this can take the form of digital evidence that can be used in forensic investigations. It is crucial for organizations to understand the technical requirements for practicing digital forensics and to follow proper protocols in order to preserve the integrity and authenticity of this evidence. Failing to do so can result in compromised or lost evidence, evidence that is not admissible in court, and non-compliance with laws and regulations. It is essential for organizations to have a strong defense-in-depth strategy in place, which includes the proper handling of digital evidence, in order to effectively prosecute intruders and protect against cybercrime.
 
@@ -126,7 +124,7 @@ Cybercriminals have become increasingly creative in their methods of committing 
 
 One of the unique aspects of cybercrime is that it can occur over vast distances, with a cybercriminal potentially launching an attack from anywhere in the world. This makes it difficult for law enforcement to effectively combat cybercrime, as jurisdiction and laws can vary between countries. However, most cybercriminals leave behind some form of trace that can be tracked by authorities, and international cybercrime treaties, such as the Council of Europe's convention, have been put in place to give law enforcement the power to investigate and prosecute cybercrimes that cross national borders.
 
-**Types of Cybercrime:**
+## **Types of Cybercrime**
 
 Cyberstalking is another form of cybercrime that involves the use of the internet or other electronic means to harass or intimidate someone. This can take the form of threatening emails or messages, repeated unwanted contact, or the dissemination of personal information online. Cyberstalking is a serious crime that can have serious consequences for the victim, including emotional distress, damage to reputation, and even physical harm.
 
@@ -364,7 +362,7 @@ Essentials:
 
 **10. Computer Security Technologies:**
 
-[( CYBER SECURITY FOR BEGINNERS: A COMPREHENSIVE AND ESSENTIAL GUIDE FOR EVERY NOVICE TO UNDERSTAND AND MASTER CYBERSECURITY eBook : Smith, Liam: Kindle Store )](https://www.amazon.com/CYBER-SECURITY-BEGINNERS-COMPREHENSIVE-CYBERSECURITY-ebook/dp/B09S22HW9N/ref=sr\_1\_1?keywords=cyber+security\&qid=1649394601\&s=books\&sprefix=cyber+securit%2Cstripbooks%2C562\&sr=1-1\&asin=B09S22HW9N\&revisionId=9d16ccfa\&format=1\&depth=1)
+(Deeper Dive: CYBER SECURITY FOR BEGINNERS: A COMPREHENSIVE AND ESSENTIAL GUIDE FOR EVERY NOVICE TO UNDERSTAND AND MASTER CYBERSECURITY Smith, Liam: )
 
 Hacking refers to the practice of gaining unauthorized access to a computer or network with the intention of stealing sensitive information or causing harm. Hackers use various tools to analyze systems and networks, identify vulnerabilities, and exploit them to gain access. These tools can also be used by IT professionals to assess and test systems for vulnerabilities.
 
