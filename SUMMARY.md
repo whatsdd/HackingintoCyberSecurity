@@ -28,7 +28,7 @@
 
 ## CHAPTER 6
 
-* [Hacking](chapter-6/hacking.md)
+* [Hacking Skills](chapter-6/hacking.md)
 
 ## CHAPTER 7
 

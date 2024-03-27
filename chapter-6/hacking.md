@@ -1,6 +1,4 @@
-# Hacking
-
-### **Hacking** <a href="#id-61gtujtdzc0f" id="id-61gtujtdzc0f"></a>
+# Hacking Skills
 
 ### Programming <a href="#id-7vwzvdhotzp0" id="id-7vwzvdhotzp0"></a>
 
@@ -260,7 +258,7 @@ This tinywebd program serves HTTP content, similar to the original tinyweb progr
 
 ### Cryptology <a href="#n8s9u6302h7d" id="n8s9u6302h7d"></a>
 
-**(** [Hacking: The Art of Exploitation, 2nd Edition](https://repo.zenk-security.com/Magazine%20E-book/Hacking-%20The%20Art%20of%20Exploitation%20\(2nd%20ed.%202008\)%20-%20Erickson.pdf) **)**
+**(Best read:** Hacking: The Art of Exploitation, 2nd Edition **)**
 
 Cryptology is the scientific study of cryptography and cryptanalysis. Cryptography is the practice of securely communicating through the use of ciphers, while cryptanalysis is the process of breaking or deciphering secret communications. Historically, cryptology has been of significant interest during times of war, as countries utilized secret codes to communicate with their troops while also attempting to crack the enemy's codes to infiltrate their communications.
 
