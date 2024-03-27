@@ -32,7 +32,7 @@
 
 ## CHAPTER 7
 
-* [Ethical Hacking](chapter-7/ethical-hacking.md)
+* [Understading Ethical Hacking](chapter-7/ethical-hacking.md)
 
 ## CHAPTER 8
 

@@ -1,10 +1,6 @@
-# Ethical Hacking
+# Understading Ethical Hacking
 
-### **Ethical Hacking** <a href="#_xen90u6d2rg6" id="_xen90u6d2rg6"></a>
-
-### Introduction <a href="#_xe3zvxhir6zv" id="_xe3zvxhir6zv"></a>
-
-This book is dedicated to the topic of ethical hacking, which involves identifying and addressing vulnerabilities in systems and networks through authorized testing methods. The purpose of this book is to provide guidance on how to detect and remediate vulnerabilities before they can be exploited by malicious actors. It is important to note that the term "ethical" is often misused, therefore the definition provided by Merriam Webster is appropriate for the context of this book. Ethical hacking is only permissible when the system owner grants permission for the testing to take place.
+This chapter is dedicated to the topic of ethical hacking, which involves identifying and addressing vulnerabilities in systems and networks through authorized testing methods. The purpose of this book is to provide guidance on how to detect and remediate vulnerabilities before they can be exploited by malicious actors. It is important to note that the term "ethical" is often misused, therefore the definition provided by Merriam Webster is appropriate for the context of this book. Ethical hacking is only permissible when the system owner grants permission for the testing to take place.
 
 **Origins of Ethical Hacking:**&#x20;
 
@@ -89,7 +85,7 @@ If hacking is done with negative intention, it can lead to the following issues:
 * Malicious attacks on the system, leading to loss of important information
 * Hampering the operations of the system
 
-### Types of Hackers <a href="#_h4o4pmrfawz4" id="_h4o4pmrfawz4"></a>
+### Types of Hackers <a href="#h4o4pmrfawz4" id="h4o4pmrfawz4"></a>
 
 There are several different types of hackers, each with their own distinct motivations and methods. Some common types include:
 
@@ -137,7 +133,7 @@ Some groups of hackers can be hired by criminal organizations to carry out illeg
 
 Similarly, the Philippine police also dismantled a multimillion-dollar hacking ring that sold cheap phone calls made through the lines they had hacked into. These types of hackers are often motivated by financial gain and are willing to engage in illegal activities for a large sum of money. These type of hackers are more dangerous since they are well-organized and have the resources to carry out sophisticated cyber-attacks.
 
-### &#x20;Hacking Terminologies <a href="#_18w2op67fg40" id="_18w2op67fg40"></a>
+### &#x20;Hacking Terminologies <a href="#id-18w2op67fg40" id="id-18w2op67fg40"></a>
 
 This chapter briefly details some of the common and important terms that are used in the field of hacking.
 
@@ -277,7 +273,7 @@ A security vulnerability in web applications that allows attackers to inject mal
 
 A hijacked computer that is controlled remotely by a hacker to perform malicious activities such as sending spam emails or participating in Distributed Denial of Service (DDoS) attacks.
 
-### Tools <a href="#_m62xecjelf9l" id="_m62xecjelf9l"></a>
+### Tools <a href="#m62xecjelf9l" id="m62xecjelf9l"></a>
 
 Now that you know what ethical hacking is, let’s look at some of the different tools that are available for you to use to prevent any unauthorized access to a network system or computer.
 
@@ -372,7 +368,7 @@ Network Stumbler is a WiFi monitoring and scanning tool that is used on the Wind
 
 ToneLOC, or Tone Locator, is a program written in the early 90s for MS-DOS. It was originally used in war dialing computer programs which scan phone numbers using a modem and dials every number that has the same area code. Malicious hackers use this tool to breach security by identifying modems that can be used to gain unauthorized access to a network or computer system or guessing a user's account. Ethical hackers can also use it to detect any unauthorized device on a computer network.
 
-### Skills Required <a href="#_xv1ihbfifkiq" id="_xv1ihbfifkiq"></a>
+### Skills Required <a href="#xv1ihbfifkiq" id="xv1ihbfifkiq"></a>
 
 This chapter covers the ten most important skills every hacker needs to possess and consistently improve on to become a professional in the field.
 
@@ -426,7 +422,7 @@ Web applications are software that allows users to access the internet through t
 
 The skills mentioned in this section are essential for hackers to develop. Professional hackers continuously work to improve these skills, making it easier for them to hack into any system. It is important for amateur hackers to also develop these skills.
 
-### Hacking Process & Metrologies <a href="#_ronur7a8vh3n" id="_ronur7a8vh3n"></a>
+### Hacking Process & Metrologies <a href="#ronur7a8vh3n" id="ronur7a8vh3n"></a>
 
 As with any IT project, ethical hacking should always be well-planned. It's important to identify both the strategic and tactical aspects of the process. Whether the test is a simple password-cracking test or a penetration test on an internet-based application, it is crucial to plan the process thoroughly.
 
@@ -512,9 +508,9 @@ After completing an ethical hack, it's important to implement the findings and p
 
 Therefore, it's important to have a plan in place to regularly conduct security assessments to ensure the continued protection of the system. These assessments can reveal new hacker exploits and vulnerabilities, and should be run whenever new systems are added, patches are applied, or software is upgraded. It's important to remember that a security assessment is only a snapshot of the system's security and regular testing is necessary to ensure the continued protection of the system.
 
-### Distributed Denial-of-Service Attacks. <a href="#_dsf3r6tyo6dq" id="_dsf3r6tyo6dq"></a>
+### Distributed Denial-of-Service Attacks. <a href="#dsf3r6tyo6dq" id="dsf3r6tyo6dq"></a>
 
-[3 in 1- A Comprehensive Beginner's Guide + Complete Tips And Tricks To Ethical Hacking + Learn Penetration Testing, Cybersecurity with Advanced Ethical Hacking Techniques and Methods Kindle Edition](https://www.amazon.com/Ethical-Hacking-Comprehensive-Penetration-Cybersecurity-ebook/dp/B08NCQZ61P/ref=sr\_1\_7?crid=3BMIU3O7QWDA0\&keywords=ethical+hacking+career\&qid=1649665551\&sprefix=ethical+hacking+caree%2Caps%2C591\&sr=8-7\&asin=B08NCQZ61P\&revisionId=ef7a237f\&format=1\&depth=1)
+Good Read: 3 in 1- A Comprehensive Beginner's Guide + Complete Tips And Tricks To Ethical Hacking + Learn Penetration Testing, Cybersecurity with Advanced Ethical Hacking Techniques and Methods Kindle Edition
 
 A Distributed Denial of Service (DDoS) attack is a malicious attempt to disrupt the normal traffic of a network or server by overwhelming it with a large volume of traffic from multiple sources. Unlike a Denial of Service (DoS) attack, which uses a single internet connection and computer to overload a network or server, a DDoS attack uses multiple internet connections and computers to flood the target with traffic. This makes DDoS attacks more difficult to detect and mitigate because the traffic appears to come from multiple, legitimate sources. The goal of a DDoS attack is to make the targeted website or service unavailable to its intended users by overwhelming its server and network resources.
 
