@@ -27,7 +27,7 @@ Getting into this field requires firm knowledge and skills in Networking, Progra
 
 Thanks to for sponsering the project:
 
-[Billigetesterpro.no](https://billigetesterpro.no/) & [Navnelapperpro.no](https://navnelapperpro.no/p/navnelapper/)
+[Billigetesterpro.no](https://billigetesterpro.no/)&#x20;
 
 <figure><img src=".gitbook/assets/cover.png" alt=""><figcaption></figcaption></figure>
 
