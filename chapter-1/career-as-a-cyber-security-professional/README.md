@@ -58,7 +58,7 @@ Having a mentor who has experience in the field of Cyber Security can be extreme
 
 Networking is an essential aspect of any career, and it is especially important in the field of Cyber Security. Building a professional network can help you to learn about job openings, get advice from industry experts, and gain exposure to new ideas and technologies. Consider joining industry groups and organizations, attending events and conferences, and participating in online forums and discussion groups to help you build your professional network.
 
-<figure><img src="../.gitbook/assets/Picture 1 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Picture 1 (1).png" alt=""><figcaption></figcaption></figure>
 
 ## 2. It's all about Skills
 
@@ -164,7 +164,7 @@ Company growth: Is the company growing or shrinking? How stable is the company?
 
 In addition to researching companies, it's also important to research the specific job you are applying for. Some things to consider when researching a job include:
 
-<figure><img src="../.gitbook/assets/Picture 2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Picture 2.png" alt=""><figcaption></figcaption></figure>
 
 ## 4.Understanding the Pros and Cons of Cyber Careers
 

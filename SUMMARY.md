@@ -1,42 +1,27 @@
 # Table of contents
 
 * [Breaking into Cyber Security](README.md)
-* [Table of content](table-of-content.md)
-  * [TABLE OF CONTENT](table-of-content/table-of-content.md)
-* [Credits](credits.md)
-* [Summary](page-12.md)
+* [Summary](page-12/README.md)
+  * [Credits](page-12/credits.md)
+  * [Table of content](page-12/table-of-content/README.md)
+    * [TABLE OF CONTENT](page-12/table-of-content/table-of-content.md)
 
 ## CHAPTER 1
 
-* [Choosing an Advanced Career](chapter-1/choosing-an-advanced-career.md)
-
-## CHAPTER 2
-
-* [Career in Cyber Security](chapter-2/career-in-cyber-security.md)
+* [Choosing an Advanced Career](chapter-1/choosing-an-advanced-career/README.md)
+  * [Career in Cyber Security](chapter-1/choosing-an-advanced-career/career-in-cyber-security.md)
+* [Career as a Cyber Security Professional](chapter-1/career-as-a-cyber-security-professional/README.md)
+  * [Professions in Cyber Security](chapter-1/career-as-a-cyber-security-professional/professions-in-cyber-security.md)
 
 ## CHAPTER 3
 
 * [Introduction to Cyber Security](chapter-3/introduction-to-cyber-security.md)
-
-## CHAPTER 4
-
-* [Career as a Cyber Security Professional](chapter-4/career-as-a-cyber-security-professional.md)
-
-## Chapter 5
-
-* [Professions in Cyber Security](chapter-5/professions-in-cyber-security.md)
-
-## CHAPTER 6
-
-* [Hacking Skills](chapter-6/hacking.md)
+* [Information Security](chapter-3/information-security.md)
 
 ## CHAPTER 7
 
-* [Understading Ethical Hacking](chapter-7/ethical-hacking.md)
-
-## CHAPTER 8
-
-* [Information Security](chapter-8/information-security.md)
+* [Understading Ethical Hacking](chapter-7/ethical-hacking/README.md)
+  * [Hacking Skills](chapter-7/ethical-hacking/hacking.md)
 
 ## CHAPTER 9
 
@@ -44,7 +29,7 @@
 
 ## CHAPTER 10
 
-* [Risk Management](chapter-10/risk-management.md)
+* [Risk](chapter-10/risk-management.md)
 
 ## CHAPTER 11
 

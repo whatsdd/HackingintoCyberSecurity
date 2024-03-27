@@ -116,7 +116,7 @@ The physical layer of the internet protocol stack is responsible for the transmi
 
 The top layer of the OSI model, the application layer, uses HTTP (Hypertext Transfer Protocol) to facilitate communication when browsing the web. When a web browser on a network requests a webpage, it communicates with a web server located on a different network. In order for the data packets to reach their destination, they are encapsulated and passed down through the layers of the OSI model, starting at the application layer. The packets then pass through the router, which only needs to implement protocols up to the network layer, as it doesn't need to understand the contents of the packets. The router then sends the packets to the internet, where they reach the router of the destination network. This router encapsulates the packets with the necessary lower layer protocol headers, allowing the packets to reach their final destination.
 
-![](<../.gitbook/assets/0 (3)>)
+![](<../../.gitbook/assets/0 (3)>)
 
 The process of packet encapsulation creates a complex language for devices on the internet and other networks to communicate with each other. This language is built into routers, firewalls, and operating systems, allowing them to understand and participate in the communication. Applications that rely on networking, such as web browsers and email clients, interface with the operating system to handle network communication. Since the operating system handles the technical details of packet encapsulation, it simplifies the task of creating network programs, which only need to interact with the OS's network interface.
 

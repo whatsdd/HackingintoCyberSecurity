@@ -1,10 +1,14 @@
+---
+description: Information Security vs
+---
+
 # Information Security
 
-### **Information Security** <a href="#_afb8c5557q51" id="_afb8c5557q51"></a>
+### **Information Security** <a href="#afb8c5557q51" id="afb8c5557q51"></a>
 
 **(**[Amazon.com: Principles of Information Security (MindTap Course List): 9780357506431](https://www.amazon.com/Principles-Information-Security-Mindtap-Course/dp/035750643X/ref=sr\_1\_1?keywords=information+security\&qid=1649738335\&s=books\&sprefix=information+sec%2Cstripbooks-intl-ship%2C578\&sr=1-1\&asin=B08QRLB2MQ\&revisionId=\&format=4\&depth=1) **)**
 
-### Introduction to Infosec. <a href="#_qy8s4bnt2nv5" id="_qy8s4bnt2nv5"></a>
+### Introduction to Infosec. <a href="#qy8s4bnt2nv5" id="qy8s4bnt2nv5"></a>
 
 Information security, or Infosec, is a crucial aspect of modern business operations. IT Security Manager at Northside Hospital, Martin Fisher, emphasizes the importance of aligning infosec with a company's culture and objectives. This is echoed by many practitioners in the field. The opening scenario in this chapter highlights the consequences of not properly balancing information risks and controls. In this scenario, a lack of knowledge on malware causes problems for a company and its management. As you progress through the chapters of this book, you will gain a deeper understanding of infosec and learn how to better handle situations like the one described in the scenario. However, before diving into the specifics, it's important to have a grasp on the history and evolution of infosec.
 
@@ -39,7 +43,7 @@ This book uses many terms and concepts that are essential to any discussion of i
 * **Threat agent:** A specific component of a threat, such as an external professional hacker like Kevin Mitnick who was convicted of hacking into phone systems. Natural disasters like lightning strikes, hailstorms, and tornadoes are examples of threat agents that fall under the category of "acts of God/acts of nature."
 * **Threat event:** The occurrence of an event caused by a threat agent. For example, damage caused by a storm would be considered a threat event. This term is commonly used interchangeably with the term "attack."
 
-### The Need for Security <a href="#_t9b6gygaxese" id="_t9b6gygaxese"></a>
+### The Need for Security <a href="#t9b6gygaxese" id="t9b6gygaxese"></a>
 
 An information security program has a unique mission, which is to safeguard information assets, including the systems that store them, to ensure they remain secure and functional. Organizations invest significant resources to maintain their information assets, and if it weren't for the threat of attacks, these resources could be used exclusively to improve these systems. Unfortunately, the threat of attacks on information assets is ongoing and the need for information security continues to grow as the attacks become more advanced. Some organizations consider both information and systems as part of their definition of an information asset, while others prefer to differentiate between information-based assets such as data, databases, and applications that use data, and media such as systems and networks that store and transmit data. For this purpose, we will include both data and systems assets in our definition of the term.
 
@@ -118,7 +122,7 @@ Acts of trespassing can result in unauthorized physical or virtual actions that 
 
 The typical perpetrator of espionage or trespassing is the hacker, who is often portrayed in popular culture as a skilled individual who can stealthily manipulate computer networks, systems, and data to uncover confidential information. However, the reality is far less glamorous. The profile of the typical hacker has changed from that of a 13 to 18-year-old male with limited parental supervision who spends all their free time on the computer, to an individual with fewer identifiable attributes (see Figure 2-7). In reality, a hacker often spends many hours studying the types and structures of targeted systems, and uses their skills, deception or fraud to try to bypass controls placed on someone else's information.
 
-### Legal, Ethical, and Professional Issues in Information Security <a href="#_2uqu16xkcqkj" id="_2uqu16xkcqkj"></a>
+### Legal, Ethical, and Professional Issues in Information Security <a href="#id-2uqu16xkcqkj" id="id-2uqu16xkcqkj"></a>
 
 As an aspiring information security professional or an IT professional with security responsibilities, it is crucial to understand the scope of an organization's legal and ethical responsibilities. Information security professionals play a critical role in an organization's approach to managing responsibility and liability for privacy and security risks. In today's litigious societies, laws are often enforced in civil courts, where large damages can be awarded to plaintiffs who bring suits against organizations. These damages can be punitive, as a deterrent for future transgressions.&#x20;
 
@@ -155,7 +159,7 @@ There are a number of ways to categorize laws within the United States. In addit
 * Administrative law, which is created by government agencies and departments to regulate specific industries or activities. These laws are usually created to implement statutory laws and are enforced by the agencies that create them.
 * International law, which is created by treaty or international agreement and applies to the relations between countries. Examples include trade agreements and human rights conventions.
 
-### Principles of Infosec. <a href="#_yvv76vmiq5dn" id="_yvv76vmiq5dn"></a>
+### Principles of Infosec. <a href="#yvv76vmiq5dn" id="yvv76vmiq5dn"></a>
 
 The fundamental principles of information security include maintaining confidentiality, ensuring integrity, and guaranteeing availability. Each aspect of a comprehensive security program should be constructed to uphold one or more of these principles. Together, they are referred to as the CIA Triad.
 
@@ -173,13 +177,13 @@ Availability refers to ensuring that a system's software and data are readily ac
 
 ![](<../.gitbook/assets/0 (4)>)
 
-### Information Security vs Cybersecurity <a href="#_yy9l0b9la2cm" id="_yy9l0b9la2cm"></a>
+### Information Security vs Cybersecurity <a href="#yy9l0b9la2cm" id="yy9l0b9la2cm"></a>
 
 IInformation security and cybersecurity are distinct but related concepts. The terms are often used interchangeably, but more accurately, cybersecurity is a subset of information security. Information security encompasses a wide range of areas such as physical security, endpoint security, data encryption, and network security, and is closely linked to information assurance which protects information from threats such as natural disasters and server failures.
 
 &#x20;Cybersecurity, on the other hand, specifically deals with technology-based threats and employs practices and tools to prevent or minimize them. Another related field is data security, which concentrates on safeguarding an organization's data from accidental or intentional exposure to unauthorized parties.
 
-### Information Security Policy <a href="#_sci6nolxk8gb" id="_sci6nolxk8gb"></a>
+### Information Security Policy <a href="#sci6nolxk8gb" id="sci6nolxk8gb"></a>
 
 An Information Security Policy (ISP) is a set of guidelines that instruct individuals on the proper use of IT resources. Organizations can establish information security policies to ensure that employees and other users comply with security protocols and procedures. The purpose of security policies is to ensure that only authorized users have access to sensitive systems and information.&#x20;
 
@@ -187,7 +191,7 @@ Creating a comprehensive and effective security policy and enforcing compliance 
 
 It's important to make the information security strategy practical and feasible. To meet the needs and priorities of different departments within the organization, it may be necessary to establish a system of exceptions, with an approval process, allowing departments or individuals to deviate from the rules in specific circumstances.
 
-### Top Information Security Threats <a href="#_43ndwd4tq64t" id="_43ndwd4tq64t"></a>
+### Top Information Security Threats <a href="#id-43ndwd4tq64t" id="id-43ndwd4tq64t"></a>
 
 There are countless categories of information security threats and an abundance of known threat vectors. Here are a few of the key threats that are a major concern for security teams in modern organizations:
 
@@ -229,7 +233,7 @@ Organizations can mitigate security misconfigurations by using platforms that co
 
 Performing regular security testing, including penetration testing, also helps organizations to identify vulnerabilities and misconfigurations that might otherwise go unnoticed, and to take action to remediate them before they can be exploited by attackers.
 
-### Active vs Passive Attacks <a href="#_wohw6t6jzfm1" id="_wohw6t6jzfm1"></a>
+### Active vs Passive Attacks <a href="#wohw6t6jzfm1" id="wohw6t6jzfm1"></a>
 
 Information security is implemented to safeguard organizations against malicious attacks. There are two primary types of attacks: active and passive. Active attacks are considered more challenging to prevent and the focus is on detecting, mitigating, and recovering from them. Passive attacks, on the other hand, are easier to prevent with robust security measures.
 
@@ -251,7 +255,7 @@ Passive attacks, on the other hand, are the ones where the attacker seeks to gai
 
 The attackers do not make any changes to the communication or the target systems. This makes it more difficult to detect. However, encryption can help prevent passive attacks because it obfuscates the data, making it more difficult for attackers to make use of it.
 
-### Information Security and Data Protection Laws <a href="#_6ii6mx79hnq" id="_6ii6mx79hnq"></a>
+### Information Security and Data Protection Laws <a href="#id-6ii6mx79hnq" id="id-6ii6mx79hnq"></a>
 
 Information security is implemented to safeguard organizations against malicious attacks. There are two primary types of attacks: active and passive. Active attacks are considered more challenging to prevent and the focus is on detecting, mitigating, and recovering from them. Passive attacks, on the other hand, are easier to prevent with robust security measures. Active attacks are the ones in which the attacker seeks to cause harm or disrupt the operations, like malware, phishing, DDoS attacks etc. Passive attacks, on the other hand, are the ones where the attacker seeks to gain unauthorized access to sensitive information, like sniffing network traffic, eavesdropping, and shoulder surfing etc.&#x20;
 

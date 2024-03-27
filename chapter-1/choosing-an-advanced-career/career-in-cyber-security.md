@@ -131,7 +131,7 @@ _“Scripting really helps you to understand how hardware and software works. It
 
 There are many high-paying, dynamic full-time jobs within the cybersecurity industry. Due to the [global talent shortage](https://www.isc2.org/-/media/ISC2/Research/2020/Workforce-Study/ISC2ResearchDrivenWhitepaperFINAL.ashx?la=en\&hash=2879EE167ACBA7100C330429C7EBC623BAF4E07B), many employers are offering average salaries between $70,000 and $90,000 for entry-level roles. More experienced cybersecurity professionals such as cybersecurity directors and chief information security officers (CISOs) can earn over $150,000 annually.
 
-![](<../.gitbook/assets/0 (6)>)
+![](<../../.gitbook/assets/0 (6)>)
 
 With so much demand for cybersecurity professionals, now has never been a better time to get into the field. Here are some of the highest paying and most in demand cybersecurity jobs today:
 
