@@ -1,7 +1,5 @@
 # Risk
 
-### &#x20;<a href="#t9cfbcnzrm36" id="t9cfbcnzrm36"></a>
-
 At its essence, risk in information security refers to the potential for loss or damage when threats exploit vulnerabilities. However, this simple definition belies the complexity and nuance of risk management. To truly understand risk, one must grasp its three fundamental components:
 
 1. **Threats:** Any circumstance or event with the potential to cause harm to an information system. Threats can be intentional, such as a hacker attack, or accidental, like a natural disaster or a system malfunction.
@@ -151,7 +149,7 @@ Conducting management reviews at least annually, with more frequent reviews for 
 
 ### Risk management requirements of ISO 27001:2013/17 <a href="#id-4klf33pk766t" id="id-4klf33pk766t"></a>
 
-**(**[https://www.isms.online/iso-27001/information-security-risk-management-explained/](https://www.isms.online/iso-27001/information-security-risk-management-explained/)**)**
+**(**https://www.isms.online/iso-27001/information-security-risk-management-explained/**)**
 
 There are 2 main requirements where risk management is expressed: Clause 6 Planning and Clause 8 Operation.
 
