@@ -2,7 +2,7 @@
 
 ### **Security Design Principles** <a href="#g3uo5e6i5i7b" id="g3uo5e6i5i7b"></a>
 
-### The Saltzer and Schroeder List. <a href="#x1d9yns43duh" id="x1d9yns43duh"></a>
+### The Saltzer and Schroeder List <a href="#x1d9yns43duh" id="x1d9yns43duh"></a>
 
 The Saltzer and Schroeder design principles are a set of guidelines for developing secure systems that have been widely referenced in the information security community. These principles were first introduced in an article by Jerome Saltzer in 1974, which outlined the security mechanisms in the Multics time-sharing system. The following year, Saltzer and Michael Schroeder expanded the article into a tutorial titled “The Protection of Information in Computer Systems”, which introduced the triad of confidentiality, integrity, and availability, and a set of design principles.
 
@@ -14,7 +14,7 @@ In 2008, when writing my own textbook for an introductory information security c
 
 The review of design principles is an important step in understanding the evolution of information security best practices, and identifying areas where further research or development is needed. The principles outlined by Saltzer and Schroeder have been influential in shaping the field of information security, and their legacy continues to be felt today.
 
-### Security Principles Today. <a href="#id-8vpeu58yshf5" id="id-8vpeu58yshf5"></a>
+### Security Principles Today <a href="#id-8vpeu58yshf5" id="id-8vpeu58yshf5"></a>
 
 Saltzer and Schroeder’s 1976 paper listed eight design principles for computer security, and noted two additional principles that seemed relevant if more general. These principles are still highly relevant in today's security landscape and are often used as the foundation for designing secure systems.
 
@@ -38,9 +38,9 @@ Saltzer and Schroeder noted two principles that were familiar in physical securi
 
 Today, most analysts and developers embrace these final two design principles. The argument underlying complex password selection reflects a work factor calculation, as do the recommendations on choosing cryptographic keys. Compromise recording has become an essential feature of every secure system in the form of event logging and auditing. This highlights the evolution of the field of information security and how new experiences and technology have helped to shape the security principles that are used today.
 
-### **Security Principles Today** <a href="#f8pcf5n7r0re" id="f8pcf5n7r0re"></a>
 
-In conclusion, the Saltzer and Schroeder design principles, first introduced in 1975, have had a lasting impact on the field of information security and are still widely referenced today. Many organizations and standards bodies have used them as a guide for developing secure systems. However, with the evolution of technology and new experiences, the field of information security has produced its own set of security principles. These principles are often variations of Saltzer and Schroeder's or are presented in a more abstract sense. Textbook authors generally avoid making specific lists of principles, but still recognize the importance of key principles such as least privilege. Overall, it is important for organizations to understand the depth, type and scope of each set of security principles and to make sure that the desired outputs and outcomes match their organizational needs.
+
+The Saltzer and Schroeder design principles, first introduced in 1975, have had a lasting impact on the field of information security and are still widely referenced today. Many organizations and standards bodies have used them as a guide for developing secure systems. However, with the evolution of technology and new experiences, the field of information security has produced its own set of security principles. These principles are often variations of Saltzer and Schroeder's or are presented in a more abstract sense. Textbook authors generally avoid making specific lists of principles, but still recognize the importance of key principles such as least privilege. Overall, it is important for organizations to understand the depth, type and scope of each set of security principles and to make sure that the desired outputs and outcomes match their organizational needs.
 
 However, the text also reviews Saltzer and Schroeder’s principles in detail in Section 5.4. The remaining few textbooks that specifically discuss design principles generally focus on the 1975 list. The textbook by Smith and Marchesini (2008) discuss the design principles in Chapter 3. The two textbooks by Bishop (2003, 2005) also review the design principles in Chapters 13 and 12, respectively.
 
@@ -71,13 +71,13 @@ In 2001, a team at NIST tried to produce a more specific and technical list of s
 
 While these new principles captured newer issues and concerns than the 1975 list, they also captured assumptions regarding system development and operation. For example, Principle 20 assumes that the public will never have access to “mission critical resources.” However, many companies rely heavily on Internet sales for revenue. They must clearly ignore this principle in order to conduct those sales.
 
-### Training and Curriculum Standards. <a href="#id-2wfbl4ckrl56" id="id-2wfbl4ckrl56"></a>
+### Training and Curriculum Standards <a href="#id-2wfbl4ckrl56" id="id-2wfbl4ckrl56"></a>
 
 While training and curriculum standards in information security recognize the importance of security principles, they do not provide a specific list of principles. Instead, they often refer to them in an abstract sense and mention key concepts such as least privilege, separation of privilege and compromise recording. The Information Assurance and Security IT 2008 curriculum recommendations, for example, only provide one example of a design principle: "defense in depth." It is important for organizations to understand the curriculum standards and how they align with their own security needs and objectives. Additionally, they should also consider incorporating specific threat modeling methodologies and principles, such as those outlined by Saltzer and Schroeder, into their training and development programs to ensure that their staff are equipped with the necessary knowledge and skills to effectively protect their systems and operations.
 
 The Information Assurance and Security IT 2008 curriculum recommendations (ACM and IEEE, 2008) identify design principles as an important topic, and provide a single example: “defense in depth.” This is a restatement of NIST’s Principle 16.
 
-### Saltzer and Kaashoek. <a href="#id-5dz87lq1qi4a" id="id-5dz87lq1qi4a"></a>
+### Saltzer and Kaashoek <a href="#id-5dz87lq1qi4a" id="id-5dz87lq1qi4a"></a>
 
 Co-authors Saltzer and Kaashoek published the textbook Principles of Computer Design in 2009 (Saltzer and Kaashoek, 2009). The book lists sixteen general design principles and several specific principles, including six security-specific principles.
 
@@ -99,7 +99,7 @@ Here are new – or newly stated – principles compared to those described in 1
 
 Neither of the uncertain principles listed in 1975 made it into this revised list. Despite this, event logging and auditing is a fundamental element of modern computer security practice. Likewise, work factor calculations continue to play a role in the design of information security systems. Pfleeger and Pfleeger highlighted “weakest link” and “easiest penetration” principles that reflect the work factor concept. However, there are subtle trade-offs in work factor calculations that may makes it a poor candidate for stating as a concise and easy-to-apply principle.
 
-### Elementary Information Security. <a href="#id-2etv3pnhe872" id="id-2etv3pnhe872"></a>
+### Elementary Information Security <a href="#id-2etv3pnhe872" id="id-2etv3pnhe872"></a>
 
 The contents of the textbook were primarily influenced by two curriculum standards. The first was the "National Training Standard for Information System Security Professionals" (NSTISSC, 1994), which remains the standard for general security training under the US government's Information Assurance Courseware Evaluation (IACE) Program. The second curriculum standard is the "Information Technology 2008 Curriculum Guidelines" (ACM and IEEE Computer Society, 2008), which the textbook covers all topics and core learning outcomes recommended in the Information Assurance and Security section of the Guidelines.
 
@@ -122,7 +122,7 @@ The textbook’s list focused on memorable phrases that were widely accepted in 
 
 ### Omitted Principles. <a href="#id-1s2r9pn4ai2l" id="id-1s2r9pn4ai2l"></a>
 
-( [Security Design Principles – Cryptosmith](https://cryptosmith.com/2013/10/19/security-design-principles/) )
+( Deeper Dive: Security Design Principles – Cryptosmith )
 
 For better or worse, three of the 1975 principles do not play a central role in modern information security practice. These are simplicity, complete mediation, and psychological acceptability. We examine each below. There is no real market for simplicity in modern computing. Private companies release product improvements to entice new buyers. The sales bring in revenues to keep the company operating. The company remains financially successful as long as the cycle continues. Each improvement, however, increases the underlying system’s complexity. Much of the free software community is caught in a similar cycle of continuous enhancement and release.&#x20;
 
