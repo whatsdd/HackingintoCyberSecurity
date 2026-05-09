@@ -12,11 +12,13 @@ This chapter cuts through the noise. By the end of it, you'll understand what th
 
 Every year, the cybersecurity industry publishes a workforce gap report. Every year, the numbers get worse.
 
-In 2024, there were over 4 million unfilled cybersecurity positions worldwide. Companies aren't being selective. The talent genuinely doesn't exist. Organizations ranging from small businesses to national governments are operating with security teams that are too small, too stretched, and too slow to keep up with the threat landscape.
+{% hint style="info" %}
+**By the numbers:** In 2024, there were over **4 million unfilled cybersecurity positions** worldwide. Entry-level roles in the US average **$70,000 to $90,000** annually. Mid-level positions cross **$120,000**. Senior engineers and architects regularly earn **$150,000 to $200,000**. CISOs at large enterprises can earn $300,000 to $500,000.
+{% endhint %}
+
+Companies aren't being selective. The talent genuinely doesn't exist. Organizations ranging from small businesses to national governments are operating with security teams that are too small, too stretched, and too slow to keep up with the threat landscape.
 
 This is your opportunity.
-
-The market consequences of that shortage are significant. Entry-level roles in the US average $70,000 to $90,000 annually. Mid-level positions with three to five years of experience routinely cross $120,000. Senior engineers, managers, and architects regularly earn $150,000 to $200,000. CISOs at large enterprises can earn $300,000 to $500,000.
 
 More importantly: many of these roles don't require a computer science degree. They reward demonstrated skill, curiosity, and the ability to keep learning. Former military personnel, IT helpdesk workers, developers, network admins, and career-changers from unrelated fields have all built successful cybersecurity careers. What matters is what you can actually do.
 
@@ -46,9 +48,21 @@ Consider the scale of what you'd be protecting. Every time someone uses a bankin
 
 Cybersecurity isn't for everyone. But it's for far more people than typically think it is.
 
-You might thrive here if you enjoy puzzles and don't give up easily when something is hard. If you like learning, genuinely, not just for the credential. If you can stay calm and think clearly when things are going wrong. If you care about doing work that has real stakes.
+{% hint style="success" %}
+**You might thrive here if you:**
+- Enjoy puzzles and don't give up easily when something is hard
+- Like learning genuinely, not just for the credential
+- Can stay calm and think clearly when things are going wrong
+- Care about doing work that has real stakes
+- Are comfortable with constant change and continuous self-study
+{% endhint %}
 
-You might struggle here if you need the work to be predictable and routine, because it won't be. If you prefer to specialize deeply in one narrow area and stay there forever, the field changes too fast for that. If you truly dislike writing, reports, documentation, and communication are unavoidable in every role.
+{% hint style="warning" %}
+**You might struggle here if you:**
+- Need work to be predictable and routine
+- Prefer to specialize deeply in one narrow area and stay there forever (the field changes too fast for that)
+- Truly dislike writing: reports, documentation, and communication are unavoidable in every role
+{% endhint %}
 
 One thing that doesn't matter as much as people think: prior technical expertise. Many people break in from non-technical backgrounds by building skills deliberately through labs, certifications, and personal projects. What matters is the willingness to build those skills, not whether you already have them.
 
@@ -56,17 +70,19 @@ One thing that doesn't matter as much as people think: prior technical expertise
 
 ## The Reality of Getting Started
 
-There's an honest tension in cybersecurity entry-level hiring. Most jobs ask for experience. But experience requires getting a job first. This catch-22 is real, and it's frustrating.
+{% hint style="warning" %}
+**The entry-level catch-22:** Most jobs ask for experience. But experience requires getting a job first. This is real, and it's frustrating. The way around it is to build *demonstrable* skills before you apply -- using free and affordable tools -- so that you walk into interviews with specific things to discuss, not just a resume.
+{% endhint %}
 
-The way around it is to build demonstrable skills before you apply. The tools to do this are free or affordable.
+The tools to do this are free or affordable.
 
-TryHackMe and Hack The Box are hands-on learning platforms where you practice real techniques in safe, legal environments. Completing their tracks is something you can put on a resume and discuss in interviews with specifics.
+**TryHackMe and Hack The Box** are hands-on learning platforms where you practice real techniques in safe, legal environments. Completing their tracks is something you can put on a resume and discuss in interviews with specifics.
 
-CTF competitions (Capture The Flag) are security competitions that test practical skills in a time-limited format. Participating, even without winning, builds experience and signals genuine interest to employers in a way a certification alone cannot.
+**CTF competitions** (Capture The Flag) are security competitions that test practical skills in a time-limited format. Participating, even without winning, builds experience and signals genuine interest to employers in a way a certification alone cannot.
 
-Home labs using virtual machines let you build and break your own environments safely. Spending a weekend setting up a vulnerable machine and attacking it teaches more than most courses.
+**Home labs** using virtual machines let you build and break your own environments safely. Spending a weekend setting up a vulnerable machine and attacking it teaches more than most courses.
 
-Certifications like CompTIA Security+ demonstrate foundational knowledge to employers even without job experience to point to.
+**Certifications** like CompTIA Security+ demonstrate foundational knowledge to employers even without job experience to point to.
 
 The professionals hiring you know what the entry-level catch-22 looks like. What they're evaluating is whether this person did the work to demonstrate they want this, or just submitted a resume. The ones who built labs, earned certifications, played CTFs, and can talk about specific things they learned stand out immediately.
 
@@ -76,16 +92,14 @@ The next section maps the career paths within cybersecurity so you can choose wh
 
 ## Further Reading
 
-**ISC2 Cybersecurity Workforce Study** (published annually): The primary source for global cybersecurity workforce gap statistics. The most cited industry research on talent shortages and hiring trends. [isc2.org/research](https://www.isc2.org/research)
-
-**CyberSeek** (cyberseek.org): An interactive tool mapping real-time cybersecurity job demand across US regions, career pathway transitions, and certification requirements by role. Built from actual job posting data. [cyberseek.org](https://www.cyberseek.org)
-
-**US Bureau of Labor Statistics, Occupational Outlook Handbook: Information Security Analysts**: Authoritative salary and employment projection data for the US cybersecurity workforce. Updated regularly. [bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm](https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm)
-
-**TryHackMe** (tryhackme.com): Structured, beginner-friendly hands-on cybersecurity training in a browser-based lab environment. The Pre-Security and Introduction to Cybersecurity paths are the right starting points.
-
-**Hack The Box** (hackthebox.com): More open-ended, competitive lab environment. Excellent for building offensive skills once you have some fundamentals. The Academy section has structured learning paths.
+| Resource | What it is |
+|---|---|
+| [ISC2 Cybersecurity Workforce Study](https://www.isc2.org/research) | Primary source for global workforce gap stats. Published annually. |
+| [CyberSeek](https://www.cyberseek.org) | Interactive map of real-time US job demand by region, role, and cert. |
+| [BLS: Information Security Analysts](https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm) | Authoritative US salary and employment projection data. |
+| [TryHackMe](https://tryhackme.com) | Beginner-friendly browser-based labs. Start with Pre-Security path. |
+| [Hack The Box](https://www.hackthebox.com) | More open-ended competitive labs. Academy section has structured paths. |
 
 ---
 
-*Have questions or want honest feedback on your path into cybersecurity? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this book helped, contribute back — that pull request is your first open-source credit.*
+*Have questions or want honest feedback on your path into cybersecurity? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this book helped, contribute back -- that pull request is your first open-source credit.*
