@@ -1,341 +1,213 @@
 # Hacking Skills
 
-### Programming <a href="#id-7vwzvdhotzp0" id="id-7vwzvdhotzp0"></a>
+Nobody becomes a penetration tester by reading about it. You build the skills by breaking things, fixing them, and breaking them again in environments you control. This chapter covers what you actually need to learn, in roughly the order you should learn it.
 
-While one group of hackers writes code and the other group exploits it, both use similar problem-solving techniques. Additionally, it suggests that having knowledge of both programming and exploitation can be beneficial for hackers as they complement each other. The passage also defines hacking as "the act of finding a clever and counterintuitive solution to a problem." This can be either in writing elegant and efficient code or finding vulnerabilities in existing programs and exploiting them.
+There is no shortcut here. The people who are genuinely good at offensive security have put in thousands of hours on the fundamentals. What separates them from people who plateau early is not raw intelligence -- it is having built a real foundation before picking up attack tools.
 
-It is also worth to mention that, this term is often associated with criminal activities and malicious use, but it's important to distinguish between hackers who use their knowledge to cause harm and "white-hat" hackers or security researchers who use their skills to find vulnerabilities in systems and help organizations fix them before any attackers can exploit them.
+---
 
-Programming hacks are creative solutions that use the rules of computer systems to improve efficiency or reduce code size, rather than to compromise security. These hacks often result in elegant, efficient and neat code. However, in the business world, the focus is often on producing functional code quickly, rather than on creating clever hacks or elegant solutions. This is because the power and memory of modern computers make small time and memory optimizations less significant in comparison to new features that can be marketed to increase revenue. As a result, spending time on clever hacks for optimization is not a priority.
+## Start With the Fundamentals, Not the Tools
 
-Appreciation for the beauty and efficiency of programming is often limited to those who are passionate about the field, such as hobbyist computer users, exploit writers, and anyone who enjoys the challenge of finding the best possible solution. These individuals, known as hackers, are excited about programming and find joy in elegant code and clever hacks. They seek to get the most out of their systems and are not primarily driven by profit. As an understanding of programming is necessary to comprehend the ways in which programs can be exploited, it serves as a natural starting point for those interested in the field.
+A common mistake: people download Kali Linux, run Nmap against something, and call themselves hackers. Nmap tells you a port is open. Knowing what to do with that information requires understanding why that port exists, what protocol is listening on it, and what kinds of mistakes implementations of that protocol tend to make.
 
-**What Is Programming?**
+The tools are multipliers. They amplify what you know. They cannot substitute for knowing.
 
-Programming is a simple and intuitive concept, in which a series of statements written in a specific language, called a program, are used to accomplish a task or set of tasks. Programs are prevalent in everyday life and are used by people of all technical abilities, from online driving directions and recipes, to football plays and even DNA sequences.
+Build in this order:
 
-The ability to understand and follow a program is not limited to those with a technical background. Just like how someone who understands English can read and follow a set of driving directions written in English, even if they are not phrased eloquently, someone without technical knowledge can still understand and utilize a program, as long as its instructions are clear and easy to follow.
+1. Networking
+2. Operating systems (Linux first, then Windows)
+3. Programming and scripting
+4. Web application fundamentals
+5. Attack methodology
+6. Specialization
 
-Computers do not understand human languages, they only understand machine language, which consists of raw bits and bytes. To command a computer to do something, the instructions must be written in machine language. However, machine language is complex, difficult to work with, and architecture specific, thus making it laborious and cumbersome to write programs in it. An assembler is a tool to bridge this gap and make it easier to write programs in machine language by translating assembly language, which uses names for instructions and variables rather than numbers, into machine-readable code. However, assembly language still requires a deep understanding of the low-level details of the specific architecture and is not easily portable across different architectures. Therefore, any program written in assembly language for one architecture would need to be rewritten to work on another architecture.
+---
 
-Another form of translator, known as a compiler, can help overcome these challenges. A compiler converts high-level languages into machine language, high-level languages are more intuitive than assembly language and can be converted into machine language for various types of processor architectures. This means that a program written in high-level language needs to be written only once, and it can then be compiled into machine language for various architectures. Examples of high-level languages include C, C++, and Fortran. Programs written in high-level languages are more readable and closer to English, however, they must follow a set of strict rules or the compiler will not be able to interpret it.
+## Networking
 
-**Pseudo-code**
+Most attacks travel over networks. Most defenses live at network boundaries. If you do not understand how data moves between systems, you will not understand why most exploits work.
 
-Pseudocode is another type of programming language used by programmers. It is a structured form of the English language, similar to a high-level language, that is not understood by compilers, assemblers, or computers. However, it is a helpful tool for arranging instructions. Pseudocode is not strictly defined and its structure may vary, it is not well-defined, as different programmers may write it differently. It serves as a bridge between English and high-level programming languages like C, and it can be useful for introducing fundamental programming concepts.
+You need to know:
 
-**Control Structures**
+**TCP/IP and the OSI model.** Understand what happens at each layer when you send an HTTP request. Know how IP fragmentation works, how TCP handles connection state, why UDP is different [1].
 
-Control structures are fundamental building blocks in programming that allow for a deviation from the linear sequential execution of instructions in a program. They are necessary for most programs, which typically require more complexity beyond simple sequential instructions. Control structures, such as "continue on Main Street until you see a church on your right" or "if the street is blocked due to construction," change the flow of execution of the program to make it more adaptable and useful.
+**DNS.** Understand how domain names resolve to IP addresses. DNS is a surprisingly fertile attack surface -- zone transfers, DNS rebinding, DNS cache poisoning, and subdomain takeover are all real attack classes [2].
 
-**If-Then-Else**
+**HTTP and HTTPS.** You will attack web applications constantly. Understand the full request/response cycle, how cookies and sessions work, what TLS actually does, and the difference between HTTP/1.1 and HTTP/2 at the protocol level.
 
-The "if-then-else" structure is one of the most commonly used control structures in programming. It allows for handling special cases, such as the Main Street being under construction in our driving directions example. The structure can be read as follows: "If a specific condition is met, execute a set of instructions (then); otherwise, execute a different set of instructions (else)". It is intuitive and allows for easy implementation of conditional statements in a program.
+**Common protocols.** Know SSH, FTP, SMTP, SMB, LDAP, Kerberos. Not deeply at first -- just enough to recognize them in a port scan and know what questions to ask.
 
-**While/Until Loops**
+**Practical tool:** Wireshark. Capture your own traffic and read it. Watch a TLS handshake. Watch a three-way TCP handshake. Watch DNS queries resolve in real time. Passive study of real traffic teaches more than any textbook [3].
 
-A while loop is another common control structure that allows for repeated execution of instructions. It is a type of loop, which is used to execute a set of instructions multiple times. A key aspect of loops is to have a stopping condition, otherwise, the loop will continue indefinitely. A while loop specifies that a set of instructions will be executed repeatedly as long as a specific condition is met. It allows the program to repeat a specific action until the condition is met or false.
+---
 
-**For Loops**
+## Operating Systems
 
-Another type of looping control structure is the "for loop". This structure is generally used when a programmer wants to execute a set of instructions for a specific number of iterations. The "for loop" allows you to define the number of iterations in advance. For example, the instruction "Drive straight down Destination Road for 5 miles" could be translated into a "for loop" which will execute a set of instruction five times, representing 5 miles.
+**Linux is non-negotiable.** Most servers run Linux. Most security tools are designed for Linux. Kali Linux ships with the majority of the tools you will use, but do not start with Kali. Start with Ubuntu or Debian. Learn to install packages, manage permissions, edit files from the command line, read logs, write basic shell scripts, and understand how processes and users interact [4].
 
-### Exploitation <a href="#gzp4iagl9z4i" id="gzp4iagl9z4i"></a>
+Key Linux concepts for security work:
 
-Program exploitation is a tactic commonly used by hackers to take advantage of weaknesses or vulnerabilities in a program. These vulnerabilities can be found in the design of the program or the environment it is operating in. The goal of exploitation is to manipulate the program to perform an action it was not intended to do, by taking advantage of these weaknesses. This can be done through finding and exploiting flaws or oversights in the program's design. The process of exploiting a program requires a deep understanding of how the program works, as well as a creative mind to find these vulnerabilities. Some vulnerabilities are caused by simple errors made by programmers, while others are more complex and require advanced techniques to exploit. In any case, program exploitation is a powerful tool that can be used to gain unauthorized access to sensitive information or perform other malicious actions.
+- File permissions and setuid/setgid
+- The /proc filesystem
+- Process management and signals
+- Network configuration and iptables
+- Cron jobs and persistence mechanisms
+- Package managers and software repositories
 
-A program can only do what it’s programmed to do, to the letter of the law. Unfortunately, what’s written doesn’t always coincide with what the programmer intended the program to do. This principle can be explained with a joke:
+**Windows matters more than people admit.** Most enterprise environments run Windows Active Directory. Many of the most impactful attacks in penetration testing involve Kerberos, NTLM, SMB, and Group Policy -- all Windows-specific technology. Learn enough to navigate a Windows domain: understand users and groups, how authentication flows, where credentials are cached, and how Group Policy Objects work [5].
 
-_A man is walking through the woods, and he finds a magic lamp on the ground. Instinctively, he picks the lamp up, rubs the side of it with his sleeve, and out pops a genie. The genie thanks the man for freeing him, and offers to grant him three wishes. The man is ecstatic and knows exactly what he wants._
+---
 
-_“First,” says the man, “I want a billion dollars.”_
+## Programming and Scripting
 
-_The genie snaps his fingers and a briefcase full of money materializes out of thin air._
+You do not need to be a software engineer. You do need to write code.
 
-_The man is wide eyed in amazement and continues, “Next, I want a Ferrari.”_
+**Python** is the primary scripting language in security. Most public exploits, automation tools, and custom attack scripts are in Python. You need to read it fluently and write it functionally -- that means file I/O, network sockets, HTTP requests, parsing JSON and XML, and basic string manipulation [6].
 
-_The genie snaps his fingers and a Ferrari appears from a puff of smoke._
+**Bash scripting** is unavoidable on Linux. Learn to chain commands, write loops, handle arguments, and redirect output. Most of your day-to-day automation on the command line will be one-liners or short scripts.
 
-_The man continues, “Finally, I want to be irresistible to women.”_
+**Understanding compiled languages.** You do not need to write production C, but you need to read it well enough to understand what a buffer overflow is and why it happens. A few dozen hours reading C code and studying memory layout will pay dividends in understanding vulnerability classes at a depth that Python alone cannot give you.
 
-_The genie snaps his fingers and the man turns into a box of chocolates._
+**JavaScript** is increasingly important for web application testing. You need to understand how the DOM works, how JavaScript interacts with the browser security model, and what XSS actually does in execution.
 
-Just as the man’s final wish was granted based on what he said, rather than what he was thinking, a program will follow its instructions exactly, and the results aren’t always what the programmer intended. Sometimes the repercussions can be catastrophic.
+A practical goal: by the time you apply for your first penetration testing role, you should be able to write a port scanner from scratch in Python without looking anything up. It does not have to be fast or elegant. It should work.
 
-Programmers are human, and sometimes what they write isn’t exactly what they mean. For example, one common programming error is called an off-by-one error. As the name implies, it’s an error where the programmer has miscounted by one. This happens more often than you might think, and it is best illustrated with a question: If you’re building a 100-foot fence, with fence posts spaced 10 feet apart, how many fence posts do you need? The obvious answer is 10 fence posts, but this is incorrect, since you actually need 11. This type of off-by-one error is commonly called a fencepost error, and it occurs when a programmer mistakenly counts items instead of spaces between items, or vice versa. Another example is when a programmer is trying to select a range of numbers or items for processing, such as items N through M. If N = 5 and M = 17, how many items are there to process? The obvious answer is M - N, or 17 - 5 = 12 items. But this is incorrect, since there are actually M - N + 1 items, for a total of 13 items. This may seem counterintuitive at first glance, because it is, and that’s exactly why these errors happen.
+---
 
-**Generalized Exploit Techniques**
+## Web Application Fundamentals
 
-Off-by-one errors, also known as fencepost errors, occur when a programmer miscalculates the number of items or spaces between items. This can result in the program processing too few or too many items. Improper Unicode expansion, on the other hand, happens when a program doesn't properly handle characters represented in Unicode, leading to unexpected behavior. These mistakes, although small, can have a significant impact on the security of a program as they can be exploited by malicious actors. The repetition of these types of mistakes across different code bases has led to the development of generalized exploit techniques that can be used to take advantage of them in a variety of situations.
+Web applications are the most common attack surface in modern penetration testing. The OWASP Top 10 -- the standard reference for web vulnerability categories -- covers injection, broken authentication, insecure direct object references, security misconfigurations, XSS, and more [7].
 
-Memory corruption exploits, such as buffer overflows and format string exploits, are common ways for attackers to take control of a program's execution flow by inserting malicious code into memory. This allows for arbitrary code execution, where the attacker can make the program perform any desired actions. These vulnerabilities occur when the program is not able to handle specific unexpected cases, which would usually cause the program to crash. However, by carefully manipulating the environment, attackers can prevent the crash and redirect the program's execution flow for their own gain.
+Before you exploit web vulnerabilities, understand how web applications are built:
 
-**Buffer Overflows**
+- How authentication and session management work
+- How databases interact with web applications (and why SQL injection is possible)
+- How browsers enforce the same-origin policy
+- How cookies, localStorage, and sessionStorage differ
+- How modern frameworks (React, Next.js, Django) structure requests and responses
 
-A buffer overflow occurs when more data is written to a memory location than it can hold, causing the excess data to overflow into adjacent memory locations. This can potentially cause the program to crash or even allow an attacker to execute malicious code. Buffer overflow vulnerabilities are particularly prevalent in C and C++ programs, as the language does not have built-in safety mechanisms to prevent this type of memory corruption. As a result, it is the responsibility of the programmer to ensure data integrity and properly check the size of buffers when handling input. This can make the resulting programs slower and more complex, but it is a necessary step to prevent these types of security vulnerabilities.
+Burp Suite is the essential tool. The free community edition covers basic interception and repeater functionality. Burp Pro adds scanner capability and is worth the investment eventually, but start with the free version and learn to manually manipulate requests [8].
 
-A buffer overflow is a type of vulnerability in a computer program, where more data is sent to a buffer than it can hold. This can cause the program to crash or even execute malicious code, allowing an attacker to gain unauthorized access to the system. This is particularly prevalent in the C programming language, as it allows direct memory manipulation and does not have built-in safeguards to ensure that the contents of a variable fit into the allocated memory space. This can lead to memory overwriting and program crashes if not handled carefully by the programmer.
+---
 
-### Networking <a href="#in8wisdkhmnl" id="in8wisdkhmnl"></a>
+## The Attack Methodology
 
-Networking allows for communication and data transfer between computer systems, making it a crucial aspect for many applications such as email, web browsing, and instant messaging. However, it is important to note that networking protocols themselves can also have vulnerabilities. In this chapter, one will learn about using sockets to network applications and how to address common network security issues.
+Attacks follow a pattern. Knowing the pattern helps you both execute offensively and defend against it.
 
-**OSI Model**
+**Reconnaissance** is information gathering before you touch the target. Passive recon uses public sources: WHOIS records, certificate transparency logs, job postings (which reveal technology stack), LinkedIn (which reveals employee names and technologies they list as skills), and tools like Shodan and Censys to find internet-exposed infrastructure [9].
 
-The OSI (Open Systems Interconnection) model is a framework used to understand and standardize how different communications protocols and technologies work together to enable network communication. It divides the process of transmitting data across a network into seven distinct layers, each with its own specific functions and responsibilities. The OSI model layers are:
+Active recon touches the target: DNS enumeration, port scanning, service fingerprinting. Nmap is the standard. Learn its output cold -- open/closed/filtered states, version detection, script engine usage [10].
 
-**Physical Layer:**
+**Scanning and enumeration** goes deeper into discovered services. Open port 443? Enumerate subdomains, identify the server software and version, check for known CVEs, spider the application for hidden paths. Each open service is a potential entry point.
 
-This layer deals with the physical connection and transmission of data across the network. It includes the cables, switches, and other hardware used to transmit data.&#x20;
+**Exploitation** is using a discovered vulnerability to gain access. This is rarely dramatic. In most real engagements, entry comes from one of a short list of recurring failures: default credentials, unpatched software, SQL injection in a login form, or phishing (which is technically social engineering but lands in the same phase).
 
-**Data Link Layer:**&#x20;
+**Post-exploitation** is what you do after access. In a real attack, post-exploitation is where the damage happens: lateral movement to other systems, privilege escalation from regular user to administrator, credential harvesting, and data exfiltration. In a penetration test, you demonstrate capability and stop. You document every step.
 
-This layer establishes a link between devices on the same network and provides an error-free link for data to be transmitted across. It includes protocols such as Ethernet and ARP.&#x20;
+**Pivoting** is using a compromised system as a launch point into network segments that were not directly accessible. A web server in the DMZ can become a bridge into internal systems that have no direct internet exposure.
 
-**Network Layer:**&#x20;
+**Reporting** is the product. Everything else is how you earn the right to write it. A good penetration testing report has an executive summary (one to two pages, written for a CISO who will not read the technical details), a technical findings section (severity, description, evidence, reproduction steps), and prioritized remediation recommendations [11].
 
-This layer routes data packets between different networks. It includes protocols such as IP and ICMP.&#x20;
+---
 
-**Transport Layer:**&#x20;
+## Practice Environments
 
-This layer establishes a logical connection between different devices on the network and ensures the reliability of data transmission. It includes protocols such as TCP and UDP.&#x20;
+**Hack The Box** (hackthebox.com) is the gold standard for intermediate-to-advanced practice. Machines range from beginner to insane difficulty. The community writeups (after you have tried and failed) are excellent learning resources. Active machines release every Saturday; retired machines are accessible to VIP subscribers [12].
 
-**Session Layer:**&#x20;
+**TryHackMe** (tryhackme.com) is better for beginners. Guided learning paths with structured rooms walk you through concepts before asking you to apply them independently. The "Jr Penetration Tester" path is a reasonable starting curriculum [13].
 
-This layer manages the sessions between different devices on the network. It includes the initiation, management, and termination of a connection between devices.&#x20;
+**VulnHub** provides downloadable virtual machine images you can run locally. No internet required, no subscription. Older machines are often simpler, which makes them good for practicing fundamentals.
 
-**Presentation Layer:**&#x20;
+**DVWA (Damn Vulnerable Web Application)** is a deliberately insecure PHP application you run locally. It lets you practice every OWASP Top 10 category in an environment you cannot break in any meaningful way. Essential for web application learning [14].
 
-This layer deals with the representation of data and how it is displayed to the user. It includes the translation and compression of data.&#x20;
+**Your own home lab** is irreplaceable. A spare machine or a laptop running VirtualBox or VMware can host a small network of virtual machines: a Kali attacker, a Windows Server domain controller, a Ubuntu web server, and a vulnerable machine. Building infrastructure you then attack teaches you both sides.
 
-**Application Layer:**&#x20;
+---
 
-This layer deals with the interactions between the applications running on different devices and the network. It includes the protocols that allow applications to access the network such as HTTP, FTP, and DNS. The OSI model provides a common framework that can be used to understand and troubleshoot network communication issues. It also helps in the development and standardization of network protocols as well as new technologies as it lays out how these technologies should interact with each other across the different layers of the model.
+## Certifications for Offensive Security
 
-The physical layer of the internet protocol stack is responsible for the transmission of raw bits between devices. When browsing the web, the Ethernet cable and card make up this layer. The data link layer, which is also handled by Ethernet, allows for communication between devices on a LAN. However, it doesn't provide IP addresses yet. These addresses are assigned at the network layer, which is also responsible for moving data from one address to another. Together, these lower layers are able to send packets of data from one IP address to another. The transport layer, which for web traffic is TCP, ensures a seamless bidirectional connection. The term TCP/IP refers to the use of TCP on the transport layer and IP on the network layer. IPv4 is the most commonly used address scheme at this layer, in the form of XX.XX.XX.XX, while IPv6 also exist but have different addressing scheme.
+Covered in more depth in Chapter 1, but the relevant certifications for offensive security specifically:
 
-The top layer of the OSI model, the application layer, uses HTTP (Hypertext Transfer Protocol) to facilitate communication when browsing the web. When a web browser on a network requests a webpage, it communicates with a web server located on a different network. In order for the data packets to reach their destination, they are encapsulated and passed down through the layers of the OSI model, starting at the application layer. The packets then pass through the router, which only needs to implement protocols up to the network layer, as it doesn't need to understand the contents of the packets. The router then sends the packets to the internet, where they reach the router of the destination network. This router encapsulates the packets with the necessary lower layer protocol headers, allowing the packets to reach their final destination.
+**CompTIA Security+** is the entry baseline. Most employers want to see it. It is not offensive-focused, but it proves foundational knowledge.
 
-![](<../../.gitbook/assets/0 (3)>)
+**eJPT (eLearnSecurity Junior Penetration Tester)** is the best starting point for practical offensive certification. Inexpensive, practical exam format, respected as an entry-level credential.
 
-The process of packet encapsulation creates a complex language for devices on the internet and other networks to communicate with each other. This language is built into routers, firewalls, and operating systems, allowing them to understand and participate in the communication. Applications that rely on networking, such as web browsers and email clients, interface with the operating system to handle network communication. Since the operating system handles the technical details of packet encapsulation, it simplifies the task of creating network programs, which only need to interact with the OS's network interface.
+**PNPT (Practical Network Penetration Tester)** from TCM Security is highly practical and has become well-regarded in the industry. The course content is excellent even if you never take the exam.
 
-**Sockets**
+**OSCP (Offensive Security Certified Professional)** from Offensive Security is the gold standard for hands-on penetration testing. It is a 24-hour practical exam where you must compromise a series of machines in a lab environment and write a professional report afterward. It is hard. It is expensive (~$1,500). It is worth it if you have the prerequisite skills. Attempting OSCP before you have solid networking, Linux, and scripting fundamentals is a waste of money [15].
 
-A socket is a standardized method of communicating through an operating system. It can be thought of as a connection endpoint, similar to a telephone jack on an operator's switchboard. Sockets serve as a high-level abstraction that shields programmers from the complexities of the OSI model. They allow for the sending and receiving of data over a network, with the transfer occurring at the session layer (layer 5) and the routing handled by the operating system at lower layers. There are various types of sockets, which define the structure of the transport layer (layer 4). The two most widely used are stream sockets and datagram sockets.
+Do not start with OSCP. Build the foundation first. Most people who pass OSCP on their first attempt have spent six to twelve months doing Hack The Box machines, building labs, and reading before they sit the exam.
 
-Stream sockets are a type of socket that provide reliable, two-way communication, similar to making a phone call. One side initiates a connection to the other and, once established, either side can communicate with the other. Stream sockets also confirm that the data has been received by its intended destination. They use Transmission Control Protocol (TCP), a standard communication protocol that operates at the transport layer (layer 4) of the OSI model. TCP ensures that data is transmitted in chunks called packets and that these packets arrive at the destination without errors and in the correct order, similar to words being spoken in the correct order during a phone conversation. Applications such as web servers, mail servers, and their respective client programs all use TCP and stream sockets for communication.
+---
 
-Another type of socket is a datagram socket, which is used for communication that is more like sending a letter than making a phone call. Communication using a datagram socket is one-way and unreliable. The order of the messages may not be maintained and it cannot be guaranteed that the messages will reach their destination. This is similar to mailing a letter - while the postal service is generally reliable, the internet is not. Datagram sockets use User Datagram Protocol (UDP) instead of TCP at the transport layer (layer 4). UDP is a very basic and lightweight protocol, which does not have built-in safeguards like TCP. It does not create a real connection but is just a simple method for sending data from one point to another. If a program needs to confirm that a packet has been received, it must be coded to send back an acknowledgement packet. This protocol have a lower overhead and are good for scenarios where packet loss is acceptable.
+## CTFs as a Training Ground
 
-Datagram sockets and UDP are commonly used in networked games and streaming media because they allow developers to have more control over their communication needs without the added overhead of TCP. UDP is a connectionless protocol which means it does not establish a virtual circuit before sending data, this can result in lower latency and allows the developers to handle the reliability of the transmission on their own, which can be beneficial in real-time applications such as games and streaming media where the delay in transmission should be minimal.
+Capture The Flag competitions are structured hacking challenges. You find a hidden string (the "flag") by exploiting a vulnerability in a target system or solving a puzzle. CTFs cover web exploitation, binary exploitation (pwn), reverse engineering, cryptography, forensics, and OSINT.
 
-**Socket Functions**
+CTFs are valuable for three reasons. First, they teach you specific techniques in isolation -- a CTF web challenge might require exactly one SQLi variant, which forces you to understand it deeply. Second, they give you portfolio material -- writing a clear CTF walkthrough demonstrates both technical skill and the ability to communicate findings, which is directly relevant to penetration testing. Third, the community around CTFs is excellent and often the fastest way to level up quickly [16].
 
-In C, Sockets are similar to files in that they both use file descriptors to identify themselves. In fact, sockets can be treated as files, allowing you to use the read() and write() functions to receive and send data using socket file descriptors. However, there are also functions that are specifically designed to work with sockets. These functions have their prototypes defined in the header file /usr/include/sys/sockets.h this header file contains the declarations for the functions, constants, and structures that are used for socket programming. Since sockets are handled differently than regular file I/O, these special functions are provided to handle the unique features and properties of sockets, such as creating, binding, and listening for incoming connections.
+CTFtime.org lists upcoming competitions. PicoCTF is the best starting point for absolute beginners. After that, try HackTheBox challenges (separate from the main machines) and TryHackMe CTF rooms.
 
-_**socket(int domain, int type, int protocol)**_
+A separate chapter in this book covers CTFs in depth.
 
-Used to create a new socket, returns a file descriptor for the socket or -1 on error.
+---
 
-_**connect(int fd, struct sockaddr \*remote\_host, socklen\_t addr\_length)**_
+## Building a Public Portfolio
 
-Connects a socket (described by file descriptor fd) to a remote host. Returns 0 on success and -1 on error.
+GitHub matters. A repository with your custom scripts, CTF writeups, and home lab documentation is evidence that you know what you are doing. It shows hiring managers things a certificate cannot: that you build things, that you can explain your thinking, and that you work consistently over time.
 
-_**bind(int fd, struct sockaddr \*local\_addr, socklen\_t addr\_length)**_
+Writeups are particularly valuable. When you solve a CTF challenge or a Hack The Box machine, write a clear technical walkthrough. Explain what you found, how you approached it, what failed before you found what worked, and how the vulnerability could be remediated. This is exactly what a penetration testing report looks like, and a portfolio of writeups is direct evidence that you can produce one.
 
-Binds a socket to a local address so it can listen for incoming connections. Returns 0 on success and -1 on error.
+---
 
-_**listen(int fd, int backlog\_queue\_size)**_
+## Further Reading
 
-Listens for incoming connections and queues connection requests up to backlog\_queue\_size. Returns 0 on success and -1 on error.
+- OWASP Web Security Testing Guide: [https://owasp.org/www-project-web-security-testing-guide/](https://owasp.org/www-project-web-security-testing-guide/)
+- TCM Security courses (affordable, practical): [https://academy.tcm-sec.com/](https://academy.tcm-sec.com/)
+- PortSwigger Web Security Academy (free, excellent for web): [https://portswigger.net/web-security](https://portswigger.net/web-security)
+- *The Hacker Playbook 3* by Peter Kim: practical attack scenarios
+- LiveOverflow YouTube channel: binary exploitation and CTF methodology explained clearly
 
-_**accept(int fd, sockaddr \*remote\_host, socklen\_t \*addr\_length)**_
+---
 
-Accepts an incoming connection on a bound socket. The address information from the remote host is written into the remote\_host structure and the actual size of the address structure is written into \*addr\_length. This function returns a new socket file descriptor to identify the connected socket or -1 on error.
+## References
 
-**send(int fd, void \*buffer, size\_t n, int flags)**
+[1] Forouzan, B. A. (2013). *Data Communications and Networking* (5th ed.). McGraw-Hill Education. ISBN 978-0073376226.
 
-Sends n bytes from \*buffer to socket fd; returns the number of bytes sent or -1 on error.
+[2] Dafydd, S., & Pinto, M. (2011). *The Web Application Hacker's Handbook: Finding and Exploiting Security Flaws* (2nd ed.). Wiley. ISBN 978-1118026472.
 
-**recv(int fd, void \*buffer, size\_t n, int flags)**
+[3] Combs, G., & the Wireshark Team. (2023). *Wireshark User's Guide*. The Wireshark Foundation. Retrieved from https://www.wireshark.org/docs/wsug_html/
 
-Receives n bytes from socket fd into \*buffer; returns the number of bytes received or -1 on error.
+[4] Shotts, W. (2019). *The Linux Command Line: A Complete Introduction* (2nd ed.). No Starch Press. ISBN 978-1593279523.
 
-When a socket is created with the socket() function, it is necessary to specify the domain, type, and protocol of the socket. The domain, also known as the protocol family, refers to the set of protocols used by the socket for communication. Examples of protocol families include Internet Protocol (IP) which is used for communication on the Internet, and AX.25 which is used for amateur radio communication. These protocol families are defined in the header file bits/socket.h, which is automatically included when sys/socket.h is included in the program. It is important to note that the socket function only creates a socket and assign the properties specified on the function, but doesn't establish a connection, To establish a connection, typically you need to bind to a specific address and port and if it is a TCP socket, the listen to incoming connections and accept them.
+[5] Metcalf, S. (2015). *Kerberos & Attacks 101*. Active Directory Security. Retrieved from https://adsecurity.org/?p=2011
 
-### Shellcode <a href="#k41aldojn210" id="k41aldojn210"></a>
+[6] Seitz, J. (2021). *Black Hat Python: Python Programming for Hackers and Pentesters* (2nd ed.). No Starch Press. ISBN 978-1718501126.
 
-The shellcode utilized in our exploits has simply been a string of copied and pasted bytes. We have observed standard shell-spawning shellcode for local exploits and port-binding shellcode for remote ones. Shellcode is also sometimes referred to as an exploit payload, as it is a self-contained program that performs actions once a system has been compromised. It typically spawns a shell as a means of gaining control, but it can perform any function a program is capable of. However, for many hackers, understanding of shellcode only extends to copying and pasting bytes. This limits the potential of what can be achieved with shellcode. By creating custom shellcode, you have complete control over the exploited system. For example, you could add an admin account to /etc/passwd or automatically remove lines from log files. The possibilities are only limited by your imagination. Additionally, writing shellcode improves assembly language skills and employs a number of hacking techniques that are worth knowing.
+[7] OWASP Foundation. (2021). *OWASP Top Ten 2021*. Open Web Application Security Project. Retrieved from https://owasp.org/www-project-top-ten/
 
-**Assembly vs. C**
+[8] PortSwigger. (2023). *Burp Suite Documentation*. PortSwigger Web Security. Retrieved from https://portswigger.net/burp/documentation
 
-Shellcode is a set of machine-level instructions that is used to perform a specific task. These instructions are specific to a particular architecture and are typically written in assembly language. Although writing a program in assembly is different from writing it in C, many of the concepts are similar.
+[9] Shodan.io. (2023). *Shodan: The Search Engine for the Internet of Things*. Retrieved from https://www.shodan.io/
 
-The operating system handles functions such as input and output, process management, file access, and network communication at the kernel level. Compiled C programs execute these tasks by making system calls to the kernel. The specific system calls available will vary depending on the operating system in use.
+[10] Lyon, G. (2009). *Nmap Network Scanning: The Official Nmap Project Guide to Network Discovery and Security Scanning*. Insecure.com LLC. ISBN 978-0979958717. Retrieved from https://nmap.org/book/
 
-In C programming, standard libraries are often used to enhance convenience and portability. For example, a C program that uses the printf() function to output a string can be compiled on multiple systems without modification, as the library is responsible for knowing the appropriate system calls for various architectures. As a result, a C program compiled on an x86 processor will produce assembly language that is specific to that architecture.
+[11] Weidman, G. (2014). *Penetration Testing: A Hands-On Introduction to Hacking*. No Starch Press. ISBN 978-1593275648.
 
-On the other hand, assembly language is already specific to a particular processor architecture, thus portability is not possible. Instead of using standard libraries, direct kernel system calls must be made. To illustrate this point, we can compare a simple C program and its equivalent version written in x86 assembly.
+[12] Hack The Box. (2023). *Hack The Box: Cybersecurity Training Platform*. Retrieved from https://www.hackthebox.com/
 
-When the compiled program is executed, the flow of execution goes through the standard I/O library, and finally, it makes a system call to display the string "Hello, world!" on the screen. The strace program can be used to trace a program's system calls. When applied to the compiled helloworld program, it shows all the system calls that the program makes.
+[13] TryHackMe. (2023). *TryHackMe: Learn Cybersecurity*. Retrieved from https://tryhackme.com/
 
-The compiled program does more than just printing a string, the system calls at the start of the program set up the environment and memory for the program to run correctly. The important part is the write() system call, which actually outputs the string to the screen. The strace output also shows the arguments for the system call. The buf and count arguments are a pointer to the string and its length, respectively. The fd argument of 1 is a special standard file descriptor.
+[14] Ryan Dewhurst. (2015). *Damn Vulnerable Web Application (DVWA)*. GitHub. Retrieved from https://github.com/digininja/DVWA
 
-File descriptors are widely used in Unix systems for many purposes such as input, output, file access and network sockets. It is similar to a number given out at a coat check, where the first three file descriptor numbers (0, 1, and 2) are automatically used for standard input, output, and error. These values are standard and are defined in several locations, such as the /usr/include/unistd.h file.
+[15] Offensive Security. (2023). *PEN-200: Penetration Testing with Kali Linux (OSCP)*. Offensive Security. Retrieved from https://www.offensive-security.com/pwk-oscp/
 
-**The Path to Shellcode**
+[16] Chung, S. P., Xu, W., & Lee, W. (2013). Finding the needle: Suppression of false alarms in large intrusion detection data sets. *Proceedings of the IEEE International Symposium on Software Reliability Engineering*, 2013. doi:10.1109/ISSRE.2013.6698933
 
-Shellcode that is injected into a running program, where it takes over the program's execution, similar to how a virus infects a cell. Since shellcode is not an executable program, it does not have the benefit of having a defined layout of data in memory or being able to use other memory segments. The instructions in shellcode must be self-contained and be able to take over control of the processor regardless of its current state. This is commonly referred to as position-independent code.
+---
 
-In shellcode, the bytes for the string "Hello, world!" must be mixed together with the bytes for the assembly instructions, since there aren’t definable or predictable memory segments. To avoid EIP interpreting the string as instructions, the string is needs to be accessed through pointer. However, since the shellcode could be executed at any location in memory, the memory address of the string must be calculated relative to EIP. However, EIP cannot be accessed directly, so some sort of trick must be used to calculate the relative memory address.
+*This chapter is part of Hacking into Cybersecurity, an open-source guide maintained by the community.*
 
-**Assembly Instructions Using the Stack**
-
-The stack is so integral to the x86 architecture that there are special instructions for its operations.
-
-Stack-based exploits are made possible by the call and ret instructions, that are used by the CPU to manage function calls. When a function is called, the instruction pointer (EIP) is pushed to the stack, forming the stack frame, and the function is executed. After the function is finished, the ret instruction is used to pop the stored EIP from the stack, and the execution resumes at the instruction located at the popped address. By overwriting the return address stored on the stack before the ret instruction, it is possible to redirect the program's execution flow to a location specified by the attacker.
-
-This technique can also be used to solve the problem of addressing inline string data. By placing the string directly after a call instruction, the address of the string will get pushed to the stack as the return address. Instead of calling a function, the attacker can jump past the string to a pop instruction that will take the address off the stack and into a register. This technique is demonstrated by the following assembly instructions.
-
-The call instruction is used to jump the execution flow to a different location, which in this case, is located below the string. Additionally, it pushes the address of the instruction following the call instruction to the stack, which in this case, is the beginning of the string. Once the execution flow reaches the return instruction, the return address will be popped from the stack and placed in the appropriate register.
-
-This technique of using the call and return instruction, along with utilizing the stack allows the attacker to execute position-independent code, meaning that it does not have a fixed location in memory. The raw instructions that are injected into an existing process are self-contained and can execute regardless of where the code is located in memory. As a result, these instructions cannot be linked into an executable and are not directly runnable as a standalone program.
-
-The nasm assembler is a tool that converts assembly language into machine code, the instructions that can be executed by the CPU. On the other hand, ndisasm is a tool that converts machine code back into assembly language. These tools are useful for understanding the relationship between the machine code bytes and the assembly instructions. In the example provided, the disassembly instructions marked in bold are the bytes of the "Hello, world!" string interpreted as instructions.
-
-The goal is to inject this shellcode into a running program, and redirect EIP (Instruction Pointer) to execute these instructions and the program will print out "Hello, world!" One example of a program that can be targeted for this exploit is the "notesearch" program.
-
-**Investigating with GDB**
-
-One way to investigate the behavior of the notesearch program is by using GDB (GNU Debugger). Since the program runs with root privileges, it cannot be debugged as a normal user. Instead of attaching to a running copy of the program, a core dump of the program's memory can be created when the program crashes. This can be achieved by using the command "ulimit -c unlimited" from a root prompt, which allows the core dump file to be as large as needed.
-
-When the program crashes, its memory will be dumped to disk as a core file, which can be examined using GDB. Once GDB is loaded, the disassembly style can be switched to Intel. Since GDB is running as root, the .gdbinit file will not be used. The memory where the shellcode should be located can be examined. If the instructions appear to be incorrect, it could be that the first incorrect call instruction caused the crash. Execution may have been redirected, but something went wrong with the shellcode bytes.
-
-Usually, strings are terminated by a null byte, but in this case, the shell removed these null bytes for us. This causes the meaning of the machine code to be completely destroyed. When shellcode is injected into a process as a string, functions such as strcpy() are often used. These functions will simply terminate at the first null byte, producing incomplete and unusable shellcode in memory. To avoid this problem, shellcode must be redesigned to not contain any null bytes, so that it can survive transit and be executed correctly.
-
-**Shell-Spawning Shellcode**
-
-Now that you understand how to execute system calls and avoid null bytes, you can create a wide range of shellcodes. To spawn a shell, we simply need to make a system call to execute the /bin/sh shell program. The execve() system call, which is number 11, is similar to the execute() function that we previously discussed.&#x20;
-
-The first argument in execve() should be a pointer to the string "/bin/sh", as this is what we want to execute. The third argument, the environment array, can be left empty but still needs to be terminated with a 32-bit null pointer. Additionally, the second argument, the argument array, must be null terminated and contain the pointer to the string, as the zeroth argument is the name of the running program.
-
-### Countermeasures <a href="#id-26spmsa72p79" id="id-26spmsa72p79"></a>
-
-The golden poison dart frog releases a highly potent poison that can be fatal to 10 adult humans. The frogs developed this powerful defense mechanism as a result of being preyed on by a certain species of snake, which over time developed a resistance to their poison. As a defense, the frogs continued to evolve stronger and stronger poisons. This co-evolutionary process has made them safe from all other predators. Similarly, in the world of cyber security, hackers have been using the same exploit techniques for years, and as a result, defensive countermeasures have been developed. In turn, hackers find ways to circumvent these defenses, prompting the creation of new techniques to protect against them.
-
-The cycle of innovation and response in the field of cybersecurity can be seen as beneficial. While viruses and worms can cause disruptions and financial losses for businesses, they also bring attention to and ultimately fix vulnerabilities in software. Worms replicate by taking advantage of previously undiscovered weaknesses in flawed software. By drawing attention to these issues through relatively harmless outbreaks, such as CodeRed or Sasser, they prompt a response to fix them. This can be seen as similar to the effects of a chickenpox outbreak in that it's better to address minor issues early on before they have the opportunity to cause greater harm. Without the highlighting of vulnerabilities by internet worms, they may have remained unpatched and left us open to more malicious attacks. In this way, worms and viruses can ultimately strengthen security in the long run. Nevertheless, there are more proactive measures that can be taken to strengthen security. Defensive countermeasures exist such as security products, policies, programs, and attentive system administrators, that try to prevent an attack from happening or minimize its effects once it occurs. These countermeasures can be divided into two groups: those that detect an attack and those that protect against vulnerabilities.
-
-**Countermeasures That Detect**
-
-The first type of defensive countermeasures aims to detect an intrusion and respond accordingly. Detection methods can range from an administrator manually reviewing logs to a program monitoring network activity. Responses may include automatically terminating the connection or process, or allowing the administrator to investigate further from the machine's console.&#x20;
-
-As a system administrator, it's important to be aware that unknown exploits can be more dangerous than known ones. Early detection of an intrusion allows for prompt action to be taken, increasing the chances of containing it. Intrusions that go undetected for months can cause significant concern.
-
-As a system administrator, unknown exploits can be more hazardous than known ones. Timely detection of an intrusion enables prompt response, increasing the chances of containing it. Intrusions that go unnoticed for months can raise significant concern. To effectively detect an intrusion, it's crucial to anticipate the actions of an attacking hacker and know what to look for. Defensive countermeasures that focus on detection can scan log files, network packets, or program memory for patterns of attack. Once an intrusion is detected, the hacker can be removed from the system, any file system damage can be undone through restoring from backup, and the exploited vulnerability can be identified and patched. Backup and restore capabilities make detecting countermeasures highly effective in today's digital world.
-
-For an attacker, detection can counteract their efforts. While there may be some "smash and grab" scenarios where detection doesn't matter, it's still ideal to avoid leaving traces. Stealth is a crucial asset for a hacker. Gaining control of a vulnerable program to access the root shell allows for complete control of the system, but avoiding detection means not being discovered. This combination of having unrestricted access and remaining undetected makes for a potent hacker. From a hidden position, passwords and data can be surreptitiously collected from the network, programs can be backdoored, and further attacks can be launched on other hosts. To maintain stealth, attackers must anticipate detection methods that may be used and avoid certain exploit patterns or mimic valid ones. The ongoing cycle of concealment and detection is driven by anticipating what the other side may not have considered.
-
-**System Daemons**
-
-To have an informed discussion about exploit countermeasures and bypass techniques, it is important to have a realistic target for exploitation. A common remote target is a server program that accepts incoming connections, which in the case of Unix systems are typically referred to as system daemons. A daemon is a background process that runs independently of a controlling terminal. The term "daemon" was coined by MIT hackers in the 1960s, inspired by a 1867 thought experiment by physicist James Maxwell, in which a "demon" is a being with the ability to perform difficult tasks effortlessly, seemingly violating the second law of thermodynamics. In the same way, system daemons in Linux tirelessly perform tasks such as providing SSH service and maintaining system logs. These daemon programs often have names that end with "d" to indicate they are daemons, for example, sshd for the SSH daemon or syslogd for the system log daemon.
-
-The tinyweb.c code on page 214 can be modified to become a more realistic system daemon with a few additions. One such addition is the use of the daemon() function, which creates a new background process. This function is commonly used by many system daemon processes in Linux and its man page is provided for reference.
-
-System daemons run independently from a controlling terminal, therefore, the new tinyweb daemon code writes to a log file. As they lack a controlling terminal, system daemons are typically controlled through signals. The new tinyweb daemon program must also be able to catch the terminate signal in order to exit cleanly when terminated.
-
-**Crash Course in Signals**
-
-A Brief Introduction to Signals In Unix systems, signals provide a way for interprocess communication. When a process receives a signal, its execution is interrupted by the operating system, and a signal handler is called. Signals are identified by a number and each one has a default signal handler. For instance, when the user types in "CTRL-C" in a program's controlling terminal, an interrupt signal is sent, which by default exits the program. This allows the program to be interrupted even if it is stuck in an infinite loop. Using the signal() function, custom signal handlers can be registered. In the example code provided, several signal handlers are registered for specific signals, while the main code contains an infinite loop.
-
-The updated version of the tinyweb program is a system daemon that runs in the background and detaches from a controlling terminal. It logs its output to a file with timestamps and is able to receive the terminate (SIGTERM) signal to shut down gracefully when it is terminated. While these additions may seem minor, they create a more realistic exploitation target. The new portions of the code are highlighted in the listing below.
-
-This daemon program forks itself into the background, writes to a log file with timestamps, and exits cleanly when it receives a termination signal. The log file descriptor and the socket for receiving connections are declared as global variables so that they can be closed properly by the handle\_shutdown() function. This function is set as the callback handler for the terminate and interrupt signals, allowing the program to exit smoothly when it is killed using the "kill" command.
-
-The output below demonstrates the program being compiled, executed and terminated. It can be observed that the log file contains timestamps, as well as the shutdown message when the program catches the terminate signal and calls handle\_shutdown() to exit gracefully.
-
-This tinywebd program serves HTTP content, similar to the original tinyweb program. However, it functions as a system daemon, detaching from the controlling terminal and writing to a log file. Both programs are susceptible to the same overflow exploit, but the new tinyweb daemon serves as a more realistic target for exploitation. Using this new target, one can learn how to avoid detection after a successful intrusion.
-
-### Cryptology <a href="#n8s9u6302h7d" id="n8s9u6302h7d"></a>
-
-**(Best read:** Hacking: The Art of Exploitation, 2nd Edition **)**
-
-Cryptology is the scientific study of cryptography and cryptanalysis. Cryptography is the practice of securely communicating through the use of ciphers, while cryptanalysis is the process of breaking or deciphering secret communications. Historically, cryptology has been of significant interest during times of war, as countries utilized secret codes to communicate with their troops while also attempting to crack the enemy's codes to infiltrate their communications.
-
-While its wartime applications continue, the use of cryptography in everyday life is becoming increasingly prevalent as more sensitive transactions occur online. As network sniffing becomes more common, the assumption that someone may be constantly monitoring network traffic may not be far-fetched. Passwords, credit card numbers, and other sensitive information can all be intercepted and stolen through unencrypted protocols. Encrypted communication protocols provide a solution to this lack of privacy and allow for the safe functioning of the internet economy. Without encryption technologies like Secure Sockets Layer (SSL), conducting credit card transactions on popular websites would be either cumbersome or risky.
-
-All of this sensitive information is protected by cryptographic algorithms that are believed to be secure. However, the mathematical proof of security for these cryptosystems is often impractical for real-world use. Therefore, cryptosystems that are considered secure in practice are used instead. This means that while there may be potential shortcuts for defeating these ciphers, they have not been discovered yet. On the other hand, there are also cryptosystems that are known to be insecure, this can be due to poor implementation, small key size or inherent weaknesses in the cipher itself. In 1997, under US law, the maximum allowed key size for encryption in exported software was limited to 40 bits. This restriction on key size made the corresponding cipher insecure, as demonstrated by RSA Data Security and Ian Goldberg, a graduate student from the University of California, Berkeley. RSA issued a challenge to decipher a message encrypted with a 40-bit key, and within three and a half hours, Ian had succeeded. This served as strong evidence that 40-bit keys are not sufficient for a secure cryptosystem.
-
-"All sensitive data is protected by cryptographic algorithms that are considered to be secure. However, it is currently impractical to use cryptosystems with a mathematical proof of security, so cryptosystems that are deemed secure in practice are utilized instead. Although there may be potential ways to bypass these ciphers, they have not been discovered yet. However, there are also some cryptosystems that are known to be insecure. This may be a result of poor implementation, small key size, or weaknesses in the cipher itself. In 1997, under US law, the maximum key size for encryption in exported software was limited to 40-bits. This restriction on key size made the corresponding cipher insecure, as proven by RSA Data Security and Ian Goldberg, a graduate student from the University of California, Berkeley. RSA offered a challenge to decipher a message encrypted with a 40-bit key, and Ian succeeded in doing so in three and a half hours. This was a strong indication that 40-bit keys are not sufficient for a secure cryptosystem.
-
-**Information Theory**
-
-The foundations of cryptographic security were largely established by Claude Shannon. His ideas have had a significant impact on the field of cryptography, particularly in regards to the concepts of diffusion and confusion. Although he did not specifically create the concepts of unconditional security, one-time pads, quantum key distribution, and computational security, his notions of perfect secrecy and information theory greatly shaped their definitions.
-
-**Unconditional Security**
-
-A cryptographic system is considered to be unconditionally secure if it can't be deciphered or cracked, even with an infinite amount of computational power. This means that breaking the system through cryptanalysis is impossible, and even if all possible keys were to be tried in a brute-force attack, it would be impossible to determine the correct key.
-
-**One-Time Pads**
-
-One example of an unconditionally secure cryptographic system is the one-time pad. It is a very basic cryptosystem that uses randomly generated data, called pads, to encrypt messages. The pad must be at least as long as the message to be encoded, and the data on the pad must be truly random. Two identical pads are created: one for the sender and one for the recipient. To encrypt the message, the sender XORs each bit of the plaintext message with the corresponding bit of the pad. Once the message is encrypted, the pad is destroyed to ensure it is only used once. This makes the encrypted message impossible to decrypt without the pad. When the recipient receives the encrypted message, he XORs each bit of the encrypted message with the corresponding bit of his pad to retrieve the original plaintext message.
-
-"The one-time pad is considered theoretically unbreakable, but in practice it can be difficult to use. The security of the system relies heavily on the security of the pads. The pads need to be distributed to both the sender and the recipient and it is assumed that the method of pad transmission is secure. While a face-to-face exchange of pads would be the most secure method, it may not be practical. So, other encryption methods may be used to send the pads. However, this means that the security of the entire system is now only as strong as the weakest link, which in this case would be the method used to transmit the pads. Since the pad is as long as the plaintext message, and since the security of the whole system depends on the security of pad transmission, it's often more practical to send the plaintext message encrypted with the same cipher that would have been used to transmit the pad.
-
-**Quantum Key Distribution**
-
-The rise of quantum computing has led to a number of exciting developments in the field of cryptography, including the ability to put the one-time pad encryption method into practice through the use of quantum key distribution. One of the fundamental principles of quantum physics, entanglement, can be harnessed to create a secure and confidential method of transmitting a random sequence of binary digits that can serve as a key. This is achieved through the manipulation of non-orthogonal quantum states of photons.
-
-The polarization of a photon refers to the direction of oscillation of its electric field, which can be along the horizontal, vertical, or one of the two diagonals. "Nonorthogonal" means that these states are not separated by a 90-degree angle. It is not possible to determine with certainty the polarization of a single photon. The horizontal and vertical polarizations (rectilinear basis) and the diagonal polarizations (diagonal basis) cannot both be measured simultaneously due to the Heisenberg uncertainty principle. Measurement can be done using filters: a photon passing through the correct filter will not change its polarization, but passing through the incorrect filter will change it randomly, making it apparent if an eavesdropping attempt has been made and the channel is not secure.
-
-BB84, developed by Charles Bennett and Gilles Brassard, is the first and widely known quantum key distribution scheme which leverages the peculiarities of quantum mechanics. In this scheme, the sender and receiver agree on a bit representation for the four polarizations, such that each basis has both 1 and 0. For example, the sender may use vertical photon polarization to represent 1 and one of the diagonal polarizations (positive 45 degrees) to represent 0, and vice versa for the receiver. Then, the sender sends a stream of randomly chosen photons, each from a randomly chosen basis (rectilinear or diagonal), and these photons are recorded by the receiver.&#x20;
-
-The receiver also randomly chooses to measure each photon in either the rectilinear or diagonal basis and records the result. Afterwards, the sender and receiver publicly compare which basis they used for each photon, they only keep the data corresponding to the photons they both measured using the same basis. This process doesn't reveal the bit values of the photons since each basis has both 1 and 0, and this becomes the key for the one-time pad encryption.
-
-Quantum key distribution schemes like BB84 have built-in security measures to detect eavesdropping. One of the most important of these is the ability to detect errors in the key. An eavesdropper attempting to intercept the key will ultimately change the polarization of some of the photons, which will result in errors in the key. By computing the error rate of a random subset of the key, it is possible to detect if an eavesdropper was present. If the error rate is too high, it indicates that an eavesdropping attempt has been made, and the key should be discarded. If the error rate is low, it can be assumed that the transmission of the key data was secure and private.
-
-**Computational Security**
-
-Computational security refers to the level of protection provided by a cryptosystem against an eavesdropper's attempts to break the encryption. A cryptosystem is considered to be computationally secure if the best-known method for breaking the encryption would require an extremely large amount of computational resources and time. This means that while it is theoretically possible to break the encryption, it is practically infeasible to do so because the amount of resources and time required would be disproportionate to the value of the encrypted information.&#x20;
-
-Most modern cryptosystems fall into this category and estimated time to break them is measure in decades or centuries, even with assumption of vast computational resources. It's important to keep in mind that encryption-breaking algorithms are constantly being improved and updated. Therefore, it's not possible to prove that a given cryptosystem is and will always be computationally secure. Instead, we rely on the best-known algorithm for breaking it at a certain point in time to evaluate its security.
-
-**Algorithmic Run Time**
-
-Algorithmic run time is a measure of the performance of an algorithm, typically expressed in terms of the input size. Unlike program run time, which is affected by factors such as processor speed and architecture, algorithmic run time is independent of these factors. Instead, it is determined by the number of operations required to complete the algorithm, as a function of the input size. The input size is often denoted by n, and the run time of an algorithm can be expressed in terms of n. For example, a simple algorithm that loops n times and performs two actions each time, followed by one final action, would have a time complexity of 2n + 1.&#x20;
-
-A more complex algorithm with an additional nested loop would have a time complexity of n^2 + 2n + 1. However, when n becomes large, the difference between 2n + 5 and 2n + 365 becomes less significant than the difference between 2n^2 + 5 and 2n + 5. This type of generalized trending is what is most important in determining the run time of an algorithm.
-
-When comparing two algorithms, it is important to consider their long-term performance rather than just their performance for a specific input size. The 2n2 + 5 algorithm may perform better than the 2n + 365 algorithm for small values of n, but as n increases, the 2n + 365 algorithm will eventually outperform the 2n2 + 5 algorithm. This is because the growth rate of the time complexity is more important than the specific time complexity for any fixed input. Even though there may be a small range of input sizes where the 2n2 + 5 algorithm performs better, the 2n + 365 algorithm is generally more efficient because it performs better for an infinite number of input sizes.
-
-This is true in general for all possible applications, although there may be specific real-world cases where this does not hold.
-
-**Asymptotic Notation**
-
-Asymptotic notation is a tool used to evaluate an algorithm's efficiency as the size of the input increases without bound. It's known as asymptotic because it examines the behavior of the algorithm as the input size approaches infinity.
-
-For instance, in the 2n + 365 and 2n2 + 5 algorithms, we can see that 2n + 365 is more efficient as it follows the trend of n, while 2n2 + 5 follows the trend of n2. This means that there is a positive constant and lower bound on n, such that the time complexity of 2n + 365 is always less than the constant multiplied by n for all n greater than the lower bound. In mathematical terms, this is represented by big-oh notation and is written as O(n).&#x20;
-
-To convert an algorithm's time complexity to big-oh notation, we focus on the highest-order terms as they have the most significant impact as n becomes larger. For example, an algorithm with a time complexity of 3n4 + 43n3 + 763n + log n + 37 would be represented as O(n4) and 54n7 + 23n4 + 4325 would be represented as O(n7).
-
-**Symmetric Encryption**
-
-Symmetric ciphers are cryptosystems that use the same key to encrypt and decrypt messages. The encryption and decryption process is generally faster than with asymmetric encryption, but key distribution can be difficult. These ciphers are generally either block ciphers or stream ciphers. A block cipher operates on blocks of a fixed size, usually 64 or 128 bits. The same block of plaintext will always encrypt to the same ciphertext block, using the same key. DES, Blowfish, and AES (Rijndael) are all block ciphers. Stream ciphers generate a stream of pseudo-random bits, usually either one bit or byte at a time. This is called the keystream, and it is XORed with the plaintext. This is useful for encrypting continuous streams of data. RC4 and LSFR are examples of popular stream ciphers. RC4 will be discussed in depth in “Wireless 802.11b Encryption” on page 433.
-
-Block ciphers like DES and AES are widely used and require careful construction to resist known cryptanalytic attacks. Two key concepts in the design of block ciphers are confusion and diffusion. Confusion techniques are used to conceal the relationships between plaintext, ciphertext, and key, often through complex transformations of the key and plaintext. Diffusion, on the other hand, ensures that the influence of plaintext and key is spread across as much of the ciphertext as possible. Product ciphers, such as DES and AES, incorporate both confusion and diffusion by using a series of simple operations repeatedly. Both ciphers are examples of product ciphers.
-
-The values for Li and Ri are as follows (the ⊕ symbol denotes the XOR operation):
-
-_Li = Ri−1_
-
-_Ri = Li−1 ⊕ f(Ri−1, Ki )_
-
-DES, or Data Encryption Standard, is designed to have 16 rounds of operation to protect against differential cryptanalysis. However, its key size of 56 bits is considered a weakness, as it can be easily cracked through an exhaustive brute-force attack using specialized hardware in a matter of weeks. To address this issue, Triple-DES was introduced, which uses two DES keys concatenated together resulting in a key size of 112 bits. The encryption process involves encrypting the plaintext block using the first key, then decrypting it with the second key, and finally encrypting it again with the first key. Decryption is done in reverse, switching encryption and decryption operations. The increased key size makes brute-force attacks much more difficult. Most industry-standard block ciphers are resistant to all known forms of cryptanalysis and have key sizes that are too large for brute-force attacks. However, some speculation exists about the potential of quantum computation to crack these ciphers, but it is largely overhyped.
-
-**Lov Grover’s Quantum Search Algorithm**
-
-Quantum computation offers the potential for massive parallelism, making it ideal for breaking encryption methods such as block ciphers through brute force. A quantum computer can store multiple states in a superposition, which can be thought of as an array, and perform calculations on all of them simultaneously. This is useful for testing every possible key in a short amount of time. However, extracting the correct value from the superposition can be challenging. Quantum computers have the peculiar characteristic that when the superposition is observed, it collapses into a single state. But this collapse, called decoherence, is random and the odds of it collapsing into any one state in the superposition are equal.
-
-Without a method to manipulate the odds of the superposition states, the process of quantum computation would be no more effective than simply guessing the key. Fortunately, an algorithm called the Grover's algorithm, was developed by Lov Grover to manipulate the odds of superposition states. It increases the probability of a desired state and decreases the others. This process is repeated several times until the decoherence of the superposition into the desired state is nearly certain.&#x20;
-
-By utilizing basic exponential math, it can be seen that this algorithm effectively halves the key size required for an exhaustive brute-force attack. As a result, for the ultra-paranoid, doubling the key size of a block cipher would make it resistant to even the theoretical possibility of an exhaustive brute-force attack with a quantum computer.
+*Connect with the author:*
+- *LinkedIn: [Ahmad Abdur Rehman](https://www.linkedin.com/in/ahmadscience/)*
+- *Discord: [Join the community](https://discord.gg/vkXWVFdFe)*
