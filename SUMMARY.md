@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Breaking into Cyber Security](README.md)
+* [Hall of Fame](hall-of-fame.md)
 * [Summary](page-12/README.md)
   * [Credits](page-12/credits.md)
   * [Table of content](page-12/table-of-content.md)
