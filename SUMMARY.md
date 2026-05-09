@@ -5,12 +5,12 @@
   * [Credits](page-12/credits.md)
   * [Table of content](page-12/table-of-content.md)
 
-## CHAPTER 1
+## CHAPTER 1: Breaking In
 
-* [Choosing an Advanced Career](chapter-1/choosing-an-advanced-career/README.md)
-  * [Career in Cyber Security](chapter-1/choosing-an-advanced-career/career-in-cyber-security.md)
-* [Career as a Cyber Security Professional](chapter-1/career-as-a-cyber-security-professional/README.md)
-  * [Professions in Cyber Security](chapter-1/career-as-a-cyber-security-professional/professions-in-cyber-security.md)
+* [Your Path Into Cybersecurity](chapter-1/choosing-an-advanced-career/README.md)
+  * [The Career Landscape](chapter-1/choosing-an-advanced-career/career-in-cyber-security.md)
+* [Skills and Certifications](chapter-1/career-as-a-cyber-security-professional/README.md)
+  * [Getting the Job](chapter-1/career-as-a-cyber-security-professional/professions-in-cyber-security.md)
 
 ## CHAPTER 2
 
@@ -19,7 +19,7 @@
 
 ## CHAPTER 3
 
-* [Understading Ethical Hacking](chapter-3/ethical-hacking/README.md)
+* [Understanding Ethical Hacking](chapter-3/ethical-hacking/README.md)
   * [Hacking Skills](chapter-3/ethical-hacking/hacking.md)
 
 ## CHAPTER 4
