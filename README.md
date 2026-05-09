@@ -1,35 +1,31 @@
 ---
 description: >-
-  Breaking into Cyber Security is an open-source book for professionals and
-  beginner's who want to crack into Information security field. Ultimate career
-  Guide into Cyber Security for everyone.
+  A practical, no-fluff guide to breaking into cybersecurity. From zero to
+  hired, written for anyone with the curiosity to start.
 cover: .gitbook/assets/cover.png
 coverY: 0
 ---
 
 # Breaking into Cyber Security
 
-A book by Ahmad Abdur Rehman; co-author Noor Maryam
-Contributer Authors: 
+**By Ahmad Abdur Rehman**
 
+The digital world has a security problem.
 
-In this fast transitioning world of technology, there is a clear view that the whole world will be soon digitalized. Talking about the developing countries, we can see how fast this process is occurring. Businesses are getting digitalized, banks are getting branch-less, and even the whole departments of public and private sectors are transferring into the digital world.
+Billions of people's data, critical infrastructure, financial systems, and state secrets are under constant attack. The adversaries range from teenagers running scripts they downloaded to sophisticated nation-state operations with unlimited budgets. Every company, hospital, bank, and government on earth is a target. And most of them are understaffed, underprepared, and desperate for people who know what they're doing.
 
+Cybersecurity needs defenders.
 
+This book is for anyone who wants to become one. Whether you're starting from zero, pivoting from another technical field, or trying to make sense of a landscape that moves faster than any textbook can track, this is your guide.
 
-Billion dollars businesses, information of internet users from all over the world, sensitive state secrets, and military information are also getting vulnerable day by day. Their absolute safety and security are still questioned. Large enterprises, online applications, social media, and intelligence secrets of the states now require more security and their protection is now even more inevitable.
+What you won't find here: academic theory that doesn't survive contact with a real job, certification vendor marketing dressed up as advice, or vague suggestions that leave you no clearer than when you started.
 
-A large number of online data also requires more strengthened and protected databases. That is why the demand for such professionals is increasing day by day. Careers in Cyber Security and Information Security are among the top ratted fields calling creative, technical, and problem-solving professionals to assist large enterprises and states to protect their extremely imperative data.
+What you will find: a clear map of the field, honest portraits of the careers within it, the skills you actually need, and the fastest credible path from where you are to where you want to be.
 
-Cybersecurity is not only among the top ratted fields in terms of chances of getting hired due to a great demand in the market, but cybersecurity professionals are also among the most highly paid professionals as well. The estimated pay of a cybersecurity professional in the US falls between $90,000 to $160,000.
+Cybersecurity is one of the few fields where you can self-train your way in, land a well-paying job without a traditional degree, and spend your career doing work that genuinely matters. The barrier isn't talent. It's knowing where to start.
 
-Cybersecurity has many fields for professionals according to the demands of the market. Some of the most demanded professions in this field of cybersecurity are Cyber Analysts, Network Engineers, Hackers, Consultants, and Network Administrators playing the roles of Application Security, Data Loss Prevention, Forensics, Incident Response, Network Security, Security Architecture, Threat Intelligence, and Vulnerability Management.
+That's what this book is for.
 
-Getting into this field requires firm knowledge and skills in Networking, Programming, System Administration, Operating Systems, Network Security Control, Coding, Cloud Security, Blockchain Security, Internet of Things, (IoT), Artificial Intelligence, and Security Incident Handling & Response..
+---
 
-Thanks to for sponsering the project:
-
-[TesterPro](https://Testerpro.no/)&#x20;
-
-<figure><img src=".gitbook/assets/cover.png" alt=""><figcaption></figcaption></figure>
-
+*This book is open source and free. If it helped you, contribute back — fix something, improve something, add something. That contribution goes on your GitHub and your CV. Want to talk through your path or get help from the community? Join us on [Discord](https://discord.gg/vkXWVFdFe) or reach out directly on [LinkedIn](https://www.linkedin.com/in/ahmadscience/).*
