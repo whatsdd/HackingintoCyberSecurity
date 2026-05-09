@@ -9,7 +9,9 @@ coverY: 0
 
 # Breaking into Cyber Security
 
-A book by Ahmad Abdur Rehman
+A book by Ahmad Abdur Rehman; co-author Noor Maryam
+Contributer Authors: 
+
 
 In this fast transitioning world of technology, there is a clear view that the whole world will be soon digitalized. Talking about the developing countries, we can see how fast this process is occurring. Businesses are getting digitalized, banks are getting branch-less, and even the whole departments of public and private sectors are transferring into the digital world.
 
@@ -23,11 +25,11 @@ Cybersecurity is not only among the top ratted fields in terms of chances of get
 
 Cybersecurity has many fields for professionals according to the demands of the market. Some of the most demanded professions in this field of cybersecurity are Cyber Analysts, Network Engineers, Hackers, Consultants, and Network Administrators playing the roles of Application Security, Data Loss Prevention, Forensics, Incident Response, Network Security, Security Architecture, Threat Intelligence, and Vulnerability Management.
 
-Getting into this field requires firm knowledge and skills in Networking, Programming, System Administration, Operating Systems, Network Security Control, Coding, Cloud Security, Blockchain Security, Internet of Things, (IoT), Artificial Intelligence, and Security Incident Handling & Response.
+Getting into this field requires firm knowledge and skills in Networking, Programming, System Administration, Operating Systems, Network Security Control, Coding, Cloud Security, Blockchain Security, Internet of Things, (IoT), Artificial Intelligence, and Security Incident Handling & Response..
 
 Thanks to for sponsering the project:
 
-[Billigetesterpro.no](https://billigetesterpro.no/)&#x20;
+[TesterPro](https://Testerpro.no/)&#x20;
 
 <figure><img src=".gitbook/assets/cover.png" alt=""><figcaption></figcaption></figure>
 
