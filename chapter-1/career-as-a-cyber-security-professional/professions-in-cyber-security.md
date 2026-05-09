@@ -1,174 +1,207 @@
-# Professions in Cyber Security
+# Getting the Job
 
-### Find a cybersecurity career <a href="#_5yqfltxxxnul" id="_5yqfltxxxnul"></a>
+Everything in the previous sections was preparation. This section is about execution: finding the right roles, researching employers intelligently, avoiding common mistakes, and having an honest picture of what the career is actually like once you're in it.
 
-**(**[Cybersecurity Careers | Guides to Explore Different Careers](https://cybersecurityguide.org/careers/) **)**
+---
 
-The field of cybersecurity has seen consistent growth in recent years, especially in the tech sector. Despite the economic downturn caused by the COVID-19 pandemic, the demand for cyber professionals has remained high, driven by rising concerns over remote work security and an increase in ransomware attacks. A survey from the World Economic Forum reveals that cybersecurity is a top concern for CEOs in US-based companies, highlighting a shortage of skilled professionals in the field. With job postings in cybersecurity rising by 65% during the pandemic, now is an excellent time to pursue a career in this field, particularly with the right training.
+## The Honest Pros and Cons
 
-**Why Cybersecurity Career Paths Matter**
+Before you invest months building toward this career, you deserve a straight answer on what it's actually like.
 
-Having a diverse set of experiences and skills is crucial for a successful career in cybersecurity. As you progress in your career, a well-rounded background will make you a more effective cybersecurity leader. Additionally, gaining exposure to various domains in cybersecurity will help you determine which areas you are most interested in and want to focus your career on. Before committing to a specific domain in cybersecurity as your career path, it's important to gain exposure to different areas to make an informed decision.
+**Why cybersecurity is a genuinely great career**
 
-**Examples of Cyber Security Career Paths**
+The work is never boring. The threat landscape evolves constantly. The attacks you see this year are different from the attacks you saw last year. You will never run out of things to learn, which is either exciting or exhausting depending on your disposition. Most people who stay in this field for a long time genuinely enjoy that quality about it.
 
-There are many different career paths to choose from within the cybersecurity industry. However, it’s common to categorize paths in three areas:
+Job security is real. As long as there are computers and people who want to attack them, there will be work. The industry has never had a significant downturn. The talent shortage is, if anything, getting worse.
 
-1. Management
-2. Technical
-3. Senior leadership
+The salaries are strong at every level. Entry-level roles pay significantly better than comparable entry-level positions in most other fields, and the ceiling is high.
 
-### 1. Management: Security governance and oversight roles <a href="#_cyib4hyik8n8" id="_cyib4hyik8n8"></a>
+Remote work is standard. The majority of cybersecurity roles are fully remote or hybrid. You're not anchored to a specific city.
 
-The security management and governance domain is all about the oversight and management of cybersecurity within the organization. Though it’s important to understand as much as you can about technology and the technical nuances behind cyber risk, this area tends to be less technical than others. Instead of configuring systems or getting deep into operational support, a career path in this space entails using business savviness, organizational management, and soft skills to programmatically manage security.
+You can self-train your way in. Platforms like TryHackMe and Hack The Box, free YouTube courses, open-source tools, and CTF competitions mean you can build real, demonstrable skills without paying $50,000 for a degree. The field rewards what you can do, not just your credentials.
 
-● **Security analyst:** A security analyst is responsible for monitoring and protecting an organization's computer systems and networks from cyber threats. They use various tools and techniques to identify vulnerabilities and assess the risk to the organization.
+**What they don't tell you upfront**
 
-● **Penetration tester:** A penetration tester, also known as a "white hat" hacker, simulates cyber attacks on behalf of an organization to test the security of their systems and identify vulnerabilities.
+Alert fatigue is real. If you start in a SOC, and most people do, you will spend a lot of time chasing false positives. Alert after alert. Most of them nothing. This is the part that doesn't make it into career brochures. You have to push through the repetitive early stages to get to the interesting work. The people who advance are the ones who stay curious even when the day-to-day is tedious.
 
-● **Security engineer:** A security engineer is responsible for designing, building, and maintaining an organization's security systems. They work to ensure that the systems are effective in protecting against cyber threats and meet the organization's security needs.
+The stakes create pressure. When a breach happens, the impact is real: data stolen, businesses disrupted, reputations destroyed, sometimes people's livelihoods affected. Some people thrive under that kind of weight. Others burn out. Be honest with yourself about which type you are before committing to incident response or high-pressure defensive roles.
 
-**● Security consultant:** A security consultant is an expert in cybersecurity who is hired by organizations to provide advice and recommendations on how to improve their security posture. They may also be responsible for conducting security assessments and audits.\
-● **Cybersecurity manager:** A cybersecurity manager is responsible for leading and managing the cybersecurity efforts of an organization. This includes developing and implementing security policies and procedures, as well as managing a team of cybersecurity professionals.
+Staying current is a continuous commitment. The field moves fast enough that a few years of coasting will erode your skills. The professionals who remain effective and in demand are the ones who invest personal time in learning even when they're not required to.
 
-**Management:** Security governance and oversight roles:
+Not all companies take security seriously. You'll encounter organizations that treat security as a compliance checkbox, with no budget, no authority, and no organizational support to do the job properly. Choosing where you work matters enormously. Ask hard questions during interviews.
 
-Some common tasks in the security management and governance domain include:
+On-call is part of many roles. Attacks don't respect business hours. Incident response in particular can mean 2am phone calls. Know this before you commit to that path.
 
-● Developing and implementing security policies and procedures to ensure the protection of information assets
+---
 
-● Defining and implementing security standards and best practices
+## Finding the Right Roles
 
-● Managing security budgets and identifying areas where investment is needed
+**Where to look**
 
-● Leading incident response efforts and coordinating with relevant stakeholders to ensure timely and effective resolution of security incidents
+LinkedIn is the most useful single platform for cybersecurity job searching. Recruiters actively use it to find candidates, and having a profile that reflects your skills and learning activity generates inbound interest without applying anywhere.
 
-● Conducting risk assessments and implementing risk management strategies
+Indeed and Glassdoor are useful for broader searches and for reading company reviews before interviewing. Glassdoor's salary data, while imperfect, gives you a reference point before negotiating.
 
-● Educating employees on security best practices and promoting a culture of security within the organization
+For more specialized searches: CyberSeek maps cybersecurity job demand by region and is useful for understanding where concentrations of roles exist. Government and defense contractor roles often appear on USAJOBS (US) or directly on agency websites.
 
-● Working with upper management to establish security as a priority within the organization and allocate necessary resources
+Bug bounty platforms including HackerOne, Bugcrowd, and Intigriti are relevant if offensive security interests you. Consistent findings on a public program is evidence of skill that hiring managers in offensive security know how to read.
 
-● Providing guidance and leadership to other cybersecurity professionals within the organization.
+**What to look for in an employer**
 
-### 2. Technical: Security engineering and operations roles <a href="#_hi19thebpx7s" id="_hi19thebpx7s"></a>
+The company's security maturity matters more than the job title. A company with a well-funded, respected security team in a culture that treats security as a business priority is worth taking a slightly lower salary for, especially early in your career. The learning environment and the quality of your colleagues shape the first few years of your development more than the work itself does.
 
-This area of career path focuses on the technical aspect of cybersecurity. It encompasses roles that involve a deeper understanding of systems, data, tools, and networks. The objective is to defend against, detect and respond to cyber threats. Some examples of positions that fall under this category include, but are not limited to:
+Questions worth asking in interviews:
+- What does the security team's relationship with engineering look like?
+- How are security incidents handled and reviewed?
+- What does the team's learning and development budget look like?
+- How long do most people in this role stay before advancing?
 
-● **Security architecture:**
+If the interviewer can't answer these clearly, that itself is information.
 
-Security Architects are responsible for designing and implementing the security infrastructure of an organization. They work closely with stakeholders to understand the organization's goals and requirements, then develop a comprehensive security plan that aligns with those objectives.
+---
 
-**● Incident response:**
+## Do You Even LinkedIn?
 
-Incident responders are the cyber first responders, accountable for identifying and handling security breaches or other cyber-attacks. Their job is to evaluate the impact and take necessary actions to lessen the threat and stop any additional damage.
+Seriously. Go look at your LinkedIn profile right now.
 
-**● Cybersecurity management:**
+Is the headline generic ("Aspiring Cybersecurity Professional" tells me nothing)? Is the summary empty, or does it read like a form letter? Have you posted anything in the last six months? Do you have any connections in the field?
 
-Cybersecurity Managers are accountable for managing the security of an organization's data and systems. They collaborate with teams and stakeholders to devise and execute cybersecurity strategies, procedures and also make sure to educate employees on cyber threats and effective practices.
+LinkedIn is not optional in this industry. It is where recruiters actively search for candidates, where hiring managers check you out after your resume lands, and where your professional network lives. A weak or empty profile is a missed opportunity every single day.
 
-● **Compliance**:
+What a strong LinkedIn profile looks like in cybersecurity: a headline that says what you do or are working toward specifically ("SOC Analyst | CompTIA Security+ | TryHackMe Top 10%"), a summary written in plain human language about where you're coming from and where you're going, certifications listed, and some sign of activity, sharing an article you found useful, commenting on something in the community, posting about a lab you completed.
 
-Cybersecurity compliance experts guarantee that the organization adheres to the security regulations and standards. They collaborate with leadership team to comprehend the standards and aid the organization in implementing the necessary controls and procedures to comply with those standards.
+You don't need to be a content creator. You need to exist and look like someone who gives a damn.
 
-### 3. Senior leadership: Focusing on the People <a href="#_jrgu61mkpsch" id="_jrgu61mkpsch"></a>
+---
 
-Like any industry, company culture and leadership plays a critical role in the success of the business. Example opportunities in this space include, but are not limited to:
+## Your GitHub Is Your Real Resume
 
-* **Chief information security officer:**
+When I'm hiring, I check GitHub before I read the resume carefully. So do most technical hiring managers I know.
 
-Senior level leadership is of great importance in Cybersecurity. To secure the buy-in and support throughout the company, it is vital to have a senior executive who leads the company towards a world-class cybersecurity position. This career path necessitates a wide range of experience and knowledge across all facets of cybersecurity as well as excellent people leadership skills.
+A great open-source project or a solid portfolio of labs tells me more about a candidate than a Harvard or MIT degree. Degrees tell me you could pass exams in controlled conditions. GitHub tells me you actually build things.
 
-* **Managers and directors of domains:**
+Here's what matters: working projects. Not impressive ones. Working ones. A Python script that scrapes CVE data. A home lab write-up documented in a repo. A small tool you wrote to automate something tedious. A CTF writeup repo where you document your thinking. None of this needs to be polished. It needs to exist and show effort.
 
-In various domains of cybersecurity, management roles are required in different degrees depending on the size of an organization. Therefore, a career development in some domains may present opportunities for transitioning from hands-on work to managing a team of professionals who perform the hands-on work. For this career path, it's crucial to find a balance, having an understanding of key principles and best practices of the domain, as well as how to lead and inspire a team.&#x20;
+If your GitHub is empty or private, that's your most important task before you send another job application.
 
-Building a career in cybersecurity is an exciting journey that offers various opportunities. There is no single correct path, and success can be achieved through different routes. It's essential to gain exposure to the available options, try new things, learn as much as possible, and determine which domains you enjoy the most. Then, decide if you prefer to focus on in-depth career paths within those domains or gain broader exposure in pursuit of senior leadership roles. Remember that choosing a career path doesn't mean limiting oneself to a single domain, and don't forget to have fun while learning and growing along the way.
+And if you don't know where to start with open source: you're reading an open-source book right now. This book lives on GitHub. Fixing a typo, improving a section, adding a resource you found useful, that's a real open-source contribution. You can put it on your CV. It counts. Many people who've hired in this field, including me, would rather see a pull request to an open-source project than a paid certification from an expensive bootcamp.
 
-### Cyber Security Career Options <a href="#_uod31nebupyf" id="_uod31nebupyf"></a>
+---
 
-Below is an index of complete career profiles:
+## Show Up. Physically, If You Can.
 
-* **Chief information security officer**
+Most people wait to feel ready before showing up anywhere. That's backwards.
 
-Chief Information Security Officer (CISO) is an executive-level role responsible for formulating and supervising a company's cybersecurity strategy, policy, planning and implementation. This position requires both technical expertise and leadership skills.
+Security conferences and meetups are where the industry actually lives. OWASP chapter meetings are free and happen in most major cities. DEF CON and Black Hat have student discounts. BSides events are community-organized, low-cost or free, and incredibly accessible. Local ISACA and ISC2 chapter events often have discounted rates for students or unemployed members, and some will waive the fee entirely if you reach out and ask.
 
-* **Chief privacy officer**
+Fresh graduates: ask. Many events offer discounted or free tickets specifically for recent grads entering the field. The worst they can say is no.
 
-The role of a Chief Privacy Officer (CPO) is a relatively new executive-level position that is becoming more prevalent in large companies, institutions and organizations, including government bodies. The purpose of this position is to guarantee the safeguarding of sensitive data, including personal information and financial data.
+Employed but new to the field: tell them. Some events offer a first-time professional rate or will work something out. Showing up matters more to most organizers than the ticket price.
 
-* **Computer forensics**
+What you do when you get there: talk to people. Not to network in the transactional sense, but because these are people who do the work you want to do. Ask what they're working on. Ask what they wish they'd learned earlier. Most practitioners in this community are generous with their time. The conversations you have at a BSides event will do more for your trajectory than many hours of solo studying.
 
-Digital Forensics Experts are individuals that act as detectives, working with company authorities or law enforcement after a data, network, or security incident. They investigate and piece together information to understand how a computer or computer system was hacked.
+---
 
-* **Computer security incident responder**
+## Internships and Training Positions: Don't Be Proud
 
-The duties of an Incident Responder are closely related to their job title. They are typically the initial point of contact within an organization in case of a detected data breach or cyber-attack. Their role includes documentation of the attack and devising a plan of action to counter the attack.
+A paid internship at a well-known company, or an unpaid one if you can afford it, is one of the fastest paths into a full-time role. The name on your resume matters less than you'd think for landing jobs later. The experience and the reference matter enormously.
 
-* **Cryptanalysts**
+Sitting and waiting for the perfect opportunity is the worst thing you can do. An imperfect role you took, learned from, and turned into a reference is worth far more than the ideal role you're still hoping to get.
 
-Cryptanalysts, often referred to as "codebreakers," use mathematical techniques, computer science, and engineering to study various ways of encrypting and hiding data. This profession is sometimes referred to as "cryptographer," but there is a distinction between the two terms within the field.
+Training positions, apprenticeships, even junior helpdesk roles at companies with security teams, all of these are entry points. Many of the best security professionals started somewhere unglamorous. The job you take isn't the job you stay in. It's the job you use to get to the next one.
 
-* **Cryptographer**
+---
 
-A cryptographer working in cybersecurity is a contemporary application of an ancient practice. Cryptographers use algorithms and computer code to design and decode encrypted software and associated services.
+## On Discrimination
 
-* **Cybercrime investigator**
+It happens. Most people in positions to discriminate won't admit it, even to themselves. You may face it because of your name, your background, your accent, your gender, your age. It is real and it is wrong and you will not always be able to prove it.
 
-Cybercrime investigations are unique in that they often occur remotely or within virtual environments, and may involve complex coordination between multiple locations. Cybercrime investigators serve as digital detectives, working to identify and bring cybercriminals to justice following a hack or cyber attack.
+Here's the honest truth about what to do with that: focus on what you can control. The hiring manager who discriminates against you is often the same person who needs help desperately and can't find it. Keep building your skills. Keep showing up. Keep making your work visible. The volume of genuine, quality attempts eventually beats inaction every time.
 
-* **Data protection officer**
+The industry is facing a massive talent shortage. Good practitioners who can demonstrate real skill will find employers who want them. Not every employer. But enough. And the field is diverse enough that you will find teams where you belong.
 
-Data Protection Officer (DPO) is a recent role established to comply with the General Data Protection Regulation (GDPR) in Europe. As GDPR applies to all companies operating within Europe, a DPO is responsible for creating and executing data privacy policies within an organization.
+Don't let one bad interview, one silent rejection, or one frustrating experience stop forward motion. The data is on your side. Keep going.
 
-* **Digital forensics**
+---
 
-Digital Forensics Professionals are like detectives of the digital realm. They are frequently responsible for investigating and reconstructing what took place during a security incident, and being able to reverse-engineer hacks and attacks. As the number of digital attack surfaces continues to increase, so too does the need for experts with digital forensics skills.
+## One More Thing About This Book
 
-* **Ethical hacker**
+How much of this did you actually read? Be honest.
 
-An ethical hacker, also known as a penetration tester, is in charge of searching for vulnerabilities in computer systems or networks. The objective is to identify these vulnerabilities and recommend solutions or defenses before cybercriminals or unauthorized hackers can exploit the system.
+The authors of this book, and the contributors who've helped build it, share decades of combined experience here for free. No paywall. No upsell. No course to buy afterward.
 
-* **Malware analyst**
+The point is: you don't need to buy a fancy program, book, or course to get into this field. The information exists. Much of it is free. The bottleneck is never access to information. It's doing the work.
 
-A Malware Analyst is a vital and rapidly expanding role within the cybersecurity field. Part security engineer, part digital forensics expert, and part programmer, they provide comprehensive analysis and insights following a cybersecurity incident.
+If this book helped you, the best thing you can do is contribute back. Fix something that's wrong. Add a resource. Improve a section. Submit a pull request on GitHub. Your name goes in the contributor list, and you have a legitimate open-source contribution to put on your resume. That matters to hiring managers who know what to look for.
 
-* **Penetration tester**
+Don't know how to contribute to open source yet? This is your first project.
 
-Penetration Tester, or Ethical Hacker, is a highly sought-after job in the cybersecurity field. They are employed by organizations to identify security risks and vulnerabilities before malicious hackers can exploit them.
+---
 
-* **Risk management**
+## Your 30-Day Launch Plan
 
-Risk management is a crucial aspect of business operations. As digital presence becomes more prevalent for businesses, managing and reducing cybersecurity risk is becoming increasingly important. Today's risk managers need to possess a diverse background that encompasses an understanding of cybersecurity.
+You don't need to be ready to start. You need to start to get ready.
 
-* **Security administrator**
+**Week 1: Build your foundation**
 
-A Security Administrator is commonly a role that centers around IT and can evolve into security-related responsibilities.
+Create a free account on TryHackMe. Complete the "Pre-Security" learning path. It takes about 10 hours and covers networking basics, Linux fundamentals, and how web technology works. If you already know this material, it's a quick review. If you don't, it's time well spent.
 
-* **Security analyst**
+Install VirtualBox (free) and set up a Linux virtual machine. Ubuntu is a good choice. Spend time every day in the terminal doing basic tasks: navigation, file management, process management, piping. It becomes natural faster than it feels like it will.
 
-A Security Analyst is accountable for supervising security protocols and ensuring that industry standard practices are implemented and adhered to. The role of a security analyst can vary widely depending on the company's size and industry, but this career path is becoming increasingly popular across various sectors.
+Watch Professor Messer's CompTIA Network+ series on YouTube. It's free, comprehensive, and well-paced. Take notes in your own words, not just copying slides.
 
-* **Security architect**
+**Week 2: Go hands-on**
 
-Security Architects are responsible for designing computing networks and other infrastructure while keeping in mind security and maintaining the overall integrity. This job often draws on the skills and experience of various backgrounds and is considered a fundamental function when building secure and robust networks.
+Complete TryHackMe's "Introduction to Cybersecurity" path. This covers how attacks work, what defenders do, and gives you a real taste of each pillar.
 
-* **Security code auditor**
+Set up a deliberately vulnerable application. DVWA (Damn Vulnerable Web Application) is free and easy to install on your Linux VM. Practice the OWASP Top 10 vulnerabilities in this safe environment. Document what you learn.
 
-A Security Code Reviewer, also known as a Security Auditor, Source Code Auditor, or Security Inspector, is responsible for examining sensitive security code. This role requires a wide range of skills, such as programming, knowledge of network and systems infrastructure, as well as experience in penetration testing and understanding of underlying security protocols.
+Based on what you've experienced this week, commit to one of the four pillars. Not forever. Just for now.
 
-* **Security consultant**
+**Week 3: Build a visible presence**
 
-Security Consultants are experts who are retained to provide specialized advice and solutions to pressing security issues and problems faced by a company or organization. They are usually hired for their depth of experience and knowledge.
+Create a LinkedIn profile specifically for your cybersecurity journey. Document what you're learning, what labs you're completing, what certifications you're pursuing. Recruiters notice this. More importantly, it holds you accountable.
 
-* **Security engineer**
+Join the TryHackMe Discord, the r/cybersecurity subreddit, or a relevant professional community. Finding people at the same stage as you, and people slightly ahead, is genuinely useful for both motivation and learning.
 
-Security Engineers are in charge of developing and preserving security systems and codes to protect data and infrastructure.
+Find three professionals on LinkedIn doing the work you want to do in five years. Study their career paths. Note the certifications, tools, and experience milestones they mention.
 
-* **Security software developer**
+**Week 4: Make a commitment**
 
-Security Software Developer is responsible for adding layers of security to existing software used by a company or organization, making it more resistant to attacks. This role combines traditional software development with the growing field of information security.
+Register for the CompTIA Security+ exam. You don't need to be ready yet. You need a deadline. Somewhere between 60 and 90 days from now is reasonable for most people. Pay the registration fee. Having money on the line focuses the studying.
 
-* **Security specialist**
+Identify your primary practice platform and use it daily. TryHackMe is best structured for beginners. Hack The Box is more open-ended once you have some fundamentals. PicoCTF is excellent for people practicing offensive skills from scratch.
 
-A Security Specialist is an expert with a thorough comprehension of tactics and best practices that can be assigned various security-related roles depending on the size and scope of the company or organization.
+Write a simple one-page plan: your target pillar, the certification you're pursuing first, and the job title you want to have 12 months from now.
+
+---
+
+## A Note on Timelines
+
+Twelve months is achievable. People do it regularly. But the timeline depends entirely on the consistency and quality of your practice, not just the hours logged.
+
+Scattered, passive studying (watching videos while distracted, reading without doing) is far less effective than focused, active practice: doing labs, breaking things, writing down what you learned, and trying again when it doesn't work. Forty focused hours beats two hundred passive ones.
+
+One of the most important things you can do is find a community of people at a similar stage. The cybersecurity practitioner community is unusually open and helpful. People share resources, answer questions on Discord and forums, and mentor newcomers. Use that.
+
+You're entering a field that needs you. The talent shortage is real, the work matters, and the career rewards people who are genuinely good at it. The only thing left is to start.
+
+---
+
+## Further Reading
+
+**CyberSeek Career Pathway Tool** (cyberseek.org/pathway.html): An interactive map of cybersecurity career transitions, showing which roles feed into which, what certifications are associated with each, and how many job openings exist at each level. Grounded in real job posting data. [cyberseek.org/pathway.html](https://www.cyberseek.org/pathway.html)
+
+**Glassdoor Company Reviews**: Use the company review section, not just the job listings. Pay attention to reviews from current and former security team members specifically, not just overall company culture scores.
+
+**LinkedIn Salary Insights**: The salary tool (available to all LinkedIn users) shows compensation ranges for specific job titles in specific locations, pulled from self-reported data. Useful for calibrating expectations and negotiation.
+
+**PicoCTF** (picoctf.org): A beginner-friendly CTF platform run by Carnegie Mellon University. Problems are permanently available, well-designed, and excellent for people starting offensive skills from scratch. [picoctf.org](https://picoctf.org)
+
+**r/cybersecurity and r/netsec on Reddit**: Two of the most active cybersecurity communities online. r/cybersecurity is broader and more career-focused; r/netsec skews more technical. Both are worth reading regularly.
+
+**Cybersecurity Career Master Plan by Dr. Gerald Auger** (book): A practical, experience-based guide to building a cybersecurity career. Written by someone who hired and developed cybersecurity professionals, not just someone who studied the field.
+
+---
+
+*Want someone to look at your LinkedIn or GitHub and give you honest feedback? Stuck on where to start? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/) — happy to help. And if this book was useful to you, pay it forward: contribute to it, share it, or just send someone else here who needs it.*
