@@ -1,129 +1,286 @@
 # Threat Modeling
 
-### Introduction <a href="#id-19r0n5nq3khu" id="id-19r0n5nq3khu"></a>
+## What Gets Skipped When Teams Are Moving Fast
 
-Threat modeling is a structured approach to identifying and mitigating potential security threats to a system, network or application. It involves analyzing the system's architecture, data flows, and potential attack vectors to identify potential vulnerabilities and the impact of those vulnerabilities. This can include identifying the assets that need to be protected, the threats that could be used to exploit those assets, and the vulnerabilities that could be exploited. Once the potential vulnerabilities have been identified, a risk assessment can be performed to determine the likelihood and impact of each threat, and then mitigation strategies can be developed to address the most significant risks.
+In 2013, attackers installed malware on Target's point-of-sale terminals during the holiday shopping season. Forty million credit card numbers were stolen. The entry point was not a sophisticated zero-day exploit -- it was credentials stolen from a third-party HVAC vendor that had network access to Target's systems.
 
-The process of threat modeling typically involves several steps, including:
+A basic threat modeling exercise on the network architecture would have raised a question: why does an HVAC vendor need network connectivity that can reach payment terminals? That connectivity should never have existed. The design had a trust boundary problem that nobody stopped to examine before the system went live.
 
-* Identifying assets and determining their value.
-* Identifying potential threats and attack vectors.
-* Identifying potential vulnerabilities and attack surfaces.
-* Conducting a risk assessment to determine the likelihood and impact of each threat.
-* Developing and implementing mitigation strategies to address the most significant risks.
-* Continuously monitoring and updating the threat model to account for new threats and vulnerabilities.
+Threat modeling is the practice of systematically asking "what could go wrong?" before code is written and systems are deployed. It is not about predicting every possible attack. It is about finding the design-level problems that are cheap to fix before implementation and catastrophically expensive to fix after a breach.[1]
 
-It's important to note that threat modeling is an iterative process, and it should be performed regularly to ensure that the system, network, or application remains secure. And it's also important to involve different teams in the process, such as developers, security professionals, and business stakeholders, as they may have different perspectives and insights that can help identify potential vulnerabilities.
+The reason teams skip it is the same reason teams skip documentation, security requirements, and code review: pressure. There is always a deadline. There is always a feature backlog. Threat modeling feels like overhead when you are trying to ship.
 
-### Threat modeling overview <a href="#uc2w7omlecru" id="uc2w7omlecru"></a>
+The counterargument is simple: Target spent $200 million in the first year responding to the breach. The threat model session that would have caught the HVAC vendor connectivity issue would have taken two hours.
 
-Threat modeling is a crucial step in identifying and mitigating potential security threats in an organization's systems or software. It involves walking through a structured process to identify all potential security risks, evaluate their severity, and prioritize them for mitigation. This approach helps organizations to proactively address potential vulnerabilities, rather than waiting for an incident to occur. It also allows organizations to develop a deeper understanding of their systems, which can aid in the early detection and prevention of security issues, resulting in lower costs for remediation and incident response.
+---
 
-### The threat modeling process <a href="#lkxcii45w1up" id="lkxcii45w1up"></a>
+## The Four Questions
 
-As every organization, system and security team is unique, there are a variety of threat modeling methodologies that can be employed to meet their particular needs and goals. While each has their own slightly different naming convention and series of steps, the most prevalent threat models processes encompass roughly the same logical flow at their core.These steps typically include:
+Adam Shostack, who led threat modeling at Microsoft and wrote the field's most comprehensive book on the subject, reduces threat modeling to four questions:[2]
 
-* Identify assets: Understand what you're trying to protect, including data, systems, and users.
-* Identify threats: Understand who might want to attack your assets and why.&#x20;
-* Identify vulnerabilities: Understand how the threats might exploit the assets.
-* Evaluate the risks: Assess the likelihood of each threat exploiting each vulnerability.
-* Mitigate the risks: Implement countermeasures to reduce the likelihood or impact of the risks.
-* Monitor and update: Continuously monitor the system for new threats and vulnerabilities and update the threat model accordingly.
+1. **What are we building?** -- Understand the system well enough to reason about it
+2. **What can go wrong?** -- Identify threats to the system
+3. **What are we going to do about it?** -- Define mitigations for each threat
+4. **Did we do a good enough job?** -- Verify that the process was complete and mitigations are effective
 
-It's important to note that threat modeling is an ongoing process and not a one-time event. As technology and business requirements change, so too should the threat model be updated to reflect new risks and vulnerabilities. Additionally, threat modeling should be integrated into the development life cycle and not seen as a separate step.
+These questions apply regardless of which methodology you use. The methodologies are structured ways of answering question 2 more systematically.
 
-### Main threat modeling frameworks <a href="#id-3ymj79xofkxa" id="id-3ymj79xofkxa"></a>
+---
 
-While a complete breakdown of each of the main threat modeling frameworks is not within the scope of this article, the models introduced below represent ten of the most prevalent. As with other types of risk modeling, quantitative and qualitative analysis combine to demonstrate that threat modeling is still in many ways an art as opposed to a pure scientific process.
+## Step 1: Understand What You Are Building
 
-**Attack Trees**
+Threat modeling starts with a model -- a representation of the system that is detailed enough to reason about security without being so detailed that it takes weeks to produce.
 
-Attack trees are a valuable tool for organizations looking to document and address cyber risk. First introduced by Bruce Schneier in the late 1990s, these logic models provide a visual and methodological approach for describing systems and assessing various aspects of an attack surface.
+**Data Flow Diagrams (DFDs)** are the standard artifact. A DFD shows:
 
-![](<../.gitbook/assets/0 (2)>)
+- **Processes**: Systems, applications, or components that transform data (drawn as circles or rounded rectangles)
+- **Data stores**: Databases, files, caches where data lives (drawn as parallel lines)
+- **External entities**: Users, third-party systems, or other things outside your control boundary (drawn as rectangles)
+- **Data flows**: Arrows showing data moving between components, labeled with what the data is
+- **Trust boundaries**: Lines separating zones of different trust levels (typically dashed lines)
 
-To construct an attack tree, organizations typically follow these six steps:
+```
+[User Browser] --HTTPS--> [Web Server] --SQL--> [Database]
+               external       DMZ          internal
+               |_______________|_______________|
+               Trust boundary at DMZ edge
+```
 
-1. Identify the assets that need protection
-2. Identify potential threats to those assets
-3. Understand the nature of those threats
-4. Categorize the threats based on their characteristics
-5. Evaluate the likelihood of each threat
-6. Identify mitigation strategies or defensive measures to address the threats
+Trust boundaries are where the threat model earns its value. Every data flow that crosses a trust boundary is a potential attack surface. Data entering from an external entity is untrusted. Data passing from a lower-trust zone to a higher-trust zone requires special scrutiny.
 
-By using an attack tree, organizations can make informed decisions, identify vulnerable systems and evaluate the likelihood of certain attack vectors.
+{% hint style="info" %}
+**Practical tip:** Start with a simple diagram. A whiteboard photo works. A perfectly formatted diagram produced after three meetings does not. The goal is to get the team thinking about data flows and trust boundaries, not to produce a deliverable.
 
-**STRIDE**
+For every arrow on your diagram, ask: who controls this data? What happens if it is malicious? What happens if the connection is intercepted? The questions are more valuable than the diagram itself.
+{% endhint %}
 
-The STRIDE model is a well-established method for conducting cyber threat modeling. Developed by Microsoft employees Loren Kohnfleder and Praerit Garg in 1999, the model is built around the CIA triad (Confidentiality, Integrity, and Availability) and is an acronym that represents the six types of threats:
+---
 
-* Spoofing
-* Tampering
-* Repudiation
-* Information disclosure
-* Denial of service
-* Elevation of privilege
+## Step 2: Identify Threats
 
-![](<../.gitbook/assets/1 (4)>)
+### STRIDE
 
-The STRIDE methodology aligns with Microsoft's Trustworthy Computing initiative and is designed to provide software developers with the tools needed to integrate security into the software design phase. The process starts with security professionals creating a data flow diagram that identifies the system's components, events, interactions, and boundaries. They then overlay this diagram with a general set of known threats using the threat types identified by STRIDE.
+STRIDE is the most widely used threat categorization framework. Developed at Microsoft by Loren Kohnfelder and Praerit Garg in 1999, it provides a checklist of six threat categories applied systematically to each element in the DFD.[3]
 
-As deviations or issues are identified in the system when compared to the STRIDE model, developers can then refine the target system. This process continues until all threats are addressed or the organization reaches its defined level of acceptable risk.
+| Threat | Property Violated | Applied To | Example |
+|---|---|---|---|
+| **Spoofing** | Authentication | Processes, external entities | Attacker impersonates a user by forging JWT tokens |
+| **Tampering** | Integrity | Data flows, data stores, processes | Attacker modifies API responses via MitM attack |
+| **Repudiation** | Non-repudiation | Processes, external entities | User denies placing a fraudulent order; no audit log exists |
+| **Information Disclosure** | Confidentiality | All elements | Error messages expose stack traces with internal paths and versions |
+| **Denial of Service** | Availability | Processes, data stores | Attacker floods login endpoint; no rate limiting; server exhausted |
+| **Elevation of Privilege** | Authorization | Processes | Regular user accesses admin API endpoint by manipulating user ID in request |
 
-**OCTAVE**
+**How to apply STRIDE:**
 
-The OCTAVE threat modeling methodology, developed by Carnegie Mellon University’s Software Engineering Institute (SEI) and CERT in 2003, provides an enterprise-level perspective of cyber risk. Unlike other threat modeling methods, OCTAVE focuses on organization-level risks, such as the impact of breaches of proprietary or customer data, instead of only assessing technology threats. The acronym stands for Operational Critical Threat, Asset and Vulnerability Evaluation.
+For each element in your DFD, work through all six threat categories. For each combination of (element type, threat category), ask whether that threat is possible and what its impact would be.
 
-Organizations using the OCTAVE model move through three phases:
+Not every STRIDE category applies to every element type:
 
-Asset identification: All assets involved in storing, processing, and transferring information across the organization, as well as the associated datasets, are captured and attributes are assigned based on the type and sensitivity of the data. Technical component documentation: Specific technical components and their associated vulnerabilities are documented. Evaluation, strategy development, and decision making: The information from Phase 1 and Phase 2 are evaluated, a security strategy and required resources are developed and identified. Decisions to address or take action on them can be made by organizational leadership. OCTAVE allows organizations to identify and prioritize assets and threats, and to develop a risk management strategy that aligns with their specific business needs.
+| Element | S | T | R | I | D | E |
+|---|---|---|---|---|---|---|
+| External Entity | yes | -- | yes | -- | -- | -- |
+| Process | yes | yes | yes | yes | yes | yes |
+| Data Store | -- | yes | yes | yes | yes | -- |
+| Data Flow | -- | yes | -- | yes | yes | -- |
 
-![](<../.gitbook/assets/2 (1)>)
+Running STRIDE on a system with five processes, three data stores, and four data flows produces a structured list of candidate threats. Most will be low-severity or already mitigated. The ones that are not are your findings.
 
-**MITRE**
+### MITRE ATT&CK
 
-The MITRE Adversary Tactics Techniques and Common Knowledge (ATT\&CK) framework is a well-known method for identifying, cataloging and understanding organizational vulnerabilities and cyber attack methods. Launched in 2015, it has quickly become a widely used tool in the industry. The framework is divided into 11 tactics, each further populated with a range of techniques that attackers could use, totaling 291. The 11 tactics are:
+MITRE ATT&CK is a knowledge base of adversary tactics, techniques, and procedures (TTPs) based on observed real-world attacks. Where STRIDE provides categories for reasoning about what could go wrong, ATT&CK provides a catalog of what attackers actually do.[4]
 
-1. Initial access
-2. Execution
-3. Persistence
-4. Privilege escalation
-5. Defense evasion
-6. Credential access
-7. Discovery
-8. Lateral movement
-9. Collection
-10. Exfiltration
-11. Impact
+ATT&CK is organized into 14 tactics (the "why" of an attack) with hundreds of techniques and sub-techniques (the "how"):
 
-To leverage the MITRE framework, developers and security professionals find the relevant technology, the tactic for evaluation, and then review which of the 291 techniques attackers could utilize to perform that movement against that piece of software or system. For example, if a security team wants to bolster defenses against attackers pivoting (lateral movement) from a Windows-based web server to another internal device, a threat analyst could look under the “Lateral Movement” section, finding web servers and review the listed techniques against the current security resources in place.
+| Tactic | What It Represents |
+|---|---|
+| Reconnaissance | Information gathering before the attack |
+| Resource Development | Establishing infrastructure, accounts, tooling |
+| Initial Access | Getting a foothold (phishing, exploit, supply chain) |
+| Execution | Running attacker-controlled code |
+| Persistence | Maintaining access across reboots and credentials changes |
+| Privilege Escalation | Gaining higher permissions |
+| Defense Evasion | Avoiding detection |
+| Credential Access | Stealing credentials |
+| Discovery | Learning about the environment |
+| Lateral Movement | Moving through the network |
+| Collection | Gathering target data |
+| Command and Control | Communicating with compromised systems |
+| Exfiltration | Stealing data out |
+| Impact | Disrupting, destroying, encrypting, or manipulating data |
 
-The key value of MITRE ATT\&CK framework is its comprehensiveness, relevance (it is updated frequently) and specificity. MITRE's ATT\&CK Navigator allows users to view a visualization of the 291 techniques overlaid against the 11 tactics.
+**Using ATT&CK for threat modeling:**
 
-**PASTA**
+For a given system, identify which ATT&CK techniques are relevant. If your system has internet-facing web applications, phishing (T1566) and exploitation of public-facing applications (T1190) are relevant initial access techniques. If your system runs Windows in a domain environment, credential dumping (T1003) and lateral movement via SMB/Pass-the-Hash are relevant.
 
-The Process for Attack Simulation and Threat Analysis (PASTA) is a risk-centric threat modeling framework that was first introduced in 2012. The PASTA model includes seven stages, each with its own respective activities, and outputs that are aligned with business objectives, compliance standards and technical requirements, making it a model that is more strategic than tactical.
+The ATT&CK Navigator tool allows teams to visually map relevant techniques onto the ATT&CK matrix and document which detections and mitigations are in place for each. This produces a heat map of coverage that makes gaps immediately visible.[5]
 
-The process starts with organizations defining their assets. Then, each asset is walked through the seven-step process, incorporating feedback from operations, management, technology, and development stakeholders. As the PASTA threat model incorporates business and impact analysis components, key organizational decision-makers and staff from outside of the IT department are involved in the process. At the end of the process, a summary of threat options, severity scores, and potential remediations are produced for each asset.
+### Attack Trees
 
-![](<../.gitbook/assets/3 (1)>)
+Attack trees, introduced by Bruce Schneier in 1999, represent attacks as tree structures where the root node is the attacker's goal and child nodes are the methods to achieve it.[6]
 
-The PASTA framework allows organizations to align their threat modeling process with their business objectives, compliance standards, and technical requirements. It also engages key decision-makers and staff from outside of IT department, which ensures that the risk management strategy is comprehensive, and aligns with the organization's specific needs.
+```
+Root: Steal customer payment data
+├── Attack database directly
+│   ├── Exploit SQL injection in web app
+│   └── Gain DBA credentials (phishing, brute force)
+├── Intercept traffic
+│   ├── Downgrade HTTPS connection
+│   └── Compromise SSL certificate
+└── Compromise insider
+    ├── Phish employee with database access
+    └── Bribe or coerce employee
+```
 
-**Persona non Grata**
+Attack trees excel at exploring the attack space for a specific goal. They naturally decompose complex attacks into atomic steps and make it easy to assign likelihood and cost to each leaf node. They are less systematic than STRIDE (which ensures all threat categories are considered) but more intuitive for explaining threats to non-technical stakeholders.
 
-Persona non Grata (PnG) is a creative threat modeling approach that utilizes an imaginary dangerous persona to perform malicious and unwanted behavior against a system or piece of software. The goal of PnG is to identify potential threats and vulnerabilities by simulating an attack from a malicious actor.
+### PASTA (Process for Attack Simulation and Threat Analysis)
 
-When using PnG, organizations first define the appropriate or typical use case that an asset is to be used. For each step of the process, they document the security measures in place. Finally, an alternative and malicious method or use case is identified that can be used to exploit it.
+PASTA is a seven-stage, risk-centric framework designed to align threat modeling with business objectives. Its stages move from business impact analysis through technical decomposition to attack enumeration and risk scoring.[7]
 
-PnG is a unique approach to threat modeling as it allows organizations to identify vulnerabilities and potential threats by simulating an attack from a malicious actor. By defining the typical use case of an asset, and then identifying alternative and malicious methods, it helps organizations to strengthen their security measures and prevent potential attacks.
+| Stage | Activity |
+|---|---|
+| 1. Define Objectives | Identify business and security objectives; define risk appetite |
+| 2. Define Technical Scope | System components, dependencies, technologies in scope |
+| 3. Application Decomposition | DFDs, use cases, trust boundaries |
+| 4. Threat Analysis | Threat intelligence, threat actor profiles, attack scenarios |
+| 5. Vulnerability Analysis | Known CVEs, design weaknesses, misconfigurations |
+| 6. Attack Modeling | Attack trees, attack simulation against identified vulnerabilities |
+| 7. Risk and Impact Analysis | Risk scoring, remediation prioritization |
 
-![](../.gitbook/assets/4)
+PASTA is more resource-intensive than STRIDE and requires broader stakeholder involvement. It is most appropriate for high-value systems where a business-aligned risk analysis is worth the investment.
 
-### Bringing it all together <a href="#qm5i3ak9vpp8" id="qm5i3ak9vpp8"></a>
+### OCTAVE (Operationally Critical Threat, Asset, and Vulnerability Evaluation)
 
-Ultimately, all threat model methodologies can help security professionals identify potential threats to their systems and operations. It is important for organizations to understand the depth, type, and scope of each, so the desired outputs and outcomes match their organization's needs.
+OCTAVE, developed by Carnegie Mellon's SEI, takes an organizational rather than system-level view. It focuses on identifying mission-critical assets, the threats to those assets, and organizational vulnerabilities -- including people and process weaknesses -- not just technical ones.[8]
 
-Additionally, organizations should understand the importance of making threat modeling a regular part of their operational activity. This includes incorporating it into the system development life cycle, integrating its use in governance models, and regularly performing threat modeling at least each time new systems are to be introduced or there are significant changes to business operations as a result of internal or external forces.
+OCTAVE is particularly appropriate for enterprise risk assessments and for organizations that need to understand systemic risk rather than application-level threats.
 
-By regularly performing threat modeling as a part of their operational activity, organizations can proactively identify and address potential vulnerabilities and threats, and improve their overall cybersecurity posture. As the threat landscape continues to evolve, it is crucial for organizations to stay informed and adapt their approach to threat modeling accordingly.
+---
+
+## Step 3: Mitigate Threats
+
+For each identified threat, one of four responses applies:
+
+| Response | When to Use |
+|---|---|
+| **Mitigate** | Implement a control that reduces the likelihood or impact |
+| **Eliminate** | Change the design to remove the threat entirely (best option when possible) |
+| **Transfer** | Shift risk to a third party (e.g., use a managed auth service rather than building your own) |
+| **Accept** | Acknowledge the risk and document the decision with a rationale |
+
+**Mitigation mapping to STRIDE:**
+
+| Threat | Primary Mitigations |
+|---|---|
+| Spoofing | Authentication (MFA, strong session management, certificate pinning) |
+| Tampering | Integrity checks (digital signatures, HMAC, parameterized queries, input validation) |
+| Repudiation | Audit logging with tamper-evident storage |
+| Information Disclosure | Encryption (TLS in transit, AES at rest), access controls, minimal error disclosure |
+| Denial of Service | Rate limiting, input size limits, auto-scaling, CDN and DDoS mitigation |
+| Elevation of Privilege | Authorization enforcement (deny by default), principle of least privilege |
+
+---
+
+## Step 4: Verify
+
+Threat model verification asks whether the process was complete and whether mitigations are effective.
+
+**Completeness checks:**
+- Does the DFD match the actual implemented system? (Threat models built on outdated diagrams are useless)
+- Are all trust boundaries identified?
+- Are all STRIDE categories applied to all relevant elements?
+- Are all high-severity threats assigned a mitigation?
+
+**Effectiveness checks:**
+- Are mitigations implemented (not just planned)?
+- Do security tests verify that mitigations work?
+- Are there test cases for each identified threat?
+
+Integrating threat model findings into the issue tracker ensures that identified threats become tracked engineering work, not documents that accumulate in a security team's drive.
+
+---
+
+## Threat Modeling Tools
+
+| Tool | Type | Notes |
+|---|---|---|
+| **Microsoft Threat Modeling Tool** | Desktop application | Free; native STRIDE support; SDL-aligned; Windows only |
+| **OWASP Threat Dragon** | Web/desktop (open-source) | Cross-platform; DFD-based; GitHub integration |
+| **IriusRisk** | Commercial platform | Automated threat generation from architecture diagrams; enterprise-grade |
+| **Pytm** | Python library | Code-first threat modeling; generates DFDs and threats from Python definitions |
+| **Threagile** | Open-source (YAML-based) | Threat modeling as code; CI/CD integration |
+
+```python
+# Example: Pytm threat model in code
+from pytm import TM, Server, Datastore, Dataflow, Boundary, Actor
+
+tm = TM("E-commerce Platform")
+
+internet = Boundary("Internet")
+dmz = Boundary("DMZ")
+internal = Boundary("Internal")
+
+user = Actor("Customer", inBoundary=internet)
+web = Server("Web Application", inBoundary=dmz)
+db = Datastore("Customer Database", inBoundary=internal)
+
+Dataflow(user, web, "HTTPS Request")
+Dataflow(web, db, "SQL Query")
+
+tm.process()  # Generates threats, DFD, and report
+```
+
+Threat modeling as code (pytm, Threagile) enables threat models to live in version control alongside the code they describe, and to be automatically updated when the system changes.
+
+---
+
+## When to Threat Model
+
+Threat modeling is most valuable during design. It loses value as implementation progresses, because the cost of design changes rises with every line of code written.
+
+| Trigger | What to Threat Model |
+|---|---|
+| New feature or system | Full threat model before implementation begins |
+| Significant architecture change | Update existing threat model for affected components |
+| New third-party integration | Trust boundary analysis for the integration point |
+| Post-incident review | Verify threat model against observed attack technique |
+| Annual security review | Validate that threat model reflects the current system |
+
+A threat model produced once and never updated is a historical document. Systems change. Threat landscapes change. The threat model should change with them.
+
+---
+
+## References
+
+[1] Shostack, A. (2014). *Threat Modeling: Designing for Security*. Wiley. ISBN 978-1-118-80999-0.
+
+[2] Shostack, A. (2014). *Threat Modeling: Designing for Security*. Wiley. ISBN 978-1-118-80999-0. (Chapter 1: Diving In)
+
+[3] Kohnfelder, L., & Garg, P. (1999). *The Threats to Our Products*. Microsoft Interface. Microsoft Corporation. Retrieved from https://adam.shostack.org/microsoft/The-Threats-To-Our-Products.docx
+
+[4] MITRE Corporation. (2024). *MITRE ATT&CK Framework*. Retrieved from https://attack.mitre.org
+
+[5] MITRE Corporation. (2024). *ATT&CK Navigator*. GitHub. Retrieved from https://mitre-attack.github.io/attack-navigator/
+
+[6] Schneier, B. (1999). Attack trees: Modeling security threats. *Dr. Dobb's Journal*, 24(12), 21--29. Retrieved from https://www.schneier.com/academic/archives/1999/12/attack_trees.html
+
+[7] UCSan Diego and VerSprite. (2012). *PASTA: Process for Attack Simulation and Threat Analysis*. VerSprite Security Research. Retrieved from https://versprite.com/blog/what-is-pasta-threat-modeling/
+
+[8] Alberts, C., Dorofee, A., Stevens, J., & Woody, C. (2003). *Introduction to the OCTAVE Approach*. Carnegie Mellon University Software Engineering Institute. Retrieved from https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=51546
+
+---
+
+## Further Reading
+
+| Resource | What It Covers |
+|---|---|
+| Shostack, *Threat Modeling: Designing for Security* (Wiley, 2014) | The definitive book on threat modeling; covers all major methodologies and practical application |
+| [OWASP Threat Modeling Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html) | Concise practical reference; good starting point for running first sessions |
+| [MITRE ATT&CK](https://attack.mitre.org) | The definitive catalog of adversary TTPs; essential reference for threat identification |
+| [Threat Dragon](https://owasp.org/www-project-threat-dragon/) | Free, open-source threat modeling tool from OWASP |
+| [Pytm](https://github.com/OWASP/pytm) | Threat modeling as code; integrates with CI/CD pipelines |
+
+---
+
+*Questions about threat modeling methodologies, running your first session, or tool selection? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back -- this book is open source and your additions are welcome.*
