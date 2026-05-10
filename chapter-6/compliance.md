@@ -1,186 +1,275 @@
 # Compliance
 
-### Introduction <a href="#mcu9z6dvhsvt" id="mcu9z6dvhsvt"></a>
+## Compliance Is Not Security. Both Matter.
 
-ISO 27001's control objectives are intended to ensure that the organization complies with all applicable criminal and civil laws, as well as any statutory, regulatory, or contractual obligations and security requirements. This includes dealing with legal requirements, compliance with security policies, technical monitoring, and system auditing. The last clause of the standard has two objectives with eight supporting controls. It's important to note that the outline of relevant legislation provided in this section is not intended to be definitive and current legal advice should be sought from qualified specialist legal advisers if an organization wants or needs to rely on any matter discussed here.
+In 2019, British Airways was fined £20 million by the UK Information Commissioner's Office. Attackers had compromised the airline's website and redirected customers to a fraudulent site that harvested payment card details. Around 500,000 customers were affected. The breach ran for two months before detection.
 
-Additionally, this section deals with current compliance issues for organizations based or operating in or supplying either the UK or US market. Laws may differ in other countries, and organizations seeking certification that are based elsewhere should take specialist local advice. Organizations based in a jurisdiction with operations in other countries will need to comply with both local and foreign legal requirements and should seek specialist legal advice.
+British Airways was PCI-DSS compliant at the time.
 
-E-commerce can take place across multiple countries, even if the organization is based in only one jurisdiction, and the laws in this area are constantly evolving. It's important for any organization that operates across the web without any limitations on who can access its website, to seek specialist advice to ensure that their contractual and trading terms are airtight. This includes making sure that issues of jurisdiction, and which laws will apply to any transaction, have been resolved. It's also important to ensure that there is an appropriate acceptance and/or waiver of liability on the website's entrance page. This is especially important for organizations that operate in multiple countries, as they need to comply with the laws of all the countries in which they operate. Organizations should take necessary steps to seek legal advice and make sure that they are in compliance with all relevant laws to avoid any legal issues.
+The fine was issued under GDPR. The breach violated the regulation's requirement to implement appropriate technical and organizational measures to protect personal data. Compliance with one framework did not prevent violation of another. And compliance with all applicable frameworks did not prevent the breach.[1]
 
-### Identification of Applicable Legislation <a href="#her69ti1tq5o" id="her69ti1tq5o"></a>
+This is the central tension in compliance: organizations often treat it as a destination rather than a baseline. Pass the audit. Tick the box. Move on. But compliance frameworks define the floor of acceptable security practice, not the ceiling. An organization can be fully compliant and still be breached. Security is what compliance is supposed to reflect -- but the reflection is imperfect.
 
-The control of ISO27002 states that the organization should explicitly define and document the statutory, regulatory, and contractual requirements for each of its information systems, and this documentation should be kept up to date to reflect any relevant changes in the legal environment. The specific controls and individual responsibilities to meet these requirements should also be similarly documented and kept up to date. The ISMS should already contain a complete list of all the data assets and processes in the organization, together with ownership details. A practical approach to meeting this requirement is to create a database of applicable legislation, which needs to be updated as laws change, that identifies relevant laws, the specific clauses that may be applicable, and links those specific clauses to individual controls in the ISMS. For each regulatory or contractual requirement on the database, someone in the organization should be allocated the responsibility for ensuring compliance. In an integrated management system, there should be an integrated approach to tracking legal and compliance developments across all components of the system. Information security, health and safety, environment, quality, human resources, commercial and other issues should be systematically tracked and appropriate steps taken towards compliance within the organization.
+Understanding compliance means understanding what it actually requires, what it does not require, and how to navigate a landscape where the requirements multiply every year.
 
-The legislation that any organization might need to identify could include, but is not necessarily limited to:
+---
 
-* European Union regulations have had a significant impact on UK regulations, and this is expected to continue in the future. From the perspective of this clause of ISO 27002, the two most important EU instruments are the EU General Data Protection Regulation (GDPR) and the EU Privacy Directive of 2003. These instruments provide the context for the UK legislation discussed below and any future changes that may occur. Organizations operating in the EU must comply with GDPR and other EU regulations, and it's essential that they stay informed and up-to-date on any changes to ensure compliance.
-* UK legislation also plays a significant role in information processing systems. Intellectual property rights, through the Copyright, Designs and Patents Act 1988 (CDPA), are one of the most obvious legal issues for most information processing systems, but there are many other relevant legislations. The Companies Act 2006, which consolidates and replaces all previous UK Companies Acts, contains important provisions regarding electronic records, electronic trading, and electronic communications. The Data Protection Act 2018 (DPA) is the next most important of these laws, in addition to the Human Rights Act 1998 (HRA), the Regulation of Investigatory Powers Act 2000 (RIPA), the Computer Misuse Act 1990 (as updated by the Police and Justice Act 2006), the Electronic Communications Act 2000, and the Privacy and Electronic Communications Regulations 2003 (as amended). The Freedom of Information Act (FOIA) was passed in 2000 and, while primarily applicable to public bodies, it has the potential to force confidential commercial information about, for example, public-sector contracts into the public arena. It's important for organizations to stay informed about and comply with all relevant legislation to ensure the protection of information assets and avoid any legal issues.
-* In the United Kingdom, there is a complex set of laws related to anti-money laundering, including the Terrorism Act 2000, the Proceeds of Crime Act 2002, and the Money Laundering Regulations 2003. Compliance with these laws requires organizations to maintain detailed records of client verification and ensure that they are kept secure. Organizations must also have in place policies and procedures to prevent money laundering and terrorist financing, and to detect and report any suspicious activities. It's important for organizations to stay informed about and comply with all anti-money laundering laws to avoid any legal issues and to maintain the integrity and security of their financial transactions.
-* These include the Bribery Act, a range of Crime and Security Acts, as well as various legislations dealing with identity cards and electronic money. These laws provide a framework for preventing and detecting bribery, and other financial crimes, and set out the responsibilities of organizations to ensure compliance. Organizations should stay informed about and comply with all relevant laws to maintain legal compliance and protect against financial crime.
-* In the United Kingdom, there is an increasing amount of corporate governance legislation that requires organizations to collect and store commercially sensitive data in order to meet reporting obligations. In order to comply with these regulations, directors must ensure that the IT system itself does not pose any operational risks to the company. These requirements were originally contained in general legislation such as the Companies (Audit, Investigations and Community Enterprise) Act 2004 and carried forward to the Companies Act 2006. There is also sector-specific regulation enforced by bodies such as the Financial Services Authority, which organizations in the financial sector should be aware of and comply with. It is important for organizations to stay informed about and comply with all relevant corporate governance legislation to maintain legal compliance and protect the company's sensitive information.
-* In the United States, there are several relevant legislations and regulations that organizations need to be aware of and comply with. These include the Gramm-Leach-Bliley Act (GLBA), which deals with consumer financial data; the Fair Credit Reporting Act (FCRA), designed to protect individuals from identity theft; the Health Insurance Portability and Accountability Act (HIPAA), which requires healthcare organizations and their business associates to protect and keep up-to-date their patients' healthcare records; the SEC's Regulation FD, which prohibits selective disclosure of material non-public information; the SEC's rule 17 a-4, which requires broker-dealers to retain trading records for six years; Section 404 of Sarbanes-Oxley Act, which requires companies to safeguard their information, including emails, attachments, etc; the California Online Privacy Protection Act of 2004 (OPPA), which requires websites serving Californians to comply with strict privacy guidelines; the CAN-SPAM Act, the Millennium Digital Copyright Act, FISMA, and a growing number of state information security and data breach laws, such as the Californian Senate Bill 1386, which require notification of breaches of personal data security. Organizations should stay informed about and comply with all relevant legislation and regulations to maintain legal compliance and protect sensitive information.
+## What Compliance Actually Is
 
-In recent years, California's Consumer Privacy Act introduced some of the EU GDPR regulatory requirements to the United States, which has prompted a federal-level review of US privacy regulations. Additionally, the significant growth in anti-money-laundering regulations, including the requirements of the international Joint Task Force and the US Patriot Act, have broadened the requirements on organizations to verify client details, and therefore to keep those personal details secure and in compliance with applicable data security regulations. Organizations must stay informed about and comply with all relevant legislation and regulations to maintain legal compliance and protect sensitive information.
+Compliance is the state of adhering to laws, regulations, contractual obligations, or standards that apply to an organization. In information security, those requirements typically mandate:
 
-**UK Legislation**
+- Specific technical controls (encryption, access management, logging)
+- Administrative processes (policies, training, risk assessments, incident response plans)
+- Physical safeguards (access controls on data centers, equipment disposal)
+- Audit and accountability mechanisms (documentation, evidence collection, third-party audits)
 
-In the United Kingdom, there are now over 70 laws that may have an impact on the ISMS. A list of these laws can be found in the Vigilant Software Compliance Manager. The most significant legislation includes:
+Compliance is not optional when it is legally required. GDPR fines reach 4% of global annual revenue. HIPAA violations carry criminal penalties. PCI-DSS non-compliance can result in losing the ability to process credit cards. These are business-critical consequences.
 
-* The General Data Protection Regulation (GDPR)&#x20;
-* The Data Protection Act 2018
-* The Human Rights Act 1998
-* The Regulation of Investigatory Powers Act 2000
-* The Computer Misuse Act 1990
-* The Electronic Communications Act 2000
-* The Privacy and Electronic Communications Regulations 2003
-* The Freedom of Information Act 2000
-* The Anti-Money Laundering laws, including the Terrorism Act 2000, the Proceeds of Crime Act 2002, and the Money Laundering Regulations 2003
-* The Corporate Governance laws, including the Companies Act 2006
-* The Intellectual Property rights, through the Copyright, Designs and Patents Act 1988&#x20;
-* And any other relevant laws and regulations specific to the sector or industry the organization operates in. It is important for organizations to stay informed about and comply with all relevant legislation and regulations to maintain legal compliance and protect sensitive information.
+{% hint style="info" %}
+**The compliance vs. security distinction matters:**
 
-**THE DATA PROTECTION ACT 2018**
+**Compliance** asks: "Does this control exist and is it documented?"
 
-The UK's Data Protection Act 2018 (DPA) puts the EU General Data Protection Regulation (GDPR) into UK statute and requires any organization that processes personal data to comply with six data protection principles. These principles are that personal data must be:
+**Security** asks: "Does this control actually reduce risk?"
 
-* Processed lawfully, fairly, and transparently
-* Collected for specified, explicit, and legitimate purposes
-* Adequate, relevant, and limited to what is necessary
-* Accurate and, where necessary, kept up to date
-* Retained only for as long as necessary
-* Processed in an appropriate manner to maintain security
+A firewall that exists but is misconfigured satisfies a compliance checkbox. It does not provide security. The goal is to implement controls that are both compliant and effective -- but the two are not automatic synonyms. Organizations that treat compliance as a proxy for security, rather than as a starting point, make themselves vulnerable.
+{% endhint %}
 
-The DPA 2018 applies to every category of personal data that relates to an identifiable natural individual, including information such as identification numbers, location data, online identifiers, or any factors specific to the physical, physiological, genetic, mental, economic, cultural, or social identity of that natural person. Under the DPA, "processing" includes any operation performed on personal data and the requirements apply to both electronic data and paper records if they are contained in a "relevant filing system". The precise definitions of what is and what is not covered are set out in the GDPR. It is important for organizations to stay informed about and comply with all relevant legislation and regulations to maintain legal compliance and protect sensitive information.
+---
 
-**THE FREEDOM OF INFORMATION ACT 2000**
+## The Major Compliance Frameworks
 
-The Information Commissioner is responsible for enforcing both the Freedom of Information Act 2000 (FOIA) and the Data Protection Act. The FOIA provides a general right of access to all types of information held by public authorities and those providing services for them. The purpose of the FOIA is to promote a culture of openness and accountability among public sector bodies and to facilitate better public understanding of how public bodies carry out their duties, why they make the decisions they do, and how they spend public money. Only public authorities are covered by the Act, which includes a wide range of organizations as listed in Schedule 1 of the FOIA.
+### GDPR (General Data Protection Regulation)
 
-Private companies should note that the FOIA could lead to the disclosure of details of their previously confidential public-sector tenders and contracts, regardless of any previous confidentiality clauses. Private-sector companies may need to take contract-specific professional advice and adjust their commercial practices to reflect the risk of disclosure.
+**Who it applies to:** Any organization, anywhere in the world, that processes personal data of individuals in the European Union or European Economic Area.
 
-The Information Commissioner is also responsible for enforcing the Environmental Information Regulations 2004, which enable individuals to access environmental information held by or on behalf of public authorities and those bodies carrying out a public function. These regulations intersect with the DPA as the requested information might also contain personal information.
+GDPR is the most expansive data protection regulation in force. It applies to a startup in Singapore if that startup collects email addresses from EU residents. It applies to a US SaaS company if EU businesses use its product to process customer data.[2]
 
-It is important for public authorities to take appropriate legal advice on the issues contained in these pieces of legislation as the use and practice, court cases, and ministerial interventions will contribute to a changing privacy landscape. The introduction of a personal identity card will also have a significant impact on the privacy landscape.
+**Key requirements:**
 
-**THE COMPUTER MISUSE ACT 1990**
+- **Lawful basis**: Processing personal data requires a documented lawful basis (consent, contract, legal obligation, legitimate interests, etc.)
+- **Data minimization**: Collect only what is necessary for the stated purpose
+- **Breach notification**: Report breaches to the supervisory authority within 72 hours of becoming aware; notify affected individuals without undue delay when high risk
+- **Data subject rights**: Respond to requests for access, deletion, correction, and portability
+- **Data Protection Officer (DPO)**: Required for public authorities, organizations processing data at scale, or those processing sensitive categories of data
+- **Appropriate technical and organizational measures**: No specific controls mandated; must be proportionate to the risk
 
-The Computer Misuse Act (CMA) of 1990 in the United Kingdom was created to establish provisions for securing computer material against unauthorized access or modification. The act created three offenses:
+**Penalties:** Up to €20 million or 4% of global annual revenue, whichever is higher. In 2023, Meta was fined €1.2 billion for transferring EU user data to the US without adequate safeguards.[3]
 
-* Knowingly using a computer to obtain unauthorized access to any program or data held in the computer
-* Using unauthorized access to commit one or more offenses
-* Carrying out an unauthorized modification of any computer material
+### HIPAA (Health Insurance Portability and Accountability Act)
 
-The CMA makes hacking and the introduction of computer viruses illegal within the United Kingdom and carries penalties of fines and imprisonment. It initially had a significant impact on the computer policies of universities, often seen as the source of much of this sort of activity. It also has implications for other computer users in the United Kingdom as anyone using someone else's username without proper authorization or copying data without proper authorization could be committing an offense. Organizations should also ensure that their employees are not using organizational facilities to hack other sites or commit offenses under the act, taking full advantage of the Regulation of Investigatory Powers Act (RIPA) to ensure compliance with the law.
+**Who it applies to:** US healthcare providers, health plans, healthcare clearinghouses (covered entities), and their business associates (vendors who process protected health information on their behalf).
 
-In mid-2004, the United Kingdom’s All Party Internet Group (APIG) reviewed the CMA and recognized that it had been ineffective, largely due to inadequate enforcement resources. The group recommended a limited number of changes to the CMA and other actions by other bodies to improve the legal environment for computer security. This led to the Police and Justice Act of 2006, which updated and modified the CMA.
+HIPAA mandates specific controls for electronic protected health information (ePHI) through three rules:[4]
 
-**THE POLICE AND JUSTICE ACT 2006**
+| Rule | What It Covers |
+|---|---|
+| **Privacy Rule** | Permitted uses and disclosures of PHI; patient rights over their information |
+| **Security Rule** | Administrative, physical, and technical safeguards for ePHI |
+| **Breach Notification Rule** | Requirements to notify individuals, HHS, and media when ePHI is breached |
 
-The Police and Justice Act of 2006 amended clauses 35-38 of the Computer Misuse Act (CMA) of 1990 in the United Kingdom. The amendments include:
+**Key technical safeguards:** Access controls (unique user identification, emergency access procedures), audit controls, integrity controls, transmission security (encryption for data in transit).
 
-* Doubling the maximum sentence for "unauthorized acts with intent to impair, or with recklessness as to impairing, operation of computer" from five to ten years. This is aimed primarily at denial-of-service attacks, but has a wider effect.
-* Creating an offense of "making, supplying or obtaining articles for use in an offense" as defined in the CMA, as amended. This provision is intended to deal with hacking tools, however, it may have unintended consequences for ethical hacking and penetration testing. The wording of clause 3A indicates that there will only be an offense if the supply of hacking tools is done with the intention or belief that they will be used in (or used to assist) the commission of an offense as defined in the CMA (as amended).
+**Penalties:** Tiered from $100 to $50,000 per violation, up to $1.9 million per violation category per year. Criminal penalties apply for intentional violations.
 
-**THE COPYRIGHT, DESIGNS AND PATENTS ACT 1988**
+### PCI-DSS (Payment Card Industry Data Security Standard)
 
-The control of ISO 27002 states that organizations should explicitly define and document statutory, regulatory, and contractual requirements for each of their information systems. This documentation should be kept up to date to reflect any changes in the legal environment. The specific controls and individual responsibilities to meet these requirements should also be similarly documented and kept up to date. Organizations should create a database of applicable legislation that identifies relevant laws, specific clauses that may be applicable, and links those specific clauses to individual controls in the ISMS. For each regulatory or contractual requirement, someone in the organization should have allocated responsibility for ensuring compliance.
+**Who it applies to:** Any organization that stores, processes, or transmits payment card data -- merchants, payment processors, service providers, and their vendors.
 
-Organizations operating in the UK should be aware of the complex array of laws such as the Data Protection Act 2018, the Computer Misuse Act 1990, and the Police and Justice Act 2006, that may apply to their information systems and take appropriate legal advice. US legislation such as the Gramm-Leach-Bliley Act, the Fair Credit Reporting Act, and the Health Insurance Portability and Accountability Act, should also be taken into consideration. Organizations should also stay informed of recent developments such as the California Consumer Privacy Act, which brings some EU GDPR regulations to the USA.
+PCI-DSS is maintained by the Payment Card Industry Security Standards Council (a consortium of Visa, Mastercard, American Express, Discover, and JCB) and is contractually required by card network agreements rather than law.[5]
 
-**THE ELECTRONIC COMMUNICATIONS ACT 2000**
+**The 12 requirements (PCI-DSS v4.0, 2022):**
 
-The Electronic Communications Act also regulates the interception of communications and the use of equipment for the purpose of intercepting communications. It also includes provisions for the protection of personal data processed in connection with the provision of publicly available electronic communications services. This includes data protection and security requirements for service providers, as well as regulations for the identification of subscribers and the protection of traffic and location data. The Act also provides for the regulation of unsolicited commercial communications, including spam and direct marketing, and sets out penalties for non-compliance with these regulations.
+| Domain | Requirements |
+|---|---|
+| Network security | Build and maintain a secure network; install firewalls; change vendor default passwords |
+| Cardholder data | Protect stored cardholder data; encrypt transmission over public networks |
+| Vulnerability management | Use anti-malware; maintain secure systems and software |
+| Access control | Restrict access to cardholder data; authenticate access; restrict physical access |
+| Monitoring | Log and monitor access; test security systems regularly |
+| Policy | Maintain an information security policy |
 
-**THE HUMAN RIGHTS ACT 1998**
+Non-compliance consequences: fines from card networks ($5,000 to $100,000/month), increased transaction fees, and ultimately loss of the ability to accept card payments.
 
-The HRA also protects the right to privacy and freedom of expression, which can be relevant in the context of an organization's information security policies and practices. It is important for organizations to consider the implications of the HRA when implementing monitoring or surveillance measures, and to balance the need for security with the protection of individual rights. Organizations should also ensure that their policies and procedures are in compliance with the HRA and that employees are aware of their rights and responsibilities under the act. It is recommended to seek legal advice to ensure compliance with the HRA.
+### SOC 2 (System and Organization Controls 2)
 
-**THE REGULATION OF INVESTIGATORY POWERS ACT 2000**
+**Who it applies to:** Technology and cloud service providers that store or process customer data. SOC 2 is not a regulation but a voluntary attestation widely required as a condition of doing business.
 
-* ensure the security of the communications system;
-* detect unauthorised use of the system;
-* ensure compliance with legal obligations or regulatory requirements;
-* prevent or detect crime;
-* investigate or detect the unauthorised use of the system;
-* determine the location of a mobile telephone.
+SOC 2 audits are conducted by licensed CPA firms against the AICPA Trust Services Criteria, which cover five categories: Security, Availability, Processing Integrity, Confidentiality, and Privacy. Organizations select which categories apply to their services.[6]
 
-It is important for organizations to have a clear policy on monitoring employee communications and to ensure that the policy is in compliance with the RIPA and relevant regulations. This policy should be communicated to all employees and should be reviewed and updated regularly to ensure compliance with any changes in laws or regulations.
+| Report Type | What It Proves |
+|---|---|
+| **SOC 2 Type I** | Controls are designed appropriately (a point-in-time assessment) |
+| **SOC 2 Type II** | Controls operated effectively over a defined period (typically 6-12 months) |
 
-### Intellectual Property Rights. <a href="#lxgorcgvmtel" id="lxgorcgvmtel"></a>
+Type II reports are the meaningful standard. A Type I report only proves that controls exist on paper on a specific day. A Type II report proves they actually operated consistently.
 
-The third approach is to put in place processes and procedures to ensure that all third-party material is checked and cleared for IPR issues before it is used. This approach would be more detailed and bureaucratic, but it would minimize the risk of IPR infringement. The organization should also implement controls to ensure that any proprietary software products used by the organization are used in compliance with the terms of the relevant software license agreement. This would typically involve maintaining accurate software asset management records, ensuring that all software is properly licensed, and that all license agreements are reviewed and approved by appropriate personnel. The third is to acquire appropriate licences from one or more of the licensing bodies that were described earlier in this chapter.
+SOC 2 is the de facto standard for SaaS companies selling to enterprise customers. Enterprise procurement teams require it before approving vendors who will process their data.
 
-**Software Copyright**
+### ISO/IEC 27001
 
-It is important for organizations to ensure compliance with copyright laws and regulations by obtaining the appropriate licenses for any software used on their network. This includes understanding the different types of licenses, such as per seat and concurrent user licenses, and keeping a register of all software licenses to ensure compliance. Organizations should also include provisions in employee access agreements to ensure that only licensed and approved software is used on organizational computers and that any use of illegally obtained or unlicensed software will result in disciplinary action. It's also important to conduct a risk assessment to evaluate the use of freeware and shareware that may be available on the internet. This can help prevent the installation of non-business-related programs that can consume valuable time, bandwidth, and storage capacity and could potentially cause system crashes and data loss.
+**Who it applies to:** Any organization, any size, any sector. ISO 27001 is the international standard for information security management systems (ISMS).
 
-It is also important for the organization to keep track of any software upgrades or updates, as these may also require additional licences. It is also essential to have a software asset management program in place, which helps organizations to track and manage their software licenses, usage and compliance with the vendor's terms and conditions. This can help to avoid potential legal issues, such as copyright infringement, and ensure that the organization is using the software in a legal and compliant way.
+Unlike most compliance frameworks, ISO 27001 does not mandate a specific list of controls. It mandates a management system: a risk-based, continuously improving cycle of planning, implementing, monitoring, and improving information security.[7] Organizations assess their risks and select controls from Annex A (93 controls across 11 domains in the 2022 edition) proportionate to those risks.
 
-The organization should also include in the access agreement signed by each member of staff before he or she is allowed to access any organizational computer a statement that only licensed and formally approved software may be used on the organization’s computers and that any use of illegally obtained or unlicensed software will lead to disciplinary action. The organization should also consider implementing software asset management (SAM) solutions which can help automate the tracking, management and reporting of software licenses, as well as identifying and mitigating any potential compliance risks. It is important to note that using unlicensed software can lead to legal issues, fines and reputational damage. Therefore, it is essential for organizations to take the necessary steps to ensure they are using software in compliance with the law and the terms of their licenses.
+Certification is awarded by accredited certification bodies after a two-stage audit: a documentation review and an on-site assessment. Certification must be maintained through annual surveillance audits and a full recertification every three years.
 
-It is important for organizations to ensure compliance with copyright laws and to have proper controls in place to avoid copyright infringement. This includes understanding the type and number of licences required for software in use, maintaining a register of software licences, and implementing policies and procedures to prevent the use of unlicensed or illegally obtained software. A risk assessment should be conducted to determine the appropriate approach to handling freeware and shareware, as well as the potential impact on the organization's network and data. It's also important to ensure that all employees are aware of the organizations policies and any violation will be subject to disciplinary action.
+**Why it matters:** ISO 27001 certification is increasingly required in European government and enterprise procurement, and is a credible signal of security maturity globally.
 
-Individuals in the United Kingdom who make the decision to disclose information about software infringement by their employer should be safeguarded under the Public Interest Disclosure Act, also known as the "Whistleblowers Act".
+### CMMC (Cybersecurity Maturity Model Certification)
 
-This Act includes three basic requirements:
+**Who it applies to:** US Department of Defense contractors and subcontractors handling Controlled Unclassified Information (CUI).
 
-* The employees in the United Kingdom who have knowledge of criminal offenses or breaches of civil law committed by their employer. Under-licensing, illegal use of software, and a manager's disregard for misuse are considered criminal offenses. Meanwhile, buying a single copy of software and using it multiple times is considered a civil infringement.
-* An individual must have a reasonable belief that the information being shared is accurate, act with integrity and not seek any personal benefit in order to be protected under the Act. Additionally, the Act takes into consideration the recipient of the disclosed information. For example, reporting to an appropriate authority such as FAST would likely be considered a reasonable action, while attempting to profit from sharing information with a news organization may not be viewed as a protected action.
-* It is important to evaluate whether the employee's decision to share information was reasonable under the circumstances. Factors that should be considered include whether the employee had exhausted internal channels for addressing the issue before going public, and if speaking out would jeopardize the employee's well-being or livelihood.
+CMMC 2.0 (released 2021) establishes three maturity levels, with Level 2 requiring an independent third-party assessment against NIST SP 800-171's 110 security requirements. CMMC is not optional for DoD contractors -- it will be a contract requirement, and organizations without the appropriate CMMC level will be ineligible for DoD contracts.[8]
 
-### Protection of Organizational Records. <a href="#gkwg4p5belu9" id="gkwg4p5belu9"></a>
+### FedRAMP (Federal Risk and Authorization Management Program)
 
-ISO 27002 standard's control 18.1.3 specifies that organizations must safeguard their vital records from destruction, loss, or alteration. The standard notes that certain records must be retained to comply with legal or regulatory requirements, while others may be necessary to defend against potential legal action or to demonstrate the financial standing of the organization to stakeholders such as shareholders, tax agencies, and auditors, and to fulfill contractual obligations. However, it is important to note that not all records need to be retained indefinitely, as this can make it challenging to locate necessary information when it is needed.
+**Who it applies to:** Cloud service providers seeking to sell to US federal agencies.
 
-As a result, organizations should establish specific timeframes for retaining different types of information. Once these timeframes have expired, the records should be disposed of in accordance with the organization's procedures to ensure that any confidential information contained within the records is not accidentally exposed. Some retention periods will be mandated by laws or regulations and organizations should consult with legal counsel to determine the current requirements for various types of documents. For example, in the United Kingdom, organizations should also comply with the requirements set by HM Revenue & Customs. Other retention periods should be established to satisfy the needs of interested parties. This is similar for most companies operating within their local jurisdiction, but can be more complex for organizations with operations in multiple jurisdictions.
+FedRAMP standardizes cloud security assessment, authorization, and monitoring for federal systems. It is based on NIST SP 800-53 controls, with three impact levels (Low, Moderate, High) determining which control set applies. Authorization requires a significant investment: third-party assessment organization (3PAO) audit, agency sponsorship, and ongoing continuous monitoring.[9]
 
-Organizations should also take into account the potential deterioration of storage media over time, and comply with any recommendations provided by the manufacturer for storage. Changes in technology can also have implications for data stored on or only accessible through media that are being phased out, so organizations should ensure they have the necessary resources to access this information throughout the designated retention period when planning IT changes. When using paper archives, it is important to consider not only the physical security of the premises but also their resistance to water damage and fire protection. Organizations should also have a backup plan in place in the event that the archive facilities themselves are destroyed. Storage should be well-organized, with individual cartons or boxes clearly labeled with their contents, the owner of the contents, the date of storage, and the planned date of destruction.
+---
 
-An efficient indexing system is crucial for quickly identifying and retrieving individual documents from the storage box. To maintain the integrity of the archive, the retrieval and document return process must be closely monitored. Appointing a designated individual to oversee the maintenance of the archive and implementing clear procedures within the ISMS (Information Security Management System) for using the archive can help prevent disorganization and difficulty in finding documents. Regular audits should also be conducted to ensure compliance with established procedures and to ensure that records are being properly maintained.
+## The Compliance Lifecycle
 
-### Privacy and Protection of Personally Identifiable Information. <a href="#mov6bv9g6vw8" id="mov6bv9g6vw8"></a>
+Compliance is not a project with a completion date. It is an ongoing cycle.
 
-Control 18.1.4 of ISO27002 states that organizations should establish and enforce a data protection and privacy policy, implementing controls to safeguard personally identifiable information (PII) in compliance with relevant laws. In the United Kingdom, this primarily includes adhering to the Data Protection Act (DPA) and the Privacy and Electronic Communications Regulations. Organizations that operate on an international or global scale may also be subject to legislation in other countries, particularly in the United States. In such cases, it is recommended that specialized legal counsel is sought.
+```
+Assess → Plan → Implement → Audit → Certify → Monitor → Assess (again)
+```
 
-As previously mentioned in this chapter, the Data Protection Act (DPA) sets out specific requirements for protecting personal information. Organizations that attain certification of their information security management system to ISO 27001 can demonstrate to the Information Commissioner that they are compliant with the DPA and have implemented "appropriate security" measures. It is mandatory for organizations to register with the Information Commissioner under the DPA. Failure to do so can result in prosecution and fines.
+**Assess:** Determine which regulations and frameworks apply. Conduct a gap assessment against each applicable standard to understand current state vs. required state.
 
-Certain organizations, including those handling large amounts of sensitive data or those in the public sector, are legally mandated to appoint a data protection officer (DPO). The DPO can be an employee or a contractor. Even if not legally required, many organizations choose to appoint a DPO due to the complexity of the legislation and potential liabilities. It's important to note that the General Data Protection Regulation (GDPR) prohibits the appointment of DPOs who may have a conflicting interest. This typically means that individuals whose roles involve deciding on the means and purposes of processing, such as an information security manager, cannot also serve as the DPO.
+**Plan:** Develop a remediation roadmap. Prioritize gaps by risk and compliance deadline. Assign ownership and timelines.
 
-Organizations should be aware of the limitations on transferring personal data to countries outside of the European Union. This restriction is particularly relevant for organizations that are outsourcing any aspect of their customer support operations or centralizing services previously provided from multiple locations. This is important for organizations to comply with the GDPR and other international regulations.
+**Implement:** Deploy the required controls -- technical, administrative, and physical. Document everything. Evidence is the currency of compliance.
 
-**The EU–US Privacy Shield framework**
+**Audit:** Internal auditors verify controls are implemented and operating. Findings are documented and remediated. For certifiable standards (ISO 27001, SOC 2, CMMC), external auditors conduct formal assessments.
 
-The EU-US Privacy Shield framework enables US corporations that are regulated by the Federal Trade Commission (FTC) and have operations in the EU to legally receive EU personal data. The Privacy Shield provides US organizations with a means to demonstrate a level of data protection that is not typically provided under US Federal Law. Compliance with Privacy Shield standards is certified by the Department of Commerce and enforced by the FTC, and can be found on the Commerce Department and FTC websites. Only a small percentage of corporations have met the requirements to obtain EU member state permission to transfer data out of the European Union. More information on the safe harbor framework can be found on the website https://www.export.gov/safeharbor/eg\_main\_018236.asp
+**Certify:** Formal certification or attestation is issued. For regulations like GDPR and HIPAA, there is no certification -- compliance is an ongoing obligation enforced by regulators.
 
-### Regulation of Cryptographic Controls. <a href="#id-9vxztlvaufo8" id="id-9vxztlvaufo8"></a>
+**Monitor:** Compliance does not hold itself. Controls drift. Regulations change. New systems are deployed that are not in scope. Continuous monitoring -- including automated compliance tools, regular internal audits, and management reviews -- maintains the certified state.
 
-Control 18.1.5 of ISO27002 states that organizations should implement controls to ensure compliance with any national agreements, laws, regulations or other requirements related to the access to or use of cryptographic controls. This is necessary because different countries have different regulations on the use of cryptography, such as controls over the import and export of hardware and software with cryptographic capabilities or that can have such capabilities added, or requirements for authorities to access information encrypted by certain hardware or software. In the United Kingdom, relevant legislation includes the Electronic Communications Act 2000, the Electronic Signatures Regulations 2002, the Electronic Commerce Regulations 2002, and the Regulation of Investigatory Powers Act (RIPA). There is also legislation specifically addressing export/import restrictions on cryptography, such as the Dual Use (Export Control) Regulations 2000. To ensure compliance with current laws, organizations should seek specialized legal advice and consider the costs and benefits of implementing a security approach through a risk assessment. Additionally, when encrypted information or cryptographic equipment or controls are to be moved to another country, organizations should seek advice about the laws of that country.
+{% hint style="warning" %}
+**The gap between certification and compliance:** ISO 27001 certification is valid for three years with annual surveillance audits. A system deployed the day after a certification audit has three years of potential drift before the next full audit. Organizations that treat certification as a finish line rather than a waypoint accumulate compliance debt that surfaces dramatically during the next audit or, worse, during a breach investigation.
+{% endhint %}
 
-### Compliance with Security Policies and Standards. <a href="#tvkcw8o6oqzm" id="tvkcw8o6oqzm"></a>
+---
 
-Control 18.2.2 of ISO27002 states that the organization's managers should ensure that security procedures within their areas of responsibility are executed correctly, and that regular reviews are conducted to ensure compliance with documented security policies, procedures, and standards throughout the organization. Clause 9.2 of ISO27001, which pertains to "Internal ISMS audits," establishes the broader requirement. A written procedure and audit plan should be in place to detail how the audit process should be conducted, similar to an ISO9001 internal audit program.
+## Evidence Management
 
-The responsibility for ensuring compliance with security policies should be included in the job descriptions of all line managers to meet the first requirement. However, the organization must also ensure that this is actually being done. The most effective way to do this is through a program of internal quality audits using trained staff or external consultants or service providers. It is recommended that the organization's own staff be used for this role, as internal auditing provides them with a good opportunity for development, not only in terms of audit skills but also in understanding how different functions of the organization interact and how their processes work. Auditors’ communication skills will become highly developed and their profiles will be raised as a consequence of interviewing staff at all levels of the organization.
+Compliance lives and dies on documentation. Every control must be evidenced -- not just stated to exist, but demonstrated to be operating.
 
-To effectively carry out internal quality audits, one or more members from each department throughout the organization should be encouraged to volunteer for basic internal auditor training, which is typically offered by consultancies or companies that provide ISO 27001 accredited certification audit services. These individuals should then receive additional internal training as necessary. Technical expertise is not required for this role, as they should be able to perform the audit activity in addition to their regular work responsibilities. This responsibility should be included in their existing job descriptions.
+Evidence types include:
 
-To avoid potential conflicts of interest, staff should not conduct audits of their own departments or areas that are the responsibility of their own line manager. They can, however, carry out audits of other areas within the organization. The organization must have a plan in place for training enough auditors to cover staff turnover, holidays, and other absences, planned or unplanned. The information security advisor should plan the audit schedule at least a year in advance and in coordination with the existing internal quality department to ensure all areas are covered at least annually, activities are coordinated and there are no clashes or disruptions. A risk assessment might identify some areas as requiring more frequent audits (high-risk areas) and this should also be taken into consideration.
+- **Policies and procedures**: Written documents defining what must happen
+- **Configuration screenshots**: System settings showing controls are enabled
+- **Log exports**: Records of activity demonstrating controls operated
+- **Training completion records**: Evidence that staff received required training
+- **Risk assessment documents**: Documented evidence of the risk assessment process
+- **Vendor assessments**: Evidence of third-party security evaluation
+- **Penetration test reports**: Evidence of technical security testing
+- **Audit reports**: Results of internal and external audits with findings and remediation
 
-Audits should be documented, with nonconformities identified in writing. Managers are expected to determine the cause of nonconformities, determine appropriate actions, including the need to prevent recurrence, implement the decision and review its effectiveness. Action plans for rectification, together with dates and responsibilities, should be documented, and the information security advisor (or internal quality function) should have a system for ensuring that all due dates are met or followed up as appropriate. All nonconformities, together with action plans and status (i.e. showing which are closed and which are not), should be reported to the regular meetings of the information security committee, together with an analysis of trends or assessment of larger threats that might not be immediately apparent at the individual incident level.&#x20;
+Evidence must be:
+- Current (not from three years ago)
+- Complete (covering the full scope, not selected systems)
+- Authentic (not modified)
+- Accessible (retrievable when auditors request it)
 
-These internally identified nonconformities and the results of corrective action should be available to external auditors when they conduct their review of the ISMS. Sensibly, the nonconformities raised by any external auditor should be integrated into the organization's system and receive numbers (usually in addition to the numbers given by the external auditor) that tie them into the existing continual improvement system for monitoring and analysis.
+GRC platforms -- Vanta, Drata, Tugboat Logic, OneTrust, ServiceNow GRC -- automate evidence collection by integrating with cloud platforms, identity providers, and security tools to pull compliance evidence continuously rather than in manual point-in-time snapshots.
 
-**Technical compliance review**
+---
 
-Control 18.2.3 of ISO27002 states that organizations should regularly conduct independent evaluations of their information systems to ensure compliance with documented security requirements, and that hardware and software controls have been correctly implemented and maintained. This applies to network protection hardware and software, such as firewalls and routers, as well as network resources, such as servers, user settings, access policies, etc. A plan for these evaluations, which should be repeatable and documented, should be in place and they should be conducted as often as a risk assessment indicates is necessary. ISO/IEC 27008 provides guidance for auditing security controls. These evaluations should be carried out by someone who has the necessary technical skills and not by those responsible for implementing the control in the first place.
+## Multi-Framework Compliance
 
-Specialized assistance is required for this type of evaluation, and it can be obtained from security organizations that offer security (penetration) testing. Some checks will have to be done manually by a trained tester, while others can be done using automated software tools and the resulting reports can later be analyzed by a trained tester. This type of check includes intrusion or penetration testing of network defenses. ISO 27002 warns that penetration testing should be conducted cautiously, as it could lead to a system compromise. In practice, penetration testing has become one of the most important forms of technical compliance, as it identifies vulnerabilities that might be exploited by outside attackers.
+Most organizations are subject to multiple frameworks simultaneously. A US healthcare SaaS company might need HIPAA, SOC 2, ISO 27001, and GDPR at the same time.
 
-To obtain competitive prices, a number of organizations should be approached with a schedule of the technical checks that are required, and references should be thoroughly investigated. The contract with any organization retained to perform these security checks should conform to the organization's standard requirements, and there should be specific consideration of how the contractor will be required to report vulnerabilities, to ensure that all are reported. All nonconformities established under this process should be reported in accordance with the nonconformities procedure discussed earlier in this chapter and should be subject to the same level of monitoring, analysis, and follow-up as any others.
+The practical approach is to map frameworks against each other to identify overlap. Most frameworks share common control objectives:
 
-### Information Systems Audit Consideration. <a href="#id-6bkokt6hr2xi" id="id-6bkokt6hr2xi"></a>
+{% hint style="success" %}
+**Controls that satisfy multiple frameworks simultaneously:**
+- **MFA on all accounts**: satisfies GDPR Article 32, HIPAA technical safeguards, PCI-DSS Req 8, ISO 27001 A.9, SOC 2 CC6.1
+- **Encryption in transit and at rest**: satisfies GDPR, HIPAA, PCI-DSS, ISO 27001, SOC 2
+- **Access reviews (quarterly)**: satisfies HIPAA, PCI-DSS, ISO 27001, SOC 2
+- **Security awareness training**: satisfies HIPAA, PCI-DSS, ISO 27001, SOC 2, CMMC
 
-**(**Deeper Dive: IT Governance: An International Guide to Data Security and ISO 27001/ISO 27002: Calder, Alan, Watkins, Steve: 9780749496951 **)**
+Implementing controls correctly once and mapping them to all applicable frameworks is far more efficient than implementing separate control sets per framework. This is the foundation of an integrated compliance program.
+{% endhint %}
 
-Control 12.7.1 of ISO27002 sets out how organizations should prepare for information systems audits, which may include technical compliance checking as well as audits of licenses and software installations. The standard states that such audits should be scheduled so they do not disrupt business activities. While any audit can cause interruption, the goal of this control is to minimize disruption by selecting periods of low or reduced activity and/or demand to carry out the audit. Additionally, testing should be controlled, testers should have preferably read-only access, and all testing logs should be controlled.
+---
+
+## Third-Party and Supply Chain Compliance
+
+An organization's compliance obligations extend to vendors and suppliers that handle their regulated data. GDPR requires Data Processing Agreements with all processors of EU personal data. HIPAA requires Business Associate Agreements with all parties handling PHI. PCI-DSS requires ensuring that third-party service providers also comply with applicable requirements.
+
+Third-party compliance management involves:
+
+- Maintaining a vendor inventory (who has access to what data)
+- Executing required legal agreements (DPAs, BAAs)
+- Assessing vendor compliance posture (questionnaires, certifications, right-to-audit)
+- Monitoring vendor compliance on an ongoing basis
+- Defining processes for vendor incidents (what happens when a vendor is breached)
+
+The 2023 MOVEit breach, in which the Cl0p ransomware group exploited a SQL injection zero-day, illustrates the supply chain compliance challenge: hundreds of organizations discovered they were indirectly affected because their vendors used MOVEit Transfer for file sharing. The downstream data exposure triggered GDPR, HIPAA, and state breach notification obligations for organizations that had no direct relationship with MOVEit.[10]
+
+---
+
+## Compliance as a Career
+
+Compliance and GRC roles are among the most stable and well-compensated non-technical positions in cybersecurity. Organizations subject to multiple frameworks need dedicated compliance professionals who understand both the regulatory landscape and the technical controls that satisfy it.
+
+**Common roles:**
+- Compliance Analyst: managing evidence collection, audit preparation, policy maintenance
+- GRC Manager: overseeing multiple frameworks, managing assessments, reporting to leadership
+- Data Protection Officer (DPO): legally mandated role under GDPR for certain organizations
+- Virtual CISO (vCISO): fractional senior security and compliance leadership across multiple clients
+- Audit Manager: leading internal or external compliance audits
+
+**Skills that matter:**
+- Deep knowledge of 2-3 primary frameworks relevant to your industry
+- Familiarity with GRC platforms (Vanta, Drata, OneTrust, ServiceNow)
+- Evidence management and audit preparation experience
+- Clear written communication for policy development and executive reporting
+- Ability to translate regulatory requirements into technical control specifications
+
+---
+
+## References
+
+[1] Information Commissioner's Office. (2020). *ICO fines British Airways £20 million for data breach affecting more than 400,000 customers*. ICO. Retrieved from https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2020/10/ico-fines-british-airways-20million-for-data-breach-affecting-more-than-400-000-customers/
+
+[2] European Parliament and Council of the European Union. (2016). Regulation (EU) 2016/679 -- General Data Protection Regulation. *Official Journal of the European Union*, L 119, 1--88. Retrieved from https://gdpr-info.eu
+
+[3] Data Protection Commission Ireland. (2023). *Decision of the Data Protection Commission: Meta Platforms Ireland Limited*. DPC. Retrieved from https://www.dataprotection.ie/en/dpc-guidance/decision-meta-platforms-ireland-limited
+
+[4] US Department of Health and Human Services. (2003). Security Standards for the Protection of Electronic Protected Health Information. *Federal Register*, 68(34), 8333--8381. Retrieved from https://www.hhs.gov/hipaa/for-professionals/security/index.html
+
+[5] PCI Security Standards Council. (2022). *Payment Card Industry Data Security Standard Requirements and Testing Procedures, Version 4.0*. PCI SSC. Retrieved from https://www.pcisecuritystandards.org
+
+[6] American Institute of CPAs. (2017). *Trust Services Criteria for Security, Availability, Processing Integrity, Confidentiality, and Privacy (SOC 2)*. AICPA. Retrieved from https://www.aicpa.org/resources/download/2017-trust-services-criteria-for-security-availability-processing-integrity-confidentiality-and-privacy
+
+[7] International Organization for Standardization. (2022). *ISO/IEC 27001:2022 -- Information Security Management Systems -- Requirements*. ISO/IEC JTC 1/SC 27.
+
+[8] US Department of Defense. (2021). *Cybersecurity Maturity Model Certification (CMMC) 2.0*. Office of the Under Secretary of Defense for Acquisition and Sustainment. Retrieved from https://www.acq.osd.mil/cmmc/
+
+[9] General Services Administration. (2023). *FedRAMP Authorization Act Implementation Guidance*. Federal Risk and Authorization Management Program. Retrieved from https://www.fedramp.gov
+
+[10] Cybersecurity and Infrastructure Security Agency. (2023). *#StopRansomware: CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability*. CISA Advisory AA23-158A. Retrieved from https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a
+
+---
+
+## Further Reading
+
+| Resource | What It Covers |
+|---|---|
+| [GDPR Full Text](https://gdpr-info.eu) | Clean, searchable GDPR with articles and recitals. Essential reference for data protection work. |
+| [HHS HIPAA](https://www.hhs.gov/hipaa) | Official source for HIPAA rules, guidance, and enforcement actions. |
+| [PCI DSS v4.0](https://www.pcisecuritystandards.org) | Current PCI-DSS standard and supporting guidance documents. |
+| [ISO 27001:2022](https://www.iso.org/standard/27001) | The international ISMS certification standard. |
+| [FedRAMP](https://www.fedramp.gov) | US federal cloud authorization program documentation and approved provider list. |
+| [Vanta](https://www.vanta.com) / [Drata](https://drata.com) | Leading GRC automation platforms; both offer free resources and compliance guides. |
+
+---
+
+*Questions about compliance frameworks, GRC career paths, or audit preparation? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back -- this book is open source and your additions are welcome.*
