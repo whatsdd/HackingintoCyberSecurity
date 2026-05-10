@@ -29,7 +29,7 @@
 
 ## CHAPTER 5
 
-* [Risk](chapter-5/risk-management.md)
+* [Risk Management](chapter-5/risk-management.md)
 
 ## CHAPTER 6
 
@@ -46,3 +46,11 @@
 ## CHAPTER 9
 
 * [Security Design Principles](chapter-9/security-design-principles.md)
+
+## CHAPTER 10
+
+* [DevSecOps](chapter-10/devsecops.md)
+
+## CHAPTER 11
+
+* [Secure Developer: The SSDLC](chapter-11/secure-developer.md)
