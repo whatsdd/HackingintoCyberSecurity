@@ -1,131 +1,258 @@
 # Security Design Principles
 
-### **Security Design Principles** <a href="#g3uo5e6i5i7b" id="g3uo5e6i5i7b"></a>
+## Why Principles Matter
 
-### The Saltzer and Schroeder List <a href="#x1d9yns43duh" id="x1d9yns43duh"></a>
+Security controls fail. Patches get missed. Configurations drift. Attackers find new techniques. No specific control remains valid forever.
 
-The Saltzer and Schroeder design principles are a set of guidelines for developing secure systems that have been widely referenced in the information security community. These principles were first introduced in an article by Jerome Saltzer in 1974, which outlined the security mechanisms in the Multics time-sharing system. The following year, Saltzer and Michael Schroeder expanded the article into a tutorial titled “The Protection of Information in Computer Systems”, which introduced the triad of confidentiality, integrity, and availability, and a set of design principles.
+What does remain valid is the reasoning behind controls. Security design principles are the underlying logic that explains why certain controls work, why certain architectures are more resilient, and why certain decisions made in system design consistently lead to breaches decades later.
 
-Over the decades, these principles have been used as guidelines for developing secure systems. They were included in the DOD’s standard for computer security, the Trusted Computer System Evaluation Criteria, and have been highlighted in security textbooks such as Pfleeger’s Security in Computing. The Saltzer and Schroeder design principles are a valuable resource for organizations looking to improve the security of their systems and protect sensitive information. They provide a clear and concise set of guidelines for designing and implementing secure systems, and are an important part of the legacy of wisdom in the information security community.
+In 1975, Jerome Saltzer and Michael Schroeder published "The Protection of Information in Computer Systems" in the Proceedings of the IEEE. The paper introduced eight design principles for secure systems.[1] Those principles have proven more durable than any specific technology from that era. They are still cited, still taught, and still violated in systems being built today.
 
-Different writers use the term principle differently. Some apply the term to a set of precisely worded statements, like Saltzer and Schroeder’s 1975 list, while others apply it in general to a collection of unidentified but fundamental concepts. This paper focuses on explicit statements of principles, like the 1975 list. The principles were concise and well-stated on the whole, and many have stood the test of time and are reflected in modern security practice.
+This chapter covers the classic principles, their modern interpretations, and the newer principles that have emerged from decades of experience building and breaking real systems.
 
-In 2008, when writing my own textbook for an introductory information security course, I was informed by an awareness of Saltzer and Schroeder’s design principles, but motivated primarily by the curriculum requirements. The textbook, titled Elementary Information Security, produced its own list of basic principles. This review of design principles arises from the mismatch between the classic list and this more recent list. The review also looks at other efforts to codify general principles, both by standards bodies and by other textbook authors, including a recent textbook co-authored by Saltzer himself.
+---
 
-The review of design principles is an important step in understanding the evolution of information security best practices, and identifying areas where further research or development is needed. The principles outlined by Saltzer and Schroeder have been influential in shaping the field of information security, and their legacy continues to be felt today.
+## The Saltzer and Schroeder Principles
 
-### Security Principles Today <a href="#id-8vpeu58yshf5" id="id-8vpeu58yshf5"></a>
+### 1. Economy of Mechanism (Keep It Simple)
 
-Saltzer and Schroeder’s 1976 paper listed eight design principles for computer security, and noted two additional principles that seemed relevant if more general. These principles are still highly relevant in today's security landscape and are often used as the foundation for designing secure systems.
+> "Keep the design as simple and small as possible."
 
-The principles are:
+Complexity is the enemy of security. Every additional feature, every additional code path, every additional configuration option is a potential hiding place for vulnerabilities. Simple systems are easier to analyze, easier to test, easier to audit, and easier to reason about under adversarial conditions.
 
-1. Economy of mechanism: A simple design is easier to test and validate.
-2. Fail-safe defaults: Systems should have a default of "no access" so that the system must specifically grant access to resources.
-3. Complete mediation: Access rights should be completely validated every time an access occurs.
-4. Open design: Secure systems should have unclassified designs.
-5. Separation of privilege: A protection mechanism should require two separate keys to unlock it, allowing for two-person control and similar techniques to prevent unilateral action by a subverted individual.
-6. Least privilege: Every program and user should operate while invoking as few privileges as possible.
-7. Least common mechanism: Users should not share system mechanisms except when absolutely necessary, because shared mechanisms may provide unintended communication paths or means of interference.
-8. Psychological acceptability: The policy interface should reflect the user’s mental model of protection, and users won’t specify protections correctly if the specification style doesn’t make sense to them.
+**In practice:**
 
-These principles provide a solid foundation for organizations to build upon in order to create secure systems. It is important for organizations to understand and follow these principles as they design, implement and maintain their systems, in order to protect against potential threats and vulnerabilities.
+The Heartbleed vulnerability (CVE-2014-0160) existed in a feature called "heartbeat" added to OpenSSL. The heartbeat feature sent a small message and expected a response of the same size -- but the implementation did not verify that the response was actually the size claimed. An attacker could request a 64KB response to a 1-byte heartbeat, leaking 64KB of server memory per request -- potentially including private keys, session tokens, and passwords.[2]
 
-Saltzer and Schroeder noted two principles that were familiar in physical security but applied “imperfectly” to computer systems. These principles are:
+The feature was unnecessary for the core cryptographic function. Its complexity introduced a critical vulnerability that affected an estimated 17% of secure web servers at the time of disclosure.
 
-1. Work factor: Stronger security measures pose more work for the attacker. The authors acknowledged that such a measure could estimate trial-and-error attacks on randomly chosen passwords, but questioned its relevance since there often existed “indirect strategies” to penetrate a computer by exploiting flaws.
-2. Compromise recording: The system should keep records of attacks even if the attacks aren’t necessarily blocked. The authors were skeptical about this, since the system ought to be able to prevent penetrations in the first place. If the system couldn’t prevent a penetration or other attack, then it was possible that the compromise recording itself may be modified or destroyed.
+{% hint style="info" %}
+**Modern application:** Prefer managed services over self-hosted complexity where security is not your core competency. Fewer lines of code means fewer vulnerabilities. Remove features and dependencies that are not actively used. Every library you include is attack surface you are responsible for.
+{% endhint %}
 
-Today, most analysts and developers embrace these final two design principles. The argument underlying complex password selection reflects a work factor calculation, as do the recommendations on choosing cryptographic keys. Compromise recording has become an essential feature of every secure system in the form of event logging and auditing. This highlights the evolution of the field of information security and how new experiences and technology have helped to shape the security principles that are used today.
+### 2. Fail-Safe Defaults (Deny by Default)
 
+> "Base access decisions on permission rather than exclusion."
 
+Systems should default to the secure state. If an action is not explicitly permitted, it should be denied. If a service fails, it should fail closed -- not open.
 
-The Saltzer and Schroeder design principles, first introduced in 1975, have had a lasting impact on the field of information security and are still widely referenced today. Many organizations and standards bodies have used them as a guide for developing secure systems. However, with the evolution of technology and new experiences, the field of information security has produced its own set of security principles. These principles are often variations of Saltzer and Schroeder's or are presented in a more abstract sense. Textbook authors generally avoid making specific lists of principles, but still recognize the importance of key principles such as least privilege. Overall, it is important for organizations to understand the depth, type and scope of each set of security principles and to make sure that the desired outputs and outcomes match their organizational needs.
+The inverse -- building systems that allow everything except what is explicitly denied -- produces security that is permanently one missed rule away from failure. Allowlists are inherently more secure than denylists because new attacks are unknown and therefore not in the denylist.
 
-However, the text also reviews Saltzer and Schroeder’s principles in detail in Section 5.4. The remaining few textbooks that specifically discuss design principles generally focus on the 1975 list. The textbook by Smith and Marchesini (2008) discuss the design principles in Chapter 3. The two textbooks by Bishop (2003, 2005) also review the design principles in Chapters 13 and 12, respectively.
+**In practice:**
 
-**“Generally Accepted Principles”**
+A firewall configured with a default-allow policy requires administrators to enumerate every dangerous connection to block. A firewall configured with a default-deny policy requires administrators to enumerate only the connections that are legitimate. The latter produces a dramatically smaller and more auditable rule set.
 
-Following _Computers at Risk_, standards organizations were motivated to publish lists of principles. The OECD published a list of eight guidelines in 1992 that established the tone for a set of higher-level security principles:
+The same principle applies to IAM (Identity and Access Management): new principals should receive zero permissions by default. Permissions should be explicitly granted for specific resources and actions, not inherited broadly.
 
-Accountability, Awareness, Ethics, Multidisciplinary, Proportionality, Integration, Timeliness, Reassessment, and Democracy.
+```
+# Bad: Overly permissive IAM policy
+{
+  "Effect": "Allow",
+  "Action": "*",
+  "Resource": "*"
+}
 
-In its 1995 handbook, “An Introduction to Computer Security,” NIST presented the OECD list and also introduced a list of “elements” of computer security (NIST, 1995). Following the OECD’s lead, this list presented very high level guidance, addressing the management level instead of the design or technical level. For example, the second and third elements are stated as follows:
+# Good: Least-permissive policy for a specific function
+{
+  "Effect": "Allow",
+  "Action": ["s3:GetObject"],
+  "Resource": "arn:aws:s3:::my-bucket/reports/*"
+}
+```
 
-“Computer Security is an Integral Element of Sound Management”
+### 3. Complete Mediation (Check Every Access)
 
-“Computer Security Should Be Cost-Effective”
+> "Every access to every object must be checked for authority."
 
-The following year, NIST published its own list of “Generally Accepted Principles and Practices for Securing Information Technology Systems” (Swanson and Guttman, 1996). The overriding principles drew heavily from the elements listed in the 1995 document. The second and third elements listed above also appeared as the second and third “Generally Accepted Principles.”
+Access control decisions should not be cached, assumed, or skipped for performance. Every time a subject requests access to an object, the authorization should be verified against current permissions -- not permissions that were valid when the session started.
 
-The OECD list also prompted the creation of an international organization that published “Generally Accepted System Security Principles” (GASSP) in various revisions between 1996 and 1999 (I2SF, 1999). This was intended to provide high-level guidance for developing more specific lists of principles, similar to those used in the accounting industry. The effort failed to prosper.
+**In practice:**
 
-Following the 1999 publication, the sponsoring organization apparently ran out of funding. In 2003, the Information System Security Association tried to restart the GASSP process and published the “Generally Accepted Information Security Principles” (ISSA, 2004), a cosmetic revision of the 1999 document. This effort also failed to prosper.
+Insecure Direct Object Reference (IDOR) -- one of the most common web application vulnerabilities -- is a failure of complete mediation. An application authenticates the user once but then uses a predictable identifier (user ID, order number) without re-verifying that the authenticated user is actually authorized to access that specific object. Change the ID in the URL, access someone else's data.
 
-In 2001, a team at NIST tried to produce a more specific and technical list of security principles. This became “Engineering Principles for Information Technology Security” (Stoneburner, et al, 2004). The team developed a set of thirty-three separate principles. While several clearly reflect Saltzer and Schroeder, many are design rules that have arisen from subsequent developments, notably in networking. For example:
+```
+# Vulnerable: Authorization checked at login but not at each resource access
+GET /api/invoices/12345
 
-* Principle 16: Implement layered security (Ensure no single point of vulnerability).
-* Principle 20: Isolate public access systems from mission critical resources.
-* Principle 30: Implement security through a combination of measures distributed physically and logically.
-* Principle 33: Use unique identities to ensure accountability.
+# The server returns invoice 12345 to any authenticated user
+# It does not verify that the authenticated user owns invoice 12345
+```
 
-While these new principles captured newer issues and concerns than the 1975 list, they also captured assumptions regarding system development and operation. For example, Principle 20 assumes that the public will never have access to “mission critical resources.” However, many companies rely heavily on Internet sales for revenue. They must clearly ignore this principle in order to conduct those sales.
+Every API endpoint must independently verify that the authenticated principal is authorized to perform the requested action on the requested resource.
 
-### Training and Curriculum Standards <a href="#id-2wfbl4ckrl56" id="id-2wfbl4ckrl56"></a>
+### 4. Open Design (Security Through Obscurity Fails)
 
-While training and curriculum standards in information security recognize the importance of security principles, they do not provide a specific list of principles. Instead, they often refer to them in an abstract sense and mention key concepts such as least privilege, separation of privilege and compromise recording. The Information Assurance and Security IT 2008 curriculum recommendations, for example, only provide one example of a design principle: "defense in depth." It is important for organizations to understand the curriculum standards and how they align with their own security needs and objectives. Additionally, they should also consider incorporating specific threat modeling methodologies and principles, such as those outlined by Saltzer and Schroeder, into their training and development programs to ensure that their staff are equipped with the necessary knowledge and skills to effectively protect their systems and operations.
+> "The design should not be secret."
 
-The Information Assurance and Security IT 2008 curriculum recommendations (ACM and IEEE, 2008) identify design principles as an important topic, and provide a single example: “defense in depth.” This is a restatement of NIST’s Principle 16.
+A system's security should not depend on the secrecy of its design or implementation. It should remain secure even when the attacker knows exactly how it works -- because the attacker's ignorance cannot be relied upon.
 
-### Saltzer and Kaashoek <a href="#id-5dz87lq1qi4a" id="id-5dz87lq1qi4a"></a>
+This is Kerckhoffs's principle, independently derived: assume the adversary knows your algorithm. Your security comes from the secrecy of the key, not the algorithm.[3]
 
-Co-authors Saltzer and Kaashoek published the textbook Principles of Computer Design in 2009 (Saltzer and Kaashoek, 2009). The book lists sixteen general design principles and several specific principles, including six security-specific principles.
+**In practice:**
 
-Here is a list of principles that were essentially inherited from the 1975 paper:
+Proprietary encryption algorithms developed by vendors who refuse to publish their design for review have a consistent track record of failure when they are eventually reverse-engineered. The A5/1 cipher used in early GSM mobile communications was kept secret, but was reverse-engineered and found to be significantly weaker than publicly designed alternatives.[4]
 
-* General principle: Open design
-* Security principle: Complete mediation
-* Security principle: Fail-safe defaults
-* Security principle: Least privilege
-* Security principle: Economy of mechanism
-* Security principle: Minimize common mechanism
+Open design enables peer review. The AES algorithm was published and subjected to five years of cryptanalysis by the world's best cryptographers before NIST standardized it. That review process gives users justified confidence in its security.
 
-Here are new – or newly stated – principles compared to those described in 1975:
+{% hint style="warning" %}
+**Open design does not mean exposing your secrets.** It means the security mechanism does not depend on the mechanism being unknown. Your database schema being private is fine. Your encryption algorithm requiring secrecy to be secure is not.
+{% endhint %}
 
-* Security principle: Minimize secrets – a thoughtful addition to the list that could be prone to misunderstanding. Secrets should be few and changeable, but they should also maximize entropy, and thus increase the attacker’s work factor. The simple principle is also true by itself, since each secret increases a system’s administrative burden: a late 1990s fighter jet project required dozens of separately-managed crypto keys to comply with data separation requirements that had been added piecemeal.
-* General principle: Adopt sweeping simplifications – a restatement that acknowledges how hopelessly complex modern systems have become. In the 1970s, a Unix operating system could support a dozen separate users with a megabyte of RAM; a single user on a modern desktop easily consumes a gigabyte of RAM, much of it containing software programs.
-* General principle: Principle of least astonishment – a concise and much clearer restatement of the “psychological acceptability” principle described in 1975.
-* General principle: Design for iteration – an important first step towards incorporating continuous improvement as a design principle.
+### 5. Separation of Privilege (Two Keys to Unlock)
 
-Neither of the uncertain principles listed in 1975 made it into this revised list. Despite this, event logging and auditing is a fundamental element of modern computer security practice. Likewise, work factor calculations continue to play a role in the design of information security systems. Pfleeger and Pfleeger highlighted “weakest link” and “easiest penetration” principles that reflect the work factor concept. However, there are subtle trade-offs in work factor calculations that may makes it a poor candidate for stating as a concise and easy-to-apply principle.
+> "Where feasible, a protection mechanism that requires two keys to unlock it is more robust and flexible than one that allows access to the presenter of only a single key."
 
-### Elementary Information Security <a href="#id-2etv3pnhe872" id="id-2etv3pnhe872"></a>
+No single individual or component should have sufficient authority to complete a critical action alone. Requiring multiple independent conditions to be satisfied -- or multiple independent parties to authorize an action -- prevents a single point of failure or a single compromised account from causing catastrophic harm.
 
-The contents of the textbook were primarily influenced by two curriculum standards. The first was the "National Training Standard for Information System Security Professionals" (NSTISSC, 1994), which remains the standard for general security training under the US government's Information Assurance Courseware Evaluation (IACE) Program. The second curriculum standard is the "Information Technology 2008 Curriculum Guidelines" (ACM and IEEE Computer Society, 2008), which the textbook covers all topics and core learning outcomes recommended in the Information Assurance and Security section of the Guidelines.
+**In practice:**
 
-To meet instructional goals, each principle needed to meet certain requirements, such as forming a memorable phrase related to its meaning and reflecting the current state of practice, and were introduced when they played a significant role in a new topic. This resulted in the following eight principles: Continuous Improvement, Least Privilege, Defense in Depth, Open Design, Chain of Control, Deny by Default, Transitive Trust, and Separation of Duty.
+Multi-factor authentication is a direct implementation: something you know (password) AND something you have (hardware token) AND/OR something you are (biometric). A compromised password alone is insufficient.
 
-To fulfill their instructional role, each principle needed to meet certain requirements. Each needed to form a memorable phrase related to its meaning, with preference given to existing, familiar phrases. Each had to reflect the current state of the practice, and not simply a “nice to have” property. Each had to be important enough to appear repeatedly as new materials were covered. Each principle was introduced when it played a significant role in a new topic, and no sooner. Students were not required to learn and remember a set of principles that they didn’t yet understand or need.
+Code deployment pipelines that require both a developer approval and a security scan to pass before deployment can proceed implement separation of privilege. A compromised developer account cannot deploy malicious code unilaterally.
 
-This yielded the following eight principles:
+Financial controls requiring dual authorization for transfers above a threshold are the physical security analog. The Verizon DBIR consistently shows that the presence of MFA reduces the effectiveness of credential-based attacks dramatically.[5]
 
-1. Continuous Improvement – continuously assess how well we achieve our objectives and make changes to improve our results. Modern standards for information security management systems, like ISO 27001, are based on continuous improvement cycles. Such a process also implicitly incorporates compromise recording from 1975 and “design for iteration” from 2009. Introduced in Chapter 1, along with a basic six-step security process to use for textbook examples and exercises.
-2. Least Privilege – provide people or other entities with the minimum number of privileges necessary to allow them to perform their role in the system. This literally repeats one of the 1975 principles.
-3. Defense in Depth – build a system with independent layers of security so that an attacker must defeat multiple independent security measures for the attack to succeed. This echoes “least common mechanism” but seeks to address a separate problem. Defense in depth is also a well-known alternative for stating NIST’s Principle 16.
-4. Open Design – building a security mechanism whose design does not need to be secret. This also repeats a 1975 principle.
-5. Chain of Control – ensure that either trustworthy software is being executed, or that the software’s behavior is restricted to enforce the intended security policy. This is an analogy to the “chain of custody” concept in which evidence must always be held by a trustworthy party or be physically secured. A malware infection succeeds if it can redirect the CPU to execute its code with enough privileges to embed itself in the computer and spread.
-6. Deny by Default – grant no accesses except those specifically established in security rules. This is a more-specific variant of Saltzer and Schroeder’s “fail safe defaults” that focuses on access control. The original statement is less specific, so it applies in safety and control problems.
-7. Transitive Trust – If A trusts B, and B trusts C, then A also trusts C. In a sense this is an inverted statement of “least common mechanism,” but it states the problem in a simpler way for introductory students. Moreover, this is already a widely-used term in computer security.
-8. Separation of Duty – decompose a critical task into separate elements performed by separate individuals or entities. This reflects the most common phrasing in the security community. Some writers phrase it as “segregation of duty” or “separation of privilege.”
+### 6. Least Privilege (Minimum Necessary Access)
 
-The textbook’s list focused on memorable phrases that were widely accepted in the computer security community. Principles introduced in earlier chapters always resurface in examples in later chapters. In retrospect, the list is missing at least one pithy and well-known maxim: “Trust, but verify.” The book discusses the maxim in Chapter 13, but does not tag it as a basic principle.
+> "Every program and every user of the system should operate using the least set of privileges necessary to complete the job."
 
-### Omitted Principles. <a href="#id-1s2r9pn4ai2l" id="id-1s2r9pn4ai2l"></a>
+Principals -- users, service accounts, processes -- should have exactly the permissions required for their current task and no more. This limits the blast radius of a compromise: an attacker who gains access to a low-privilege account or process inherits only those limited permissions.
 
-( Deeper Dive: Security Design Principles – Cryptosmith )
+**In practice:**
 
-For better or worse, three of the 1975 principles do not play a central role in modern information security practice. These are simplicity, complete mediation, and psychological acceptability. We examine each below. There is no real market for simplicity in modern computing. Private companies release product improvements to entice new buyers. The sales bring in revenues to keep the company operating. The company remains financially successful as long as the cycle continues. Each improvement, however, increases the underlying system’s complexity. Much of the free software community is caught in a similar cycle of continuous enhancement and release.&#x20;
+A web application service account that only needs to read from a specific database table should have `SELECT` permission on that table only -- not `db_owner`, not `INSERT`, not access to other tables. If the application is compromised, the attacker's database access is bounded by what the service account can do.
 
-Saltzer and Kaashoek (2009) call for “sweeping simplifications” instead of overall simplicity, reflecting this change. Complete mediation likewise reflects a sensible but obsolete view of security decision making. Network access control is spread across several platforms, no one of which makes the whole decision. A packet filter may grant or deny access to packets, but it can’t detect a virus-infected email at the packet level. Instead it forwards email to a series of servers that apply virus and spam checks before releasing the email to the destination mailbox. Even then, the end user might apply a digital signature check to perform a final verification of the email’s contents.&#x20;
+The principle applies at every layer:
 
-Psychological acceptability, or the “principle of least astonishment” is an excellent goal, but it is honored more in the breach than in the observance. The current generation of “graphical” file access control interfaces provide no more than rudimentary control over low-level access flags. It takes a sophisticated understanding of the permissions already in place to understand how a change in access settings might really affect a particular user’s access.
+| Layer | Least Privilege Application |
+|---|---|
+| Operating system | Run services as non-root; use dedicated service accounts |
+| Application | Request only OAuth scopes actually needed |
+| Database | Grant table-level and operation-level permissions, not schema-wide |
+| Cloud IAM | Scope policies to specific resources and actions |
+| Network | Allow only required ports and protocols; block everything else |
+
+### 7. Least Common Mechanism (Minimize Shared Resources)
+
+> "Minimize the amount of mechanism common to more than one user and depended on by all users."
+
+Mechanisms shared between multiple users or processes are potential covert channels -- ways for one user to observe or influence another's behavior through side effects. Shared resources also mean that a compromise of the shared mechanism affects all users who depend on it.
+
+**In practice:**
+
+Containerization and microservices architectures implement this principle: each service runs in its own isolated environment with its own resources. A vulnerability in one service does not automatically compromise others sharing the same process space.
+
+Multi-tenant cloud environments must carefully implement this principle. Side-channel attacks like Spectre and Meltdown (2018) exploited shared CPU cache to leak information between processes -- a direct violation of this principle at the hardware level.[6]
+
+### 8. Psychological Acceptability (Usable Security)
+
+> "It is essential that the human interface be designed for ease of use, so that users routinely and automatically apply the protection mechanisms correctly."
+
+Security mechanisms that are difficult to use will be circumvented. Users will write passwords on sticky notes, disable security software that slows their machines, share accounts to avoid complicated provisioning processes, or find workarounds for controls they cannot easily comply with.
+
+**In practice:**
+
+Password managers solve the usability vs. security tension in password management: users no longer need to remember complex, unique passwords for every account. The security outcome (unique, complex passwords everywhere) is achieved through a tool that is easier to use than the insecure alternative (reusing simple passwords).
+
+Phishing-resistant MFA (hardware keys like YubiKey, passkeys) is more secure than TOTP codes and, for technical users, no harder to use. The adoption of passwordless authentication is as much a usability project as a security one.
+
+Security controls that generate too many false positives train users to ignore alerts -- which is exactly the condition that allowed the Target breach to go undetected despite automated alerts firing.[7]
+
+---
+
+## Modern Principles
+
+The 1975 list was developed for timesharing systems. Subsequent decades of experience -- networked systems, the internet, cloud computing, mobile -- have produced additional principles that are now as foundational.
+
+### Defense in Depth
+
+No single security control is sufficient. Security architecture should layer independent controls such that the failure of any single layer does not result in a complete compromise. An attacker who bypasses the firewall should still face network segmentation. An attacker who gains a foothold on a workstation should face endpoint detection. An attacker who extracts data should find it encrypted.
+
+Each layer independently reduces the probability of successful attack. Layers that address different threat vectors (network, endpoint, application, data) and are operated by different teams provide the strongest independence.
+
+### Zero Trust Architecture
+
+Zero Trust is an architectural philosophy that abandons the assumption of a trusted internal network. The traditional model -- trust everything inside the firewall, distrust everything outside -- fails catastrophically when a threat actor gains internal access (through phishing, VPN compromise, or insider action), because internal traffic is largely unmonitored and unrestricted.
+
+Zero Trust replaces the network perimeter with identity as the new perimeter. NIST SP 800-207 defines Zero Trust as:[8]
+
+> "Never trust, always verify. Assume breach. Verify explicitly."
+
+| Traditional Model | Zero Trust Model |
+|---|---|
+| Trust based on network location (inside = trusted) | Trust based on verified identity + device health + context |
+| Wide lateral movement possible once inside | Micro-segmentation limits blast radius |
+| Implicit trust for internal traffic | All traffic authenticated and authorized |
+| VPN provides broad network access | Just-in-time, just-enough access to specific resources |
+
+Zero Trust is not a product -- it is an architecture. Implementing it requires investment in identity infrastructure (strong MFA everywhere), device health verification (MDM/EDR integration), micro-segmentation (software-defined networking), and continuous monitoring.
+
+### Secure by Default
+
+Systems should be secure out of the box, without requiring administrators to take additional hardening steps. Default configurations should be the most secure configurations. Insecure features should require explicit opt-in.
+
+**Failures of this principle:**
+
+- Network devices shipped with default credentials that users must actively change (Mirai botnet exploited this at scale)
+- Cloud services where storage is publicly accessible by default (multiple major breaches from misconfigured S3 buckets)
+- Software where debug endpoints are enabled in production builds
+- Services where logging and monitoring must be manually enabled
+
+Microsoft's "Secure by Default" initiative and Google's approach to Android security both operationalize this principle: security improvements that do not require user action reach 100% of the user base; those requiring opt-in reach a fraction.
+
+### Minimize Attack Surface
+
+The attack surface is the sum of all points where an attacker could attempt to enter a system. Reducing it -- by disabling unused services, removing unnecessary accounts, eliminating unneeded network exposures, and reducing code complexity -- reduces the number of opportunities for compromise.
+
+This is distinct from defense in depth (which layers controls over existing attack surface) -- attack surface reduction eliminates the attack surface entirely.
+
+---
+
+## Principles in Conflict
+
+Security design principles sometimes conflict, and resolving those conflicts requires judgment.
+
+| Conflict | Example | Resolution Approach |
+|---|---|---|
+| Usability vs. Least Privilege | Complex permission management drives users to request excessive permissions | Invest in tooling that makes least-privilege easy (permission wizards, role templates) |
+| Complete Mediation vs. Performance | Checking every database access adds latency | Cache decisions with short TTLs; use policy engines (OPA, Cedar) that evaluate quickly |
+| Open Design vs. Business Confidentiality | Publishing security architecture exposes business logic | Separate security mechanisms (which should be open) from business logic (which may be private) |
+| Defense in Depth vs. Economy of Mechanism | Adding layers increases complexity | Prefer independent layers that each address different threat vectors; avoid redundant controls |
+
+There is no formula for these trade-offs. Security architecture is engineering judgment applied under constraints. The principles provide the vocabulary and reasoning framework; application requires understanding the specific system, threat model, and organizational context.
+
+---
+
+## References
+
+[1] Saltzer, J. H., & Schroeder, M. D. (1975). The protection of information in computer systems. *Proceedings of the IEEE*, 63(9), 1278--1308. doi:10.1109/PROC.1975.9939
+
+[2] Durumeric, Z., Kasten, J., Bailey, M., & Halderman, J. A. (2014). Analysis of the HTTPS certificate ecosystem. *Proceedings of the ACM Internet Measurement Conference*, 2014. doi:10.1145/2663716.2663755
+
+[3] Kerckhoffs, A. (1883). La cryptographie militaire. *Journal des sciences militaires*, 9, 5--38.
+
+[4] Barkan, E., Biham, E., & Keller, N. (2008). Instant ciphertext-only cryptanalysis of GSM encrypted communication. *Journal of Cryptology*, 21(3), 392--429. doi:10.1007/s00145-007-9001-y
+
+[5] Verizon. (2024). *2024 Data Breach Investigations Report*. Verizon Business. Retrieved from https://www.verizon.com/business/resources/reports/dbir/
+
+[6] Kocher, P., Horn, J., Fogh, A., Genkin, D., Gruss, D., Haas, W., Hamburg, M., Lipp, M., Mangard, S., Prescher, T., Schwarz, M., & Yarom, Y. (2019). Spectre attacks: Exploiting speculative execution. *Communications of the ACM*, 62(7), 93--101. doi:10.1145/3399742
+
+[7] Krebs, B. (2014, February 12). Target hackers broke in via HVAC company. *Krebs on Security*. Retrieved from https://krebsonsecurity.com/2014/02/target-hackers-broke-in-via-hvac-company/
+
+[8] Rose, S., Borchert, O., Mitchell, S., & Connelly, S. (2020). *Zero Trust Architecture*. NIST Special Publication 800-207. doi:10.6028/NIST.SP.800-207
+
+---
+
+## Further Reading
+
+| Resource | What It Covers |
+|---|---|
+| Saltzer & Schroeder (1975) | The original paper; still worth reading in full. Available via IEEE. |
+| [NIST SP 800-207](https://csrc.nist.gov/publications/detail/sp/800-207/final) | The authoritative Zero Trust Architecture guide from NIST. Free. |
+| Shostack, *Threat Modeling: Designing for Security* (Wiley, 2014) | Applies design principles in the context of practical threat modeling. |
+| [OWASP Security Design Principles](https://owasp.org/www-project-developer-guide/draft/design/web_app_checklist/design_principles/) | OWASP's application of design principles to web security. |
+| Anderson, R. (2020). *Security Engineering* (3rd ed.). Wiley. | The most comprehensive text on security design; free online edition available. |
+
+---
+
+*Questions about security architecture, design principles, or applying Zero Trust? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back -- this book is open source and your additions are welcome.*
