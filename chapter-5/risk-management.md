@@ -1,185 +1,207 @@
-# Risk
+# Risk Management
 
-At its essence, risk in information security refers to the potential for loss or damage when threats exploit vulnerabilities. However, this simple definition belies the complexity and nuance of risk management. To truly understand risk, one must grasp its three fundamental components:
+## Risk Is Not the Enemy
 
-1. **Threats:** Any circumstance or event with the potential to cause harm to an information system. Threats can be intentional, such as a hacker attack, or accidental, like a natural disaster or a system malfunction.
-2. **Vulnerabilities:** Weaknesses in an information system that can be exploited by threats to gain unauthorized access or cause harm. These can range from software bugs and insecure system configurations to human factors like lack of awareness or negligence.
-3. **Impact:** The extent of damage or loss that can be expected if a threat successfully exploits a vulnerability. This can include financial losses, damage to an organization’s reputation, legal liabilities, and more.
+Organizations do not fail because they face risk. They fail because they face risk they did not understand, did not measure, and did not make deliberate decisions about.
 
-### **Risk Management** <a href="#t9cfbcnzrm36" id="t9cfbcnzrm36"></a>
+Every organization that has ever operated has accepted risk. A hospital that stores patient records accepts the risk that those records could be breached. A bank that offers online banking accepts the risk that accounts could be compromised. A manufacturer that connects its production floor to the internet accepts the risk that an attacker could disrupt operations. The question is never whether to accept risk. It is whether the risk being accepted is understood, proportionate, and managed.
 
-### Risk management is important in information security: Why? <a href="#fd38k7ccxxga" id="fd38k7ccxxga"></a>
+Risk management is the discipline that makes those decisions systematically instead of accidentally.
 
-Risk management is a commonly used phrase in business today, but without a consistent understanding of what it means and how to do it effectively, it can itself create risk. Information security risk management and cybersecurity risk management are derivatives of this broader concept. As these areas continue to grow in importance for organizations, it is important to demystify them and understand how to approach them at a practical and actionable level.
+---
 
-In particular, this article will focus on how to do risk management for the ISO 27001 standard and achieving compliance with the risk-focused aspects of the General Data Protection Regulation (EU GDPR). ISO 27001 is an international standard that provides a framework for managing information security risks, and achieving compliance with it can demonstrate an organization's commitment to protecting sensitive information. Similarly, the EU GDPR requires organizations to implement appropriate technical and organizational measures to protect personal data and to demonstrate compliance with those measures. By understanding the risk management requirements of these standards and implementing them effectively, organizations can better protect sensitive information and avoid potential penalties for non-compliance.
+## What Risk Actually Is
 
-**What is information security risk management?**
+Risk in information security is the potential for harm resulting from a threat exploiting a vulnerability in an asset. Three components interact to produce risk.[1]
 
-Unsurprisingly, risk management means different things to different people. To understand it better, it is important to go back to the basics of risk management and build from there.
+| Component | Definition | Example |
+|---|---|---|
+| **Threat** | A potential cause of harm | Ransomware operator, disgruntled insider, hardware failure |
+| **Vulnerability** | A weakness that could be exploited | Unpatched software, weak access controls, untrained staff |
+| **Impact** | The consequence if exploitation occurs | Data loss, operational downtime, regulatory fines, reputational damage |
 
-ISO 31000:2018 is a recently updated version of the International Standards Organisation (ISO) standard for risk management. It defines risk as "the effect of uncertainty on objectives." Therefore, risk management is about decision-making and taking actions to address uncertain outcomes and controlling how risks might impact the achievement of business goals.
+Remove any one component and the risk collapses. A threat with no vulnerability to exploit cannot cause harm. A vulnerability with no threat actor to exploit it carries no risk. An asset with no value carries no meaningful impact. This is why risk management focuses on all three -- and why prioritizing based on likelihood and impact matters more than treating all vulnerabilities equally.
 
-The standard provides a framework for organizations to identify, assess, and prioritize risks and to implement measures to mitigate or manage those risks. It also includes the governance, communication and review of the risk management process. This helps organizations to make informed decisions, allocate resources effectively and improve their overall performance.
+{% hint style="info" %}
+**Risk appetite vs. risk tolerance:**
 
-Risk management is an ongoing process that helps organizations to identify and manage potential threats, opportunities, and uncertainties that could impact their operations and objectives. By understanding and managing risks, organizations can improve their ability to achieve their goals and to operate more efficiently and effectively.
+**Risk appetite** is the amount and type of risk an organization is willing to accept in pursuit of its objectives. It is a strategic decision made by senior leadership and the board.
 
-**Why risk management is important in information security**
+**Risk tolerance** is the acceptable variation around that appetite -- the operational boundaries within which the organization is willing to deviate before action is required.
 
-Information security risk management (ISRM) is the process of identifying, evaluating, and treating risks to an organization's valuable information. It addresses uncertainties around those assets to ensure the desired business outcomes are achieved.
+An organization might have a risk appetite of "no unpatched critical vulnerabilities on internet-facing systems for more than 72 hours." Its risk tolerance might allow 96 hours in exceptional circumstances with documented approval. Both must be defined. Organizations that have neither are accepting whatever risk exists, which is not a strategy.
+{% endhint %}
 
-There are different ways to manage risk and not all risks are bad, as they can also create opportunities. However, most of the time, the focus is on managing threats. It is important to note that one size does not fit all and different organizations may have different risk management approaches.
+---
 
-ISRM typically involves identifying potential risks to the organization's information assets, assessing the likelihood and impact of those risks, and implementing measures to mitigate or manage them. This process helps organizations to ensure the confidentiality, integrity, and availability of their information assets, and to meet compliance and regulatory requirements.
+## The Risk Management Lifecycle
 
-It is an ongoing process that requires regular review and updates to ensure that risks are identified and treated in a timely manner. By implementing effective ISRM practices, organizations can improve their ability to protect their information assets and achieve their business objectives.
+Risk management is not a one-time assessment. It is a continuous cycle. ISO 31000:2018, the international standard for risk management, describes it as an iterative process of identification, analysis, evaluation, treatment, and monitoring.[2]
 
-### Why ‘joined up’ risk management is important <a href="#igt4hr196mon" id="igt4hr196mon"></a>
+### Step 1: Context and Scope
 
-Risk management in organizations can be challenging, as it involves many people with different perspectives, biases, and risk appetites. Each person may have their own way of approaching risk management and may have implicitly overlaid their own methodology and tools. For example, many people may have created their own risk registers as part of a work project, using a document or spreadsheet and incorporating their own process for evaluation and actions.
+Before identifying risks, define what you are protecting and what you are protecting it from. This means:
 
-However, when it comes to meeting regulations like GDPR and standards like ISO 27001 for information security management, there are specific requirements that need to be met. These standards provide a framework for managing information security risks and achieving compliance, and organizations need to ensure that they understand and implement these requirements effectively.
+- Defining the scope of the risk assessment (which systems, processes, data, or business units)
+- Understanding the organization's objectives (what does success look like, and what would threaten it)
+- Identifying internal and external context (regulatory environment, technology landscape, threat intelligence)
+- Establishing risk acceptance criteria (at what point is a risk considered acceptable without further treatment)
 
-For example, GDPR requires organizations to implement appropriate technical and organizational measures to protect personal data and to demonstrate compliance with those measures. ISO 27001 provides a framework for managing information security risks, and achieving compliance with it can demonstrate an organization's commitment to protecting sensitive information.
+### Step 2: Risk Identification
 
-The goal of risk management in these contexts is not only to meet regulatory and compliance requirements, but also to ensure that the organization's valuable information is protected and that desired business outcomes are achieved. By understanding and implementing these standards effectively, organizations can improve their ability to protect their information assets and achieve their business objectives.
+Identify threats to information assets within scope. Sources of risk include:
 
-These include:
+- External threats: attackers, natural disasters, supply chain failures
+- Internal threats: accidental errors, system failures, malicious insiders
+- Process risks: inadequate controls, poor change management, untrained staff
+- Compliance risks: regulatory changes, contractual obligations
 
-* Alignment of risk management actions with business objectives
-* A consistent and repeatable methodology to ‘show your working’ and ensure it can be applied in line with the standards and regulations (which we’ll cover more of shortly)
+A **risk register** is the primary artifact here -- a structured document recording identified risks, their sources, affected assets, current controls, and status. A risk register that is maintained and reviewed is an active management tool. One that was created once and filed is a false comfort.
 
-Doing risk management well can help an organization run a better business by addressing uncertainties and making informed decisions. It can also act as an insurance mechanism, in the event of a data breach or other negative incident.
+### Step 3: Risk Analysis
 
-When it comes to cybersecurity and information security, a joined-up risk management approach that takes into account business objectives is crucial. This is important not just for these specific types of risk, but for all types of risk, such as quality, environmental, health, and cyber. By taking a holistic approach to risk management, organizations can ensure that they are effectively identifying, assessing and mitigating risks that could impact their operations and objectives.
+For each identified risk, assess:
 
-Looking deeper at the risk management methodology and approach for ISO 27001 and Europe's General Data Protection Regulation (GDPR) specifically, organizations need to understand these standards and implement them effectively. ISO 27001 provides a framework for managing information security risks, and GDPR requires organizations to implement appropriate technical and organizational measures to protect personal data and to demonstrate compliance with those measures. By understanding and implementing these standards, organizations can improve their ability to protect their information assets and achieve their business objectives and avoiding penalties for non-compliance.
+- **Likelihood**: How probable is it that this threat will exploit this vulnerability? Consider historical data, threat intelligence, and existing controls.
+- **Impact**: If exploitation occurs, what is the consequence? Consider financial loss, operational disruption, regulatory penalty, and reputational damage.
 
-### Cyber Security VS Information Security? <a href="#zdgd3s7dzbhi" id="zdgd3s7dzbhi"></a>
+The combination of likelihood and impact produces a risk rating. A 5x5 risk matrix is the most common visualization, with likelihood on one axis and impact on the other, producing a heat map that distinguishes low-priority risks from critical ones.
 
-Cybersecurity is a relatively new concept that has gained importance in recent years, particularly with the increasing digitization and electronic dependency of the world. The consequences of poor cybersecurity have grown exponentially and have become a significant concern for organizations. Serious Organized Crime Groups (OCGs) are now exploiting vulnerabilities in cyber defenses, making it even more critical for organizations to have robust cybersecurity measures in place.
+{% hint style="warning" %}
+**The limitation of qualitative risk matrices:** A 5x5 matrix uses subjective ratings ("high," "medium," "low") that different people will score differently. Two analysts assessing the same risk can produce different ratings based on judgment alone. Qualitative matrices are useful for communication and prioritization but should not be mistaken for precision.
 
-The General Data Protection Regulation (GDPR) has also raised the bar for organizations to improve their cybersecurity infrastructure. The GDPR has the ability to impose significant fines for personal data breaches, which is an added incentive for organizations to take cybersecurity seriously.
+For high-stakes decisions -- major security investments, board-level risk reporting, insurance decisions -- consider **quantitative risk analysis** methods that express risk in financial terms.
+{% endhint %}
 
-Overall, cybersecurity has become an essential aspect of managing any organization, and it is critical to understand the risks, consequences and importance of having a robust cybersecurity strategy in place. This can help organizations to mitigate risks, protect their valuable data and avoid costly penalties.
+### Quantitative Risk Analysis: The FAIR Model
 
-**Cybersecurity** and **information** security are commonly considered to be the same thing, but they have distinct differences. Cybersecurity is more typically about the protection of information held electronically, and it is a subset of the broader information security posture. Information security covers a wider range of concerns, it not only deals with the protection of electronic information but also includes physical security, such as locks on doors, and people-based security, such as ensuring that key personnel within an organization are protected and that sensitive information is not lost when they leave or are unavailable.
+Factor Analysis of Information Risk (FAIR) is the leading framework for quantitative cyber risk measurement.[3] Instead of "high/medium/low" ratings, FAIR produces risk in financial terms: expected loss in dollars over a defined period, expressed as a range.
 
-Information security also encompasses data protection, incident management, disaster recovery, and business continuity planning. It is a holistic approach that looks at the protection of information from all angles, including the protection of sensitive data, the management of incidents, the recovery of data after a disaster, and the continuity of business operations.
+FAIR decomposes risk into:
 
-Overall, while cybersecurity is an essential aspect of information security, information security is a more comprehensive concept that encompasses a wide range of concerns related to protecting information assets in various forms and from various threats.
+- **Loss Event Frequency**: How often an event is expected to occur (combining threat event frequency and vulnerability)
+- **Loss Magnitude**: The financial impact when it does occur (combining primary and secondary losses)
 
-In ISO 27000, information security is defined as: “_The preservation of confidentiality, integrity, and availability of information._” Implicitly this includes cyber. International Standards like ISO 27001 and GDPR also expect you to consider information security in its more holistic sense.
+The output is a probability distribution of annual loss expectancy -- for example, "there is a 90% probability that annual losses from this risk category will fall between $200,000 and $4.2 million, with a most likely value of $850,000."
 
-Cyber Essentials is a UK government-backed scheme that focuses on the high-risk control areas that can help prevent cyber-based losses. It is designed to provide a foundation for smaller businesses that are reliant on digital services. It is complementary to other standards such as ISO 27001 and GDPR, and it is a good starting point for organizations to build their cybersecurity defenses.
+This language is meaningful to CFOs, boards, and insurance underwriters in ways that "high risk" is not. FAIR is increasingly required in mature GRC programs and is the basis for the Open FAIR standard maintained by The Open Group.[4]
 
-While cybersecurity is often associated with external threats, it is important to remember that cyber problems can also occur internally. Access control and physical protection should be in place to manage both internal and external threats.
+### Step 4: Risk Treatment
 
-It is important to note that IT security and information security are not synonymous. IT security is a subset of information security and should be considered as part of a more strategic and holistic approach to protecting information assets.
+Once risks are analyzed and prioritized, each requires a treatment decision. The four standard options:[5]
 
-One of the dangers of only thinking about cybersecurity risk management is that it can be left to the IT department alone. However, it is important to remember that cybersecurity is a business-wide concern and should be managed by a team with representation from various departments and functions within the organization.
+| Treatment | Description | When to Use |
+|---|---|---|
+| **Mitigate (Treat)** | Implement controls to reduce likelihood or impact | When the risk exceeds appetite and a cost-effective control exists |
+| **Accept (Tolerate)** | Acknowledge the risk and continue without additional controls | When residual risk falls within appetite, or treatment cost exceeds potential loss |
+| **Transfer (Share)** | Shift financial impact to a third party via insurance or contract | When risk cannot be fully mitigated and financial exposure needs to be bounded |
+| **Avoid (Terminate)** | Cease the activity that creates the risk | When risk exceeds appetite and cannot be sufficiently reduced |
 
-It is important to have a business-led, joined-up approach to information security risk management to ensure the right solutions are put in place. This approach ensures that staff and supply chain embrace the policies and controls, and that there are no conflicting hoops to jump through.
+Treatment decisions must be documented with rationale, approved by an appropriate authority, and reviewed periodically. A risk that was accepted three years ago may no longer be acceptable given changed circumstances.
 
-It is crucial to clarify the role and scope of the IT team and to be clear about how integrated they are with the business objectives. This applies to other departments as well, regardless of the sign above the door. The goal is to do business securely, which makes it everyone's responsibility. Clear leadership and accountability are needed to have a chance of achieving an ISO 27001 certification.
+ISO 27001 Annex A provides 93 control objectives across information security domains that serve as a library of treatment options. The Statement of Applicability (SoA) -- a required ISO 27001 document -- maps identified risks to the controls selected to treat them, explicitly noting which controls are included or excluded and why.[6]
 
-ISO 27001 is a great framework for organizations to follow a structured approach to information security management. It helps organizations work through their purpose, issues, interested parties, scope, and information at risk. Through this process, organizations can identify who should be involved in information security management. It is important to note that it is not just the IT team that should be involved and that it covers more than just cyber security.
+### Step 5: Monitor and Review
 
-Overall, information security risk management is a business-wide concern that requires the involvement of multiple departments and functions within an organization, and it should be aligned with the organization's overall objectives.
+Risk is not static. New threats emerge. Vulnerabilities are discovered. Business processes change. Regulatory requirements shift. The risk management process must be:
 
-### Risk management methodology <a href="#jo90yji2xqfd" id="jo90yji2xqfd"></a>
+- **Continuously monitored**: Risk owners track control effectiveness and report changes
+- **Formally reviewed**: Management reviews risks at defined intervals (at minimum annually; more frequently for high-rated risks)
+- **Audit-ready**: Internal audits verify that risk treatment plans are implemented and effective
 
-Article 32 of the EU General Data Protection Regulation (GDPR) requires organizations to conduct risk assessments using the Confidentiality, Integrity, and Availability (CIA) framework. This framework is also a requirement of the ISO 27001 standard for information security management. Using the CIA approach for all information assets, not just personal data, ensures a consistent and comprehensive approach to information security risk management. By aligning the risk management process with both GDPR and ISO 27001, organizations can ensure compliance with both regulations and standards while also effectively managing their information security risks. This approach not only helps organizations to meet their regulatory obligations, but also improve overall information security posture.
+---
 
-1. Confidentiality: information is not made available or disclosed to unauthorised individuals, entities or processes
-2. Integrity: safeguarding the accuracy and completeness of information assets
-3. Availability: being accessible and usable upon demand by an authorised entity
+## Risk Assessment Methods
 
-When developing a methodology for information security risk management, it's important to consider the conflicts and priorities that may arise when addressing risks related to Confidentiality, Integrity, and Availability (CIA) of information. For example, in the event of a data breach, an organization may be faced with a conflict between maintaining the confidentiality of the data and keeping services online, which is an availability issue.
+### Asset-Based Risk Assessment
 
-In order to effectively manage these conflicts and priorities, organizations should have a clear and documented process in place. This process should include the following key elements:
+Start with information assets, identify threats to each, assess the vulnerabilities those threats could exploit, and calculate risk. This is the approach mandated by ISO 27001 and is well-suited to organizations that need to demonstrate comprehensive coverage of their information security landscape.
 
-### What are the 5 steps in a risk management process? <a href="#hoq9spwg148k" id="hoq9spwg148k"></a>
+### Scenario-Based Risk Assessment
 
-Let’s assume your goal is to obtain ISO 27001 certification, whilst complying with GDPR. We’ll craft our information security risk methodology with that in mind.
+Start with plausible attack scenarios -- ransomware deployment, insider data theft, supply chain compromise -- and assess the likelihood and impact of each scenario. This approach is more intuitive for executives and easier to communicate to boards. It also maps naturally to cyber threat intelligence, since threat intel describes specific attack scenarios used by specific threat actors.
 
-![](<../.gitbook/assets/0 (1)>)
+### Hybrid Approaches
 
-* **Risk identification**
+Most mature organizations use both: asset-based assessment for ISO 27001 compliance documentation and scenario-based assessment for executive reporting and strategic decision-making. The two perspectives are complementary.
 
-Identifying potential threats and vulnerabilities that could impact the CIA of information. The source of the risk may be from an information asset, related to an internal/external issue (e.g. associated to a process, the business plan etc) or an interested party/stakeholder related risk.
+---
 
-* **Risk analysis**
+## Third-Party and Supply Chain Risk
 
-Once you know the risks, you need to consider the likelihood and impact (LI) to allow you to distinguish between (say) low likelihood and low impact, versus higher ones.
+Organizations do not operate in isolation. Their risk profile includes the security posture of every vendor, supplier, and partner with access to their systems or data. The SolarWinds breach, the MOVEit breach, and the 3CX supply chain attack all demonstrate that sophisticated attackers have learned to use trusted third parties as entry points.[7]
 
-* **Risk evaluation.**
+Third-party risk management (TPRM) is an extension of the risk management program that:
 
-Once you have assessed the risks, it is important to prioritize investments where they are needed the most. This can be done by utilizing a risk management tool, such as the 5x5 grid system offered by ISMS.online. This system allows for easy identification of potential risks and their potential impact on the business. The grid includes a likelihood range from very low to very high, with corresponding explanations for each level. For example, a very low likelihood indicates that there is no history of occurrence and that it would require specialized skills and high investment to occur. The impact criteria range from very low, with insignificant consequences and costs, to very high, which could lead to the potential failure of the business. By clearly documenting the meaning of each position on the grid, it ensures that the method can be applied consistently by anyone who uses it. Additionally, the tool also includes a risk bank with popular risks and corresponding treatments, saving a significant amount of time.
+- Inventories third-party relationships and the access each has
+- Assesses each vendor's security posture (through questionnaires, certifications, or direct audit)
+- Establishes contractual security requirements and right-to-audit clauses
+- Monitors vendor security posture on an ongoing basis
+- Defines processes for responding when a vendor is breached
 
-* **Risk treatment**
+{% hint style="danger" %}
+**The concentration risk problem:** Many organizations rely on a small number of critical vendors for security-sensitive functions -- a single identity provider, a single cloud platform, a single security tool vendor. When one of these vendors is compromised, the blast radius extends to every customer simultaneously. The Log4Shell vulnerability (2021) and the XZ Utils backdoor (2024) demonstrated how a single widely-used component can expose millions of systems at once.
 
-The process of addressing risk, also referred to as "risk response planning," must be supported by evidence. Risk treatment can take various forms, including internal measures to control and tolerate the risk, transferring the risk to a third party, or completely eliminating the risk.
+Understanding and managing concentration risk -- the risk that too many critical functions depend on a single point of failure -- is increasingly a governance-level responsibility.
+{% endhint %}
 
-The ISO 27001 standard provides a set of control objectives outlined in Annex A to guide risk treatment and serve as the foundation for the Statement of Applicability. Additionally, these controls offer an opportunity to identify potential risks that may have been previously overlooked.
+---
 
-* **Monitor and review the risk**
+## Risk Reporting
 
-Monitoring and reviewing risk is an essential part of the risk management process. It involves creating processes for monitoring and review, including:
+Risk management produces no value unless findings reach the people who can act on them. Effective risk reporting varies by audience:
 
-**Staff engagement and awareness**
+| Audience | What They Need | Format |
+|---|---|---|
+| **Board / Audit Committee** | Strategic risk posture, top risks, trend over time, alignment to risk appetite | Concise dashboard, heat map, top 5-10 risks in business language |
+| **Executive Team** | Operational risk status, resource requirements, compliance exposure | Summary report with action items and owners |
+| **Security Team** | Detailed risk register, control gaps, treatment priorities | Full risk register with technical detail |
+| **Auditors / Regulators** | Evidence of risk assessment process, treatment decisions, control effectiveness | Documented methodology, completed risk assessments, SoA |
 
-Involving appropriate staff in the process regularly and providing a forum for feedback.
+Risk reporting that only flows up the security team and never reaches the board is governance theater. It creates the appearance of risk management without the accountability.
 
-**Management reviews**
+---
 
-Incorporating risk reviews as a standard part of management meetings, with risk owners present at this level and operational responsibilities delegated to the front line.
+## Risk Management Certifications and Career Path
 
-**Improvement**
+Risk management is a core competency for GRC professionals and is increasingly valued across all security disciplines. Certifications most relevant to risk management:
 
-Utilizing internal audits and other mechanisms in Clause 10 to continuously improve the risk management process.
+- **CRISC** (Certified in Risk and Information Systems Control) -- ISACA's dedicated risk management certification; the most recognized credential specifically for IT risk practitioners
+- **CISM** (Certified Information Security Manager) -- covers risk management as a core domain alongside governance and incident response
+- **CISSP** -- includes risk management across its eight domains; relevant for senior generalist roles
+- **ISO 31000 Lead Risk Manager** -- practitioner-level certification in the ISO risk management standard
+- **FAIR Institute membership** -- for practitioners pursuing quantitative risk analysis
 
-**Risk ownership**
+---
 
-Assigning an owner for each risk, potentially delegating ownership to the front line according to the "3 lines of defense" model.
+## References
 
-**Review frequency**
+[1] Stoneburner, G., Goguen, A., & Feringa, A. (2002). *Risk Management Guide for Information Technology Systems*. NIST Special Publication 800-30. National Institute of Standards and Technology. doi:10.6028/NIST.SP.800-30
 
-Conducting management reviews at least annually, with more frequent reviews for higher likelihood and higher impact risks.
+[2] International Organization for Standardization. (2018). *ISO 31000:2018 -- Risk Management -- Guidelines*. ISO. Retrieved from https://www.iso.org/standard/65694.html
 
-### Risk management requirements of ISO 27001:2013/17 <a href="#id-4klf33pk766t" id="id-4klf33pk766t"></a>
+[3] Jones, J., & Freund, J. (2015). *Measuring and Managing Information Risk: A FAIR Approach*. Butterworth-Heinemann. ISBN 978-0-12-420231-3.
 
-**(**https://www.isms.online/iso-27001/information-security-risk-management-explained/**)**
+[4] The Open Group. (2013). *Open FAIR Body of Knowledge*. The Open Group Standard. Retrieved from https://www.opengroup.org/open-fair
 
-There are 2 main requirements where risk management is expressed: Clause 6 Planning and Clause 8 Operation.
+[5] National Institute of Standards and Technology. (2012). *Guide for Conducting Risk Assessments*. NIST Special Publication 800-30 Rev. 1. doi:10.6028/NIST.SP.800-30r1
 
-Clause 8 is simply about implementing and operating what you have described for 6.1 so let’s concentrate on 6.1 here knowing that you have to live and breathe it in practice (8) to have a chance of running the business well and obtaining certification.
+[6] International Organization for Standardization. (2022). *ISO/IEC 27001:2022 -- Information Security Management Systems -- Requirements*. ISO/IEC JTC 1/SC 27.
 
-**Clause 6.1: Actions to address risks and opportunities**
+[7] Cybersecurity and Infrastructure Security Agency. (2023). *#StopRansomware: CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability*. CISA Advisory AA23-158A. Retrieved from https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a
 
-Let’s also remember that this process needs to be business objectives led (i.e. establish context above) so you need to show the information security management system can:
+---
 
-* achieve the intended outcomes
-* prevent, or reduce the undesired effects
-* achieve continual improvement
+## Further Reading
 
-When implementing ISO requirements, it is best to begin with a top-down approach. This approach involves considering the overall context and purpose of your organization, as well as the specific challenges it faces. This includes assessing interested parties, determining the scope of the project, and identifying important information assets. This approach is illustrated in the image provided in the ISO 27001 Virtual Coach program within ISMS.online and is considered the most logical method to take.
+| Resource | What It Covers |
+|---|---|
+| [NIST SP 800-30 Rev 1](https://csrc.nist.gov/publications/detail/sp/800-30/rev-1/final) | The authoritative NIST guide for conducting risk assessments. Free, comprehensive, well-structured. |
+| [FAIR Institute](https://www.fairinstitute.org) | Resources on quantitative cyber risk measurement. Free membership, active practitioner community. |
+| [ISO 31000:2018](https://www.iso.org/standard/65694.html) | The international risk management standard. Purchase required; summaries freely available. |
+| Jones & Freund, *Measuring and Managing Information Risk* (2015) | The definitive book on the FAIR model. Required reading for anyone doing quantitative risk analysis. |
+| [ISACA CRISC](https://www.isaca.org/credentialing/crisc) | Details on the leading IT risk management certification. |
 
-![](<../.gitbook/assets/1 (3)>)
+---
 
-**The organisation has to plan how to address the risks threats and opportunities. ISO 27001 is also very interested in:**
-
-1. How the risks integrate into the wider information security management system
-2. How actions are taken, and evaluating the effectiveness of the actions taken on the way
-
-In addition to the top-down approach, ISO 27001 also requires a thorough documentation of risk acceptance criteria for performing risk assessments. This ensures that the results of the assessments are consistent, valid, and comparable, and that they effectively address the confidentiality, integrity, and availability of the information assets within scope.&#x20;
-
-An external auditor will expect to see a methodology that clearly explains these processes, and will have increased confidence in the overall efficiency and effectiveness of the ISMS. When information assets are linked to risks, and risks are linked to the policies and controls implemented to address them, the ISMS operates in a seamless and cohesive manner.
-
-### The Role of GRC in Managing Risk
-
-Governance, Risk Management, and Compliance (GRC) frameworks provide a structured approach to managing risk in alignment with an organization's overall governance strategy and compliance obligations. GRC emphasizes the integration of risk management practices into all aspects of an organization's operations, ensuring that:
-
-* **Governance** processes effectively oversee the organization's information security strategies and policies.
-* **Risk Management** practices are proactive and integrated, supporting informed decision-making and strategic planning.
-* **Compliance** with relevant laws, regulations, and standards is maintained, mitigating legal and financial risks.
+*Questions about risk management or GRC career paths? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back -- this book is open source and your additions are welcome.*
