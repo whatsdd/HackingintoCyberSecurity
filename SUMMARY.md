@@ -54,3 +54,11 @@
 ## CHAPTER 11
 
 * [Secure Developer: The SSDLC](chapter-11/secure-developer.md)
+
+## CHAPTER 12
+
+* [Hacking the CTF](chapter-12/hacking-the-ctf.md)
+
+## CHAPTER 13
+
+* [Hacking the Interview](chapter-13/hacking-the-interview.md)
