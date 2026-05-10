@@ -1,284 +1,315 @@
 # Cryptography
 
-## Introduction <a href="#id-3uezhdm9mdzq" id="id-3uezhdm9mdzq"></a>
+## The Oldest Arms Race in History
 
-The science of encryption, known as cryptology, encompasses both cryptography and cryptanalysis. Cryptography, derived from the Greek words kryptos meaning "hidden" and graphein meaning "to write," involves the creation and use of codes to secure messages. Cryptanalysis, on the other hand, deals with cracking or breaking encrypted messages to reveal their unencrypted form. Cryptography utilizes mathematical algorithms that are widely known but the protection of the encrypted message lies in the knowledge of the key, a series of characters or bits added to the algorithm along with the original message to create the encrypted message. The process of encryption transforms plaintext into ciphertext, making it unreadable to unauthorized individuals without the key to decrypt the message back into its original form. The field of cryptology is vast and this chapter provides a general overview of the subject and specific information on a few cryptographic tools. It will cover the background of cryptology, key concepts in cryptography, common cryptographic tools, cryptographic protocols and attack methods used against cryptosystems.
+Julius Caesar shifted every letter in his messages three positions forward in the alphabet. A became D. B became E. Enemies who intercepted the message saw gibberish. Those who knew the shift could read it instantly.
 
-### Foundations of Cryptology <a href="#imuwfdfim5l1" id="imuwfdfim5l1"></a>
+The Caesar cipher is trivially broken today. A modern computer cracks it in microseconds by trying all 25 possible shifts. But Caesar's approach captured something fundamental: hide a message by transforming it according to a rule that only authorized parties know. That principle -- transformation by shared secret -- runs unbroken from Caesar's military dispatches to the TLS encryption protecting your banking session right now.[1]
 
-The history of cryptology is extensive and multicultural, dating back thousands of years. People have been creating, using, and breaking codes for a long time, and it remains an important aspect of information security today. Many modern IT tools use embedded encryption technologies to protect sensitive information in applications. For example, web browsers use built-in encryption features to enable secure e-commerce transactions such as online banking and shopping.
+What changed is the mathematics. Simple substitution ciphers can be broken by analyzing letter frequency patterns. Modern cryptography uses mathematical problems that are computationally infeasible to reverse without the key -- problems involving large prime factorization, discrete logarithms, and elliptic curves that even the fastest computers cannot brute-force in any meaningful timeframe.
 
-Since World War II, there have been restrictions on the export of cryptosystems, and these restrictions continue today, as seen in the Code of Federal Regulations: International Traffic in Arms Regulations. These restrictions stem from the role that cryptography played in World War II, and the belief of the American and British governments that their cryptographic tools were superior to those in less developed countries. As a result, these governments believe that other countries should be prevented from using cryptosystems to communicate potential terrorist activities or gain an economic advantage.
+Cryptography is the foundation of digital security. Without it, there is no private communication, no authentication, no trusted e-commerce, no secure remote access. Every other security control either uses cryptography or depends on infrastructure that does.
 
-**Terminology**
+---
 
-To understand the fundamentals of cryptography, you must know the meanings of the following terms:
+## Core Concepts
 
-* **Algorithm:** A mathematical formula or method used to convert plaintext (original unencrypted message) into ciphertext (encrypted message). This term can also refer to the programs that enable cryptographic processes.
-* **Bit stream cipher:** An encryption method that converts plaintext to ciphertext one bit at a time.
-* **Block cipher:** An encryption method that divides plaintext into blocks or sets of bits, and then converts plaintext to ciphertext one block at a time.
-* **Cipher:** As a verb, it refers to the process of converting individual components of an unencrypted message into encrypted components or vice versa. As a noun, it refers to the process of encryption or the algorithm used in encryption and is synonymous with cryptosystem.
-* **Ciphertext or cryptogram:** The unintelligible encrypted or encoded message resulting from encryption.
-* **Code:** The process of converting components of an unencrypted message into encrypted components.
-* **Decipher:** See Decryption.
-* **Decryption:** The process of converting an encoded or enciphered message (ciphertext) back to its original readable form (plaintext). Also referred to as deciphering.
-* **Encipher:** See Encryption.
-* **Encryption:** The process of converting an original message (plaintext) into a form that cannot be used by unauthorized individuals (ciphertext). Also referred to as enciphering.
-* **Key or cryptovariable:** Information used in conjunction with the algorithm to create ciphertext from plaintext. It can be a series of bits used in a mathematical algorithm or the knowledge of how to manipulate plaintext.
-* **Keyspace:** The entire range of values that can be used to construct an individual key.
-* **Link encryption:** A series of encryptions and decryptions between multiple systems in a network. Each system decrypts the message sent to it and then reencrypts it using different keys before sending it to the next neighbor.This process continues until the message reaches its final destination.
-* **Plaintext or cleartext:** The original unencrypted message that is encrypted and is the result of successful decryption.
-* **Steganography:** The practice of hiding messages, such as hiding a message within the digital encoding of a picture or graphic, making it almost impossible to detect that the hidden message even exists.
-* **Work factor:** The amount of effort (usually expressed in units of time) required to perform cryptanalysis on an encoded message.
+Before diving into specific algorithms, these terms appear in every cryptographic discussion and must be precise.
 
-## Cryptographic Algorithms & Encryption. <a href="#m815plhnpxi4" id="m815plhnpxi4"></a>
+| Term | Definition |
+|---|---|
+| **Plaintext** | The original, readable data before encryption |
+| **Ciphertext** | The encrypted, unreadable output |
+| **Encryption** | The process of converting plaintext to ciphertext using an algorithm and key |
+| **Decryption** | The reverse: converting ciphertext back to plaintext using the correct key |
+| **Key** | The secret value that controls the encryption and decryption process |
+| **Algorithm (cipher)** | The mathematical function used for encryption/decryption |
+| **Key space** | The total number of possible keys; larger key spaces mean harder brute-force attacks |
 
-Cryptographic algorithms can be divided into two main groups: symmetric and asymmetric. Symmetric algorithms use the same key for both encryption and decryption, while asymmetric algorithms use a pair of keys: a public key for encryption and a private key for decryption. In practice, many modern cryptosystems utilize a combination of both symmetric and asymmetric algorithms for enhanced security. This approach is known as a "hybrid cryptosystem".
+**Kerckhoffs's principle**, formulated by Auguste Kerckhoffs in 1883, states that a cryptographic system should be secure even if everything about it -- except the key -- is public knowledge.[2] This is why the AES algorithm is published in full. Security comes from the secrecy of the key, not the secrecy of the algorithm. Systems that depend on algorithm secrecy ("security through obscurity") have a poor track record.
 
-**Symmetric Encryption**
+---
 
-Encryption methodologies that use the same secret key for both encryption and decryption are known as private-key or symmetric encryption. These methods are popular due to their computational efficiency, as they can be implemented using fast algorithms, even on small computers. However, one of the main challenges of symmetric key encryption is key distribution. Both the sender and the recipient must have the secret key, and if either copy of the key falls into the wrong hands, the security of the encrypted messages can be compromised. The key must be exchanged securely, using a separate communication channel or medium, to avoid interception. The primary challenge in symmetric encryption is securely sharing the key with the intended recipient.
+## Symmetric Encryption
 
-The Data Encryption Standard (DES) is a widely used symmetric encryption cryptosystem. It was developed by IBM and is based on the company's Lucifer algorithm, which uses a key length of 128 bits. However, as implemented, DES uses a 64-bit block size and a 56-bit key. In 1976, it was adopted by the National Institute of Standards and Technology (NIST) as a federal standard for encryption of non-classified information, and it quickly gained widespread use in commercial applications. However, by 1997, it became apparent that the 56-bit key size of DES did not provide adequate security. In 1998, the Electronic Frontier Foundation (EFF) used a specialized computer to break a DES key in just over 56 hours. Since then, it has been theorized that with dedicated hardware, a DES key could be broken in less than a day. Due to these security concerns, DES is considered no longer secure and has been replaced by more advanced symmetric encryption algorithms like AES.
+Symmetric encryption uses the same key for both encryption and decryption. Both parties must possess the key before secure communication can begin.
 
-Triple DES (3DES) was designed to provide stronger encryption than the original Data Encryption Standard (DES). However, as computing power continued to increase, 3DES's security proved to be insufficient in the long term. As a result, it was replaced by the Advanced Encryption Standard (AES).
+### AES (Advanced Encryption Standard)
 
-AES is a federal information processing standard (FIPS) that specifies a cryptographic algorithm used by the U.S. government to protect information in federal agencies that are not part of the national defense infrastructure. It was developed to replace both DES and 3DES. The AES algorithm is publicly disclosed, unclassified, and available royalty-free worldwide. Agencies that are considered a part of national defense use more secure methods of encryption provided by the National Security Agency. AES is widely considered as the standard for strong encryption, and is widely used in various industries and applications.
+AES is the dominant symmetric encryption algorithm in use today. NIST selected it in 2001 after a five-year international competition, replacing the older DES (Data Encryption Standard) which had become vulnerable to brute-force attacks with its 56-bit key.[3]
 
-While 3DES remains an approved algorithm for some uses, its expected lifespan is limited. Historically, cryptographic standards approved by the Federal Information Processing Standards (FIPS) have been adopted on a voluntary basis by organizations outside government entities. The Advanced Encryption Standard (AES) was selected through a cooperative process between the U.S. government, private industry, and academia from around the world. It was approved by the Secretary of Commerce as the official federal governmental standard on May 26, 2002.
+AES operates on 128-bit blocks of data and supports three key sizes:
 
-AES implements a block cipher called the Rijndael Block Cipher, which allows for a variable block length and a key length of 128, 192, or 256 bits. AES is considered to be much more secure than 3DES and other older standards. Experts estimate that it would take a specialized computer 4,698,864 quintillion years (4,698,864,000,000,000,000,000) to crack AES, making it highly resistant to brute force attacks. AES is widely used in various industries and applications as a standard for strong encryption.
+| Key Size | Rounds | Status |
+|---|---|---|
+| AES-128 | 10 | Secure for most purposes |
+| AES-192 | 12 | Secure |
+| AES-256 | 14 | Recommended for top-secret and post-quantum resilience |
 
-![](<../.gitbook/assets/0 (7)>)
+AES-256 encrypting a 128-bit block requires an attacker to try 2^256 possible keys to brute-force it. At a trillion attempts per second, that would take longer than the age of the universe. It is not practically breakable by brute force with any technology that exists today.
 
-**Asymmetric Encryption**
+### Modes of Operation
 
-Asymmetric encryption, also known as public-key encryption, uses two different but related keys to encrypt and decrypt messages. The encryption key, also known as the public key, is used to encrypt the message and the decryption key, also known as the private key, is used to decrypt the message. These two keys are mathematically related, but it is computationally infeasible to derive the private key based on the public key.
+AES is a block cipher -- it encrypts fixed-size blocks. The mode of operation determines how it handles data longer than one block, and the choice of mode has major security implications.
 
-The encryption key, or public key, can be freely shared with anyone and is used to encrypt messages that are intended for the owner of the key pair. The decryption key, or private key, is kept secret and is used to decrypt the messages that were encrypted with the corresponding public key.
+| Mode | How It Works | Use Case | Notes |
+|---|---|---|---|
+| **ECB** (Electronic Codebook) | Each block encrypted independently | Almost never appropriate | Identical plaintext blocks produce identical ciphertext -- patterns leak |
+| **CBC** (Cipher Block Chaining) | Each block XORed with previous ciphertext before encryption | File encryption, legacy TLS | Requires random IV; vulnerable to padding oracle attacks if misimplemented |
+| **GCM** (Galois/Counter Mode) | Counter-based stream cipher + authentication tag | TLS 1.3, disk encryption | Provides both confidentiality and integrity; the modern standard |
 
-Asymmetric encryption can provide elegant solutions to problems of secrecy and verification. The private key is used to decrypt the message and authenticate the sender, while the public key is used to encrypt the message and verify the authenticity of the message. It is particularly useful in electronic transactions and digital signatures, where it is important to keep the private key secret and the public key accessible.
+{% hint style="danger" %}
+**Never use ECB mode.** ECB encrypts identical plaintext blocks to identical ciphertext blocks. The famous "ECB penguin" -- a bitmap image of a penguin encrypted with ECB mode that still shows the clear outline of the penguin in the ciphertext -- makes this concrete. If you can see the pattern, the encryption has failed. ECB mode is present in many libraries for backward compatibility; that does not mean it should be used.
+{% endhint %}
 
-Asymmetric encryption, also known as public-key encryption, uses two different but related keys to encrypt and decrypt messages. The encryption key, also known as the public key, can be freely shared with anyone and is used to encrypt messages that are intended for the owner of the key pair. The decryption key, or private key, is kept secret and is used to decrypt the messages that were encrypted with the corresponding public key. These keys are mathematically related, but it is computationally infeasible to derive the private key based on the public key.
+### The Key Distribution Problem
 
-This technique has its greatest value when one key is used as a private key, which means it is kept secret and is known only to the owner of the key pair, and the other key serves as a public key, which means it is stored in a public location where anyone can use it. This allows for secure communication, as messages can be encrypted with the public key, but can only be decrypted with the private key. It is also used for digital signature and authentication, as the private key is used to sign a message and the public key is used to verify the signature.
+Symmetric encryption has one fundamental weakness: both parties need the same key before secure communication can happen. How do you securely share that key in the first place? If you could already communicate securely, you would not need encryption. This is the key distribution problem, and it is why symmetric encryption alone cannot secure the internet.
 
-Asymmetric encryption can provide elegant solutions to problems of secrecy and verification and it is a popular choice for secure electronic transactions and digital signatures.
+The solution is asymmetric encryption.
 
-Asymmetric encryption, also known as public-key encryption, can be used to securely send encrypted messages between two parties. In this example, Alex at XYZ Corporation wants to send an encrypted message to Rachel at ABC Corporation.
+---
 
-Firstly, Alex obtains Rachel’s public key from a public-key registry. The foundation of asymmetric encryption is that the same key cannot be used both to encrypt and decrypt the same message. So, when Rachel’s public key is used to encrypt the message, only her private key can be used to decrypt the message. This private key is held by Rachel alone, ensuring that only she can read the message.
+## Asymmetric Encryption
 
-Similarly, if Rachel wants to respond to Alex’s message, she goes to the registry where Alex’s public key is held and uses it to encrypt her message. This message can only be read by Alex’s private key, ensuring that only Alex can read the message.
+Asymmetric encryption (also called public-key cryptography) uses mathematically linked key pairs: a **public key** that anyone can possess and use to encrypt data, and a **private key** that only the owner holds and uses to decrypt it.
 
-This approach of keeping private keys secret and encouraging the sharing of public keys in reliable directories is an elegant solution to the key management problems of symmetric key applications. It provides a secure way to communicate without the need for a shared secret key, and also allows for easy verification of the sender's identity.
+The magic: what the public key encrypts, only the private key can decrypt. And critically, knowing the public key does not let you derive the private key -- that derivation would require solving a computationally infeasible mathematical problem.
 
-Asymmetric algorithms are one-way functions, meaning they are relatively easy to compute in one direction, but computationally infeasible to compute in the opposite direction. This is the foundation of public-key encryption. It relies on the use of a mathematical function, known as a one-way function, that transforms an input value into a fixed-size output value, called a hash value.
+This solves the key distribution problem. To receive encrypted messages, you publish your public key to the world. Anyone can encrypt a message for you. Only you can decrypt it.
 
-A hash value is essentially a summary of the original input values and it is virtually impossible to determine the original input values without knowing the specific algorithm used to create the hash value. This property is known as "preimage resistance"
+### RSA (Rivest-Shamir-Adleman)
 
-For example, if you multiply 45 by 235, you get 10,575. This is simple enough. But if you are simply given the number 10,575, it is computationally infeasible to determine which two numbers were multiplied to produce it. This is the same concept behind the one-way functions used in asymmetric encryption, it is easy to compute the encryption but hard to compute the decryption.
+RSA, published in 1977, was the first practical public-key cryptosystem.[4] Its security rests on the difficulty of factoring the product of two large prime numbers. Given the number N = p × q (where p and q are large primes), finding p and q from N alone is computationally infeasible for sufficiently large numbers.
 
-One of the most widely used public-key cryptosystems is RSA, named after its developers Rivest, Shamir, and Adleman. RSA was the first public-key encryption algorithm developed and published for commercial use in 1977. Since then, it has become a widely popular and has been embedded in many web browsers to provide security for e-commerce applications. The RSA algorithm is patented, but it has become the de facto standard for public-use encryption applications. It is widely used for secure data transmission, digital signatures, and secure key exchange. RSA is considered to be one of the most secure encryption methods and is widely used in various industries and applications.
+RSA key sizes:
 
-The problem with asymmetric encryption is that for each conversation between two parties, it requires four keys to be managed. When multiple organizations are involved in the conversation, it can become difficult to determine which public key should be used to encrypt a message, and managing the keys can become a complex task. Also, Asymmetric encryption is less efficient in terms of CPU computations compared to symmetric encryption. Due to these limitations, hybrid systems, such as those used in Public Key Infrastructure (PKI), are more commonly used than pure asymmetric systems. Hybrid systems use a combination of both symmetric and asymmetric encryption methods to provide a balance of security and efficiency.
+| Key Size | Status |
+|---|---|
+| 512-bit | Broken -- factorable in hours on modern hardware |
+| 1024-bit | Deprecated -- not recommended; factoring feasible with significant resources |
+| 2048-bit | Minimum acceptable today; recommended through ~2030 |
+| 4096-bit | Strong; preferred for long-term security |
 
-![](../.gitbook/assets/1)
+### Elliptic Curve Cryptography (ECC)
 
-**Encryption Key Size**
+ECC provides equivalent security to RSA with much smaller key sizes, based on the difficulty of the elliptic curve discrete logarithm problem.[5]
 
-The key size of an encryption algorithm is an important factor in determining the strength of the encryption. The key size determines the number of possible keys that an attacker must try before finding the correct one. The longer the key, the larger the number of possible keys, and the more difficult it becomes to break the code.
+| Security Level | RSA Key Size | ECC Key Size |
+|---|---|---|
+| 80-bit | 1024-bit | 160-bit |
+| 128-bit | 3072-bit | 256-bit |
+| 256-bit | 15360-bit | 512-bit |
 
-As the key size increases, the number of possible keys in the key space increases exponentially, making it much more difficult for an attacker to guess the correct key through a brute force attack. For example, a key size of 128 bits provides for 2^128 possible keys, which is a very large number and would take a significant amount of time and computing power to exhaust all possibilities.
+A 256-bit ECC key provides the same security as a 3072-bit RSA key. Smaller keys mean faster operations and less bandwidth -- which is why ECC dominates in TLS, mobile devices, and embedded systems.
 
-It is true that when it comes to cryptosystems, the security of encrypted data is not dependent on keeping the encrypting algorithm secret. In fact, publishing the algorithms allows for public scrutiny and research, which can help identify and address any weaknesses in the algorithm.
+**ECDSA** (Elliptic Curve Digital Signature Algorithm) and **ECDH** (Elliptic Curve Diffie-Hellman) are the primary ECC algorithms in use. The curves P-256, P-384, and Curve25519 are the most widely deployed.
 
-The security of a cryptosystem depends on keeping certain elements of the cryptovariable(s) or key(s) secret. For example, in symmetric encryption, the security of the system depends on keeping the secret key secret, while in asymmetric encryption, the security of the system depends on keeping the private key secret.
+### Diffie-Hellman Key Exchange
 
-Effective security is maintained by manipulating the size (bit length) of the keys and by following proper procedures and policies for key management. This includes procedures for key generation, distribution, storage, and destruction. It is important to use a key size that is large enough to provide an acceptable level of security against potential attacks, and to follow best practices for key management to ensure the keys are not compromised.
+Diffie-Hellman (DH), published in 1976, solved the key distribution problem before RSA even existed.[6] It allows two parties to establish a shared secret over an insecure channel, without ever transmitting the secret itself -- using modular arithmetic that an eavesdropper cannot reverse.
 
-For a simple example of how key size is related to encryption strength, consider an algorithm that uses a three-bit key. The keyspace is the range of possible keys that can be used to encrypt a message. In this case, the algorithm uses a three-bit key which can represent values from 000 to 111 in binary notation. This corresponds to the numbers 0 to 7 in decimal notation and thus provides a keyspace of eight possible keys (0-7).
+In TLS, Diffie-Hellman (specifically ECDHE -- Elliptic Curve Diffie-Hellman Ephemeral) is used to establish the session key. The "ephemeral" part is critical: a new key pair is generated for every session, so recording encrypted traffic today does not help an attacker who later compromises the server's private key. This property is called **forward secrecy** (or perfect forward secrecy).
 
-Knowing the keyspace of an algorithm allows an attacker to program a computer to try all possible keys in an attempt to crack the encryption. However, this requires knowledge of the algorithm, possession of the encrypted message and a significant amount of time.
+---
 
-It is relatively easy to obtain encryption tools that use the Data Encryption Standard (DES) algorithm, which is a widely used standard. However, intercepting an encrypted message is illegal and can be difficult to accomplish. Additionally, cracking an encryption through a brute force attack can take a significant amount of time, especially for more advanced cryptosystems. The strength of an encryption algorithm is ultimately determined by the time it takes to guess the key. As the key size increases, it becomes more computationally infeasible to exhaust all the possible keys, making the encryption stronger.
+## Cryptographic Hashing
 
-When it comes to keys, the size of the key directly impacts the strength of the encryption. A three-bit system has eight possible keys, an eight-bit system has 256 possible keys, and a 24-bit key has almost 16.8 million possible keys. However, even with a large number of possible keys, the time it takes to crack the encryption through a brute force attack decreases as computer processing power increases.
+A cryptographic hash function takes an input of any size and produces a fixed-size output (the hash or digest) with three critical properties:
 
-The use of graphics processing units (GPUs) found in video cards also significantly increases the speed of cryptanalysis calculations, making it easier to crack even once-standard encryption key sizes. Additionally, using multiple computers in a grid computing environment can greatly speed up brute force key-breaking efforts.
+1. **Deterministic**: The same input always produces the same hash
+2. **One-way**: Given the hash, it is computationally infeasible to reconstruct the input
+3. **Collision-resistant**: It is computationally infeasible to find two different inputs that produce the same hash
 
-However, it is important to note that the security of encryption is not solely dependent on the key size but also on proper key management and password management. These practices are critical in protecting encrypted information and can be even more important than key strength.
+Hashes are not encryption -- there is no key, and there is no intended reversal. They are used to verify integrity.
 
-Encryption systems such as DES incorporate multiple elements or operations to increase the complexity of the encryption process and make it more difficult to crack. Using the same operation multiple times does not add any additional security, but by using a combination of different operations, the encryption becomes more secure.
+| Algorithm | Output Size | Status |
+|---|---|---|
+| **MD5** | 128-bit | Broken -- collisions can be generated; do not use for security |
+| **SHA-1** | 160-bit | Deprecated -- collision demonstrated in 2017 (SHAttered attack); do not use |
+| **SHA-256** | 256-bit | Secure; current standard for most uses |
+| **SHA-3** | Variable | Secure; different construction from SHA-2, providing algorithm diversity |
+| **bcrypt / Argon2** | Variable | Specifically designed for password hashing; intentionally slow |
 
-For example, using a substitution cipher to replace one letter with another, then transposing the letters, and then using a XOR operation will scramble, substitute and recode the original plaintext in a way that is more difficult to break without the key. The use of multiple different operations increases the number of possible keys and makes the encryption more robust and secure.
+{% hint style="warning" %}
+**Password hashing is not the same as data hashing.** SHA-256 is fast -- a modern GPU can compute billions of SHA-256 hashes per second. For password storage, fast is bad: it means an attacker can test billions of password guesses per second against stolen hashes.
 
-![](../.gitbook/assets/2)
+Password hashing functions (bcrypt, scrypt, Argon2) are intentionally slow and memory-intensive. Argon2 won the Password Hashing Competition in 2015 and is the current recommendation. If you are storing user passwords, use Argon2id. Never store passwords as plaintext, never use MD5 or SHA-1, and never use fast hash functions like SHA-256 directly.
+{% endhint %}
 
-### Cryptographic Tools <a href="#id-99wcrou4z1gj" id="id-99wcrou4z1gj"></a>
+### Hash-Based Integrity Verification
 
-The ability to conceal the contents of sensitive messages and verify the contents of messages and the identities of their senders can be important in all areas of business. To be useful, these cryptographic capabilities must be embodied in tools that allow IT and information security practitioners to apply the elements of cryptography in the everyday world of computing. This section covers some of the widely used tools that bring the functions of cryptography to the world of information systems.
+```bash
+# Generate SHA-256 hash of a downloaded file
+sha256sum kali-linux-2024.1-installer-amd64.iso
 
-PKI systems play a critical role in securing e-commerce and other online transactions by providing a secure means of identifying parties and protecting the confidentiality and integrity of communications. By implementing PKI systems, organizations can safeguard sensitive information and protect against unauthorized access, tampering, and fraud.
+# Output:
+# 3d9cdb...  kali-linux-2024.1-installer-amd64.iso
 
-* **Authentication:** PKI systems enable secure authentication of individuals, devices, and systems by validating digital certificates and identifying the key owners.
-* **Integrity:** PKI systems ensure the integrity of messages by using digital signatures, which are created using the sender's private key, and can be verified using the sender's public key.
-* **Privacy:** PKI systems provide secure communications by encrypting messages using the recipient's public key, ensuring that only the intended recipient can read the message.
-* **Authorization:** The validated identity of users and programs can enable authorization rules that remain in place for the duration of a transaction; this reduces overhead and allows for more control of access privileges for specific transactions.
-* **Nonrepudiation:** PKI systems enable non-repudiation of messages by providing evidence of the sender's identity and the integrity of the message.A typical PKI solution protects the transmission and reception of secure information by integrating the following components:
-* A certificate authority (CA), is responsible for issuing, managing, authenticating, signing, and revoking digital certificates for users. These certificates contain information such as the user's name, public key, and other identifying details.
-* A registration authority (RA), works in partnership with the CA to handle certification functions, including verifying registration information, generating end-user keys, revoking certificates, and validating user certificates.
-* Certificate directories, serve as central storage locations for certificates and provide a centralized point for administration and distribution
-* Management protocols are used to organize and manage communications among CAs, RAs, and end users, and include procedures for setting up new users, issuing keys, recovering keys, updating keys, revoking keys, and transferring certificates and status information within the PKI's area of authority.
-* Policies and procedures,also play a role in assisting organizations in the application and management of certificates, the formalization of legal liabilities and limitations, and the actual use of certificates in business
+# Compare to the hash published by Kali
+# If they match, the file is unmodified
+```
 
-PKI, or Public Key Infrastructure, is a system that utilizes digital certificates and a certificate authority (CA) to provide secure communication and transactions. This infrastructure enables organizations to issue digital certificates to users and servers, enroll in directories, manage key issuance, and verify and return certificates. By implementing PKI, organizations can establish an enterprise-wide solution that ensures users within the infrastructure's jurisdiction can engage in secure, authenticated communications and transactions.
+This is how software publishers verify that distributed files have not been tampered with. An attacker who modifies the binary cannot reproduce the original hash -- so a mismatch alerts the user.
 
-In addition to these key management tasks, the CA is responsible for issuing digital certificates to users and servers. These certificates contain information such as the user's or server's identity, public key, and other identifying details. The CA uses various authentication methods to verify the identity of the user or server before issuing the certificate. Once issued, the certificate can be used to establish secure and authenticated communication between the parties involved.
+---
 
-The registration authority (RA) works in collaboration with the CA to handle certification functions such as verifying registration information, generating end-user keys, revoking certificates, and validating user certificates. The RA is responsible for ensuring that the correct information is provided during registration, and that only authorized users are issued certificates.
+## Digital Signatures
 
-Certificate directories are central locations for storing digital certificates, providing a single access point for administration and distribution. Management protocols are used to organize and manage communications among CAs, RAs, and end-users. These protocols include procedures for setting up new users, issuing keys, recovering keys, updating keys, revoking keys, and enabling the transfer of certificates and status information among the parties involved in the PKI's area of authority.
+Digital signatures combine asymmetric cryptography with hashing to provide three guarantees: **authentication** (the message came from the claimed sender), **integrity** (the message was not modified), and **non-repudiation** (the sender cannot deny sending it).
 
-Lastly, policies and procedures play an important role in the PKI's implementation. These policies assist organizations in the application and management of certificates, formalizing legal liabilities and limitations, and ensuring their proper use in actual business processes.
+How it works:
 
-**Digital Signatures**
+1. The sender computes a hash of the message
+2. The sender encrypts that hash with their **private key** -- this is the signature
+3. The sender transmits the message and the signature
+4. The recipient decrypts the signature with the sender's **public key**, recovering the hash
+5. The recipient computes the hash of the received message independently
+6. If the two hashes match, the signature is valid -- the message is authentic and unmodified
 
-A digital signature is a type of electronic signature that uses a combination of encryption techniques to ensure the authenticity and integrity of a message or document. By using the sender's private key to encrypt a message, the receiver can then use the sender's public key to decrypt it and confirm that it was indeed sent by the sender. This process provides non-repudiation, which means that the sender cannot deny having sent the message. Digital signatures also provide integrity, which means that the message or document has not been tampered with during transmission. This is achieved by including a hash value of the original message in the digital signature, which can be verified by the receiver to ensure that the message has not been altered. Digital signatures are widely used in various applications such as e-commerce, e-government, and digital documents to provide a secure and reliable way to authenticate the identity of the sender and ensure the integrity of the message.
+```
+Sender:  Message → Hash → Encrypt(hash, private_key) → Signature
+Recipient: Message → Hash
+           Signature → Decrypt(signature, public_key) → Hash
+           Compare: if hashes match → authentic and unmodified
+```
 
-In summary, digital signatures are a form of authentication that uses asymmetric encryption to ensure that a message or document is legitimate and cannot be denied by the sender. They are created by encrypting a message digest, which is a summary of the original message, using the sender's private key. The recipient can then use the sender's public key to verify the digital signature and confirm the authenticity of the message. They are widely used to provide nonrepudiation, which is the ability to prove that a message or document was sent by a specific sender. The Digital Signature Standard (DSS) is a widely accepted standard for creating and managing digital signatures, and many products and processes that are DSS compliant have been approved and endorsed by governments for use in authenticating electronic documents.
+Digital signatures underpin code signing, email signing (S/MIME, PGP), document signing, and certificate authorities.
 
-**Digital Certificates**
+---
 
-As you learned earlier in this chapter, a digital certificate is an electronic document or container file that contains a key value and identifying information about the entity that controls the key. The certificate is often issued and certified by a third party, usually a certificate authority. A digital signature attached to the certificate’s container file certifies the file’s origin and integrity. This verification process often occurs when you download or update software via the Internet. For example, the window in Figure 8-8 shows that the downloaded files do come from the purported originating agency, Amazon.com, and thus can be trusted.
+## Public Key Infrastructure (PKI)
 
-* Secure Sockets Layer (SSL)/Transport Layer Security (TLS) certificates are used to secure Web communications by establishing a secure connection between a web server and a web browser. This type of certificate is commonly used for e-commerce transactions, online banking, and other sensitive online activities.
-* &#x20;Email signing and encryption certificates are used to sign and encrypt email messages to ensure the authenticity of the sender and the confidentiality of the message.&#x20;
-* Code signing certificates are used to sign software and other code to verify the authenticity and integrity of the code, and to ensure that it has not been tampered with.
-* Secure/Multipurpose Internet Mail Extensions (S/MIME) certificates are used to secure email communications by encrypting the message and verifying the identity of the sender.
-* Virtual Private Network (VPN) certificates are used to authenticate the identity of a VPN client or server, and to establish a secure connection between them. Wireless certificates are used to authenticate wireless clients and to secure wireless communications.&#x20;
+Asymmetric encryption solves key distribution but creates a new problem: how do you know that a public key actually belongs to who you think it does? An attacker could publish their own public key while claiming to be your bank.
 
-It is important to note that the strength of a digital certificate is dependent on the strength of the key value that is embedded in the certificate and the robustness of the certification process that is used to issue the certificate. This is why it is crucial for organizations to choose trusted and reputable CAs to issue their digital certificates, and to ensure that the key values that are embedded in the certificates are of adequate length to provide strong encryption. Proper management of digital certificates, including regular updates and revocations, is also important for maintaining the security of the certificate-based system.
+PKI solves this through **digital certificates** -- documents that bind a public key to an identity, signed by a trusted third party called a **Certificate Authority (CA)**.
 
-On the other hand, PGP, which was developed by Phil Zimmermann in 1991, uses a web of trust model, in which users sign and verify each other's keys. This allows users to establish trust relationships with other users without the need for a central certificate authority. PGP uses a combination of symmetric and asymmetric encryption, and includes a built-in means for managing key generation, key exchange, and key revocation. It also includes a digital signature feature to enable non-repudiation. PGP is widely used for secure email, file encryption, and secure instant messaging. It is important to note that while X.509 v3 and PGP have their own set of advantages and disadvantages, both are widely used in different contexts and industries. It is essential to choose the right certificate type and certificate authority that best suits the organization's needs and requirements.
+When you connect to `https://yourbank.com`:
 
-**Hybrid Cryptography Systems**
+1. The server presents a certificate containing its public key
+2. The certificate is signed by a CA (e.g., DigiCert, Let's Encrypt)
+3. Your browser has a pre-installed list of trusted root CAs
+4. Your browser verifies the certificate signature chain back to a trusted root
+5. If valid, the browser trusts that the public key belongs to `yourbank.com`
 
-Asymmetric key encryption, while not widely used on its own, plays a crucial role in hybrid encryption systems. One of the most popular examples of this is the Diffie-Hellman key exchange. This method uses asymmetric encryption to establish a shared session key, which is then used for symmetric encryption. This hybrid approach is efficient as symmetric encryption is faster than asymmetric encryption for sending messages. The Diffie-Hellman key exchange also provides a secure way to exchange keys, eliminating the risk of third-party exposure commonly encountered in out-of-band key exchange methods. It is also considered as a foundation for the future developments in public-key encryption.
+The trust model relies on root CAs being trustworthy. When they fail -- as happened with the DigiNotar CA breach in 2011, where attackers issued fraudulent certificates for Google and dozens of other domains -- the entire PKI model for affected certificates collapses.[7]
 
-![](../.gitbook/assets/3)
+Let's Encrypt, launched in 2016, provides free, automated, domain-validated certificates and has dramatically increased HTTPS adoption across the web. As of 2024, over 80% of web traffic is encrypted.[8]
 
-An approach that combines both symmetric and asymmetric encryption is shown in Figure 8-9. It operates as follows: when Alex from XYZ Corp wants to communicate with Rachel from ABC Corp, he first generates a session key. He then encrypts the message using this session key. Alex obtains Rachel's public key and uses it to encrypt both the session key and the already encrypted message. He sends this package to Rachel. Rachel uses her private key to decrypt the package which contains the session key and the encrypted message. She then uses the session key to decrypt the message. The session key is used for the duration of the communication session and is discarded once the session ends. Rachel can then continue to use the same session key for all electronic communications until it expires. The session key is used in more efficient symmetric encryption and decryption processes. A new session key is chosen and shared using the same process when the current session key expires, typically after a few minutes.
+---
 
-**Steganography**
+## TLS: Cryptography in Practice
 
-The term steganography is derived from the Greek words "steganos" meaning "concealed" and "graphein" meaning "to write." This technique has a long history, with one of the earliest examples being described by the Greek historian Herodotus, who wrote about a Greek individual who used a secret message hidden under a wax writing tablet to warn of an impending invasion. Although steganography is not a form of cryptography, it is a method of maintaining the confidentiality of information during transmission. In contemporary times, the most prevalent form of steganography is embedding secret information within digital images or other types of files.
+TLS (Transport Layer Security) is the protocol that secures the majority of internet communication. Every HTTPS connection uses it. Understanding TLS is the most practical application of everything in this chapter.
 
-Steganography that involves hiding information in digital images works by manipulating the bits that make up the image file. Most image file formats use a combination of Red, Green, and Blue (RGB) values to represent each pixel in the image. Each color value typically requires 8 bits to represent its intensity, for example, 00000000 represents no red, while 11111111 represents the maximum red. This means that each pixel in an image requires 24 bits (8 bits x 3 colors) to represent its color mix and intensity. Some image file formats may use more or fewer bits per pixel. The resolution of an image, measured in pixels, is determined by the number of horizontal and vertical pixels captured when the image is created by a digital camera or computer program. For example, an image with a resolution of 1024 x 768 pixels has 786,432 pixels, or three-quarters of a megapixel. The raw image size can be calculated as 1024 x 768 x 24 bits, or 5.66 megabytes. As the image data file contains a large number of bits, it provides ample space to conceal a secret message within it.
+**TLS 1.3** (RFC 8446, 2018) is the current standard. It eliminated support for weak cipher suites, mandatory forward secrecy for all sessions, and reduced handshake latency.[9]
 
-Steganography works by manipulating the least significant bits of the image data to hide a message. To the naked eye, there is no visible difference between a pixel with a red intensity of 00101001 and a slightly different pixel with a red intensity level of 00101000. This approach allows a steganographer to use one bit of payload per color, or three bits per pixel, to encode data into an image file. For example, if a steganographic process uses three bits per pixel for all 786,432 pixels in the image, it can store up to 236 kilobytes of hidden data within the uncompressed image.
+A TLS 1.3 handshake:
 
-Steganographic tools can also be used to calculate the maximum amount of data that can be hidden in an image without detection. Messages can also be hidden in other types of files, such as audio and text files, by utilizing unused bits or whitespace. Some steganographic applications can hide messages in .bmp, .wav, .mp3, and .au files, as well as in unused storage space on CDs and DVDs.
+```
+Client → Server: ClientHello (supported ciphers, key share)
+Server → Client: ServerHello (chosen cipher, key share, certificate)
+Client → Server: Finished (session keys derived; encrypted from here)
+Server → Client: Finished (handshake complete)
+```
 
-Before the 9/11 terrorist attacks, U.S. federal agencies believed that terrorist organizations were using steganography to hide maps and photographs of targets and post instructions for terrorist activities in online forums and websites. However, there has not been any public proof of this activity. The Electronic Frontier Foundation (EFF) has reported that the U.S. Secret Service worked with several manufacturers of color laser printers to use steganography to encode printer serial numbers in printed documents.
+The session keys are derived using ECDHE, ensuring forward secrecy. After the handshake, all data is encrypted with AES-GCM. The certificate is verified against the CA chain. The entire handshake completes in one round trip.
 
-### Protocol for Secure Communications. <a href="#pyi0bd7ty465" id="pyi0bd7ty465"></a>
+TLS 1.0 and 1.1 are deprecated. TLS 1.2 is still widely used but should be configured to use only strong cipher suites. Any server still supporting SSLv3 or early TLS versions has a misconfiguration.
 
-**(**Deeper Dive: Amazon.com: Principles of Information Security eBook : Whitman, Michael E., Mattord, HerbertJ.:Books**)**
+---
 
-Many of the tools currently employed to safeguard the secrecy of data are not authentic cryptographic systems. They are, instead, programs to which cryptographic methods have been added as an extra feature. This is particularly prevalent in Internet protocols; some specialists assert that the Internet and its associated protocols were created without any regard for security, and that it was only later that security measures were implemented as an afterthought. Though it is debatable whether or not this claim holds true, the absence of security risks during the early stages of the Internet enabled it to expand rapidly. However, as the number of security threats increased, so did the need for further security measures.
+## Cryptographic Attacks
 
-**Securing Internet Communication with S-HTTP and SSL**
+Understanding how cryptographic systems fail is as important as understanding how they work.
 
-Securing Internet Communication with S-HTTP and SSL S-HTTP (Secure Hypertext Transfer Protocol) and SSL are protocols designed to provide secure network communication on the Internet. These protocols work in different ways and can be used independently or together. SSL (Secure Sockets Layer) was developed by Netscape to use public-key encryption to create a secure channel over the Internet. Most commonly used browsers, including Internet Explorer, support SSL. In addition to providing encryption, integrity, and server authentication, SSL can also provide client authentication when configured properly.
+| Attack | Description | Defense |
+|---|---|---|
+| **Brute force** | Try every possible key | Use sufficiently large key sizes (AES-128+ for symmetric, 2048+ RSA) |
+| **Birthday attack** | Exploit collision probability in hash functions | Use hash functions with large output sizes (SHA-256+) |
+| **Padding oracle** | Exploit error messages to decrypt ciphertext byte by byte | Use authenticated encryption (AES-GCM); never leak padding errors |
+| **Downgrade attack** | Force negotiation of weaker cipher suites | Disable all deprecated protocol versions and cipher suites |
+| **Side-channel attack** | Extract key material from timing, power consumption, or EM emissions | Hardware mitigations; constant-time implementation |
+| **Harvest now, decrypt later** | Record encrypted traffic to decrypt after quantum computers arrive | Migrate to post-quantum algorithms now for long-lived secrets |
 
-In April 2014, a vulnerability known as Heartbleed was discovered in a widely used implementation of the SSL protocol. Web servers affected by this vulnerability allowed attackers to bypass some of the controls that protect sensitive information. These servers used an unpatched version of the popular OpenSSL tool to implement SSL/TLS (Secure Sockets Layer/Transport Layer Security) and could be tricked into revealing the memory areas of the server. These areas might contain sensitive information such as encryption keys, passwords, or account numbers. The Heartbleed bug is classified as a buffer overread error. The OpenSSL tool is widely used on Internet sites around the world.
+### The Quantum Threat
 
-Soon after the vulnerability was made public, a patched version of the OpenSSL toolset was released, and most server administrators and web hosting providers were able to secure their platforms. However, unless the toolset is updated and the website purges the keys that were issued, they remain vulnerable to data loss.
+Quantum computers, using Shor's algorithm, can theoretically break RSA and ECC by solving the underlying mathematical problems (integer factorization and discrete logarithms) in polynomial time. A sufficiently powerful quantum computer would render current public-key cryptography obsolete.
 
-The Heartbleed bug is a vulnerability in the OpenSSL library, which is a widely used implementation of the SSL (Secure Sockets Layer) protocol. The bug was caused by a feature in OpenSSL that maintained the connection between a host and a client while data was not being transmitted between them. This feature, called a heartbeat, was intended to maintain session awareness between the server and the client. However, the bug allowed the client to request data from the heartbeat packet, which would cause the server to reveal significant quantities of current server memory, including sensitive data that the server administrator would not want to be released.
+That computer does not exist today. But the "harvest now, decrypt later" threat is real: nation-state actors are likely recording encrypted traffic now, intending to decrypt it once quantum computing matures. For data that must remain confidential for 10+ years, the quantum threat is already relevant.
 
-The SSL protocol works by establishing a secure connection between a client and a server. When a client requests access to a portion of a website that requires secure communications, the server sends a message to the client indicating that a secure connection must be established. The client then sends its public key and security parameters to the server. The server verifies the public key and sends a digital certificate to the client to authenticate itself. Once the client verifies the certificate, the SSL session is established. Any data transmitted between the client and server during the session is encrypted.
+NIST completed its post-quantum cryptography standardization process in 2024, selecting:[10]
 
-S-HTTP (Secure Hypertext Transfer Protocol) is an extended version of the HTTP (Hypertext Transfer Protocol) that provides for the encryption of individual messages transmitted over the Internet between a client and server. S-HTTP is the application of SSL over HTTP, which allows for the encryption of all information passing between two computers through a protected and secure virtual connection. Unlike SSL, which establishes a secure channel for the duration of a session, S-HTTP is designed for sending individual messages over the Internet, so a session must be established for each exchange of data. To establish a session, the client and server must have compatible cryptosystems and agree on the configuration. The client sends its public key to the server, which generates a session key and encrypts it with the client's public key. The session key is then returned to the client, who decrypts it with their private key. Both the client and server then possess identical session keys, which they can use to encrypt messages sent between them. S-HTTP can provide confidentiality, authentication, and data integrity through a variety of trust models and cryptographic algorithms. It is designed for easy integration with existing HTTP applications and can be used in conjunction with HTTP.
+| Algorithm | Purpose | Based On |
+|---|---|---|
+| **CRYSTALS-Kyber (ML-KEM)** | Key encapsulation (replaces ECDH) | Module lattice problems |
+| **CRYSTALS-Dilithium (ML-DSA)** | Digital signatures | Module lattice problems |
+| **SPHINCS+ (SLH-DSA)** | Digital signatures (hash-based alternative) | Hash functions |
 
-**Securing E-mail with S/MIME, PEM, and PGP**
+TLS 1.3 and major cloud providers are already beginning hybrid deployments -- running classical and post-quantum algorithms simultaneously during the transition period.
 
-A variety of cryptosystems have been adapted to work with the most common e-mail protocols in order to provide some level of security for this often insecure means of communication. Some of the most popular adaptations include Secure Multipurpose Internet Mail Extensions (S/MIME), Privacy-Enhanced Mail (PEM), and Pretty Good Privacy (PGP).
+---
 
-S/MIME builds on the encoding format of the Multipurpose Internet Mail Extensions (MIME) protocol and uses digital signatures based on public-key cryptosystems to secure e-mails. PEM, which was proposed by the Internet Engineering Task Force (IETF) in 1993, uses 3DES symmetric key encryption and RSA for key exchanges and digital signatures, but it was not widely adopted. PGP, developed by Phil Zimmermann, uses the IDEA cipher for message encoding and RSA for symmetric key exchange and digital signatures.
+## Applied Cryptography: What Practitioners Need to Know
 
-The first commonly used Internet e-mail standard, SMTP/RFC 822 (also called SMTP), has limitations that make it difficult for organizations that need greater security and support for international character sets. MIME was developed to address the issues associated with SMTP, and it includes predefined content types and conversion transfer encodings, such as 7-bit, 8-bit, binary, and radix-64, which are used to deliver e-mails reliably across a wide range of systems.
+Cryptography is complex enough that implementing it from scratch is almost always the wrong answer. The correct approach is using well-vetted libraries and following current best-practice configurations.
 
-![](<../.gitbook/assets/4 (1)>)
+{% hint style="success" %}
+**Use these; don't reinvent them:**
+- **Symmetric encryption**: AES-256-GCM (provides confidentiality + integrity in one operation)
+- **Asymmetric encryption**: RSA-2048+ or ECC with P-256/Curve25519
+- **Key exchange**: ECDHE (with forward secrecy)
+- **Hashing**: SHA-256 or SHA-3 for integrity; Argon2id for passwords
+- **TLS**: TLS 1.3; disable TLS 1.0, 1.1, and all SSLv3
+- **Libraries**: libsodium (C), PyNaCl (Python), Go's crypto/tls, AWS/GCP/Azure KMS for key management
+{% endhint %}
 
-S/MIME is an extension to the Multipurpose Internet Mail Extensions (MIME) protocol and is the second generation of enhancements to the Simple Mail Transfer Protocol (SMTP) standard. S/MIME has the same message header fields as MIME, with the exception of those added to support new functionality. Like MIME, S/MIME uses a canonical form format which allows it to standardize message content type across different systems. However, S/MIME also has the additional capability to sign, encrypt and decrypt messages.
+{% hint style="danger" %}
+**Never do these:**
+- Roll your own cryptographic algorithm ("I'll use a custom cipher")
+- Use MD5 or SHA-1 for security-sensitive applications
+- Use ECB mode for anything
+- Hardcode encryption keys in source code
+- Reuse nonces (initialization vectors) with stream ciphers or GCM mode -- this is catastrophic
+- Trust "military-grade encryption" as a marketing claim without verifying the actual algorithm
+{% endhint %}
 
-A summary of the functions and algorithms used by S/MIME is provided in Table 8-8. It's worth mentioning that PGP is functionally similar to S/MIME, incorporates some of the same algorithms, and can interoperate with S/MIME to some degree. PGP and S/MIME are two different encryption protocols that can be used to secure e-mails and both have their own unique features and use-cases.
+---
 
-![](../.gitbook/assets/5)
+## References
 
-**Securing Web Transactions with SET, SSL, and S-HTTP**
+[1] Kahn, D. (1996). *The Codebreakers: The Comprehensive History of Secret Communication from Ancient Times to the Internet* (revised ed.). Scribner. ISBN 978-0-684-83130-5.
 
-Securing Web Transactions with SET, SSL, and S-HTTP Just as PGP, PEM, and S/MIME work to secure e-mail operations, a number of related protocols work to secure web browsers, especially at e-commerce sites. Among these protocols are SET, SSL, S-HTTP, Secure Shell (SSH-2), and IP Security (IPSec). SSL and S-HTTP were discussed earlier in this chapter.
+[2] Kerckhoffs, A. (1883). La cryptographie militaire. *Journal des sciences militaires*, 9, 5--38.
 
-SET (Secure Electronic Transactions) was developed by MasterCard and Visa in 1997 to protect against electronic payment fraud. It uses the Data Encryption Standard (DES) to encrypt credit card information transfers and RSA for key exchange. SET provides security for both Internet-based credit card transactions and credit card swipe systems in retail stores.
+[3] National Institute of Standards and Technology. (2001). *Advanced Encryption Standard (AES)*. FIPS Publication 197. doi:10.6028/NIST.FIPS.197
 
-SSL (Secure Sockets Layer) also provides secure online e-commerce transactions. SSL uses a number of algorithms, but mainly relies on RSA for key transfer and uses IDEA, DES, or 3DES for encrypted symmetric key-based data transfer. An example of the kind of certificate and SSL information that appears when checking out of an e-commerce site is shown in Figure 8-8. If your web connection does not automatically display such certificates, you can right-click in the browser's window and select Properties to view the connection encryption and certificate properties.
+[4] Rivest, R. L., Shamir, A., & Adleman, L. (1978). A method for obtaining digital signatures and public-key cryptosystems. *Communications of the ACM*, 21(2), 120--126. doi:10.1145/359340.359342
 
-**Securing Wireless Networks with WEP and WPA**
+[5] Miller, V. S. (1985). Use of elliptic curves in cryptography. In *Advances in Cryptology -- CRYPTO 1985*. Lecture Notes in Computer Science, vol 218. Springer. doi:10.1007/3-540-39799-X_31
 
-Wireless local area networks (Wi-Fi) are considered by many in the IT industry to be inherently insecure due to the use of radio transmissions to communicate between the wireless network interface of a device and the access point providing its services. These radio signals can be intercepted by anyone with a wireless packet sniffer, making it necessary to use some form of cryptographic security control to prevent such interception.
+[6] Diffie, W., & Hellman, M. E. (1976). New directions in cryptography. *IEEE Transactions on Information Theory*, 22(6), 644--654. doi:10.1109/TIT.1976.1055638
 
-Two sets of protocols are widely used to secure wireless transmissions: Wired Equivalent Privacy (WEP) and Wi-Fi Protected Access (WPA). Both are designed for use with the IEEE 802.11 wireless networks. WEP is an older protocol that uses a static key to encrypt data. However, it has been found to be easily cracked and is no longer considered secure. WPA, on the other hand, uses a stronger encryption algorithm and dynamic keys, making it more secure than WEP. It is important to note that even the most secure protocols are not foolproof and that regular updates and security checks are needed to maintain the security of wireless networks.
+[7] Langley, A. (2011). *Distrust of the Netherlands DigiNotar CA*. Google Security Blog. Retrieved from https://security.googleblog.com/2011/09/update-on-diginotar.html
 
-**Wired Equivalent Privacy (WEP)** was an early attempt to provide security for the 802.11 network protocol. It uses the RC4 cipher stream to encrypt packets using a 64-bit key, which is created using a 24-bit initialization vector and a 40-bit key value. The packets are formed with an XOR function to use the RC4 key value stream to encrypt the data packet and a 4-byte integrity check value (ICV) is calculated for each packet and then appended. WEP is now considered too cryptographically weak to provide any meaningful protection from eavesdropping, hence it is not recommended for use as it can be easily cracked. WPA/WPA2 are considered more secure alternatives.
+[8] Let's Encrypt. (2024). *Let's Encrypt Stats*. Internet Security Research Group. Retrieved from https://letsencrypt.org/stats/
 
-WEP is considered too weak for use in most network settings for several reasons:
+[9] Rescorla, E. (2018). *The Transport Layer Security (TLS) Protocol Version 1.3*. RFC 8446. Internet Engineering Task Force. doi:10.17487/RFC8446
 
-* Key management is not effective as most networks use a single shared secret key value for each node. Synchronizing key changes is a tedious process and no key management is defined in the protocol, so keys are seldom changed.&#x20;
-* The initialization vector (IV) is too small, resulting in the recycling of IVs. An attacker can reverse-engineer the RC4 cipher stream and decrypt subsequent packets, or can forge future packets. In 2007, a brute force decryption was accomplished in less than one minute.
-* An intruder who collects enough data can threaten a WEP network in just a few minutes by decrypting or altering the data being transmitted, or by forging the WEP key to gain unauthorized access to the network. WEP also lacks a means of validating user credentials to ensure that only authorized network users are allowed to access it. It is important to note that WEP is considered an insecure protocol, and it is not recommended to use it for any new deployments or updates.
+[10] National Institute of Standards and Technology. (2024). *Post-Quantum Cryptography Standardization*. NIST. Retrieved from https://csrc.nist.gov/projects/post-quantum-cryptography
 
-**Wi-Fi Protected Access (WPA and WPA2)** were created to resolve the security issues with WEP. WPA uses a key size of 128 bits and dynamic keys created and shared by an authentication server through the use of the Temporal Key Integrity Protocol (TKIP). TKIP is a suite of algorithms designed to work with legacy networking devices and to deliver the best security possible given the constraints of the wireless network environment. TKIP adds four new algorithms in addition to those that were used in WEP:
+---
 
-* A cryptographic message integrity code (MIC), called Michael, to defeat forgeries
-* A new IV sequencing discipline to remove replay attacks
-* A per-packet key mixing function to decorrelate the public IVs from weak keys
-* A rekeying mechanism to provide fresh encryption and integrity keys, undoing the threat of attacks stemming from key reuse&#x20;
+## Further Reading
 
-WPA2 was made available as a replacement for WPA in 2004, it provided many of the elements missing from WPA, most notably AES-based encryption. WPA2 became mandatory for all new Wi-Fi devices in 2006. WPA2 is backward-compatible with WPA, but some older network cards may have difficulty using it. Table 8-9 provides a summary of the differences between WEP and WPA. WPA2 is considered a more secure protocol than WPA and WEP, it is recommended to use it for any new deployments or updates.
+| Resource | What It Covers |
+|---|---|
+| [Cryptopals Challenges](https://cryptopals.com) | Hands-on cryptography challenges that teach attack techniques by breaking real systems. The best practical crypto education available. |
+| [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us) | Free textbook by Dan Boneh and Victor Shoup; rigorous but accessible. |
+| Schneier, B. (1996). *Applied Cryptography* (2nd ed.). Wiley. | The classic reference; some algorithms are dated but the conceptual foundation is excellent. |
+| [NIST Post-Quantum Cryptography](https://csrc.nist.gov/projects/post-quantum-cryptography) | Official NIST resource tracking the PQC standardization process and new algorithm standards. |
+| [TLS 1.3 RFC 8446](https://www.rfc-editor.org/rfc/rfc8446) | The TLS 1.3 specification; dense but authoritative. |
 
-**Next Generation Wireless Protocols Robust Secure Network** RSN provides robust security features such as key management, data integrity, and data encryption, which makes it a more secure option than WEP or WPA for wireless networks. Additionally, RSN is backward-compatible with TSN, which allows it to coexist with older wireless devices that may not support AES-CCMP. However, it is important to note that for optimal security, it is recommended to phase out older wireless devices that only support WEP or WPA and upgrade to newer devices that support RSN or its successor protocols.
+---
 
-Note, however, that a WLAN on which devices still use WEP is not optimally secured.
-
-The RSN protocol functions as follows:
-
-* The wireless network interface card (NIC) sends a probe request.
-* The wireless access point sends a probe response with an RSN Information Exchange (IE) frame.
-* The wireless NIC requests authentication via one of the approved methods.
-* The wireless access point provides authentication for the wireless NIC.
-* The wireless NIC sends an association request with an RSN IE frame.
-* The wireless access point sends an association response.
-
-**Bluetooth** is a wireless technology that allows devices to communicate with each other over short distances. It is commonly used in devices such as phones, laptops, and other portable devices. However, Bluetooth has security risks, as it operates on radio frequencies that can be intercepted by anyone within a range of 30 feet. By default, Bluetooth does not authenticate connections, and devices can easily be accessed in discoverable mode. To improve security, devices can be set to non-discoverable mode, and users can require a passkey for paired devices. Additionally, users should turn off Bluetooth when not in use and be cautious about accepting incoming communications pairing requests from unknown sources. In summary, Bluetooth security can be improved by careful usage and configuration of the device.
-
-**Securing TCP/IP with IPSec and PGP**
-
-IPSec is a protocol that provides security for IP-based networks by protecting data integrity, user confidentiality, and authenticity at the packet level. It is widely used to create VPNs and is an open-source framework. It operates in two modes: transport and tunnel, and includes the IP Security protocol and the Internet Key Exchange for key exchange and negotiation of security associations. It is defined in several Request for Comments (RFCs) and is considered a standard for securing communications on IP-based networks.
-
-Pretty Good Privacy (PGP) is another popular tool for securing e-mail communication. Developed by Phil Zimmermann in 1991, PGP uses a combination of symmetric and asymmetric encryption to secure e-mails. PGP uses the RSA algorithm for key exchange and digital signatures and IDEA, CAST or AES for message encryption. PGP also includes a mechanism for encrypting the subject line of an e-mail to prevent the subject from being read by an eavesdropper. PGP is often used to encrypt and sign e-mails, as well as to encrypt files and disk partitions. PGP is available as a commercial product as well as a free and open-source software. It can be used with most e-mail clients and can also be integrated with other security tools such as VPNs to provide a more secure communication infrastructure.
-
-IPSec uses several different cryptosystems:
-
-* Diffie-Hellman key exchange for deriving key material between peers on a public network
-* Public-key cryptography for signing the Diffie-Hellman exchanges to guarantee the identity of the two parties
-* Bulk encryption algorithms, such as DES, for encrypting the data
-* Digital certificates signed by a certificate authority to act as digital ID cards
-
-IPSec is a security protocol that is used to secure communications across IP-based networks such as LANs, WANs, and the Internet. It operates in two modes, transport mode and tunnel mode, and uses two protocols, the application header (AH) and the encapsulating security payload (ESP) protocols. The AH protocol provides system-to-system authentication and data integrity verification, while the ESP protocol provides secrecy for the contents of network communications as well as system-to-system authentication and data integrity verification. IPSec is widely used to create virtual private networks (VPNs) and is an open-source framework defined by the IETF.
-
-The ESP protocol is designed to provide confidentiality, data integrity, and IP packet authentication. ESP provides these security features through the use of encryption algorithms, such as AES and 3DES, and a message integrity check algorithm, such as HMAC. ESP can be used in either transport mode or tunnel mode, depending on the network requirements. In transport mode, only the payload of the IP packet is encrypted, while in tunnel mode, the entire inner IP packet is encrypted. ESP can also be used in combination with the AH protocol to provide both confidentiality and authentication for IP packets. The ESP protocol also includes a security parameters index (SPI) to reference the session key and algorithm used to protect the data, as well as a sequence number to prevent replay attacks.
-
-IPSec is a framework that provides security for IP-based networks by using the AH and ESP protocols. The AH protocol provides data integrity and IP packet authentication but does not provide confidentiality protection. The ESP protocol, on the other hand, provides confidentiality services for IP packets across insecure networks, and can also provide the authentication services of AH. It is widely used to create virtual private networks (VPNs) and can operate in both transport and tunnel mode. ESP supports several encryption algorithms such as DES, Triple DES, IDEA, RC5, CAST, and Blowfish.
+*Questions about cryptography, TLS configuration, or post-quantum migration? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back -- this book is open source and your additions are welcome.*
