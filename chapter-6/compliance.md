@@ -8,7 +8,7 @@ British Airways was PCI-DSS compliant at the time.
 
 The fine was issued under GDPR. The breach violated the regulation's requirement to implement appropriate technical and organizational measures to protect personal data. Compliance with one framework did not prevent violation of another. And compliance with all applicable frameworks did not prevent the breach.[1]
 
-This is the central tension in compliance: organizations often treat it as a destination rather than a baseline. Pass the audit. Tick the box. Move on. But compliance frameworks define the floor of acceptable security practice, not the ceiling. An organization can be fully compliant and still be breached. Security is what compliance is supposed to reflect -- but the reflection is imperfect.
+This is the central tension in compliance: organizations often treat it as a destination rather than a baseline. Pass the audit. Tick the box. Move on. But compliance frameworks define the floor of acceptable security practice, not the ceiling. An organization can be fully compliant and still be breached. Security is what compliance is supposed to reflect — but the reflection is imperfect.
 
 Understanding compliance means understanding what it actually requires, what it does not require, and how to navigate a landscape where the requirements multiply every year.
 
@@ -32,7 +32,7 @@ Compliance is not optional when it is legally required. GDPR fines reach 4% of g
 
 **Security** asks: "Does this control actually reduce risk?"
 
-A firewall that exists but is misconfigured satisfies a compliance checkbox. It does not provide security. The goal is to implement controls that are both compliant and effective -- but the two are not automatic synonyms. Organizations that treat compliance as a proxy for security, rather than as a starting point, make themselves vulnerable.
+A firewall that exists but is misconfigured satisfies a compliance checkbox. It does not provide security. The goal is to implement controls that are both compliant and effective — but the two are not automatic synonyms. Organizations that treat compliance as a proxy for security, rather than as a starting point, make themselves vulnerable.
 {% endhint %}
 
 ---
@@ -74,7 +74,7 @@ HIPAA mandates specific controls for electronic protected health information (eP
 
 ### PCI-DSS (Payment Card Industry Data Security Standard)
 
-**Who it applies to:** Any organization that stores, processes, or transmits payment card data -- merchants, payment processors, service providers, and their vendors.
+**Who it applies to:** Any organization that stores, processes, or transmits payment card data — merchants, payment processors, service providers, and their vendors.
 
 PCI-DSS is maintained by the Payment Card Industry Security Standards Council (a consortium of Visa, Mastercard, American Express, Discover, and JCB) and is contractually required by card network agreements rather than law.[5]
 
@@ -106,6 +106,10 @@ Type II reports are the meaningful standard. A Type I report only proves that co
 
 SOC 2 is the de facto standard for SaaS companies selling to enterprise customers. Enterprise procurement teams require it before approving vendors who will process their data.
 
+{% hint style="success" %}
+**Open-source SOC 2 / ISO 27001 compliance starter:** [comply by StrongDM](https://github.com/strongdm/comply) is a free, open-source compliance-as-code kit that includes policy documents, control definitions, and evidence-gathering templates structured for SOC 2 and ISO 27001. A practical working starting point, not just documentation.
+{% endhint %}
+
 ### ISO/IEC 27001
 
 **Who it applies to:** Any organization, any size, any sector. ISO 27001 is the international standard for information security management systems (ISMS).
@@ -116,11 +120,15 @@ Certification is awarded by accredited certification bodies after a two-stage au
 
 **Why it matters:** ISO 27001 certification is increasingly required in European government and enterprise procurement, and is a credible signal of security maturity globally.
 
+{% hint style="info" %}
+**Free ISO 27001 templates:** The [ISO27k Toolkit](https://www.iso27001security.com/html/iso27k_toolkit.html) provides a community-maintained collection including a pre-built Statement of Applicability, risk treatment plan, management review minutes, and internal audit checklist — the core documentation set for ISO 27001 certification, free and ready to adapt.
+{% endhint %}
+
 ### CMMC (Cybersecurity Maturity Model Certification)
 
 **Who it applies to:** US Department of Defense contractors and subcontractors handling Controlled Unclassified Information (CUI).
 
-CMMC 2.0 (released 2021) establishes three maturity levels, with Level 2 requiring an independent third-party assessment against NIST SP 800-171's 110 security requirements. CMMC is not optional for DoD contractors -- it will be a contract requirement, and organizations without the appropriate CMMC level will be ineligible for DoD contracts.[8]
+CMMC 2.0 (released 2021) establishes three maturity levels, with Level 2 requiring an independent third-party assessment against NIST SP 800-171's 110 security requirements. CMMC is not optional for DoD contractors — it will be a contract requirement, and organizations without the appropriate CMMC level will be ineligible for DoD contracts.[8]
 
 ### FedRAMP (Federal Risk and Authorization Management Program)
 
@@ -142,13 +150,13 @@ Assess → Plan → Implement → Audit → Certify → Monitor → Assess (agai
 
 **Plan:** Develop a remediation roadmap. Prioritize gaps by risk and compliance deadline. Assign ownership and timelines.
 
-**Implement:** Deploy the required controls -- technical, administrative, and physical. Document everything. Evidence is the currency of compliance.
+**Implement:** Deploy the required controls — technical, administrative, and physical. Document everything. Evidence is the currency of compliance.
 
 **Audit:** Internal auditors verify controls are implemented and operating. Findings are documented and remediated. For certifiable standards (ISO 27001, SOC 2, CMMC), external auditors conduct formal assessments.
 
-**Certify:** Formal certification or attestation is issued. For regulations like GDPR and HIPAA, there is no certification -- compliance is an ongoing obligation enforced by regulators.
+**Certify:** Formal certification or attestation is issued. For regulations like GDPR and HIPAA, there is no certification — compliance is an ongoing obligation enforced by regulators.
 
-**Monitor:** Compliance does not hold itself. Controls drift. Regulations change. New systems are deployed that are not in scope. Continuous monitoring -- including automated compliance tools, regular internal audits, and management reviews -- maintains the certified state.
+**Monitor:** Compliance does not hold itself. Controls drift. Regulations change. New systems are deployed that are not in scope. Continuous monitoring — including automated compliance tools, regular internal audits, and management reviews — maintains the certified state.
 
 {% hint style="warning" %}
 **The gap between certification and compliance:** ISO 27001 certification is valid for three years with annual surveillance audits. A system deployed the day after a certification audit has three years of potential drift before the next full audit. Organizations that treat certification as a finish line rather than a waypoint accumulate compliance debt that surfaces dramatically during the next audit or, worse, during a breach investigation.
@@ -158,7 +166,7 @@ Assess → Plan → Implement → Audit → Certify → Monitor → Assess (agai
 
 ## Evidence Management
 
-Compliance lives and dies on documentation. Every control must be evidenced -- not just stated to exist, but demonstrated to be operating.
+Compliance lives and dies on documentation. Every control must be evidenced — not just stated to exist, but demonstrated to be operating.
 
 Evidence types include:
 
@@ -177,7 +185,7 @@ Evidence must be:
 - Authentic (not modified)
 - Accessible (retrievable when auditors request it)
 
-GRC platforms -- Vanta, Drata, Tugboat Logic, OneTrust, ServiceNow GRC -- automate evidence collection by integrating with cloud platforms, identity providers, and security tools to pull compliance evidence continuously rather than in manual point-in-time snapshots.
+GRC platforms — Vanta, Drata, Tugboat Logic, OneTrust, ServiceNow GRC — automate evidence collection by integrating with cloud platforms, identity providers, and security tools to pull compliance evidence continuously rather than in manual point-in-time snapshots.
 
 ---
 
@@ -235,15 +243,42 @@ Compliance and GRC roles are among the most stable and well-compensated non-tech
 
 ---
 
+## Templates and Examples You Can Use Today
+
+Compliance requires documentation. These free resources give you a starting point for every major framework covered in this chapter — no registration or purchase required for the most useful ones.
+
+| Resource | Framework(s) | What You Get |
+|---|---|---|
+| [SANS Policy Templates](https://www.sans.org/information-security-policy/) | ISO 27001, SOC 2, HIPAA, PCI-DSS | 27 ready-to-customize policies that map to ISO 27001 Annex A and SOC 2 Common Criteria |
+| [ISO27k Toolkit](https://www.iso27001security.com/html/iso27k_toolkit.html) | ISO 27001 | Free Statement of Applicability, risk treatment plan, management review minutes, and internal audit checklist |
+| [comply by StrongDM](https://github.com/strongdm/comply) | SOC 2, ISO 27001 | Open-source compliance-as-code kit: policy documents, control definitions, and evidence templates |
+| [AICPA Trust Services Criteria](https://www.aicpa-cima.com/topic/audit-assurance/audit-and-assurance-greater-than-soc-2) | SOC 2 | Free authoritative SOC 2 control list (registration required, no charge) |
+| [OpenControl / Compliance Masonry](https://github.com/opencontrol) | FedRAMP, NIST 800-53 | Write controls once in structured YAML; generate compliance documentation for multiple frameworks |
+| [NIST SP 800-53 Rev 5](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) | FedRAMP, CMMC, ISO 27001 | Free comprehensive control catalog behind FedRAMP; includes cross-walks to ISO 27001 Annex A |
+| [CIS Benchmarks](https://www.cisecurity.org/cis-benchmarks) | PCI-DSS, SOC 2, ISO 27001 | Free hardening checklists accepted as PCI-DSS and SOC 2 audit evidence; covers every major OS and platform |
+| [PCI SSC Document Library](https://www.pcisecuritystandards.org/document_library/) | PCI-DSS | Free PCI-DSS v4.0 standard, Self-Assessment Questionnaires (SAQs), and Report on Compliance templates |
+| [HHS HIPAA Security Risk Assessment Tool](https://www.hhs.gov/hipaa/for-professionals/security/guidance/index.html) | HIPAA | Free Windows/Mac app from HHS that guides a HIPAA Security Rule risk assessment with built-in report output |
+| [GDPR.eu Templates](https://gdpr.eu/checklist/) | GDPR | Free DPIA, Records of Processing Activities (ROPA), and breach notification templates |
+
+{% hint style="success" %}
+**Which to start with depends on your priority framework:**
+- Preparing for ISO 27001? Start with SANS policies and the ISO27k Toolkit.
+- SOC 2 readiness? Start with SANS policies and the comply (StrongDM) GitHub repo.
+- HIPAA compliance? Start with the HHS Risk Assessment Tool and SANS healthcare-specific templates.
+- PCI-DSS? Download the appropriate SAQ from the PCI SSC Document Library first to scope your obligations before building any controls.
+{% endhint %}
+
+---
+
 ## References
 
 [1] Information Commissioner's Office. (2020). *ICO fines British Airways £20 million for data breach affecting more than 400,000 customers*. ICO. Retrieved from https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2020/10/ico-fines-british-airways-20million-for-data-breach-affecting-more-than-400-000-customers/
 
-[2] European Parliament and Council of the European Union. (2016). Regulation (EU) 2016/679 -- General Data Protection Regulation. *Official Journal of the European Union*, L 119, 1--88. Retrieved from https://gdpr-info.eu
+[2] European Parliament and Council of the European Union. (2016). Regulation (EU) 2016/679 -- General Data Protection Regulation. *Official Journal of the European Union*, L 119, 1-88. Retrieved from https://gdpr-info.eu
 
 [3] Data Protection Commission Ireland. (2023). *Decision of the Data Protection Commission: Meta Platforms Ireland Limited*. DPC. Retrieved from https://www.dataprotection.ie/en/dpc-guidance/decision-meta-platforms-ireland-limited
 
-[4] US Department of Health and Human Services. (2003). Security Standards for the Protection of Electronic Protected Health Information. *Federal Register*, 68(34), 8333--8381. Retrieved from https://www.hhs.gov/hipaa/for-professionals/security/index.html
+[4] US Department of Health and Human Services. (2003). Security Standards for the Protection of Electronic Protected Health Information. *Federal Register*, 68(34), 8333-8381. Retrieved from https://www.hhs.gov/hipaa/for-professionals/security/index.html
 
 [5] PCI Security Standards Council. (2022). *Payment Card Industry Data Security Standard Requirements and Testing Procedures, Version 4.0*. PCI SSC. Retrieved from https://www.pcisecuritystandards.org
 
@@ -272,4 +307,4 @@ Compliance and GRC roles are among the most stable and well-compensated non-tech
 
 ---
 
-*Questions about compliance frameworks, GRC career paths, or audit preparation? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back -- this book is open source and your additions are welcome.*
+*Questions about compliance frameworks, GRC career paths, or audit preparation? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back. This book is open source and your additions are welcome.*
