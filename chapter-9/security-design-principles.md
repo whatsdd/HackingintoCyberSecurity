@@ -22,7 +22,7 @@ Complexity is the enemy of security. Every additional feature, every additional 
 
 **In practice:**
 
-The Heartbleed vulnerability (CVE-2014-0160) existed in a feature called "heartbeat" added to OpenSSL. The heartbeat feature sent a small message and expected a response of the same size -- but the implementation did not verify that the response was actually the size claimed. An attacker could request a 64KB response to a 1-byte heartbeat, leaking 64KB of server memory per request -- potentially including private keys, session tokens, and passwords.[2]
+The Heartbleed vulnerability (CVE-2014-0160) existed in a feature called "heartbeat" added to OpenSSL. The heartbeat feature sent a small message and expected a response of the same size, but the implementation did not verify that the response was actually the size claimed. An attacker could request a 64KB response to a 1-byte heartbeat, leaking 64KB of server memory per request, potentially including private keys, session tokens, and passwords.[2]
 
 The feature was unnecessary for the core cryptographic function. Its complexity introduced a critical vulnerability that affected an estimated 17% of secure web servers at the time of disclosure.
 
@@ -34,9 +34,9 @@ The feature was unnecessary for the core cryptographic function. Its complexity 
 
 > "Base access decisions on permission rather than exclusion."
 
-Systems should default to the secure state. If an action is not explicitly permitted, it should be denied. If a service fails, it should fail closed -- not open.
+Systems should default to the secure state. If an action is not explicitly permitted, it should be denied. If a service fails, it should fail closed, not open.
 
-The inverse -- building systems that allow everything except what is explicitly denied -- produces security that is permanently one missed rule away from failure. Allowlists are inherently more secure than denylists because new attacks are unknown and therefore not in the denylist.
+The inverse, building systems that allow everything except what is explicitly denied, produces security that is permanently one missed rule away from failure. Allowlists are inherently more secure than denylists because new attacks are unknown and therefore not in the denylist.
 
 **In practice:**
 
@@ -64,11 +64,11 @@ The same principle applies to IAM (Identity and Access Management): new principa
 
 > "Every access to every object must be checked for authority."
 
-Access control decisions should not be cached, assumed, or skipped for performance. Every time a subject requests access to an object, the authorization should be verified against current permissions -- not permissions that were valid when the session started.
+Access control decisions should not be cached, assumed, or skipped for performance. Every time a subject requests access to an object, the authorization should be verified against current permissions, not permissions that were valid when the session started.
 
 **In practice:**
 
-Insecure Direct Object Reference (IDOR) -- one of the most common web application vulnerabilities -- is a failure of complete mediation. An application authenticates the user once but then uses a predictable identifier (user ID, order number) without re-verifying that the authenticated user is actually authorized to access that specific object. Change the ID in the URL, access someone else's data.
+Insecure Direct Object Reference (IDOR), one of the most common web application vulnerabilities, is a failure of complete mediation. An application authenticates the user once but then uses a predictable identifier (user ID, order number) without re-verifying that the authenticated user is actually authorized to access that specific object. Change the ID in the URL, access someone else's data.
 
 ```
 # Vulnerable: Authorization checked at login but not at each resource access
@@ -84,7 +84,7 @@ Every API endpoint must independently verify that the authenticated principal is
 
 > "The design should not be secret."
 
-A system's security should not depend on the secrecy of its design or implementation. It should remain secure even when the attacker knows exactly how it works -- because the attacker's ignorance cannot be relied upon.
+A system's security should not depend on the secrecy of its design or implementation. It should remain secure even when the attacker knows exactly how it works, because the attacker's ignorance cannot be relied upon.
 
 This is Kerckhoffs's principle, independently derived: assume the adversary knows your algorithm. Your security comes from the secrecy of the key, not the algorithm.[3]
 
@@ -102,7 +102,7 @@ Open design enables peer review. The AES algorithm was published and subjected t
 
 > "Where feasible, a protection mechanism that requires two keys to unlock it is more robust and flexible than one that allows access to the presenter of only a single key."
 
-No single individual or component should have sufficient authority to complete a critical action alone. Requiring multiple independent conditions to be satisfied -- or multiple independent parties to authorize an action -- prevents a single point of failure or a single compromised account from causing catastrophic harm.
+No single individual or component should have sufficient authority to complete a critical action alone. Requiring multiple independent conditions to be satisfied, or multiple independent parties to authorize an action, prevents a single point of failure or a single compromised account from causing catastrophic harm.
 
 **In practice:**
 
@@ -116,11 +116,11 @@ Financial controls requiring dual authorization for transfers above a threshold 
 
 > "Every program and every user of the system should operate using the least set of privileges necessary to complete the job."
 
-Principals -- users, service accounts, processes -- should have exactly the permissions required for their current task and no more. This limits the blast radius of a compromise: an attacker who gains access to a low-privilege account or process inherits only those limited permissions.
+Principals (users, service accounts, processes) should have exactly the permissions required for their current task and no more. This limits the blast radius of a compromise: an attacker who gains access to a low-privilege account or process inherits only those limited permissions.
 
 **In practice:**
 
-A web application service account that only needs to read from a specific database table should have `SELECT` permission on that table only -- not `db_owner`, not `INSERT`, not access to other tables. If the application is compromised, the attacker's database access is bounded by what the service account can do.
+A web application service account that only needs to read from a specific database table should have `SELECT` permission on that table only. Not `db_owner`, not `INSERT`, not access to other tables. If the application is compromised, the attacker's database access is bounded by what the service account can do.
 
 The principle applies at every layer:
 
@@ -136,13 +136,13 @@ The principle applies at every layer:
 
 > "Minimize the amount of mechanism common to more than one user and depended on by all users."
 
-Mechanisms shared between multiple users or processes are potential covert channels -- ways for one user to observe or influence another's behavior through side effects. Shared resources also mean that a compromise of the shared mechanism affects all users who depend on it.
+Mechanisms shared between multiple users or processes are potential covert channels, ways for one user to observe or influence another's behavior through side effects. Shared resources also mean that a compromise of the shared mechanism affects all users who depend on it.
 
 **In practice:**
 
 Containerization and microservices architectures implement this principle: each service runs in its own isolated environment with its own resources. A vulnerability in one service does not automatically compromise others sharing the same process space.
 
-Multi-tenant cloud environments must carefully implement this principle. Side-channel attacks like Spectre and Meltdown (2018) exploited shared CPU cache to leak information between processes -- a direct violation of this principle at the hardware level.[6]
+Multi-tenant cloud environments must carefully implement this principle. Side-channel attacks like Spectre and Meltdown (2018) exploited shared CPU cache to leak information between processes, a direct violation of this principle at the hardware level.[6]
 
 ### 8. Psychological Acceptability (Usable Security)
 
@@ -156,13 +156,13 @@ Password managers solve the usability vs. security tension in password managemen
 
 Phishing-resistant MFA (hardware keys like YubiKey, passkeys) is more secure than TOTP codes and, for technical users, no harder to use. The adoption of passwordless authentication is as much a usability project as a security one.
 
-Security controls that generate too many false positives train users to ignore alerts -- which is exactly the condition that allowed the Target breach to go undetected despite automated alerts firing.[7]
+Security controls that generate too many false positives train users to ignore alerts, which is exactly the condition that allowed the Target breach to go undetected despite automated alerts firing.[7]
 
 ---
 
 ## Modern Principles
 
-The 1975 list was developed for timesharing systems. Subsequent decades of experience -- networked systems, the internet, cloud computing, mobile -- have produced additional principles that are now as foundational.
+The 1975 list was developed for timesharing systems. Subsequent decades of experience, including networked systems, the internet, cloud computing, and mobile, have produced additional principles that are now as foundational.
 
 ### Defense in Depth
 
@@ -172,7 +172,7 @@ Each layer independently reduces the probability of successful attack. Layers th
 
 ### Zero Trust Architecture
 
-Zero Trust is an architectural philosophy that abandons the assumption of a trusted internal network. The traditional model -- trust everything inside the firewall, distrust everything outside -- fails catastrophically when a threat actor gains internal access (through phishing, VPN compromise, or insider action), because internal traffic is largely unmonitored and unrestricted.
+Zero Trust is an architectural philosophy that abandons the assumption of a trusted internal network. The traditional model (trust everything inside the firewall, distrust everything outside) fails catastrophically when a threat actor gains internal access (through phishing, VPN compromise, or insider action), because internal traffic is largely unmonitored and unrestricted.
 
 Zero Trust replaces the network perimeter with identity as the new perimeter. NIST SP 800-207 defines Zero Trust as:[8]
 
@@ -185,7 +185,7 @@ Zero Trust replaces the network perimeter with identity as the new perimeter. NI
 | Implicit trust for internal traffic | All traffic authenticated and authorized |
 | VPN provides broad network access | Just-in-time, just-enough access to specific resources |
 
-Zero Trust is not a product -- it is an architecture. Implementing it requires investment in identity infrastructure (strong MFA everywhere), device health verification (MDM/EDR integration), micro-segmentation (software-defined networking), and continuous monitoring.
+Zero Trust is not a product. It is an architecture. Implementing it requires investment in identity infrastructure (strong MFA everywhere), device health verification (MDM/EDR integration), micro-segmentation (software-defined networking), and continuous monitoring.
 
 ### Secure by Default
 
@@ -202,9 +202,9 @@ Microsoft's "Secure by Default" initiative and Google's approach to Android secu
 
 ### Minimize Attack Surface
 
-The attack surface is the sum of all points where an attacker could attempt to enter a system. Reducing it -- by disabling unused services, removing unnecessary accounts, eliminating unneeded network exposures, and reducing code complexity -- reduces the number of opportunities for compromise.
+The attack surface is the sum of all points where an attacker could attempt to enter a system. Reducing it (by disabling unused services, removing unnecessary accounts, eliminating unneeded network exposures, and reducing code complexity) reduces the number of opportunities for compromise.
 
-This is distinct from defense in depth (which layers controls over existing attack surface) -- attack surface reduction eliminates the attack surface entirely.
+This is distinct from defense in depth, which layers controls over existing attack surface. Attack surface reduction eliminates the attack surface entirely.
 
 ---
 
@@ -225,17 +225,17 @@ There is no formula for these trade-offs. Security architecture is engineering j
 
 ## References
 
-[1] Saltzer, J. H., & Schroeder, M. D. (1975). The protection of information in computer systems. *Proceedings of the IEEE*, 63(9), 1278--1308. doi:10.1109/PROC.1975.9939
+[1] Saltzer, J. H., & Schroeder, M. D. (1975). The protection of information in computer systems. *Proceedings of the IEEE*, 63(9), 1278-1308. doi:10.1109/PROC.1975.9939
 
 [2] Durumeric, Z., Kasten, J., Bailey, M., & Halderman, J. A. (2014). Analysis of the HTTPS certificate ecosystem. *Proceedings of the ACM Internet Measurement Conference*, 2014. doi:10.1145/2663716.2663755
 
-[3] Kerckhoffs, A. (1883). La cryptographie militaire. *Journal des sciences militaires*, 9, 5--38.
+[3] Kerckhoffs, A. (1883). La cryptographie militaire. *Journal des sciences militaires*, 9, 5-38.
 
-[4] Barkan, E., Biham, E., & Keller, N. (2008). Instant ciphertext-only cryptanalysis of GSM encrypted communication. *Journal of Cryptology*, 21(3), 392--429. doi:10.1007/s00145-007-9001-y
+[4] Barkan, E., Biham, E., & Keller, N. (2008). Instant ciphertext-only cryptanalysis of GSM encrypted communication. *Journal of Cryptology*, 21(3), 392-429. doi:10.1007/s00145-007-9001-y
 
 [5] Verizon. (2024). *2024 Data Breach Investigations Report*. Verizon Business. Retrieved from https://www.verizon.com/business/resources/reports/dbir/
 
-[6] Kocher, P., Horn, J., Fogh, A., Genkin, D., Gruss, D., Haas, W., Hamburg, M., Lipp, M., Mangard, S., Prescher, T., Schwarz, M., & Yarom, Y. (2019). Spectre attacks: Exploiting speculative execution. *Communications of the ACM*, 62(7), 93--101. doi:10.1145/3399742
+[6] Kocher, P., Horn, J., Fogh, A., Genkin, D., Gruss, D., Haas, W., Hamburg, M., Lipp, M., Mangard, S., Prescher, T., Schwarz, M., & Yarom, Y. (2019). Spectre attacks: Exploiting speculative execution. *Communications of the ACM*, 62(7), 93-101. doi:10.1145/3399742
 
 [7] Krebs, B. (2014, February 12). Target hackers broke in via HVAC company. *Krebs on Security*. Retrieved from https://krebsonsecurity.com/2014/02/target-hackers-broke-in-via-hvac-company/
 
@@ -255,4 +255,4 @@ There is no formula for these trade-offs. Security architecture is engineering j
 
 ---
 
-*Questions about security architecture, design principles, or applying Zero Trust? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back -- this book is open source and your additions are welcome.*
+*Questions about security architecture, design principles, or applying Zero Trust? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back. This book is open source and your additions are welcome.*
