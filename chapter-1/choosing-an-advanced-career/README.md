@@ -71,7 +71,7 @@ One thing that doesn't matter as much as people think: prior technical expertise
 ## The Reality of Getting Started
 
 {% hint style="warning" %}
-**The entry-level catch-22:** Most jobs ask for experience. But experience requires getting a job first. This is real, and it's frustrating. The way around it is to build *demonstrable* skills before you apply -- using free and affordable tools -- so that you walk into interviews with specific things to discuss, not just a resume.
+**The entry-level catch-22:** Most jobs ask for experience. But experience requires getting a job first. This is real, and it's frustrating. The way around it is to build *demonstrable* skills before you apply. Free and affordable tools let you build those skills so you walk into interviews with specific things to discuss, not just a resume.
 {% endhint %}
 
 The tools to do this are free or affordable.
@@ -102,4 +102,4 @@ The next section maps the career paths within cybersecurity so you can choose wh
 
 ---
 
-*Have questions or want honest feedback on your path into cybersecurity? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this book helped, contribute back -- that pull request is your first open-source credit.*
+*Have questions or want honest feedback on your path into cybersecurity? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this book helped, contribute back. That pull request is your first open-source credit.*
