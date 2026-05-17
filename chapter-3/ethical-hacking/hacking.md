@@ -2,7 +2,7 @@
 
 Nobody becomes a penetration tester by reading about it. You build the skills by breaking things, fixing them, and breaking them again in environments you control. This chapter covers what you actually need to learn, in roughly the order you should learn it.
 
-There is no shortcut here. The people who are genuinely good at offensive security have put in thousands of hours on the fundamentals. What separates them from people who plateau early is not raw intelligence -- it is having built a real foundation before picking up attack tools.
+There is no shortcut here. The people who are genuinely good at offensive security have put in thousands of hours on the fundamentals. What separates them from people who plateau early is not raw intelligence. It is having built a real foundation before picking up attack tools.
 
 ---
 
@@ -76,7 +76,7 @@ A practical goal: by the time you apply for your first penetration testing role,
 
 ## Web Application Fundamentals
 
-Web applications are the most common attack surface in modern penetration testing. The OWASP Top 10 -- the standard reference for web vulnerability categories -- covers injection, broken authentication, insecure direct object references, security misconfigurations, XSS, and more [7].
+Web applications are the most common attack surface in modern penetration testing. The OWASP Top 10, the standard reference for web vulnerability categories, covers injection, broken authentication, insecure direct object references, security misconfigurations, XSS, and more [7].
 
 Before you exploit web vulnerabilities, understand how web applications are built:
 
