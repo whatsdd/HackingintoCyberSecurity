@@ -2,7 +2,7 @@
 
 ## What Gets Skipped When Teams Are Moving Fast
 
-In 2013, attackers installed malware on Target's point-of-sale terminals during the holiday shopping season. Forty million credit card numbers were stolen. The entry point was not a sophisticated zero-day exploit -- it was credentials stolen from a third-party HVAC vendor that had network access to Target's systems.
+In 2013, attackers installed malware on Target's point-of-sale terminals during the holiday shopping season. Forty million credit card numbers were stolen. The entry point was not a sophisticated zero-day exploit. It was credentials stolen from a third-party HVAC vendor that had network access to Target's systems.
 
 A basic threat modeling exercise on the network architecture would have raised a question: why does an HVAC vendor need network connectivity that can reach payment terminals? That connectivity should never have existed. The design had a trust boundary problem that nobody stopped to examine before the system went live.
 
@@ -18,10 +18,10 @@ The counterargument is simple: Target spent $200 million in the first year respo
 
 Adam Shostack, who led threat modeling at Microsoft and wrote the field's most comprehensive book on the subject, reduces threat modeling to four questions:[2]
 
-1. **What are we building?** -- Understand the system well enough to reason about it
-2. **What can go wrong?** -- Identify threats to the system
-3. **What are we going to do about it?** -- Define mitigations for each threat
-4. **Did we do a good enough job?** -- Verify that the process was complete and mitigations are effective
+1. **What are we building?** Understand the system well enough to reason about it.
+2. **What can go wrong?** Identify threats to the system.
+3. **What are we going to do about it?** Define mitigations for each threat.
+4. **Did we do a good enough job?** Verify that the process was complete and mitigations are effective.
 
 These questions apply regardless of which methodology you use. The methodologies are structured ways of answering question 2 more systematically.
 
@@ -29,7 +29,7 @@ These questions apply regardless of which methodology you use. The methodologies
 
 ## Step 1: Understand What You Are Building
 
-Threat modeling starts with a model -- a representation of the system that is detailed enough to reason about security without being so detailed that it takes weeks to produce.
+Threat modeling starts with a model: a representation of the system that is detailed enough to reason about security without being so detailed that it takes weeks to produce.
 
 **Data Flow Diagrams (DFDs)** are the standard artifact. A DFD shows:
 
@@ -152,7 +152,7 @@ PASTA is more resource-intensive than STRIDE and requires broader stakeholder in
 
 ### OCTAVE (Operationally Critical Threat, Asset, and Vulnerability Evaluation)
 
-OCTAVE, developed by Carnegie Mellon's SEI, takes an organizational rather than system-level view. It focuses on identifying mission-critical assets, the threats to those assets, and organizational vulnerabilities -- including people and process weaknesses -- not just technical ones.[8]
+OCTAVE, developed by Carnegie Mellon's SEI, takes an organizational rather than system-level view. It focuses on identifying mission-critical assets, the threats to those assets, and organizational vulnerabilities, including people and process weaknesses, not just technical ones.[8]
 
 OCTAVE is particularly appropriate for enterprise risk assessments and for organizations that need to understand systemic risk rather than application-level threats.
 
@@ -263,7 +263,7 @@ A threat model produced once and never updated is a historical document. Systems
 
 [5] MITRE Corporation. (2024). *ATT&CK Navigator*. GitHub. Retrieved from https://mitre-attack.github.io/attack-navigator/
 
-[6] Schneier, B. (1999). Attack trees: Modeling security threats. *Dr. Dobb's Journal*, 24(12), 21--29. Retrieved from https://www.schneier.com/academic/archives/1999/12/attack_trees.html
+[6] Schneier, B. (1999). Attack trees: Modeling security threats. *Dr. Dobb's Journal*, 24(12), 21-29. Retrieved from https://www.schneier.com/academic/archives/1999/12/attack_trees.html
 
 [7] UCSan Diego and VerSprite. (2012). *PASTA: Process for Attack Simulation and Threat Analysis*. VerSprite Security Research. Retrieved from https://versprite.com/blog/what-is-pasta-threat-modeling/
 
@@ -283,4 +283,4 @@ A threat model produced once and never updated is a historical document. Systems
 
 ---
 
-*Questions about threat modeling methodologies, running your first session, or tool selection? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back -- this book is open source and your additions are welcome.*
+*Questions about threat modeling methodologies, running your first session, or tool selection? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back. This book is open source and your additions are welcome.*
