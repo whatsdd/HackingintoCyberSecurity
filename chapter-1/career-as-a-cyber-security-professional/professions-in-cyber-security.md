@@ -10,7 +10,7 @@ Before you invest months building toward this career, you deserve a straight ans
 
 {% hint style="success" %}
 **Why cybersecurity is a genuinely great career:**
-- The work is never boring -- the threat landscape evolves constantly, and you will never run out of things to learn
+- The work is never boring. The threat landscape evolves constantly, and you will never run out of things to learn.
 - Job security is real: the industry has never had a significant downturn, and the talent shortage is getting worse
 - Salaries are strong at every level: entry-level pays significantly better than comparable roles in most other fields
 - Remote work is standard: the majority of roles are fully remote or hybrid
@@ -92,7 +92,7 @@ None of this needs to be polished. It needs to exist and show effort.
 
 If your GitHub is empty or private, that's your most important task before you send another job application.
 
-And if you don't know where to start with open source: you're reading an open-source book right now. This book lives on GitHub. Fixing a typo, improving a section, adding a resource you found useful -- that's a real open-source contribution. You can put it on your CV. It counts.
+And if you don't know where to start with open source: you're reading an open-source book right now. This book lives on GitHub. Fixing a typo, improving a section, adding a resource you found useful is a real open-source contribution. You can put it on your CV. It counts.
 
 ---
 
@@ -101,10 +101,10 @@ And if you don't know where to start with open source: you're reading an open-so
 Most people wait to feel ready before showing up anywhere. That's backwards.
 
 Security conferences and meetups are where the industry actually lives:
-- **OWASP chapter meetings** -- free, most major cities
-- **BSides events** -- community-organized, low-cost or free, highly accessible
-- **DEF CON and Black Hat** -- student discounts available
-- **Local ISACA and ISC2 chapters** -- often discounted or free for students and unemployed members
+- **OWASP chapter meetings.** Free, most major cities.
+- **BSides events.** Community-organized, low-cost or free, highly accessible.
+- **DEF CON and Black Hat.** Student discounts available.
+- **Local ISACA and ISC2 chapters.** Often discounted or free for students and unemployed members.
 
 {% hint style="info" %}
 **Just ask.** Many events offer discounted or free tickets for recent grads or first-time attendees. The worst they can say is no. Showing up matters more to most organizers than the ticket price.
@@ -120,7 +120,7 @@ A paid internship at a well-known company, or an unpaid one if you can afford it
 
 Sitting and waiting for the perfect opportunity is the worst thing you can do. An imperfect role you took, learned from, and turned into a reference is worth far more than the ideal role you're still hoping to get.
 
-Training positions, apprenticeships, even junior helpdesk roles at companies with security teams -- all of these are entry points. Many of the best security professionals started somewhere unglamorous. The job you take isn't the job you stay in. It's the job you use to get to the next one.
+Training positions, apprenticeships, even junior helpdesk roles at companies with security teams are all entry points. Many of the best security professionals started somewhere unglamorous. The job you take isn't the job you stay in. It's the job you use to get to the next one.
 
 ---
 
@@ -164,9 +164,9 @@ You don't need to be ready to start. You need to start to get ready.
 
 ### Week 2: Go Hands-On
 
-- Complete TryHackMe's **"Introduction to Cybersecurity"** path -- covers how attacks work, what defenders do, and gives you a taste of each pillar
+- Complete TryHackMe's **"Introduction to Cybersecurity"** path, which covers how attacks work, what defenders do, and gives you a taste of each pillar
 - Set up **DVWA** (Damn Vulnerable Web Application) on your Linux VM. Practice every OWASP Top 10 vulnerability in this safe environment. Document what you learn
-- Based on what you've experienced this week, **commit to one of the four pillars** -- not forever, just for now
+- Based on what you've experienced this week, **commit to one of the four pillars**, not forever, just for now
 
 ### Week 3: Build a Visible Presence
 
@@ -176,12 +176,12 @@ You don't need to be ready to start. You need to start to get ready.
 
 ### Week 4: Make a Commitment
 
-- **Register for CompTIA Security+**. You don't need to be ready yet -- you need a deadline. 60 to 90 days from now is reasonable. Having money on the line focuses the studying
+- **Register for CompTIA Security+.** You don't need to be ready yet. You need a deadline. 60 to 90 days from now is reasonable. Having money on the line focuses the studying.
 - Identify your **primary practice platform** and use it daily
 - Write a simple **one-page plan**: your target pillar, your first certification, and the job title you want 12 months from now
 
 {% hint style="success" %}
-**Twelve months is achievable.** People do it regularly. The timeline depends entirely on consistency and quality of practice, not just hours logged. Forty focused hours beats two hundred passive ones. Find a community of people at a similar stage -- the cybersecurity practitioner community is unusually open and helpful.
+**Twelve months is achievable.** People do it regularly. The timeline depends entirely on consistency and quality of practice, not just hours logged. Forty focused hours beats two hundred passive ones. Find a community of people at a similar stage. The cybersecurity practitioner community is unusually open and helpful.
 {% endhint %}
 
 ---
