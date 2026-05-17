@@ -4,9 +4,9 @@
 
 Julius Caesar shifted every letter in his messages three positions forward in the alphabet. A became D. B became E. Enemies who intercepted the message saw gibberish. Those who knew the shift could read it instantly.
 
-The Caesar cipher is trivially broken today. A modern computer cracks it in microseconds by trying all 25 possible shifts. But Caesar's approach captured something fundamental: hide a message by transforming it according to a rule that only authorized parties know. That principle -- transformation by shared secret -- runs unbroken from Caesar's military dispatches to the TLS encryption protecting your banking session right now.[1]
+The Caesar cipher is trivially broken today. A modern computer cracks it in microseconds by trying all 25 possible shifts. But Caesar's approach captured something fundamental: hide a message by transforming it according to a rule that only authorized parties know. That principle, transformation by shared secret, runs unbroken from Caesar's military dispatches to the TLS encryption protecting your banking session right now.[1]
 
-What changed is the mathematics. Simple substitution ciphers can be broken by analyzing letter frequency patterns. Modern cryptography uses mathematical problems that are computationally infeasible to reverse without the key -- problems involving large prime factorization, discrete logarithms, and elliptic curves that even the fastest computers cannot brute-force in any meaningful timeframe.
+What changed is the mathematics. Simple substitution ciphers can be broken by analyzing letter frequency patterns. Modern cryptography uses mathematical problems that are computationally infeasible to reverse without the key: problems involving large prime factorization, discrete logarithms, and elliptic curves that even the fastest computers cannot brute-force in any meaningful timeframe.
 
 Cryptography is the foundation of digital security. Without it, there is no private communication, no authentication, no trusted e-commerce, no secure remote access. Every other security control either uses cryptography or depends on infrastructure that does.
 
@@ -26,7 +26,7 @@ Before diving into specific algorithms, these terms appear in every cryptographi
 | **Algorithm (cipher)** | The mathematical function used for encryption/decryption |
 | **Key space** | The total number of possible keys; larger key spaces mean harder brute-force attacks |
 
-**Kerckhoffs's principle**, formulated by Auguste Kerckhoffs in 1883, states that a cryptographic system should be secure even if everything about it -- except the key -- is public knowledge.[2] This is why the AES algorithm is published in full. Security comes from the secrecy of the key, not the secrecy of the algorithm. Systems that depend on algorithm secrecy ("security through obscurity") have a poor track record.
+**Kerckhoffs's principle**, formulated by Auguste Kerckhoffs in 1883, states that a cryptographic system should be secure even if everything about it, except the key, is public knowledge.[2] This is why the AES algorithm is published in full. Security comes from the secrecy of the key, not the secrecy of the algorithm. Systems that depend on algorithm secrecy ("security through obscurity") have a poor track record.
 
 ---
 
@@ -50,16 +50,16 @@ AES-256 encrypting a 128-bit block requires an attacker to try 2^256 possible ke
 
 ### Modes of Operation
 
-AES is a block cipher -- it encrypts fixed-size blocks. The mode of operation determines how it handles data longer than one block, and the choice of mode has major security implications.
+AES is a block cipher; it encrypts fixed-size blocks. The mode of operation determines how it handles data longer than one block, and the choice of mode has major security implications.
 
 | Mode | How It Works | Use Case | Notes |
 |---|---|---|---|
-| **ECB** (Electronic Codebook) | Each block encrypted independently | Almost never appropriate | Identical plaintext blocks produce identical ciphertext -- patterns leak |
+| **ECB** (Electronic Codebook) | Each block encrypted independently | Almost never appropriate | Identical plaintext blocks produce identical ciphertext; patterns leak |
 | **CBC** (Cipher Block Chaining) | Each block XORed with previous ciphertext before encryption | File encryption, legacy TLS | Requires random IV; vulnerable to padding oracle attacks if misimplemented |
 | **GCM** (Galois/Counter Mode) | Counter-based stream cipher + authentication tag | TLS 1.3, disk encryption | Provides both confidentiality and integrity; the modern standard |
 
 {% hint style="danger" %}
-**Never use ECB mode.** ECB encrypts identical plaintext blocks to identical ciphertext blocks. The famous "ECB penguin" -- a bitmap image of a penguin encrypted with ECB mode that still shows the clear outline of the penguin in the ciphertext -- makes this concrete. If you can see the pattern, the encryption has failed. ECB mode is present in many libraries for backward compatibility; that does not mean it should be used.
+**Never use ECB mode.** ECB encrypts identical plaintext blocks to identical ciphertext blocks. The famous "ECB penguin", a bitmap image of a penguin encrypted with ECB mode that still shows the clear outline of the penguin in the ciphertext, makes this concrete. If you can see the pattern, the encryption has failed. ECB mode is present in many libraries for backward compatibility; that does not mean it should be used.
 {% endhint %}
 
 ### The Key Distribution Problem
@@ -74,7 +74,7 @@ The solution is asymmetric encryption.
 
 Asymmetric encryption (also called public-key cryptography) uses mathematically linked key pairs: a **public key** that anyone can possess and use to encrypt data, and a **private key** that only the owner holds and uses to decrypt it.
 
-The magic: what the public key encrypts, only the private key can decrypt. And critically, knowing the public key does not let you derive the private key -- that derivation would require solving a computationally infeasible mathematical problem.
+The magic: what the public key encrypts, only the private key can decrypt. And critically, knowing the public key does not let you derive the private key; that derivation would require solving a computationally infeasible mathematical problem.
 
 This solves the key distribution problem. To receive encrypted messages, you publish your public key to the world. Anyone can encrypt a message for you. Only you can decrypt it.
 
@@ -86,8 +86,8 @@ RSA key sizes:
 
 | Key Size | Status |
 |---|---|
-| 512-bit | Broken -- factorable in hours on modern hardware |
-| 1024-bit | Deprecated -- not recommended; factoring feasible with significant resources |
+| 512-bit | Broken; factorable in hours on modern hardware |
+| 1024-bit | Deprecated; not recommended, factoring feasible with significant resources |
 | 2048-bit | Minimum acceptable today; recommended through ~2030 |
 | 4096-bit | Strong; preferred for long-term security |
 
@@ -101,15 +101,15 @@ ECC provides equivalent security to RSA with much smaller key sizes, based on th
 | 128-bit | 3072-bit | 256-bit |
 | 256-bit | 15360-bit | 512-bit |
 
-A 256-bit ECC key provides the same security as a 3072-bit RSA key. Smaller keys mean faster operations and less bandwidth -- which is why ECC dominates in TLS, mobile devices, and embedded systems.
+A 256-bit ECC key provides the same security as a 3072-bit RSA key. Smaller keys mean faster operations and less bandwidth, which is why ECC dominates in TLS, mobile devices, and embedded systems.
 
 **ECDSA** (Elliptic Curve Digital Signature Algorithm) and **ECDH** (Elliptic Curve Diffie-Hellman) are the primary ECC algorithms in use. The curves P-256, P-384, and Curve25519 are the most widely deployed.
 
 ### Diffie-Hellman Key Exchange
 
-Diffie-Hellman (DH), published in 1976, solved the key distribution problem before RSA even existed.[6] It allows two parties to establish a shared secret over an insecure channel, without ever transmitting the secret itself -- using modular arithmetic that an eavesdropper cannot reverse.
+Diffie-Hellman (DH), published in 1976, solved the key distribution problem before RSA even existed.[6] It allows two parties to establish a shared secret over an insecure channel, without ever transmitting the secret itself, using modular arithmetic that an eavesdropper cannot reverse.
 
-In TLS, Diffie-Hellman (specifically ECDHE -- Elliptic Curve Diffie-Hellman Ephemeral) is used to establish the session key. The "ephemeral" part is critical: a new key pair is generated for every session, so recording encrypted traffic today does not help an attacker who later compromises the server's private key. This property is called **forward secrecy** (or perfect forward secrecy).
+In TLS, Diffie-Hellman (specifically ECDHE, Elliptic Curve Diffie-Hellman Ephemeral) is used to establish the session key. The "ephemeral" part is critical: a new key pair is generated for every session, so recording encrypted traffic today does not help an attacker who later compromises the server's private key. This property is called **forward secrecy** (or perfect forward secrecy).
 
 ---
 
@@ -121,18 +121,18 @@ A cryptographic hash function takes an input of any size and produces a fixed-si
 2. **One-way**: Given the hash, it is computationally infeasible to reconstruct the input
 3. **Collision-resistant**: It is computationally infeasible to find two different inputs that produce the same hash
 
-Hashes are not encryption -- there is no key, and there is no intended reversal. They are used to verify integrity.
+Hashes are not encryption. There is no key, and there is no intended reversal. They are used to verify integrity.
 
 | Algorithm | Output Size | Status |
 |---|---|---|
-| **MD5** | 128-bit | Broken -- collisions can be generated; do not use for security |
-| **SHA-1** | 160-bit | Deprecated -- collision demonstrated in 2017 (SHAttered attack); do not use |
+| **MD5** | 128-bit | Broken; collisions can be generated. Do not use for security. |
+| **SHA-1** | 160-bit | Deprecated; collision demonstrated in 2017 (SHAttered attack). Do not use. |
 | **SHA-256** | 256-bit | Secure; current standard for most uses |
 | **SHA-3** | Variable | Secure; different construction from SHA-2, providing algorithm diversity |
 | **bcrypt / Argon2** | Variable | Specifically designed for password hashing; intentionally slow |
 
 {% hint style="warning" %}
-**Password hashing is not the same as data hashing.** SHA-256 is fast -- a modern GPU can compute billions of SHA-256 hashes per second. For password storage, fast is bad: it means an attacker can test billions of password guesses per second against stolen hashes.
+**Password hashing is not the same as data hashing.** SHA-256 is fast. A modern GPU can compute billions of SHA-256 hashes per second. For password storage, fast is bad: it means an attacker can test billions of password guesses per second against stolen hashes.
 
 Password hashing functions (bcrypt, scrypt, Argon2) are intentionally slow and memory-intensive. Argon2 won the Password Hashing Competition in 2015 and is the current recommendation. If you are storing user passwords, use Argon2id. Never store passwords as plaintext, never use MD5 or SHA-1, and never use fast hash functions like SHA-256 directly.
 {% endhint %}
@@ -150,7 +150,7 @@ sha256sum kali-linux-2024.1-installer-amd64.iso
 # If they match, the file is unmodified
 ```
 
-This is how software publishers verify that distributed files have not been tampered with. An attacker who modifies the binary cannot reproduce the original hash -- so a mismatch alerts the user.
+This is how software publishers verify that distributed files have not been tampered with. An attacker who modifies the binary cannot reproduce the original hash. A mismatch alerts the user.
 
 ---
 
@@ -161,11 +161,11 @@ Digital signatures combine asymmetric cryptography with hashing to provide three
 How it works:
 
 1. The sender computes a hash of the message
-2. The sender encrypts that hash with their **private key** -- this is the signature
+2. The sender encrypts that hash with their **private key**; this is the signature
 3. The sender transmits the message and the signature
 4. The recipient decrypts the signature with the sender's **public key**, recovering the hash
 5. The recipient computes the hash of the received message independently
-6. If the two hashes match, the signature is valid -- the message is authentic and unmodified
+6. If the two hashes match, the signature is valid; the message is authentic and unmodified
 
 ```
 Sender:  Message → Hash → Encrypt(hash, private_key) → Signature
@@ -182,7 +182,7 @@ Digital signatures underpin code signing, email signing (S/MIME, PGP), document 
 
 Asymmetric encryption solves key distribution but creates a new problem: how do you know that a public key actually belongs to who you think it does? An attacker could publish their own public key while claiming to be your bank.
 
-PKI solves this through **digital certificates** -- documents that bind a public key to an identity, signed by a trusted third party called a **Certificate Authority (CA)**.
+PKI solves this through **digital certificates**: documents that bind a public key to an identity, signed by a trusted third party called a **Certificate Authority (CA)**.
 
 When you connect to `https://yourbank.com`:
 
@@ -192,7 +192,7 @@ When you connect to `https://yourbank.com`:
 4. Your browser verifies the certificate signature chain back to a trusted root
 5. If valid, the browser trusts that the public key belongs to `yourbank.com`
 
-The trust model relies on root CAs being trustworthy. When they fail -- as happened with the DigiNotar CA breach in 2011, where attackers issued fraudulent certificates for Google and dozens of other domains -- the entire PKI model for affected certificates collapses.[7]
+The trust model relies on root CAs being trustworthy. When they fail, as happened with the DigiNotar CA breach in 2011, where attackers issued fraudulent certificates for Google and dozens of other domains, the entire PKI model for affected certificates collapses.[7]
 
 Let's Encrypt, launched in 2016, provides free, automated, domain-validated certificates and has dramatically increased HTTPS adoption across the web. As of 2024, over 80% of web traffic is encrypted.[8]
 
@@ -246,7 +246,7 @@ NIST completed its post-quantum cryptography standardization process in 2024, se
 | **CRYSTALS-Dilithium (ML-DSA)** | Digital signatures | Module lattice problems |
 | **SPHINCS+ (SLH-DSA)** | Digital signatures (hash-based alternative) | Hash functions |
 
-TLS 1.3 and major cloud providers are already beginning hybrid deployments -- running classical and post-quantum algorithms simultaneously during the transition period.
+TLS 1.3 and major cloud providers are already beginning hybrid deployments, running classical and post-quantum algorithms simultaneously during the transition period.
 
 ---
 
@@ -270,7 +270,7 @@ Cryptography is complex enough that implementing it from scratch is almost alway
 - Use MD5 or SHA-1 for security-sensitive applications
 - Use ECB mode for anything
 - Hardcode encryption keys in source code
-- Reuse nonces (initialization vectors) with stream ciphers or GCM mode -- this is catastrophic
+- Reuse nonces (initialization vectors) with stream ciphers or GCM mode (this is catastrophic)
 - Trust "military-grade encryption" as a marketing claim without verifying the actual algorithm
 {% endhint %}
 
@@ -280,15 +280,15 @@ Cryptography is complex enough that implementing it from scratch is almost alway
 
 [1] Kahn, D. (1996). *The Codebreakers: The Comprehensive History of Secret Communication from Ancient Times to the Internet* (revised ed.). Scribner. ISBN 978-0-684-83130-5.
 
-[2] Kerckhoffs, A. (1883). La cryptographie militaire. *Journal des sciences militaires*, 9, 5--38.
+[2] Kerckhoffs, A. (1883). La cryptographie militaire. *Journal des sciences militaires*, 9, 5-38.
 
 [3] National Institute of Standards and Technology. (2001). *Advanced Encryption Standard (AES)*. FIPS Publication 197. doi:10.6028/NIST.FIPS.197
 
-[4] Rivest, R. L., Shamir, A., & Adleman, L. (1978). A method for obtaining digital signatures and public-key cryptosystems. *Communications of the ACM*, 21(2), 120--126. doi:10.1145/359340.359342
+[4] Rivest, R. L., Shamir, A., & Adleman, L. (1978). A method for obtaining digital signatures and public-key cryptosystems. *Communications of the ACM*, 21(2), 120-126. doi:10.1145/359340.359342
 
 [5] Miller, V. S. (1985). Use of elliptic curves in cryptography. In *Advances in Cryptology -- CRYPTO 1985*. Lecture Notes in Computer Science, vol 218. Springer. doi:10.1007/3-540-39799-X_31
 
-[6] Diffie, W., & Hellman, M. E. (1976). New directions in cryptography. *IEEE Transactions on Information Theory*, 22(6), 644--654. doi:10.1109/TIT.1976.1055638
+[6] Diffie, W., & Hellman, M. E. (1976). New directions in cryptography. *IEEE Transactions on Information Theory*, 22(6), 644-654. doi:10.1109/TIT.1976.1055638
 
 [7] Langley, A. (2011). *Distrust of the Netherlands DigiNotar CA*. Google Security Blog. Retrieved from https://security.googleblog.com/2011/09/update-on-diginotar.html
 
@@ -312,4 +312,4 @@ Cryptography is complex enough that implementing it from scratch is almost alway
 
 ---
 
-*Questions about cryptography, TLS configuration, or post-quantum migration? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back -- this book is open source and your additions are welcome.*
+*Questions about cryptography, TLS configuration, or post-quantum migration? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back. This book is open source and your additions are welcome.*
