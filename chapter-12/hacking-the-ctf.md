@@ -2,7 +2,7 @@
 
 ## What a CTF Actually Is
 
-A Capture the Flag (CTF) competition is a security challenge where participants find hidden strings -- "flags" -- by exploiting vulnerabilities in purpose-built systems. The flag is typically a string like `flag{s0m3_r4nd0m_t3xt}` that you submit to a scoreboard for points. The team or individual with the most points at the end wins.
+A Capture the Flag (CTF) competition is a security challenge where participants find hidden strings (called "flags") by exploiting vulnerabilities in purpose-built systems. The flag is typically a string like `flag{s0m3_r4nd0m_t3xt}` that you submit to a scoreboard for points. The team or individual with the most points at the end wins.
 
 CTFs are one of the most efficient ways to build practical security skills. Every challenge is a contained, legal environment designed to teach a specific technique. You cannot accidentally break anything important. You cannot go to prison for poking at it too hard. And when you solve it, you know exactly what you learned.
 
@@ -12,7 +12,7 @@ They are also the primary way that talented security practitioners first get not
 
 ## CTF Categories
 
-Most CTFs are "jeopardy-style" -- a grid of challenges across multiple categories, each worth a point value reflecting difficulty. Some are "attack-defense" style where teams simultaneously attack opponents and defend their own systems. For beginners, start with jeopardy-style.
+Most CTFs are "jeopardy-style": a grid of challenges across multiple categories, each worth a point value reflecting difficulty. Some are "attack-defense" style where teams simultaneously attack opponents and defend their own systems. For beginners, start with jeopardy-style.
 
 | Category | What It Tests | Example Challenge |
 |---|---|---|
@@ -34,11 +34,11 @@ Most beginners try a challenge, get stuck immediately, feel demoralized, and qui
 
 Before competitive CTFs, spend time on platforms designed for learning:
 
-**PicoCTF** (picoctf.org) -- Run by Carnegie Mellon University. Problems are archived permanently. Difficulty ranges from truly beginner to intermediate. The hints system is generous. Start here if you have never done a CTF.[2]
+**PicoCTF** (picoctf.org). Run by Carnegie Mellon University. Problems are archived permanently. Difficulty ranges from truly beginner to intermediate. The hints system is generous. Start here if you have never done a CTF.[2]
 
-**TryHackMe** (tryhackme.com) -- Structured rooms that guide you through techniques before asking you to apply them. The "Pre-Security" and "Jr Penetration Tester" paths include CTF-style challenges with tutorial content alongside them.
+**TryHackMe** (tryhackme.com). Structured rooms that guide you through techniques before asking you to apply them. The "Pre-Security" and "Jr Penetration Tester" paths include CTF-style challenges with tutorial content alongside them.
 
-**OverTheWire Wargames** (overthewire.org/wargames) -- Text-based challenges, particularly excellent for Linux fundamentals and basic exploitation. Start with Bandit (pure Linux command line) before moving to Natas (web) or Leviathan (basic exploitation).
+**OverTheWire Wargames** (overthewire.org/wargames). Text-based challenges, particularly excellent for Linux fundamentals and basic exploitation. Start with Bandit (pure Linux command line) before moving to Natas (web) or Leviathan (basic exploitation).
 
 ### Step 2: Build Your Toolkit
 
@@ -163,10 +163,10 @@ base64.b64decode("ZmxhZ3tleGFtcGxlfQ==")
 If you are stuck after 30 minutes of active effort:
 
 - Read the challenge description again very carefully
-- Look at the point value -- is this a 500-point challenge you're trying as a beginner?
+- Look at the point value: is this a 500-point challenge you're trying as a beginner?
 - Search for writeups of similar challenges from past CTFs (not this exact challenge)
 - Ask your team or the CTF Discord
-- Walk away for 20 minutes -- the solution often arrives when you stop forcing it
+- Walk away for 20 minutes. The solution often arrives when you stop forcing it.
 
 ---
 
@@ -226,13 +226,13 @@ zsteg image.png  # LSB steganography in PNG files
 
 ### Cryptography: Break the Math
 
-Crypto challenges exploit implementation weaknesses rather than the underlying mathematics. AES and RSA are not broken -- but specific modes, small key sizes, reused nonces, and implementation errors are.
+Crypto challenges exploit implementation weaknesses rather than the underlying mathematics. AES and RSA are not broken, but specific modes, small key sizes, reused nonces, and implementation errors are.
 
 Common crypto challenge patterns:
 
 | Pattern | What to Try |
 |---|---|
-| RSA with small e and small message | Check if `m^e < n` -- may not need modular reduction |
+| RSA with small e and small message | Check if `m^e < n`; modular reduction may not happen, so plaintext is recoverable directly |
 | Repeated XOR key | Detect key length with index of coincidence; recover with frequency analysis |
 | ECB mode block cipher | Detect by looking for repeated 16-byte blocks in ciphertext |
 | CBC with padding oracle | Automate with `padbuster` or custom script |
@@ -242,7 +242,7 @@ Common crypto challenge patterns:
 
 ## Writing Writeups
 
-A writeup is a technical walkthrough of how you solved a challenge. Writing them is not optional -- it is how you consolidate what you learned and build your portfolio.
+A writeup is a technical walkthrough of how you solved a challenge. Writing them is not optional. It is how you consolidate what you learned and build your portfolio.
 
 **What a good writeup includes:**
 
@@ -254,10 +254,10 @@ A writeup is a technical walkthrough of how you solved a challenge. Writing them
 6. The flag
 7. What you learned
 
-Writeups go on your GitHub. They demonstrate the ability to reason through a problem systematically and explain findings clearly -- exactly what penetration test reports require.
+Writeups go on your GitHub. They demonstrate the ability to reason through a problem systematically and explain findings clearly, which is exactly what penetration test reports require.
 
 {% hint style="success" %}
-**The compound effect of writeups:** Every writeup you publish becomes searchable. Other practitioners find them when working on similar problems. Your profile grows passively. Recruiters and hiring managers look for candidates who have public evidence of thinking -- and a GitHub full of CTF writeups is exactly that.
+**The compound effect of writeups:** Every writeup you publish becomes searchable. Other practitioners find them when working on similar problems. Your profile grows passively. Recruiters and hiring managers look for candidates who have public evidence of thinking, and a GitHub full of CTF writeups is exactly that.
 
 Some of the most successful security practitioners built their early reputation entirely through CTF writeups and open-source tool contributions, before they had any industry experience at all.
 {% endhint %}
@@ -266,7 +266,7 @@ Some of the most successful security practitioners built their early reputation 
 
 ## Building a CTF Team
 
-Solo CTF is harder. Most top competitors work in teams of four to eight people with complementary skills -- one person focusing on web, one on pwn, one on crypto, one on forensics.
+Solo CTF is harder. Most top competitors work in teams of four to eight people with complementary skills: one person focusing on web, one on pwn, one on crypto, one on forensics.
 
 Finding a team:
 - CTFtime.org has a team-finding feature
@@ -275,6 +275,83 @@ Finding a team:
 - The community Discord for this book
 
 Starting a team: all you need is two people who are learning together. Document what you solve. Share writeups internally before publishing. Compete in beginner-friendly events. Skill develops faster when you can see how others approach the same problem.
+
+---
+
+## The Complete Free Resource Library
+
+CTFs are one entry point into security. The wider universe of free, high-quality training is enormous if you know where to look. Everything below is free at the time of writing. Pick a category, start, finish, and move on. Quality beats quantity.
+
+### Free Practice Platforms (browser-based, no install)
+
+- **TryHackMe** — free rooms include the entire Pre Security path, Complete Beginner path, OWASP Top 10, Linux Fundamentals 1-3, Network Fundamentals, and Web Fundamentals (https://tryhackme.com)
+- **HackTheBox Starting Point** — free tier covering the first six machines with guided walkthroughs (https://app.hackthebox.com/starting-point)
+- **HackTheBox Academy free modules** — Introduction to Networking, Linux Fundamentals, Windows Fundamentals, Intro to Academy (https://academy.hackthebox.com)
+- **PortSwigger Web Security Academy** — 200+ hands-on web labs, completely free, from the creators of Burp Suite (https://portswigger.net/web-security). The single strongest free web-security training available anywhere.
+- **PicoCTF** — Carnegie Mellon's permanent CTF archive (https://picoctf.org)
+- **OverTheWire Wargames** — Bandit, Natas, Narnia, Leviathan, Krypton, and more (https://overthewire.org/wargames/)
+- **Root Me** — 500+ free challenges across all categories (https://www.root-me.org)
+- **CTFlearn** — beginner-friendly community challenges (https://ctflearn.com)
+- **pwn.college** — Arizona State University's free binary exploitation curriculum (https://pwn.college)
+- **Cryptopals** — Matasano's eight-set crypto challenge gauntlet (https://cryptopals.com)
+
+### Free Vulnerable VMs (download and run locally)
+
+- **VulnHub** — hundreds of vulnerable VMs; classics include Mr-Robot, the Kioptrix series, Brainpan, and the DC series (https://www.vulnhub.com)
+- **OWASP Juice Shop** — modern web app intentionally riddled with the OWASP Top 10 (https://owasp.org/www-project-juice-shop/)
+- **OWASP WebGoat** — guided web vulnerability lessons (https://owasp.org/www-project-webgoat/)
+- **DVWA** (Damn Vulnerable Web Application) — PHP/MySQL app for SQLi, XSS, and command injection practice (https://github.com/digininja/DVWA)
+- **Metasploitable 3** — purposely vulnerable Windows and Linux VMs from Rapid7 (https://github.com/rapid7/metasploitable3)
+- **HackTheBox Starting Point VMs** — free, downloadable machines on the free tier
+- **VulnLab free machines** — newer, well-designed, free entry tier (https://www.vulnlab.com)
+
+### Free GitHub Repos (reference and tooling)
+
+- **PayloadsAllTheThings** — every web payload you will ever need, organized by vulnerability class (https://github.com/swisskyrepo/PayloadsAllTheThings)
+- **SecLists** — Daniel Miessler's wordlists for fuzzing, passwords, usernames, and subdomains (https://github.com/danielmiessler/SecLists)
+- **Awesome Hacking** — meta-list of hacking resources (https://github.com/Hack-with-Github/Awesome-Hacking)
+- **Awesome CTF** — curated CTF tools, frameworks, and wargames (https://github.com/apsdehal/awesome-ctf)
+- **HackTricks** — Carlos Polop's living encyclopedia of pentesting techniques (https://github.com/carlospolop/hacktricks)
+- **PEASS-ng** — privilege escalation enumeration suite including LinPEAS and WinPEAS (https://github.com/peass-ng/PEASS-ng)
+- **GTFOBins** — Unix binaries that can break restricted shells (https://gtfobins.github.io)
+- **LOLBAS** — Windows equivalent for living-off-the-land binaries (https://lolbas-project.github.io)
+- **CTF Writeups archives** — historical writeup repositories (https://github.com/ctfs and forks)
+
+### Free YouTube Channels (verified high signal)
+
+- **IppSec** — the gold standard for HTB walkthroughs; every retired box explained (https://www.youtube.com/@ippsec)
+- **LiveOverflow** — binary exploitation, CTFs, deep technical content (https://www.youtube.com/@LiveOverflow)
+- **John Hammond** — CTF walkthroughs, malware analysis, beginner-friendly (https://www.youtube.com/@_JohnHammond)
+- **The Cyber Mentor (Heath Adams / TCM Security)** — pentesting fundamentals (https://www.youtube.com/@TCMSecurityAcademy)
+- **NahamSec** — bug bounty hunting (https://www.youtube.com/@NahamSec)
+- **STÖK** — bug bounty methodology and storytelling (https://www.youtube.com/@stokfredrik)
+- **HackerSploit** — broad pentesting tutorials (https://www.youtube.com/@HackerSploit)
+- **Computerphile** — cryptography and computer-science fundamentals (https://www.youtube.com/@Computerphile)
+- **Professor Messer** — free Security+ and Network+ courses (https://www.youtube.com/@professormesser)
+- **David Bombal** — networking, Linux, and ethical hacking (https://www.youtube.com/@davidbombal)
+- **Simply Cyber (Gerald Auger)** — GRC, careers, and the human side of security (https://www.youtube.com/@SimplyCyber)
+- **Gynvael Coldwind** — advanced reversing and exploitation streams (https://www.youtube.com/@GynvaelEN)
+
+### Free Books and Reading
+
+- **OWASP Web Security Testing Guide** — the methodology behind modern web pentesting (https://owasp.org/www-project-web-security-testing-guide/)
+- **OWASP Application Security Verification Standard (ASVS)** — the requirements catalog for secure web apps (https://owasp.org/www-project-application-security-verification-standard/)
+- **OWASP Cheat Sheet Series** — fast-reference cheat sheets for every common security topic (https://cheatsheetseries.owasp.org)
+- **The Hitchhiker's Guide to Online Anonymity** — comprehensive OPSEC reference (https://anonymousplanet.org)
+- **NIST SP 800-115 Technical Guide to Information Security Testing** — the federal reference for security testing methodology (https://csrc.nist.gov/pubs/sp/800/115/final)
+
+{% hint style="success" %}
+**A recommended starting path for absolute beginners:**
+
+1. Pre Security path on TryHackMe (free) — networking and Linux foundations
+2. OverTheWire Bandit — Linux command line fluency
+3. PortSwigger Web Security Academy — first 30 labs, especially SQL injection and XSS
+4. PicoCTF beginner challenges — get used to the CTF format
+5. HackTheBox Starting Point — guided machine compromises
+6. Pick one YouTube channel (IppSec for HTB, LiveOverflow for pwn) and watch one video per week
+
+This sequence is free, requires only a laptop and internet access, and produces a solid foundation in three to six months at a few hours per week.
+{% endhint %}
 
 ---
 
@@ -305,4 +382,4 @@ Starting a team: all you need is two people who are learning together. Document 
 
 ---
 
-*Playing CTFs and want teammates, writeup feedback, or challenge hints? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back -- this book is open source and your additions are welcome.*
+*Playing CTFs and want teammates, writeup feedback, or challenge hints? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back. This book is open source and your additions are welcome.*
