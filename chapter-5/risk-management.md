@@ -56,7 +56,14 @@ Identify threats to information assets within scope. Sources of risk include:
 - Process risks: inadequate controls, poor change management, untrained staff
 - Compliance risks: regulatory changes, contractual obligations
 
-A **risk register** is the primary artifact here -- a structured document recording identified risks, their sources, affected assets, current controls, and status. A risk register that is maintained and reviewed is an active management tool. One that was created once and filed is a false comfort.
+A **risk register** is the primary artifact here: a structured document recording identified risks, their sources, affected assets, current controls, and status. A risk register that is maintained and reviewed is an active management tool. One that was created once and filed is a false comfort.
+
+{% hint style="success" %}
+**Free risk register tools to start immediately:**
+- [SimpleRisk](https://www.simplerisk.com/) — free, self-hosted open-source GRC platform with a built-in risk register, treatment workflows, and reporting. Installs in under 30 minutes.
+- [Eramba Community Edition](https://www.eramba.org/) — free open-source GRC platform covering risk register, control mapping, and exception tracking.
+- [ISO27k Toolkit](https://www.iso27001security.com/html/iso27k_toolkit.html) — free Excel risk register template, ready to populate immediately.
+{% endhint %}
 
 ### Step 3: Risk Analysis
 
@@ -70,7 +77,7 @@ The combination of likelihood and impact produces a risk rating. A 5x5 risk matr
 {% hint style="warning" %}
 **The limitation of qualitative risk matrices:** A 5x5 matrix uses subjective ratings ("high," "medium," "low") that different people will score differently. Two analysts assessing the same risk can produce different ratings based on judgment alone. Qualitative matrices are useful for communication and prioritization but should not be mistaken for precision.
 
-For high-stakes decisions -- major security investments, board-level risk reporting, insurance decisions -- consider **quantitative risk analysis** methods that express risk in financial terms.
+For high-stakes decisions, including major security investments, board-level risk reporting, and insurance decisions, consider **quantitative risk analysis** methods that express risk in financial terms.
 {% endhint %}
 
 ### Quantitative Risk Analysis: The FAIR Model
@@ -82,9 +89,13 @@ FAIR decomposes risk into:
 - **Loss Event Frequency**: How often an event is expected to occur (combining threat event frequency and vulnerability)
 - **Loss Magnitude**: The financial impact when it does occur (combining primary and secondary losses)
 
-The output is a probability distribution of annual loss expectancy -- for example, "there is a 90% probability that annual losses from this risk category will fall between $200,000 and $4.2 million, with a most likely value of $850,000."
+The output is a probability distribution of annual loss expectancy — for example, "there is a 90% probability that annual losses from this risk category will fall between $200,000 and $4.2 million, with a most likely value of $850,000."
 
 This language is meaningful to CFOs, boards, and insurance underwriters in ways that "high risk" is not. FAIR is increasingly required in mature GRC programs and is the basis for the Open FAIR standard maintained by The Open Group.[4]
+
+{% hint style="info" %}
+**Free FAIR resources:** The [FAIR Institute](https://www.fairinstitute.org/) provides free membership, introductory training, and community-built quantitative risk calculators. The free FAIR Foundation course is the right starting point for anyone moving from qualitative ratings to financial risk quantification.
+{% endhint %}
 
 ### Step 4: Risk Treatment
 
@@ -99,7 +110,11 @@ Once risks are analyzed and prioritized, each requires a treatment decision. The
 
 Treatment decisions must be documented with rationale, approved by an appropriate authority, and reviewed periodically. A risk that was accepted three years ago may no longer be acceptable given changed circumstances.
 
-ISO 27001 Annex A provides 93 control objectives across information security domains that serve as a library of treatment options. The Statement of Applicability (SoA) -- a required ISO 27001 document -- maps identified risks to the controls selected to treat them, explicitly noting which controls are included or excluded and why.[6]
+ISO 27001 Annex A provides 93 control objectives across information security domains that serve as a library of treatment options. The Statement of Applicability (SoA), a required ISO 27001 document, maps identified risks to the controls selected to treat them, explicitly noting which controls are included or excluded and why.[6]
+
+{% hint style="info" %}
+**Free ISO 27001 SoA template:** The [ISO27k Toolkit](https://www.iso27001security.com/html/iso27k_toolkit.html) includes a pre-built Statement of Applicability spreadsheet with all 93 Annex A controls pre-loaded. You document your inclusion/exclusion decisions and justifications for each — the core artifact for ISO 27001 certification.
+{% endhint %}
 
 ### Step 5: Monitor and Review
 
@@ -119,7 +134,7 @@ Start with information assets, identify threats to each, assess the vulnerabilit
 
 ### Scenario-Based Risk Assessment
 
-Start with plausible attack scenarios -- ransomware deployment, insider data theft, supply chain compromise -- and assess the likelihood and impact of each scenario. This approach is more intuitive for executives and easier to communicate to boards. It also maps naturally to cyber threat intelligence, since threat intel describes specific attack scenarios used by specific threat actors.
+Start with plausible attack scenarios — ransomware deployment, insider data theft, supply chain compromise — and assess the likelihood and impact of each scenario. This approach is more intuitive for executives and easier to communicate to boards. It also maps naturally to cyber threat intelligence, since threat intel describes specific attack scenarios used by specific threat actors.
 
 ### Hybrid Approaches
 
@@ -140,9 +155,9 @@ Third-party risk management (TPRM) is an extension of the risk management progra
 - Defines processes for responding when a vendor is breached
 
 {% hint style="danger" %}
-**The concentration risk problem:** Many organizations rely on a small number of critical vendors for security-sensitive functions -- a single identity provider, a single cloud platform, a single security tool vendor. When one of these vendors is compromised, the blast radius extends to every customer simultaneously. The Log4Shell vulnerability (2021) and the XZ Utils backdoor (2024) demonstrated how a single widely-used component can expose millions of systems at once.
+**The concentration risk problem:** Many organizations rely on a small number of critical vendors for security-sensitive functions — a single identity provider, a single cloud platform, a single security tool vendor. When one of these vendors is compromised, the blast radius extends to every customer simultaneously. The Log4Shell vulnerability (2021) and the XZ Utils backdoor (2024) demonstrated how a single widely-used component can expose millions of systems at once.
 
-Understanding and managing concentration risk -- the risk that too many critical functions depend on a single point of failure -- is increasingly a governance-level responsibility.
+Understanding and managing concentration risk, the risk that too many critical functions depend on a single point of failure, is increasingly a governance-level responsibility.
 {% endhint %}
 
 ---
@@ -166,11 +181,49 @@ Risk reporting that only flows up the security team and never reaches the board 
 
 Risk management is a core competency for GRC professionals and is increasingly valued across all security disciplines. Certifications most relevant to risk management:
 
-- **CRISC** (Certified in Risk and Information Systems Control) -- ISACA's dedicated risk management certification; the most recognized credential specifically for IT risk practitioners
-- **CISM** (Certified Information Security Manager) -- covers risk management as a core domain alongside governance and incident response
-- **CISSP** -- includes risk management across its eight domains; relevant for senior generalist roles
-- **ISO 31000 Lead Risk Manager** -- practitioner-level certification in the ISO risk management standard
-- **FAIR Institute membership** -- for practitioners pursuing quantitative risk analysis
+- **CRISC** (Certified in Risk and Information Systems Control) — ISACA's dedicated risk management certification; the most recognized credential specifically for IT risk practitioners
+- **CISM** (Certified Information Security Manager) — covers risk management as a core domain alongside governance and incident response
+- **CISSP** — includes risk management across its eight domains; relevant for senior generalist roles
+- **ISO 31000 Lead Risk Manager** — practitioner-level certification in the ISO risk management standard
+- **FAIR Institute membership** — for practitioners pursuing quantitative risk analysis
+
+---
+
+## Templates and Examples You Can Use Today
+
+Risk management produces artifacts. These free resources let you build those artifacts immediately rather than starting from scratch.
+
+### Risk Register and GRC Platforms
+
+| Resource | What You Get | Best For |
+|---|---|---|
+| [SimpleRisk](https://www.simplerisk.com/) | Free, self-hosted open-source risk register with risk treatment workflows, reporting, and user management | Organizations wanting a proper risk register tool without vendor cost; installs in under 30 minutes |
+| [Eramba Community Edition](https://www.eramba.org/) | Free open-source GRC platform with risk register, control mapping, exception tracking, and compliance management | Teams managing multiple frameworks and needing a single platform to track risks and controls |
+| [ISO27k Toolkit](https://www.iso27001security.com/html/iso27k_toolkit.html) | Free Excel risk register, Statement of Applicability template, Annex A control list, and risk treatment plan | ISO 27001 preparation; a working risk register and SoA you can populate immediately |
+| [NIST SP 800-30 Rev 1](https://csrc.nist.gov/pubs/sp/800/30/r1/final) | Free risk assessment guide with worked example tables in Appendix I showing a complete assessment with representative entries | Understanding what a complete, professional risk assessment looks like in practice |
+| [FAIR Institute](https://www.fairinstitute.org/) | Free model documentation, introductory training, and community-built quantitative risk calculators | Organizations moving from qualitative ratings to financial risk quantification |
+
+### Vulnerability Register: A Minimal Schema
+
+A vulnerability register is a tracked list of known weaknesses and their remediation status. Most teams build this in Jira, a spreadsheet, or their GRC platform. The minimum viable column set:
+
+| Field | Purpose |
+|---|---|
+| **ID** | Unique identifier for tracking and referencing in reports |
+| **CVE / Reference** | CVE number if applicable; internal reference otherwise |
+| **Affected Asset** | System, service, or component with the vulnerability |
+| **CVSS Score** | Base severity score (NIST NVD publishes these for known CVEs) |
+| **Exploitability** | Is a public exploit available? Is it being actively exploited in the wild? |
+| **Owner** | The team or individual responsible for remediation |
+| **Due Date** | Remediation deadline based on severity SLA |
+| **Status** | Open / In Progress / Patched / Accepted / Mitigated |
+| **Evidence** | Link to patch ticket, change record, or exception documentation |
+
+NIST SP 800-30 Appendix I provides the closest authoritative reference for this structure. Severity SLAs should be defined in your vulnerability management policy first — how quickly must a Critical, High, Medium, or Low vulnerability be remediated? That policy drives the Due Date column.
+
+{% hint style="info" %}
+**Start with a spreadsheet, then graduate to a platform.** A well-maintained spreadsheet beats a poorly configured GRC tool. The ISO27k Toolkit Excel risk register is a solid starting point. Once the process is mature and the team understands the workflow, migrate to SimpleRisk or a dedicated vulnerability management platform.
+{% endhint %}
 
 ---
 
@@ -204,4 +257,4 @@ Risk management is a core competency for GRC professionals and is increasingly v
 
 ---
 
-*Questions about risk management or GRC career paths? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back -- this book is open source and your additions are welcome.*
+*Questions about risk management or GRC career paths? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back. This book is open source and your additions are welcome.*
