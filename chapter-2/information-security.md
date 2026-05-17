@@ -10,7 +10,7 @@ In the second, a visitor to your office tailgates through a secured door, sits a
 
 Both are information security failures. Only one is a cybersecurity failure.
 
-**Information security** covers all forms of information, regardless of format. It is the broader discipline: protecting information in any form against any threat -- technical, physical, human, or environmental. A locked filing cabinet is an information security control. So is a visitor sign-in policy, a clean desk requirement, and a procedure for securely disposing of printed materials.
+**Information security** covers all forms of information, regardless of format. It is the broader discipline: protecting information in any form against any threat, technical, physical, human, or environmental. A locked filing cabinet is an information security control. So is a visitor sign-in policy, a clean desk requirement, and a procedure for securely disposing of printed materials.
 
 **Cybersecurity** is a subset of information security that specifically addresses digital systems and the threats that target them.[1] All cybersecurity is information security, but the reverse is not true.
 
@@ -32,7 +32,7 @@ No property takes precedence. An organization that achieves perfect confidential
 
 ### Beyond the Triad
 
-Modern practitioners extend the CIA model with additional properties. **Non-repudiation** ensures that parties cannot deny having performed an action -- critical for digital transactions, contracts, and legal evidence. Digital signatures achieve non-repudiation. **Authenticity** ensures that information originates from the claimed source.
+Modern practitioners extend the CIA model with additional properties. **Non-repudiation** ensures that parties cannot deny having performed an action, which is critical for digital transactions, contracts, and legal evidence. Digital signatures achieve non-repudiation. **Authenticity** ensures that information originates from the claimed source.
 
 Donn Parker's Hexad model formalizes these extensions, adding Possession, Authenticity, and Utility to the original three.[3] The Hexad is worth knowing because it appears in advanced certifications and frameworks, and it covers failure modes the triad misses.
 
@@ -70,12 +70,12 @@ Active attacks modify, disrupt, or destroy systems or data. The attacker does so
 
 | Active Attack Type | What Happens | Detection Difficulty |
 |---|---|---|
-| Ransomware deployment | Files are encrypted; systems become unavailable | Moderate -- generates file system and network activity |
-| Data manipulation | Records are altered to deceive or corrupt | Hard -- requires integrity monitoring to detect |
-| DDoS | Systems are flooded until unavailable | Easy -- visible in network traffic immediately |
-| Unauthorized modification | System configurations or code is changed | Moderate -- requires change monitoring |
+| Ransomware deployment | Files are encrypted; systems become unavailable | Moderate. Generates file system and network activity. |
+| Data manipulation | Records are altered to deceive or corrupt | Hard. Requires integrity monitoring to detect. |
+| DDoS | Systems are flooded until unavailable | Easy. Visible in network traffic immediately. |
+| Unauthorized modification | System configurations or code is changed | Moderate. Requires change monitoring. |
 
-Active attacks are generally detectable because they generate observable evidence: log entries, file system changes, network anomalies. The challenge is detecting them quickly enough to limit damage -- not after the damage is done.
+Active attacks are generally detectable because they generate observable evidence: log entries, file system changes, network anomalies. The challenge is detecting them quickly enough to limit damage, not after the damage is done.
 
 ### Passive Attacks
 
@@ -83,12 +83,12 @@ Passive attacks collect or observe information without modifying anything.
 
 | Passive Attack Type | What Happens | Detection Difficulty |
 |---|---|---|
-| Network traffic sniffing | Unencrypted traffic is captured and read | Very hard -- attacker generates no network noise |
-| Eavesdropping | Verbal or electronic communications are monitored | Very hard -- no system interaction |
-| Shoulder surfing | Screens or keyboards are visually observed | Extremely hard -- no digital trace |
-| OSINT collection | Public information about targets is gathered | Impossible to detect |
+| Network traffic sniffing | Unencrypted traffic is captured and read | Very hard. Attacker generates no network noise. |
+| Eavesdropping | Verbal or electronic communications are monitored | Very hard. No system interaction occurs. |
+| Shoulder surfing | Screens or keyboards are visually observed | Extremely hard. No digital trace at all. |
+| OSINT collection | Public information about targets is gathered | Impossible to detect. |
 
-Passive attacks leave few or no traces. The primary defense is ensuring that even successfully intercepted data is unreadable -- through encryption, physical access controls, and limiting what information is publicly available about your organization and its people.
+Passive attacks leave few or no traces. The primary defense is ensuring that even successfully intercepted data is unreadable, through encryption, physical access controls, and limiting what information is publicly available about your organization and its people.
 
 ---
 
@@ -104,7 +104,7 @@ Information security does not operate in a legal vacuum. Organizations handling 
 | **PCI-DSS** | Any organization handling payment card data | 12 high-level requirements across network security, access control, monitoring, and policy | Fines from card networks; potential loss of ability to process card payments [9] |
 
 {% hint style="warning" %}
-**Which regulation applies to you?** Many organizations are subject to multiple frameworks simultaneously. A US healthcare company operating in Europe with a payment processing function is subject to HIPAA, GDPR, and PCI-DSS at the same time. These frameworks sometimes have conflicting requirements. Compliance is not a checkbox exercise -- it is ongoing legal and technical work.
+**Which regulation applies to you?** Many organizations are subject to multiple frameworks simultaneously. A US healthcare company operating in Europe with a payment processing function is subject to HIPAA, GDPR, and PCI-DSS at the same time. These frameworks sometimes have conflicting requirements. Compliance is not a checkbox exercise. It is ongoing legal and technical work.
 
 When in doubt, involve legal counsel. Regulatory penalties are only the floor of the liability. Class action lawsuits, regulatory investigations, and reputational damage can dwarf the direct fines.
 {% endhint %}
@@ -117,7 +117,7 @@ An information security policy is the formal foundation of an organization's sec
 
 A policy that is not communicated, understood, and enforced is not a policy. It is a document, possibly a liability, and definitely not a control.
 
-For a policy to be genuinely enforceable -- including as a basis for disciplinary action or legal proceedings -- it must meet five conditions established in information security governance literature.[10]
+For a policy to be genuinely enforceable, including as a basis for disciplinary action or legal proceedings, it must meet five conditions established in information security governance literature.[10]
 
 {% hint style="info" %}
 **The Five Enforceability Conditions:**
@@ -146,12 +146,12 @@ The threats that occupy security teams are not random. They cluster in predictab
 The most consistently exploited vulnerability class is not sophisticated zero-days. It is publicly known vulnerabilities against which patches have been available for months or years.
 
 {% hint style="danger" %}
-**The Equifax breach (2017):** Attackers exploited CVE-2017-5638, a critical vulnerability in Apache Struts -- an open-source web framework. A patch had been available for two months before the breach began. Equifax had failed to apply it. The breach exposed the personal data of 147 million Americans, including Social Security numbers, birth dates, addresses, and driver's license numbers. The FTC settlement totalled $575 million.[11]
+**The Equifax breach (2017):** Attackers exploited CVE-2017-5638, a critical vulnerability in Apache Struts, an open-source web framework. A patch had been available for two months before the breach began. Equifax had failed to apply it. The breach exposed the personal data of 147 million Americans, including Social Security numbers, birth dates, addresses, and driver's license numbers. The FTC settlement totalled $575 million.[11]
 
 The vulnerability was public. The patch was available. The attacker used a widely available exploit. None of the technical sophistication was on the attacker's side.
 {% endhint %}
 
-Patch management -- the unglamorous, operationally complex process of tracking software vulnerabilities and deploying updates across a large environment -- prevents more breaches than any other single control.
+Patch management, the unglamorous and operationally complex process of tracking software vulnerabilities and deploying updates across a large environment, prevents more breaches than any other single control.
 
 ### Misconfigured Systems
 
@@ -161,7 +161,7 @@ Misconfigured cloud storage buckets (publicly readable S3 buckets, Azure Blob co
 
 ### Credential Compromise
 
-Compromised credentials are the most common initial access vector across confirmed breaches. Once an attacker has valid credentials, they can authenticate as a legitimate user -- bypassing technical controls that are designed to stop unauthorized access, not authenticated access.
+Compromised credentials are the most common initial access vector across confirmed breaches. Once an attacker has valid credentials, they can authenticate as a legitimate user, bypassing technical controls that are designed to stop unauthorized access, not authenticated access.
 
 Multi-factor authentication (MFA) significantly reduces credential-based attacks. An attacker with a valid password still cannot access an account if they cannot also satisfy the second factor. CISA data shows that organizations with broadly deployed MFA are substantially harder to compromise through credential attacks than those relying on passwords alone.[13]
 
@@ -173,17 +173,17 @@ Multi-factor authentication (MFA) significantly reduces credential-based attacks
 
 Social engineering exploits human psychology rather than technical vulnerabilities. A technically perfect network can be compromised by a single employee who receives a convincing phone call and provides their credentials to an attacker pretending to be IT support.
 
-The 2020 Twitter hack -- in which attackers gained access to accounts belonging to Barack Obama, Elon Musk, Joe Biden, Apple, and others to run a Bitcoin scam -- was executed not through technical hacking but through social engineering of Twitter employees to gain access to internal administrative tools. No exploit was needed. The attacker called people and persuaded them.
+The 2020 Twitter hack, in which attackers gained access to accounts belonging to Barack Obama, Elon Musk, Joe Biden, Apple, and others to run a Bitcoin scam, was executed not through technical hacking but through social engineering of Twitter employees to gain access to internal administrative tools. No exploit was needed. The attacker called people and persuaded them.
 
 ### Insider Threats
 
-Insider threats -- both malicious and accidental -- account for a significant proportion of data loss events that security programs focused exclusively on external threats will miss. The challenge is that legitimate authorized access is difficult to distinguish from abuse of that access without behavioral monitoring and appropriate least-privilege controls.
+Insider threats, both malicious and accidental, account for a significant proportion of data loss events that security programs focused exclusively on external threats will miss. The challenge is that legitimate authorized access is difficult to distinguish from abuse of that access without behavioral monitoring and appropriate least-privilege controls.
 
 ---
 
 ## References
 
-[1] Von Solms, R., & van Niekerk, J. (2013). From information security to cyber security. *Computers & Security*, 38, 97--102. doi:10.1016/j.cose.2013.04.004
+[1] Von Solms, R., & van Niekerk, J. (2013). From information security to cyber security. *Computers & Security*, 38, 97-102. doi:10.1016/j.cose.2013.04.004
 
 [2] Committee on National Security Systems. (2022). *National Information Assurance (IA) Glossary*. CNSS Instruction No. 4009. US Government. Retrieved from https://www.cnss.gov/CNSS/issuances/Instructions.cfm
 
@@ -193,11 +193,11 @@ Insider threats -- both malicious and accidental -- account for a significant pr
 
 [5] Stallings, W., & Brown, L. (2018). *Computer Security: Principles and Practice* (4th ed.). Pearson. ISBN 978-0-13-477373-5.
 
-[6] European Parliament and Council of the European Union. (2016). Regulation (EU) 2016/679 -- General Data Protection Regulation. *Official Journal of the European Union*, L 119, 1--88. Retrieved from https://gdpr-info.eu
+[6] European Parliament and Council of the European Union. (2016). Regulation (EU) 2016/679 -- General Data Protection Regulation. *Official Journal of the European Union*, L 119, 1-88. Retrieved from https://gdpr-info.eu
 
-[7] US Department of Health and Human Services. (2003). Security Standards for the Protection of Electronic Protected Health Information. *Federal Register*, 68(34), 8333--8381. Retrieved from https://www.hhs.gov/hipaa/for-professionals/security/index.html
+[7] US Department of Health and Human Services. (2003). Security Standards for the Protection of Electronic Protected Health Information. *Federal Register*, 68(34), 8333-8381. Retrieved from https://www.hhs.gov/hipaa/for-professionals/security/index.html
 
-[8] State of California. (2018). *California Consumer Privacy Act of 2018*. California Civil Code, Sections 1798.100--1798.199. Retrieved from https://oag.ca.gov/privacy/ccpa
+[8] State of California. (2018). *California Consumer Privacy Act of 2018*. California Civil Code, Sections 1798.100-1798.199. Retrieved from https://oag.ca.gov/privacy/ccpa
 
 [9] PCI Security Standards Council. (2022). *Payment Card Industry Data Security Standard Requirements and Testing Procedures, Version 4.0*. PCI SSC. Retrieved from https://www.pcisecuritystandards.org
 
@@ -216,11 +216,11 @@ Insider threats -- both malicious and accidental -- account for a significant pr
 | Resource | What It Covers |
 |---|---|
 | [NIST SP 800-53 Rev 5](https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final) | Comprehensive catalog of security and privacy controls. Dense but the most complete reference in the field. |
-| [GDPR Full Text](https://gdpr-info.eu) | Clean, searchable version of the GDPR with articles and recitals. Essential reference for data protection work. |
+| [GDPR Full Text](https://gdpr-info.eu) | Clean, searchable version of the GDPR with articles and recitals. Reference for data protection work. |
 | [SANS Reading Room](https://www.sans.org/reading-room/) | Free practitioner-written white papers across every aspect of information security. Consistently high quality. |
 | [Verizon DBIR](https://www.verizon.com/business/resources/reports/dbir/) | Best single source for understanding what threats actually affect organizations; based on confirmed incidents. |
 | Whitman & Mattord, *Principles of Information Security* (7th ed., Cengage, 2021) | Most widely used academic textbook in InfoSec programs. If you want one comprehensive text, this is it. |
 
 ---
 
-*Questions about information security concepts or how they apply to your career path? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back -- this book is open source and your additions are welcome.*
+*Questions about information security concepts or how they apply to your career path? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back. This book is open source and your additions are welcome.*
