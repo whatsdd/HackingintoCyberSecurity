@@ -55,7 +55,7 @@ Beyond the foundation, each pillar has its own technical depth requirements.
 
 ## The Certification Roadmap
 
-The cybersecurity certification landscape is genuinely overwhelming. There are hundreds of credentials, and vendors have a financial interest in convincing you that their specific certification is essential. Here's a clear-headed view of what actually matters.
+The cybersecurity certification landscape is genuinely overwhelming. There are hundreds of credentials, and vendors have a financial interest in convincing you that their specific certification is necessary. Here's a clear-headed view of what actually matters.
 
 ### Phase 1: Foundation (before your first job)
 
@@ -72,7 +72,7 @@ These certifications exist to prove foundational knowledge to employers when you
 |---|---|---|
 | Offensive | **eJPT** | Affordable, hands-on, proves basic pentest ability |
 | Offensive | **CompTIA PenTest+** | Broad vendor-neutral offensive foundation |
-| Offensive | **OSCP** | Gold standard; 24-hour hands-on exam; highly respected |
+| Offensive | **OSCP** | Gold standard. 24-hour hands-on exam, highly respected. |
 | Defensive | **CompTIA CySA+** | Focused on threat detection and analysis |
 | Defensive | **BTL1** | Affordable, practical, well-regarded for entry-level defensive work |
 | Engineering | **AWS/Azure/GCP Security** | Choose the cloud your target employers use |
@@ -97,10 +97,10 @@ The cybersecurity training industry is enormous and very good at making you feel
 {% hint style="danger" %}
 **Watch out for these specifically:**
 
-- **SANS courses** -- Excellent content, $5,000 to $7,000 per course. Worth it later when an employer pays. Not where you start.
-- **EC-Council CEH** -- ~$2,000, widely considered mediocre by working professionals. It's a multiple-choice exam testing memorized definitions. A solid TryHackMe profile impresses technical hiring managers more.
-- **Bootcamp programs** -- $15,000 to $20,000 promising job-readiness in 12 weeks. Some are fine. Many are not. Research outcomes data, not marketing claims.
-- **CISSP prep courses** -- $3,000 to $5,000. Largely unnecessary. The official ISC2 study guide plus practice exam platforms costs under $100.
+- **SANS courses.** Excellent content. $5,000 to $7,000 per course. Worth it later when an employer pays. Not where you start.
+- **EC-Council CEH.** About $2,000. Widely considered mediocre by working professionals. It's a multiple-choice exam testing memorized definitions. A solid TryHackMe profile impresses technical hiring managers more.
+- **Bootcamp programs.** $15,000 to $20,000 promising job-readiness in 12 weeks. Some are fine. Many are not. Research outcomes data, not marketing claims.
+- **CISSP prep courses.** $3,000 to $5,000. Largely unnecessary. The official ISC2 study guide plus practice exam platforms costs under $100.
 {% endhint %}
 
 The pattern is the same across all of them: vendors benefit when you believe credentials require expensive training. That's not always true.
@@ -132,8 +132,8 @@ The people who take longer usually spread attention across too many certificatio
 | [Offensive Security (OSCP)](https://www.offsec.com) | Home of OSCP and Proving Grounds practice labs. |
 | [OWASP Top 10](https://owasp.org/www-project-top-ten/) | Definitive reference for the ten most critical web application security risks. |
 | [ISC2 CISSP](https://www.isc2.org/certifications/cissp) | Official CISSP exam content, experience requirements, and CBK domains. |
-| [ISACA](https://www.isaca.org) | Home of CISM, CRISC, and CISA. Essential if GRC is your pillar. |
+| [ISACA](https://www.isaca.org) | Home of CISM, CRISC, and CISA. Go here if GRC is your pillar. |
 
 ---
 
-*Have questions, want feedback on your GitHub or LinkedIn, or just need a nudge in the right direction? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out directly on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). And if this book helped you, contribute back -- that commit on your GitHub is worth more than you think.*
+*Have questions, want feedback on your GitHub or LinkedIn, or just need a nudge in the right direction? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out directly on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). And if this book helped you, contribute back. That commit on your GitHub is worth more than you think.*
