@@ -10,13 +10,13 @@ This chapter covers what ethical hacking is, why it matters legally and professi
 
 ## Where Hacking Came From
 
-The original hackers were not criminals. They were curious engineers at MIT in the 1950s and 1960s who pushed computing hardware far beyond its designed limits [2]. "Hacking" in that context meant clever, elegant problem-solving -- finding the shortest path through a system to get something done that should not have been possible.
+The original hackers were not criminals. They were curious engineers at MIT in the 1950s and 1960s who pushed computing hardware far beyond its designed limits [2]. "Hacking" in that context meant clever, elegant problem-solving: finding the shortest path through a system to get something done that should not have been possible.
 
 That culture produced some of the most important software ever written, including early versions of Unix and foundational networking protocols. The hacker ethic, as Stewart Brand summarized in 1984, was essentially: information wants to be free, and the best way to understand a system is to take it apart [3].
 
 Somewhere in the 1980s and 1990s the meaning split. On one side were the security researchers and system administrators who used hacking skills defensively. On the other were people like Kevin Mitnick, who broke into systems at Motorola, Nokia, and Sun Microsystems and became the FBI's most-wanted computer criminal [4]. Both groups used the same skills. The difference was authorization.
 
-That distinction -- authorized versus unauthorized -- is the entire ethical and legal foundation of the profession today.
+That distinction, authorized versus unauthorized, is the entire ethical and legal foundation of the profession today.
 
 ---
 
@@ -40,9 +40,9 @@ The industry uses hat colors as shorthand. These categories are imprecise but co
 
 ## The Legal Framework
 
-Ethical hacking lives and dies on written authorization. This is not a soft ethical principle -- it is the line between your job and a felony.
+Ethical hacking lives and dies on written authorization. This is not a soft ethical principle. It is the line between your job and a felony.
 
-In the United States, the Computer Fraud and Abuse Act (CFAA) of 1986 makes unauthorized access to computer systems a federal crime [7]. The law was written broadly and has been criticized for overcriminalization -- Aaron Swartz faced charges under it for bulk-downloading academic papers -- but it remains the primary statute governing computer intrusion.
+In the United States, the Computer Fraud and Abuse Act (CFAA) of 1986 makes unauthorized access to computer systems a federal crime [7]. The law was written broadly and has been criticized for overcriminalization. Aaron Swartz faced charges under it for bulk-downloading academic papers. It remains the primary statute governing computer intrusion.
 
 The United Kingdom has the Computer Misuse Act 1990, which similarly criminalizes unauthorized access and unauthorized modification of computer material [8]. Most countries have equivalent legislation.
 
@@ -88,7 +88,7 @@ Bug bounty programs are a formalized way for organizations to invite external re
 
 Bug bounties are not the same as penetration testing. A penetration test has defined scope, a timeline, and a fixed deliverable. Bug bounties are ongoing, often with broad scope, and researchers are paid per validated finding. The economics can be significant -- researchers regularly earn six-figure annual payouts, and critical vulnerabilities can be worth $100,000 or more on some programs.
 
-For people starting out, bug bounties are one of the best training grounds available. You get real targets, real feedback, and real stakes -- even if the early findings are small.
+For people starting out, bug bounties are one of the best training grounds available. You get real targets, real feedback, and real stakes, even if the early findings are small.
 
 ---
 
@@ -121,7 +121,7 @@ The catch is that entry is harder than most other security paths. Employers want
 - PTES (Penetration Testing Execution Standard): [http://www.pentest-standard.org](http://www.pentest-standard.org)
 - OWASP Testing Guide: [https://owasp.org/www-project-web-security-testing-guide/](https://owasp.org/www-project-web-security-testing-guide/)
 - HackerOne Hacktivity (public bug reports): [https://hackerone.com/hacktivity](https://hackerone.com/hacktivity)
-- Kevin Mitnick, *The Art of Intrusion* (Wiley, 2005) -- real cases, well written
+- Kevin Mitnick, *The Art of Intrusion* (Wiley, 2005). Real cases, well written.
 - Daniel Miessler's Security Primer: [https://danielmiessler.com/study/security-primer/](https://danielmiessler.com/study/security-primer/)
 
 ---
@@ -132,11 +132,11 @@ The catch is that entry is harder than most other security paths. Employers want
 
 [2] Levy, S. (1984). *Hackers: Heroes of the Computer Revolution*. Doubleday. ISBN 978-0385191951.
 
-[3] Brand, S. (1985). "Keep designing." *Whole Earth Review*, 49, 44--55.
+[3] Brand, S. (1985). "Keep designing." *Whole Earth Review*, 49, 44-55.
 
 [4] Mitnick, K., & Simon, W. L. (2011). *Ghost in the Wires: My Adventures as the World's Most Wanted Hacker*. Little, Brown and Company. ISBN 978-0316037709.
 
-[5] Caldwell, T. (2011). Ethical hackers: putting on the white hat. *Network Security*, 2011(7), 10--13. doi:10.1016/S1353-4858(11)70075-7
+[5] Caldwell, T. (2011). Ethical hackers: putting on the white hat. *Network Security*, 2011(7), 10-13. doi:10.1016/S1353-4858(11)70075-7
 
 [6] Mandiant. (2022). *APT1: Exposing One of China's Cyber Espionage Units*. Mandiant Intelligence. Retrieved from https://www.mandiant.com/resources/apt1-exposing-one-of-chinas-cyber-espionage-units
 
