@@ -10,10 +10,10 @@ Most careers in the field fall under one of four pillars. Understanding them is 
 
 | Pillar | What You Do | US Salary Range | Best Entry Point |
 |---|---|---|---|
-| **Offensive Security** | Attack systems (with permission) to find weaknesses | $80k -- $180k | eJPT, then OSCP |
-| **Defensive Security** | Detect, contain, and respond to attacks | $60k -- $160k | Security+, BTL1 |
-| **Security Engineering** | Design and build the systems everyone else relies on | $100k -- $200k+ | Security+, cloud cert |
-| **GRC** | Manage risk, compliance, and policy | $70k -- $180k | Security+, CISM |
+| **Offensive Security** | Attack systems (with permission) to find weaknesses | $80k-$180k | eJPT, then OSCP |
+| **Defensive Security** | Detect, contain, and respond to attacks | $60k-$160k | Security+, BTL1 |
+| **Security Engineering** | Design and build the systems everyone else relies on | $100k-$200k+ | Security+, cloud cert |
+| **GRC** | Manage risk, compliance, and policy | $70k-$180k | Security+, CISM |
 
 ---
 
@@ -35,13 +35,13 @@ Red team operations go further. Instead of a focused technical test, you simulat
 - Application Security Engineer (offensive focus)
 
 {% hint style="info" %}
-**Best for:** People who love puzzles and who don't give up when something doesn't work the first five times. Patience matters more than people expect. Most penetration testing isn't a movie montage -- it's methodical enumeration, dead ends, and careful documentation. The creative breakthrough comes after the boring groundwork.
+**Best for:** People who love puzzles and who don't give up when something doesn't work the first five times. Patience matters more than people expect. Most penetration testing isn't a movie montage. It's methodical enumeration, dead ends, and careful documentation. The creative breakthrough comes after the boring groundwork.
 {% endhint %}
 
 **Certifications to pursue:**
-- **eJPT** -- affordable and beginner-friendly, good first step
-- **CompTIA PenTest+** -- broad vendor-neutral foundation
-- **OSCP** -- the industry gold standard; 24-hour hands-on exam, highly respected by employers
+- **eJPT.** Affordable and beginner-friendly. A solid first step.
+- **CompTIA PenTest+.** Broad vendor-neutral foundation.
+- **OSCP.** The industry gold standard. 24-hour hands-on exam, highly respected by employers.
 
 ---
 
@@ -64,13 +64,13 @@ At higher levels, you're hunting: looking for signs of compromise that automated
 - Security Operations Manager
 
 {% hint style="info" %}
-**Best for:** People who enjoy analysis, pattern recognition, and staying composed under pressure. The professionals who advance from Tier 1 analyst to threat hunter or incident response lead are the ones who stay curious, invest in learning outside work hours, and build familiarity with how real attacks unfold -- not just what the alert says.
+**Best for:** People who enjoy analysis, pattern recognition, and staying composed under pressure. The professionals who advance from Tier 1 analyst to threat hunter or incident response lead are the ones who stay curious, invest in learning outside work hours, and build familiarity with how real attacks unfold, not just what the alert says.
 {% endhint %}
 
 **Certifications to pursue:**
-- **CompTIA Security+** -- baseline requirement for most SOC roles
-- **CompTIA CySA+** -- focused on threat detection and analysis
-- **BTL1** (Blue Team Level 1) -- hands-on, affordable, well-regarded for breaking into defensive roles
+- **CompTIA Security+.** Baseline requirement for most SOC roles.
+- **CompTIA CySA+.** Focused on threat detection and analysis.
+- **BTL1** (Blue Team Level 1). Hands-on, affordable, well-regarded for breaking into defensive roles.
 
 ---
 
@@ -125,7 +125,7 @@ Regulatory frameworks are at the center of much of this work: ISO 27001, SOC 2, 
 - Virtual CISO (vCISO)
 
 {% hint style="info" %}
-**Best for:** People with strong writing, analysis, and communication skills. Critical thinking and the ability to understand both technical concepts and business context matter more than deep technical hands-on experience. This is often the most accessible entry point for people transitioning from non-technical backgrounds -- particularly those with legal, business, project management, or policy experience.
+**Best for:** People with strong writing, analysis, and communication skills. Critical thinking and the ability to understand both technical concepts and business context matter more than deep technical hands-on experience. This is often the most accessible entry point for people transitioning from non-technical backgrounds, particularly those with legal, business, project management, or policy experience.
 {% endhint %}
 
 **Certifications to pursue:**
@@ -148,7 +148,7 @@ There's no wrong answer. Most professionals touch multiple pillars over the cour
 | Come from business, legal, or policy background | GRC |
 
 {% hint style="success" %}
-**Still unsure?** Start with **Defensive Security**. SOC analyst roles are the most plentiful entry-level positions in the field, CompTIA Security+ is a credible first certification, and the skills you build there -- reading logs, understanding attack patterns, writing incident reports -- make you better at everything else.
+**Still unsure?** Start with **Defensive Security**. SOC analyst roles are the most plentiful entry-level positions in the field, CompTIA Security+ is a credible first certification, and the skills you build there, reading logs, understanding attack patterns, writing incident reports, make you better at everything else.
 {% endhint %}
 
 ---
@@ -159,9 +159,9 @@ Cybersecurity careers don't follow a single linear track, but here's a rough pic
 
 | Level | Timeline | What It Looks Like |
 |---|---|---|
-| **Entry** | 0 -- 2 years | SOC Analyst Tier 1, Junior Pentester, Junior Compliance Analyst. Heavy on learning and repetitive tasks. |
-| **Mid** | 2 -- 5 years | Complex tasks with minimal supervision. You have a specialty. You mentor juniors and make decisions. |
-| **Senior** | 5 -- 10 years | Design solutions, lead projects, influence direction. Trusted to own problems, not just subtasks. |
+| **Entry** | 0-2 years | SOC Analyst Tier 1, Junior Pentester, Junior Compliance Analyst. Heavy on learning and repetitive tasks. |
+| **Mid** | 2-5 years | Complex tasks with minimal supervision. You have a specialty. You mentor juniors and make decisions. |
+| **Senior** | 5-10 years | Design solutions, lead projects, influence direction. Trusted to own problems, not just subtasks. |
 | **Leadership** | 10+ years | Security Director, VP of Security, CISO. Deep technical credibility separates great leaders from adequate ones. |
 
 Worth noting: you don't have to become a CISO. Many highly skilled technical professionals build long, well-compensated careers staying hands-on. Staff security engineers, principal penetration testers, and senior threat hunters earn very well and never manage anyone. The field accommodates both paths equally.
@@ -180,4 +180,4 @@ Worth noting: you don't have to become a CISO. Many highly skilled technical pro
 
 ---
 
-*Not sure which pillar fits you? Want someone to think it through with you? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). And if this book helped you, contribute to it -- your commit here is a real open-source credit worth putting on your CV.*
+*Not sure which pillar fits you? Want someone to think it through with you? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). And if this book helped you, contribute to it. Your commit here is a real open-source credit worth putting on your CV.*
