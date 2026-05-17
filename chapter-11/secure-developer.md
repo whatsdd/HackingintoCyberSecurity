@@ -2,13 +2,13 @@
 
 ## The Most Expensive Way to Find a Bug
 
-In 2017, Equifax's engineering team was using Apache Struts. Apache Struts had a critical remote code execution vulnerability -- CVE-2017-5638. A patch was released in March. Equifax's systems were exploited in May. 147 million people's data was exposed.
+In 2017, Equifax's engineering team was using Apache Struts. Apache Struts had a critical remote code execution vulnerability: CVE-2017-5638. A patch was released in March. Equifax's systems were exploited in May. 147 million people's data was exposed.
 
-The patch existed. The process to apply it did not work. But trace that further back: the vulnerability itself existed because software was shipped without adequate security review of how user input was handled. A fundamental secure coding principle -- validate and sanitize all untrusted input -- was not applied in a component that hundreds of thousands of applications would eventually depend on.
+The patch existed. The process to apply it did not work. But trace that further back: the vulnerability itself existed because software was shipped without adequate security review of how user input was handled. A fundamental secure coding principle, validate and sanitize all untrusted input, was not applied in a component that hundreds of thousands of applications would eventually depend on.
 
 Security vulnerabilities are primarily software defects. And like all software defects, they are dramatically cheaper to fix when found early. NIST research on software defect costs shows that a bug found during the requirements phase costs roughly one unit to fix. The same bug found in production costs 30 times more. Found after a breach, the costs in legal fees, regulatory fines, remediation, and reputational damage multiply that by another order of magnitude.[1]
 
-The Secure Software Development Lifecycle (SSDLC) is the discipline of building security into every phase of software development -- requirements, design, implementation, testing, and deployment -- rather than attempting to add it after the fact.
+The Secure Software Development Lifecycle (SSDLC) is the discipline of building security into every phase of software development (requirements, design, implementation, testing, and deployment) rather than attempting to add it after the fact.
 
 ---
 
@@ -26,7 +26,7 @@ This does not mean every developer needs to be a penetration tester. It means ev
 - How to use the security tools in the CI/CD pipeline
 - Who to escalate to when they are unsure
 
-The investment in developer security training pays back measurably. Google's Project Zero data shows that most high-severity vulnerabilities exploited in the wild fall into a small number of recurring categories -- categories that developers who have received targeted training reliably avoid.[2]
+The investment in developer security training pays back measurably. Google's Project Zero data shows that most high-severity vulnerabilities exploited in the wild fall into a small number of recurring categories, categories that developers who have received targeted training reliably avoid.[2]
 
 ---
 
@@ -36,7 +36,7 @@ Several frameworks formalize the integration of security into the development li
 
 ### Microsoft Security Development Lifecycle (SDL)
 
-The Microsoft SDL was developed in response to the Windows XP security crisis of the early 2000s -- a period when Microsoft products were so widely exploited that the company's reputation was seriously threatened. Bill Gates' 2002 "Trustworthy Computing" memo redirected the entire company toward security, and SDL was the operational result.[3]
+The Microsoft SDL was developed in response to the Windows XP security crisis of the early 2000s, a period when Microsoft products were so widely exploited that the company's reputation was seriously threatened. Bill Gates' 2002 "Trustworthy Computing" memo redirected the entire company toward security, and SDL was the operational result.[3]
 
 Microsoft SDL defines security activities across phases:
 
@@ -60,7 +60,7 @@ SAMM is useful because it describes where you are and where you could be, rather
 
 ### BSIMM (Building Security In Maturity Model)
 
-BSIMM differs from SDL and SAMM in that it is descriptive rather than prescriptive. It is based on observational data from security programs at real organizations, measuring what they actually do rather than what frameworks say they should do.[5] BSIMM data is useful for benchmarking -- understanding how your security program compares to peers in your industry.
+BSIMM differs from SDL and SAMM in that it is descriptive rather than prescriptive. It is based on observational data from security programs at real organizations, measuring what they actually do rather than what frameworks say they should do.[5] BSIMM data is useful for benchmarking: understanding how your security program compares to peers in your industry.
 
 ---
 
@@ -73,12 +73,12 @@ Security requirements are the security properties a system must have. They are d
 - **Functional security requirements**: Specific behaviors the system must implement (MFA for administrator access, AES-256 encryption for stored credentials, session timeout after 15 minutes of inactivity)
 - **Non-functional security requirements**: Properties the system must exhibit (audit logging of all authentication events, response to security scan findings within defined SLAs)
 - **Compliance requirements**: Security behaviors mandated by regulation (GDPR data minimization, HIPAA audit controls, PCI-DSS encryption of cardholder data)
-- **Abuse cases**: Descriptions of how an attacker might try to misuse the system -- the security complement to use cases
+- **Abuse cases**: Descriptions of how an attacker might try to misuse the system, the security complement to use cases
 
 {% hint style="info" %}
 **Abuse cases are underused.** A use case describes what a legitimate user does. An abuse case describes what a malicious user attempts. For a login function, the use case is "user enters valid credentials and is authenticated." Abuse cases include "attacker attempts to brute-force credentials," "attacker attempts SQL injection in the username field," "attacker replays an expired session token."
 
-Writing abuse cases forces developers to think about the attacker's perspective before design is finalized -- which is exactly when it is cheapest to prevent the corresponding vulnerability.
+Writing abuse cases forces developers to think about the attacker's perspective before design is finalized, which is exactly when it is cheapest to prevent the corresponding vulnerability.
 {% endhint %}
 
 ---
@@ -87,7 +87,7 @@ Writing abuse cases forces developers to think about the attacker's perspective 
 
 Threat modeling is the systematic process of identifying what can go wrong in a system, why it can go wrong, and what to do about it. It is performed during the design phase, on diagrams of the system architecture before implementation, when changing designs is cheap.
 
-The output of threat modeling is a prioritized list of threats and corresponding mitigations -- design-level security requirements that feed back into the engineering work.
+The output of threat modeling is a prioritized list of threats and corresponding mitigations: design-level security requirements that feed back into the engineering work.
 
 ### The STRIDE Model
 
@@ -112,7 +112,7 @@ STRIDE is the most widely used threat categorization framework, developed at Mic
 6. **Validate**: Ensure mitigations are implemented and verify they address the threat
 
 {% hint style="success" %}
-**Practical tip:** Threat modeling does not require a specialist or a two-day workshop. A one-hour whiteboard session with a developer, architect, and someone familiar with attack techniques -- using a simple diagram and the STRIDE mnemonic as a checklist -- produces actionable findings that a purely technical code review will miss.
+**Practical tip:** Threat modeling does not require a specialist or a two-day workshop. A one-hour whiteboard session with a developer, architect, and someone familiar with attack techniques, using a simple diagram and the STRIDE mnemonic as a checklist, produces actionable findings that a purely technical code review will miss.
 
 The question "what could go wrong if an attacker controls this input?" asked during design prevents far more vulnerabilities than the same question asked during a post-release penetration test.
 {% endhint %}
@@ -127,13 +127,13 @@ These principles apply across languages, frameworks, and domains. They are not a
 
 Every piece of data entering your system from outside your control is untrusted. This includes user input, API responses, file contents, database query results, environment variables, and headers.
 
-- Validate input against a strict allowlist of acceptable values (not a denylist of bad values -- attackers will find what you missed)
+- Validate input against a strict allowlist of acceptable values (not a denylist of bad values, since attackers will find what you missed)
 - Reject or sanitize input that does not conform
 - Never trust data from the client side, even if your client-side code validates it first
 
 ### Encode All Output
 
-When data is output to another context -- a web page, a database query, a command line, a log file -- it must be encoded for that context to prevent injection. A string safe for display in HTML is not necessarily safe for inclusion in a JavaScript expression or a SQL query.
+When data is output to another context (a web page, a database query, a command line, a log file), it must be encoded for that context to prevent injection. A string safe for display in HTML is not necessarily safe for inclusion in a JavaScript expression or a SQL query.
 
 - Use context-specific output encoding: HTML encoding for HTML context, SQL parameterization for database queries, OS command escaping for shell commands
 - Never build queries, commands, or markup through string concatenation with untrusted data
@@ -151,7 +151,7 @@ cursor.execute(query, (username,))
 
 Every component, service, and user account should operate with the minimum permissions necessary to perform its function. A web application that only reads from a database should not have write permissions. A service account that only calls one API should not have access to the entire API scope.
 
-Least privilege limits blast radius: if a component is compromised, the attacker inherits only the permissions that component had -- not the permissions of everything else on the system.
+Least privilege limits blast radius: if a component is compromised, the attacker inherits only the permissions that component had, not the permissions of everything else on the system.
 
 ### Fail Securely
 
@@ -176,7 +176,7 @@ Modern applications are 80 to 95% open-source code. Every dependency you include
 {% hint style="warning" %}
 **Transitive dependencies are your responsibility too.** When you include a library, you implicitly include everything that library depends on. The Log4Shell vulnerability (CVE-2021-44228) was introduced into millions of applications not through direct use of Log4j, but through third-party libraries that used it internally. Organizations discovered they were vulnerable to a critical RCE flaw in code they had never knowingly chosen to include.[7]
 
-Run SCA (Software Composition Analysis) tools -- Snyk, Dependabot, OWASP Dependency-Check -- as part of your build process. Know what you are shipping.
+Run SCA (Software Composition Analysis) tools (Snyk, Dependabot, OWASP Dependency-Check) as part of your build process. Know what you are shipping.
 {% endhint %}
 
 Dependency management best practices:
@@ -275,4 +275,4 @@ The OWASP Top 10 is the most widely referenced categorization of critical web ap
 
 ---
 
-*Questions about secure development, SSDLC implementation, or developer security training? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back -- this book is open source and your additions are welcome.*
+*Questions about secure development, SSDLC implementation, or developer security training? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back. This book is open source and your additions are welcome.*
