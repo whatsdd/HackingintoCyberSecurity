@@ -46,7 +46,7 @@ The consequence: information security governance is now a matter of corporate la
 
 ## The CISO Role
 
-The Chief Information Security Officer is the executive responsible for developing and maintaining the organization's information security program. The CISO sits at the intersection of governance and management -- reporting to senior leadership on security posture while directing the operational security function.
+The Chief Information Security Officer is the executive responsible for developing and maintaining the organization's information security program. The CISO sits at the intersection of governance and management, reporting to senior leadership on security posture while directing the operational security function.
 
 {% hint style="info" %}
 **Where the CISO reports matters enormously.**
@@ -56,7 +56,7 @@ A CISO who reports to the CIO faces an inherent conflict: the CIO is evaluated p
 Industry best practice, reflected in frameworks like NIST and ISO 27001, is that the CISO should have a direct reporting line to the board or audit committee, with a separate administrative reporting line to the CEO or COO. This separation preserves independence.[5]
 {% endhint %}
 
-In smaller organizations, the CISO function may be fulfilled by a Director of IT Security, a Security Manager, or even outsourced to a virtual CISO (vCISO) -- a consultant who provides part-time CISO-level guidance. The function matters more than the title.
+In smaller organizations, the CISO function may be fulfilled by a Director of IT Security, a Security Manager, or even outsourced to a virtual CISO (vCISO), a consultant who provides part-time CISO-level guidance. The function matters more than the title.
 
 **Primary CISO responsibilities:**
 
@@ -69,7 +69,7 @@ In smaller organizations, the CISO function may be fulfilled by a Director of IT
 - Building and managing the security team
 - Managing relationships with external auditors and regulators
 
-The CISO role is increasingly demanding. The average CISO tenure is 26 months -- shorter than almost any other C-suite position.[6] The combination of high accountability, limited authority in many organizations, and constant pressure from both attackers and the business makes burnout common. The professionals who last longest are typically those who have built strong executive relationships and have the organizational standing to actually implement the programs they design.
+The average CISO tenure is 26 months, shorter than almost any other C-suite position.[6] The combination of high accountability, limited authority in many organizations, and constant pressure from both attackers and the business makes burnout common. The professionals who last longest are typically those who have built strong executive relationships and have the organizational standing to actually implement the programs they design.
 
 ---
 
@@ -87,17 +87,25 @@ COBIT 2019 (the current version) is particularly strong on the governance side: 
 
 ISO 27001 is the international standard for information security management systems (ISMS). An ISMS is the collection of policies, processes, and controls an organization uses to manage information security systematically.
 
-Certification to ISO 27001 is a public statement that an independent auditor has verified your information security management meets the standard's requirements. It is increasingly required as a condition of doing business -- particularly in enterprise B2B sales, government contracting, and working with European organizations under GDPR.[8]
+Certification to ISO 27001 is a public statement that an independent auditor has verified your information security management meets the standard's requirements. It is increasingly required as a condition of doing business, particularly in enterprise B2B sales, government contracting, and working with European organizations under GDPR.[8]
 
 ISO 27001 does not prescribe specific technical controls. It prescribes a management system: a cycle of planning, implementing, monitoring, and improving information security. Annex A of the standard provides 93 control objectives across 11 domains (ISO 27001:2022 version) from which organizations select those relevant to their risk profile.
+
+{% hint style="info" %}
+**Free ISO 27001 implementation toolkit:** The [ISO27k Toolkit](https://www.iso27001security.com/html/iso27k_toolkit.html) is a community-maintained collection of free policy templates, procedure documents, Statement of Applicability worksheets, and governance artifacts — everything you need to begin an ISO 27001 implementation without starting from a blank page.
+{% endhint %}
 
 ### NIST Cybersecurity Framework (CSF)
 
 The NIST CSF was originally developed for US critical infrastructure but has become the most widely adopted voluntary cybersecurity framework globally. It organizes security activities into six functions: Govern, Identify, Protect, Detect, Respond, and Recover.[9]
 
-CSF 2.0 (released in 2024) added "Govern" as an explicit function -- reflecting the industry recognition that governance cannot be separated from technical security. The Govern function addresses organizational context, risk management strategy, roles and responsibilities, policy, and supply chain risk.
+CSF 2.0 (released in 2024) added "Govern" as an explicit function, reflecting the industry recognition that governance cannot be separated from technical security. The Govern function addresses organizational context, risk management strategy, roles and responsibilities, policy, and supply chain risk.
 
-The CSF is not certifiable (unlike ISO 27001), but it is used by US federal agencies, large enterprises, and SMBs alike as a communication tool -- helping executives, boards, and technical teams share a common language for discussing security posture.
+The CSF is not certifiable (unlike ISO 27001), but it is used by US federal agencies, large enterprises, and SMBs alike as a communication tool, helping executives, boards, and technical teams share a common language for discussing security posture.
+
+{% hint style="info" %}
+**NIST CSF 2.0 tools:** The full framework, including a reference tool and downloadable Excel profile templates, is free at [nist.gov/cyberframework](https://www.nist.gov/cyberframework). The Excel workbook lets you record your organization's current and target tier for each subcategory and generate a gap report — a practical starting point for any governance roadmap.
+{% endhint %}
 
 ### A Practical Comparison
 
@@ -113,14 +121,14 @@ The CSF is not certifiable (unlike ISO 27001), but it is used by US federal agen
 
 ## The Board's Role
 
-Boards of directors are ultimately responsible for the organizations they oversee, including their security posture. This is not just theoretical -- regulators, courts, and shareholders have made it concrete.
+Boards of directors are ultimately responsible for the organizations they oversee, including their security posture. This is not just theoretical. Regulators, courts, and shareholders have made it concrete.
 
 What good board-level security governance looks like:
 
 {% hint style="success" %}
 **Signs of effective board governance:**
 - The board receives regular security briefings (at least quarterly) covering current threat landscape, security posture metrics, and significant incidents
-- At least one board member has meaningful cybersecurity expertise -- either through a dedicated seat or a committee with external advisors
+- At least one board member has meaningful cybersecurity expertise, either through a dedicated seat or a committee with external advisors
 - The CISO has direct access to the board, not only access filtered through the CIO or CEO
 - The board approves the information security strategy and risk appetite
 - Security is a standing agenda item, not a one-time presentation after a breach
@@ -142,7 +150,7 @@ The National Association of Corporate Directors (NACD) publishes a Cyber-Risk Ov
 
 ## Building an Information Security Governance Framework
 
-For organizations building a governance framework from scratch -- or practitioners advising clients who need one -- the process follows a consistent structure.
+For organizations building a governance framework from scratch, or practitioners advising clients who need one, the process follows a consistent structure.
 
 ### Step 1: Identify What Applies to You
 
@@ -187,6 +195,10 @@ Policies are the formal expression of governance decisions. A complete policy fr
 
 Policies must be communicated, acknowledged, enforced uniformly, and reviewed regularly. A policy that exists only as a PDF on a shared drive is not a control.
 
+{% hint style="success" %}
+**Free policy templates — no need to start from scratch:** The [SANS Information Security Policy Templates](https://www.sans.org/information-security-policy/) library provides 27 peer-reviewed, customizable policy documents. Acceptable Use, Password Policy, Incident Response, Data Classification, and more — written to professional standard and ready to adapt. Download, modify for your context, get legal review, and publish.
+{% endhint %}
+
 ### Step 5: Implement Measurement and Reporting
 
 You cannot govern what you cannot measure. The CISO should report to the board on metrics that reflect actual security posture, not just activities:
@@ -214,6 +226,24 @@ The skills that matter most are not technical:
 - Organizational credibility and relationship-building
 
 The certifications most relevant to governance roles are CISM (Certified Information Security Manager), CRISC (Certified in Risk and Information Systems Control), and CISSP (for senior generalist roles). ISACA's certifications dominate this space.[11]
+
+---
+
+## Templates and Examples You Can Use Today
+
+Reading about governance is useful. Having ready-made templates to build from is better. These resources are free, maintained by authoritative sources, and used by practitioners worldwide.
+
+| Resource | What You Get | Best For |
+|---|---|---|
+| [SANS Information Security Policy Templates](https://www.sans.org/information-security-policy/) | 27 peer-reviewed, customizable policy documents: Acceptable Use, Password Policy, Incident Response, Data Classification, and more | Starting a policy library from scratch; updating existing policies to professional standard |
+| [NIST Cybersecurity Framework 2.0](https://www.nist.gov/cyberframework) | Free framework PDF, Excel workbook for current/target profile tracking, and reference implementation examples | Communicating security posture to executives and boards; building a governance roadmap |
+| [CIS Controls v8](https://www.cisecurity.org/controls) | Free implementation guide and Excel mapping spreadsheet cross-referencing NIST CSF, ISO 27001, and PCI-DSS | Translating governance objectives into specific technical controls; showing coverage across frameworks |
+| [NIST Privacy Framework](https://www.nist.gov/privacy-framework) | Free privacy-governance companion framework with profiles and implementation guides | Organizations subject to GDPR, CCPA, or HIPAA needing a structured approach to privacy governance |
+| [ISO27k Toolkit](https://www.iso27001security.com/html/iso27k_toolkit.html) | Community-contributed ISO 27001 policy templates, procedure documents, governance artifacts, and management review materials | ISO 27001 preparation; building governance documentation without starting from a blank page |
+
+{% hint style="info" %}
+**A practical governance starter pack:** Download the SANS policy templates for your immediate policy needs. Use the NIST CSF 2.0 Excel workbook to map your current and target security posture across all six functions. Pull the ISO27k Toolkit templates if you are working toward ISO 27001 certification. None of these require registration or payment. They represent decades of collective practitioner knowledge built into a usable form.
+{% endhint %}
 
 ---
 
@@ -255,4 +285,4 @@ The certifications most relevant to governance roles are CISM (Certified Informa
 
 ---
 
-*Questions about governance, GRC careers, or where to start with compliance frameworks? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back -- this book is open source and your additions are welcome.*
+*Questions about governance, GRC careers, or where to start with compliance frameworks? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back. This book is open source and your additions are welcome.*
