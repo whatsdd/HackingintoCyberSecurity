@@ -2,11 +2,11 @@
 
 ## Security Was an Afterthought. That Changed.
 
-For most of software development history, security worked like this: developers built the application, testers verified it worked, and then, shortly before release, a security team reviewed it. If they found serious vulnerabilities -- and they almost always did -- engineers had to stop, context-switch back into code they had moved on from, understand the problem, and fix it under deadline pressure. The fix was often incomplete. The release was often delayed. Nobody was happy.
+For most of software development history, security worked like this: developers built the application, testers verified it worked, and then, shortly before release, a security team reviewed it. If they found serious vulnerabilities, and they almost always did, engineers had to stop, context-switch back into code they had moved on from, understand the problem, and fix it under deadline pressure. The fix was often incomplete. The release was often delayed. Nobody was happy.
 
 This model was never good. It became untenable when deployment cycles that used to run quarterly started running daily.
 
-DevSecOps is the discipline of integrating security into every stage of the software development and delivery lifecycle, rather than appending it at the end. The name reflects the merger of Development, Security, and Operations -- building on the DevOps movement that already unified development and operations teams around continuous delivery. The core principle is **shift-left security**: finding and fixing vulnerabilities earlier in the lifecycle, when they are cheaper and faster to address.[1]
+DevSecOps is the discipline of integrating security into every stage of the software development and delivery lifecycle, rather than appending it at the end. The name reflects the merger of Development, Security, and Operations, building on the DevOps movement that already unified development and operations teams around continuous delivery. The core principle is **shift-left security**: finding and fixing vulnerabilities earlier in the lifecycle, when they are cheaper and faster to address.[1]
 
 The IBM Systems Sciences Institute found that fixing a vulnerability in production costs 100 times more than fixing it during design. That ratio is why shift-left security is a business argument, not just a technical one.[2]
 
@@ -14,7 +14,7 @@ The IBM Systems Sciences Institute found that fixing a vulnerability in producti
 
 ## The DevOps Pipeline and Where Security Fits
 
-Modern software delivery uses a CI/CD pipeline -- Continuous Integration / Continuous Deployment -- to automate the path from code commit to production. A developer pushes code, and a series of automated stages test, build, scan, and deploy it without manual intervention.
+Modern software delivery uses a CI/CD pipeline (Continuous Integration / Continuous Deployment) to automate the path from code commit to production. A developer pushes code, and a series of automated stages test, build, scan, and deploy it without manual intervention.
 
 ```
 Developer → Code Commit → Build → Test → Security Scan → Staging → Production
@@ -43,13 +43,13 @@ SAST runs fast (typically seconds to minutes) and integrates directly into pull 
 
 **Leading SAST tools:**
 
-- **Semgrep** -- open-source, highly extensible rule engine; runs locally or in CI; rules can be written in minutes; covers dozens of languages
-- **CodeQL** -- GitHub's semantic analysis engine; understands code flow rather than just patterns; integrated into GitHub Actions for free on public repos
-- **SonarQube** -- broad language support, strong IDE integration, self-hosted or cloud; popular in enterprise environments
-- **Checkmarx, Veracode** -- enterprise-grade commercial tools with broad compliance reporting
+- **Semgrep.** Open-source, highly extensible rule engine; runs locally or in CI; rules can be written in minutes; covers dozens of languages
+- **CodeQL.** GitHub's semantic analysis engine; understands code flow rather than just patterns; integrated into GitHub Actions for free on public repos
+- **SonarQube.** Broad language support, strong IDE integration, self-hosted or cloud; popular in enterprise environments
+- **Checkmarx, Veracode.** Enterprise-grade commercial tools with broad compliance reporting
 
 {% hint style="warning" %}
-**SAST limitation: false positives.** SAST tools flag code that looks like it could be vulnerable without knowing whether it actually is. A SQL query built from user input might be flagged even if the input is validated upstream. Teams that ignore SAST findings because of false positive noise lose the benefit of the tool entirely. Tuning SAST to reduce false positives -- and triaging findings systematically -- is an ongoing operational task, not a one-time setup.
+**SAST limitation: false positives.** SAST tools flag code that looks like it could be vulnerable without knowing whether it actually is. A SQL query built from user input might be flagged even if the input is validated upstream. Teams that ignore SAST findings because of false positive noise lose the benefit of the tool entirely. Tuning SAST to reduce false positives, and triaging findings systematically, is an ongoing operational task, not a one-time setup.
 {% endhint %}
 
 ---
@@ -62,24 +62,24 @@ The risk is significant. The Log4Shell vulnerability (CVE-2021-44228) affected a
 
 **Leading SCA tools:**
 
-- **Snyk Open Source** -- scans dependencies, suggests fix PRs automatically, integrates with GitHub/GitLab/Bitbucket
-- **OWASP Dependency-Check** -- free, open-source; supports Java, .NET, Python, Ruby, Node.js
-- **Dependabot** -- built into GitHub; automatically raises PRs to update vulnerable dependencies
-- **Socket** -- focuses on supply chain attacks (malicious packages, not just CVEs)
+- **Snyk Open Source.** Scans dependencies, suggests fix PRs automatically, integrates with GitHub/GitLab/Bitbucket
+- **OWASP Dependency-Check.** Free, open-source; supports Java, .NET, Python, Ruby, Node.js
+- **Dependabot.** Built into GitHub; automatically raises PRs to update vulnerable dependencies
+- **Socket.** Focuses on supply chain attacks (malicious packages, not just CVEs)
 
 ---
 
 ## Dynamic Application Security Testing (DAST)
 
-Where SAST analyzes code, DAST attacks a running application -- sending crafted inputs and observing responses to find vulnerabilities that only manifest at runtime: injection flaws, authentication bypasses, insecure redirects, missing security headers.
+Where SAST analyzes code, DAST attacks a running application by sending crafted inputs and observing responses to find vulnerabilities that only manifest at runtime: injection flaws, authentication bypasses, insecure redirects, missing security headers.
 
 DAST in a DevSecOps context typically runs against a staging environment in the CI/CD pipeline, after deployment but before production release.
 
 **Leading DAST tools:**
 
-- **OWASP ZAP** (Zed Attack Proxy) -- free, open-source, actively maintained; has a CI/CD-friendly daemon mode; the standard for open-source DAST
-- **Burp Suite Enterprise** -- commercial version of the tool every web application pentester uses; supports automated scanning with manual verification
-- **StackHawk** -- developer-friendly DAST built specifically for CI/CD integration; requires OpenAPI specs
+- **OWASP ZAP** (Zed Attack Proxy). Free, open-source, actively maintained; has a CI/CD-friendly daemon mode; the standard for open-source DAST
+- **Burp Suite Enterprise.** Commercial version of the tool every web application pentester uses; supports automated scanning with manual verification
+- **StackHawk.** Developer-friendly DAST built specifically for CI/CD integration; requires OpenAPI specs
 
 ---
 
@@ -87,7 +87,7 @@ DAST in a DevSecOps context typically runs against a staging environment in the 
 
 ### Container Image Scanning
 
-Containers package an application with its dependencies and OS libraries. Those OS packages have their own CVEs. Scanning container images before they run in production -- and blocking images with critical vulnerabilities -- prevents known-vulnerable code from reaching production.
+Containers package an application with its dependencies and OS libraries. Those OS packages have their own CVEs. Scanning container images before they run in production, and blocking images with critical vulnerabilities, prevents known-vulnerable code from reaching production.
 
 ```bash
 # Scan a container image with Trivy
@@ -101,7 +101,7 @@ trivy image nginx:latest
 
 ### Infrastructure as Code (IaC) Security
 
-Infrastructure as Code (Terraform, AWS CloudFormation, Kubernetes YAML, Ansible) defines cloud infrastructure in files that can be version-controlled and reviewed. IaC security scanners check these files for misconfigurations before they are deployed -- finding publicly accessible S3 buckets, overly permissive IAM roles, or unencrypted storage volumes before they become production problems.
+Infrastructure as Code (Terraform, AWS CloudFormation, Kubernetes YAML, Ansible) defines cloud infrastructure in files that can be version-controlled and reviewed. IaC security scanners check these files for misconfigurations before they are deployed, finding publicly accessible S3 buckets, overly permissive IAM roles, or unencrypted storage volumes before they become production problems.
 
 ```bash
 # Scan Terraform files with Checkov
@@ -118,7 +118,7 @@ checkov -d ./terraform/
 
 ## Secrets Management
 
-Hardcoded secrets -- API keys, database passwords, private keys, OAuth tokens embedded in source code -- are among the most common and most damaging security failures in modern development. They appear in git history even after the developer "removes" them. They get deployed to every environment. They get pushed to public repositories accidentally.
+Hardcoded secrets (API keys, database passwords, private keys, OAuth tokens embedded in source code) are among the most common and most damaging security failures in modern development. They appear in git history even after the developer "removes" them. They get deployed to every environment. They get pushed to public repositories accidentally.
 
 {% hint style="danger" %}
 **Secrets in git are permanent.** Even after a secret is removed from code, it remains in git history. Anyone with access to the repository can retrieve it with `git log`. Rotating exposed credentials the moment they are discovered is essential. Assuming that removing the commit is sufficient is wrong.
@@ -223,4 +223,4 @@ Salaries for DevSecOps engineers in the US range from $120,000 to $180,000 at mi
 
 ---
 
-*Questions about DevSecOps tools, pipeline integration, or career paths? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back -- this book is open source and your additions are welcome.*
+*Questions about DevSecOps tools, pipeline integration, or career paths? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back. This book is open source and your additions are welcome.*
