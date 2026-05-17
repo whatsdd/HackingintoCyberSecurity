@@ -4,7 +4,7 @@
 
 Every system has weaknesses. Hiring processes are systems. They have inputs (your resume, portfolio, conversations), processing logic (how interviewers evaluate candidates), and outputs (offer or rejection). They have assumptions that are often wrong and failure modes that skilled candidates can anticipate.
 
-This chapter is about understanding that system well enough to navigate it effectively -- not to deceive, but to present genuine competence in the way that hiring processes are actually designed to detect it.
+This chapter is about understanding that system well enough to navigate it effectively, not to deceive but to present genuine competence in the way that hiring processes are actually designed to detect it.
 
 The cybersecurity job market is large, growing, and short of qualified candidates. If you have built real skills, the interview is mostly a communication challenge. If you have not built real skills yet, no interview advice will save you. This chapter assumes you have done the work.
 
@@ -89,7 +89,7 @@ Research the company before applying:
 
 ## The Phone Screen
 
-Most processes start with a 30-minute recruiter phone screen. Recruiters are evaluating basic fit and communication -- not technical depth.
+Most processes start with a 30-minute recruiter phone screen. Recruiters are evaluating basic fit and communication, not technical depth.
 
 **What recruiters assess:**
 - Can this person communicate clearly?
@@ -98,10 +98,10 @@ Most processes start with a 30-minute recruiter phone screen. Recruiters are eva
 - Do they have the credentials and experience the job requires?
 
 **Prepare for:**
-- "Tell me about yourself" -- 90 seconds, focused on your security background and what you're targeting
-- "Why are you interested in this role / company?" -- have a specific answer that is not "good pay"
-- "What is your target salary?" -- research ranges on levels.fyi, Glassdoor, LinkedIn Salary. Give a range anchored at the top of what you consider fair.
-- "Do you have [specific cert / tool experience]?" -- be honest; do not claim certifications you do not have
+- "Tell me about yourself." Aim for 90 seconds, focused on your security background and what you're targeting.
+- "Why are you interested in this role / company?" Have a specific answer that is not "good pay."
+- "What is your target salary?" Research ranges on levels.fyi, Glassdoor, and LinkedIn Salary. Give a range anchored at the top of what you consider fair.
+- "Do you have [specific cert / tool experience]?" Be honest. Do not claim certifications you do not have.
 
 ---
 
@@ -139,9 +139,9 @@ These assess whether you understand the fundamentals. Common topics by role:
 {% hint style="info" %}
 **How to answer knowledge questions you do not know:**
 
-Be honest. "I haven't worked with that specific tool, but I'm familiar with the concept -- in [tool you do know], I've done X which is similar." Interviewers respect honesty and can tell when someone is bluffing. What they cannot tell immediately is whether you will learn quickly. Showing intellectual honesty and a learning mindset compensates for gaps.
+Be honest. "I haven't worked with that specific tool, but I'm familiar with the concept. In [tool you do know], I've done X, which is similar." Interviewers respect honesty and can tell when someone is bluffing. What they cannot tell immediately is whether you will learn quickly. Showing intellectual honesty and a learning mindset compensates for gaps.
 
-Never claim knowledge you do not have. Security engineers are good at probing -- one follow-up question exposes a bluff immediately.
+Never claim knowledge you do not have. Security engineers are good at probing. One follow-up question exposes a bluff immediately.
 {% endhint %}
 
 ### Type 2: Scenario / Situational Questions
@@ -150,7 +150,7 @@ These present a realistic situation and ask what you would do. They test practic
 
 **Common scenarios:**
 
-*"A user reports their machine is acting strangely -- what do you do?"*
+*"A user reports their machine is acting strangely. What do you do?"*
 
 Structure your answer: Triage (isolate, preserve), Investigate (what are the indicators? logs, processes, network connections), Escalate (who needs to know?), Remediate (based on findings).
 
@@ -189,7 +189,7 @@ The questions you ask reveal as much as the answers you give. Always ask questio
 **Questions that signal genuine engagement:**
 
 - "What does the team's threat modeling process look like right now?"
-- "How are security incidents handled -- what's the escalation process?"
+- "How are security incidents handled? What's the escalation process?"
 - "What does success look like in this role in the first 90 days?"
 - "What is the security team's relationship with the engineering team?"
 - "What are the biggest security challenges the organization is facing right now?"
@@ -197,7 +197,7 @@ The questions you ask reveal as much as the answers you give. Always ask questio
 - "How does the security budget get determined and how is it defended?"
 
 **Questions about growth:**
-- "What does professional development look like -- training, conference attendance, certifications?"
+- "What does professional development look like? Training, conference attendance, certifications?"
 - "What have people in this role typically moved into?"
 
 **Avoid:**
@@ -213,9 +213,9 @@ Most candidates do not negotiate. Most candidates leave money on the table.
 
 **Rules:**
 
-1. **Never accept on the spot.** "Thank you so much -- I'm very excited about this. Can I have until [specific date, usually 3-5 business days] to review?" This is normal. Every recruiter expects it.
+1. **Never accept on the spot.** "Thank you so much. I'm very excited about this. Can I have until [specific date, usually 3-5 business days] to review?" This is normal. Every recruiter expects it.
 
-2. **Research the range first.** Use levels.fyi, Glassdoor, LinkedIn Salary, Glassdoor, and peers in similar roles to know what the market pays for this role in this geography.
+2. **Research the range first.** Use levels.fyi, Glassdoor, LinkedIn Salary, and peers in similar roles to know what the market pays for this role in this geography.
 
 3. **Negotiate salary, not just base.** The full package includes base salary, bonus target, equity (at tech companies), signing bonus, PTO, training budget, remote work policy, and equipment. Each is potentially negotiable.
 
@@ -268,7 +268,7 @@ One no is not the market's verdict on your career. It is one company's decision 
 
 ## References
 
-[1] Cabaj, K., Domingos, D., Kotulski, Z., & Respicio, A. (2018). Cybersecurity education: Evolution of the discipline and analysis of master programs. *Computers & Security*, 75, 24--35. doi:10.1016/j.cose.2018.01.015
+[1] Cabaj, K., Domingos, D., Kotulski, Z., & Respicio, A. (2018). Cybersecurity education: Evolution of the discipline and analysis of master programs. *Computers & Security*, 75, 24-35. doi:10.1016/j.cose.2018.01.015
 
 [2] Payscale. (2024). *Cybersecurity salaries: By role and experience*. PayScale. Retrieved from https://www.payscale.com/research/US/Skill=Information_Security/Salary
 
@@ -292,4 +292,4 @@ One no is not the market's verdict on your career. It is one company's decision 
 
 ---
 
-*Preparing for an interview? Want a mock technical screen or resume feedback? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back -- this book is open source and your additions are welcome.*
+*Preparing for an interview? Want a mock technical screen or resume feedback? Join the community on [Discord](https://discord.gg/vkXWVFdFe) or reach out on [LinkedIn](https://www.linkedin.com/in/ahmadscience/). If this chapter helped, contribute back. This book is open source and your additions are welcome.*
