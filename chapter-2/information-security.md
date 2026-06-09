@@ -102,6 +102,10 @@ Information security does not operate in a legal vacuum. Organizations handling 
 | **HIPAA** | US healthcare providers, plans, clearinghouses, and their business associates | Specific administrative, physical, and technical safeguards for electronic protected health information | $100 to $50,000 per violation; $1.9M annual maximum per category [7] |
 | **CCPA** | Organizations processing California residents' data above defined thresholds | Right to know, right to delete, right to opt out of data sale | $2,500 per unintentional violation; $7,500 per intentional violation [8] |
 | **PCI-DSS** | Any organization handling payment card data | 12 high-level requirements across network security, access control, monitoring, and policy | Fines from card networks; potential loss of ability to process card payments [9] |
+| **NIS2** | "Essential" and "important" entities across 18 sectors operating in the EU (energy, health, transport, digital infrastructure, and more) | Risk management measures, supply chain security, incident reporting (24-hour early warning, 72-hour notification); personal liability for management | €10M or 2% of global annual revenue for essential entities [14] |
+| **DORA** | EU financial entities (banks, insurers, investment firms) and their critical ICT providers | ICT risk management framework, digital resilience testing, ICT third-party risk management, incident reporting | Periodic penalties up to 1% of average daily global turnover for critical ICT providers [15] |
+
+Two additions to the landscape since the early 2020s are worth knowing even at this stage. In the EU, the **AI Act** (in force since August 2024, with obligations phasing in through 2027) regulates AI systems by risk category — relevant to security because AI systems are now both an asset to protect and a regulated technology with its own compliance obligations. In the US, the absence of a federal privacy law has produced a patchwork: California's CCPA/CPRA was followed by comprehensive state privacy laws in Virginia, Colorado, Connecticut, Texas, and a growing list of others, each with slightly different definitions and rights. For any US-facing organization, "which privacy law applies" is now a genuinely hard question that GRC teams deal with daily.
 
 {% hint style="warning" %}
 **Which regulation applies to you?** Many organizations are subject to multiple frameworks simultaneously. A US healthcare company operating in Europe with a payment processing function is subject to HIPAA, GDPR, and PCI-DSS at the same time. These frameworks sometimes have conflicting requirements. Compliance is not a checkbox exercise. It is ongoing legal and technical work.
@@ -139,7 +143,7 @@ Policies sit above procedures (the specific steps to implement them) and standar
 
 ## The Major Threats
 
-The threats that occupy security teams are not random. They cluster in predictable areas, and the same failure modes appear across industries, geographies, and organization sizes year after year.
+The previous page covered attack *techniques* — how phishing, injection, and credential attacks work mechanically. This section looks at the same battlefield from the defender's side: the organizational failure modes that let those techniques succeed. The threats that occupy security teams are not random. They cluster in predictable areas, and the same failure modes appear across industries, geographies, and organization sizes year after year.
 
 ### Unpatched Systems
 
@@ -181,6 +185,23 @@ Insider threats, both malicious and accidental, account for a significant propor
 
 ---
 
+## Try This
+
+1. **Classify a real breach.** Pick any breach from the news this month (Krebs on Security or the Verizon DBIR appendix are good sources). For it, write down: which CIA properties were violated, the threat actor type, the vulnerability exploited, and which single control would most likely have prevented it. This four-line analysis is exactly the mental motion of incident triage and risk assessment — and it makes excellent interview material.
+2. **Run a personal risk assessment.** List your five most valuable digital assets (email account, banking, cloud storage, social accounts, your laptop). For each: what's the most realistic threat, what's the vulnerability (reused password? no MFA? unencrypted disk?), and what's the impact if it's compromised? Then fix the worst one this week. You've just done asset-based risk management — the same process Chapter 5 scales up to organizations.
+
+---
+
+## Key Takeaways
+
+- Information security is broader than cybersecurity: paper, people, and premises count. All cybersecurity is infosec; not all infosec is cybersecurity.
+- The CIA triad — confidentiality, integrity, availability — is the scorecard for every control and every incident. The extensions (non-repudiation, authenticity) matter for legal and transactional contexts.
+- Speak precisely: asset, threat, vulnerability, risk, exploit, control, attack surface. Imprecise language produces gaps in coverage.
+- The regulatory landscape is now dense and overlapping: GDPR, HIPAA, PCI-DSS, NIS2, DORA, the EU AI Act, and a US state-law patchwork. Most organizations answer to several at once.
+- The recurring organizational failures are boring and predictable: unpatched systems, misconfigurations, missing MFA, and untrained people. MFA everywhere remains the single highest-value control.
+
+---
+
 ## References
 
 [1] Von Solms, R., & van Niekerk, J. (2013). From information security to cyber security. *Computers & Security*, 38, 97-102. doi:10.1016/j.cose.2013.04.004
@@ -208,6 +229,10 @@ Insider threats, both malicious and accidental, account for a significant propor
 [12] US Senate Permanent Subcommittee on Investigations. (2020). *Threats to US Networks: Oversight of Chinese Government-Owned Carriers*. Retrieved from https://www.hsgac.senate.gov
 
 [13] CISA. (2022). *More Than a Password: Implement Multi-Factor Authentication*. Cybersecurity and Infrastructure Security Agency. Retrieved from https://www.cisa.gov/sites/default/files/publications/MFA-Fact-Sheet-Jan22-508.pdf
+
+[14] European Parliament and Council of the European Union. (2022). Directive (EU) 2022/2555 on measures for a high common level of cybersecurity across the Union (NIS 2 Directive). *Official Journal of the European Union*, L 333. Retrieved from https://eur-lex.europa.eu/eli/dir/2022/2555/oj
+
+[15] European Parliament and Council of the European Union. (2022). Regulation (EU) 2022/2554 on digital operational resilience for the financial sector (DORA). *Official Journal of the European Union*, L 333. Retrieved from https://eur-lex.europa.eu/eli/reg/2022/2554/oj
 
 ---
 

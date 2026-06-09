@@ -16,6 +16,8 @@ Cybersecurity is the practice of protecting systems, networks, and data from una
 
 Technically, cybersecurity is a subset of information security that specifically addresses electronic systems and the threats that target them. Information security is the broader discipline: protecting information in any format against any threat, including paper records, verbal communication, and physical assets.[2] In practice the two terms are used interchangeably, and understanding both is foundational.
 
+Whatever the format, the goal is the same and has a name you'll use for the rest of your career: protecting the **CIA triad** — the **confidentiality** of information (only authorized parties can read it), its **integrity** (it can't be modified without authorization), and its **availability** (it's there when authorized users need it). Every attack in this chapter breaks at least one of the three; every defense protects at least one. The next section of this chapter treats the triad in depth — for now, keep it in the back of your mind as the scorecard behind everything that follows.
+
 What distinguishes cybersecurity from almost every other engineering discipline is that the adversary is intelligent. A bridge engineer does not worry that gravity will study the bridge's design and adapt. A cybersecurity professional does. Attackers learn, evolve, share techniques, and specifically work to circumvent whatever controls exist. That dynamic never stops, which is why the field never stagnates.
 
 ---
@@ -60,6 +62,8 @@ Phishing is the most common initial access technique across industries and geogr
 - **Smishing.** Phishing via SMS.
 
 Business email compromise (BEC) is a financially devastating variant where attackers compromise or convincingly spoof a corporate email account to authorize fraudulent wire transfers. The FBI's Internet Crime Complaint Center recorded **$2.7 billion in BEC losses in 2022 alone**, more than any other cybercrime category.[5]
+
+Generative AI has made all of this cheaper and more convincing. The telltale signs people were trained to spot — broken grammar, generic greetings — are gone when the attacker drafts with an LLM in fluent, personalized prose. Deepfaked voices and video have already been used in real fraud: in 2024, an employee at the engineering firm Arup transferred HK$200 million (about US$25 million) after a video call with what appeared to be the company's CFO and colleagues — every other participant on the call was a deepfake.[18] Assume the era of "you can spot a phish by the typos" is over; verification procedures, not vigilance alone, are the defense.
 
 {% hint style="warning" %}
 **Why phishing keeps working:** Security controls can block known malicious URLs and attachments. They cannot block a well-crafted message sent from a legitimate email service, asking a real employee to perform a routine action. The human element is not a bug in the system. It is an intended feature of how organizations function. Attackers exploit trust, urgency, and authority because those things work.
@@ -263,6 +267,25 @@ Memory forensics has become increasingly important as attackers use fileless mal
 
 ---
 
+## Try This
+
+Both exercises are free, legal, and run on your own machine.
+
+1. **Watch your own traffic.** Install [Wireshark](https://www.wireshark.org), start a capture on your active network interface, and load one website. Stop the capture and find: the DNS query that resolved the site's name (filter: `dns`), the TCP three-way handshake (filter: `tcp.flags.syn == 1`), and the TLS handshake (filter: `tls.handshake`). Notice that you can see *where* you went but not *what* you sent — that's the CIA triad's confidentiality property, delivered by TLS, visible in raw packets.
+2. **Scan something you own.** Install [Nmap](https://nmap.org) and scan your own machine (`nmap -sV localhost`) and, if it's your network, your home router. Identify every open port and look up what each service does. Anything you can't explain is exactly what an attacker would start with. **Never scan systems you don't own or have written permission to test** — in most jurisdictions, that's a crime even if you touch nothing.
+
+---
+
+## Key Takeaways
+
+- Cybersecurity defends systems built for openness against intelligent, adaptive adversaries — that's what separates it from every other engineering field.
+- Know the threat landscape: most incidents are financially motivated crime (ransomware, BEC, credential abuse), not nation-state exotica. Calibrate defenses accordingly.
+- The big five attack families — phishing/social engineering, denial of service, man-in-the-middle, injection, and credential attacks — cover most of what you'll ever triage. Learn how each works mechanically.
+- Generative AI removed the classic phishing tells. Procedural verification beats human vigilance.
+- Encryption protects data in transit and at rest, not compromised endpoints or stolen keys — and forensics depends on preserving evidence before touching anything.
+
+---
+
 ## References
 
 [1] Gibson, W. (1984). *Neuromancer*. Ace Books. ISBN 978-0-441-56956-4.
@@ -298,6 +321,8 @@ Memory forensics has become increasingly important as attackers use fileless mal
 [16] Combs, G., & the Wireshark Team. (2024). *Wireshark User's Guide*. The Wireshark Foundation. Retrieved from https://www.wireshark.org/docs/wsug_html/
 
 [17] Locard, E. (1930). The analysis of dust traces: Part I. *The American Journal of Police Science*, 1(3), 276-298. doi:10.2307/1147011
+
+[18] Magramo, K. (2024, February 4). British engineering giant Arup revealed as $25 million deepfake scam victim. *CNN Business*. Retrieved from https://www.cnn.com/2024/05/16/tech/arup-deepfake-scam-loss-hong-kong-intl-hnk
 
 ---
 
