@@ -6,7 +6,7 @@ A Capture the Flag (CTF) competition is a security challenge where participants 
 
 CTFs are one of the most efficient ways to build practical security skills. Every challenge is a contained, legal environment designed to teach a specific technique. You cannot accidentally break anything important. You cannot go to prison for poking at it too hard. And when you solve it, you know exactly what you learned.
 
-They are also the primary way that talented security practitioners first get noticed. Google's Project Zero, major security consultancies, and government agencies all actively recruit from competitive CTF teams. A strong CTF track record is often worth more than a certification in technical hiring discussions.[1]
+They are also the primary way that talented security practitioners first get noticed. Major security consultancies, product security teams, and government agencies all actively recruit from competitive CTF teams. A strong CTF track record is often worth more than a certification in technical hiring discussions.[1]
 
 ---
 
@@ -264,6 +264,31 @@ Some of the most successful security practitioners built their early reputation 
 
 ---
 
+## AI Tools in CTFs
+
+By 2026, LLMs are part of how most competitors work, and using them well is a genuine skill. But the rules vary, so start there.
+
+**Know the competition's policy.** Many CTFs now state explicitly whether AI assistance is allowed. Beginner and educational events usually permit it (the goal is learning); some competitive events restrict it, and a few run AI-specific tracks. Read the rules — getting disqualified for an unread policy is a waste.
+
+**Where AI genuinely helps:**
+
+- **Explaining unfamiliar code or output.** Paste a confusing snippet of assembly, an obfuscated script, or an error and ask what it does. This collapses hours of confusion in reverse-engineering and crypto challenges.
+- **Generating boilerplate exploit scaffolding.** "Write a pwntools template that connects to this host and sends a cyclic pattern" gets you to the interesting part faster.
+- **Recognizing encodings and cipher patterns.** LLMs are good at "what encoding/cipher might this be?" as a starting hypothesis.
+- **Decoding and quick scripting.** One-off parsing and transformation scripts that would take you ten minutes take one.
+
+**Where AI fails — and where the learning is:**
+
+- It **hallucinates** exploits, invents function offsets, and confidently produces shellcode that doesn't work. You need enough skill to know when it's wrong.
+- It's weak at the *creative leap* that hard challenges require — chaining unexpected bugs, spotting the one weird thing the designer hid.
+- Leaning on it for everything means you don't build the intuition the challenges exist to teach. If AI solves it and you can't explain how, you learned nothing.
+
+**A new category to watch: AI/ML and LLM challenges.** CTFs increasingly include challenges about *attacking* AI systems — prompt injection to extract a hidden flag, jailbreaking a guarded chatbot, or exploiting an ML pipeline. Prompt-injection wargames like Gandalf (covered in the AI & LLM Security chapter) are CTF-style on-ramps to this fast-growing skill.
+
+The healthy way to use AI in CTFs mirrors the healthy way to use it on the job (Chapter 1): as an accelerator you verify, not an oracle you trust.
+
+---
+
 ## Building a CTF Team
 
 Solo CTF is harder. Most top competitors work in teams of four to eight people with complementary skills: one person focusing on web, one on pwn, one on crypto, one on forensics.
@@ -353,11 +378,23 @@ CTFs are one entry point into security. The wider universe of free, high-quality
 This sequence is free, requires only a laptop and internet access, and produces a solid foundation in three to six months at a few hours per week.
 {% endhint %}
 
+Many of these tools are best run from a dedicated practice environment rather than your daily-driver machine. The Home Lab & Portfolio chapter walks through setting one up — a Kali VM, snapshots so you can break things safely, and how to turn your CTF writeups into a portfolio that gets interviews.
+
+---
+
+## Key Takeaways
+
+- CTFs are the most efficient legal way to build practical skill, and a strong track record is a genuine hiring signal — often worth more than a certification in technical interviews.
+- Sequence beats willpower: guided platforms (PicoCTF, OverTheWire, TryHackMe) first, then a toolkit you know cold, then live competitions from CTFtime.
+- Have a systematic per-challenge approach — enumerate, read the hints in the framing, identify the vulnerability class, automate the boring parts, and know when to walk away.
+- Writeups are the highest-leverage habit: they consolidate learning and build a public portfolio that compounds. Publish them on GitHub.
+- Use AI as a verified accelerator (explaining code, scaffolding exploits), know each competition's policy, and watch the emerging AI/LLM challenge category.
+
 ---
 
 ## References
 
-[1] Chung, S. P., Xu, W., & Lee, W. (2013). CTF competitions as cybersecurity education. *IEEE Security and Privacy*, 2013. doi:10.1109/MSP.2013.6
+[1] Vykopal, J., Švábenský, V., & Chang, E.-C. (2020). Benefits and pitfalls of using capture the flag games in university courses. *Proceedings of the 51st ACM Technical Symposium on Computer Science Education (SIGCSE '20)*, 752-758. doi:10.1145/3328778.3366893
 
 [2] PicoCTF. (2024). *picoCTF: Free Cybersecurity Games for Students*. Carnegie Mellon University. Retrieved from https://picoctf.org
 
@@ -365,7 +402,7 @@ This sequence is free, requires only a laptop and internet access, and produces 
 
 [4] OverTheWire. (2024). *Wargames*. Retrieved from https://overthewire.org/wargames/
 
-[5] Peng, P., Xu, L., Quinn, L., Hu, H., Gu, G., & Wang, H. (2014). jTrans: Jump-target-aware transformer for binary code similarity. *IEEE S&P 2014*. doi:10.1109/SP.2014.21
+[5] Švábenský, V., Vykopal, J., & Čeleda, P. (2021). Dataset of shell commands used by participants of hands-on cybersecurity training. *Data in Brief*, 38, 107398. doi:10.1016/j.dib.2021.107398
 
 ---
 

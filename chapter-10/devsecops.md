@@ -52,6 +52,15 @@ SAST runs fast (typically seconds to minutes) and integrates directly into pull 
 **SAST limitation: false positives.** SAST tools flag code that looks like it could be vulnerable without knowing whether it actually is. A SQL query built from user input might be flagged even if the input is validated upstream. Teams that ignore SAST findings because of false positive noise lose the benefit of the tool entirely. Tuning SAST to reduce false positives, and triaging findings systematically, is an ongoing operational task, not a one-time setup.
 {% endhint %}
 
+**A practical false-positive triage strategy.** Don't try to fix everything on day one — that's how teams give up. A workflow that actually survives contact with a real backlog:
+
+1. **Start with high-confidence, high-severity rules only.** Most tools (Semgrep, CodeQL) let you run a curated subset. A small set of accurate findings builds trust; a flood of noise destroys it.
+2. **Triage every finding into one of three buckets:** real (fix it), false positive (suppress it *with an inline comment explaining why* — that comment is the audit trail), or accepted risk (track it). Never leave findings in limbo; an untriaged backlog is the same as no scanning.
+3. **Suppress at the source, not by disabling the rule globally.** A `# nosemgrep: rule-id` on the specific line keeps the rule live everywhere else.
+4. **Tune iteratively.** When a rule produces mostly false positives for your codebase, refine or disable *that rule*, and write the reason down. Expect a few cycles before the signal-to-noise ratio is good — that's normal, not failure.
+
+The goal isn't zero findings. It's a backlog small and accurate enough that developers trust it and act on it.
+
 ---
 
 ## Software Composition Analysis (SCA)
@@ -116,6 +125,43 @@ checkov -d ./terraform/
 
 ---
 
+## Software Supply Chain Security
+
+The 2020 SolarWinds attack and the 2024 XZ Utils backdoor made one thing clear: attackers no longer need to breach you directly when they can compromise something you build *with*. Scanning your own code and dependencies for known CVEs (SAST and SCA above) is necessary but not sufficient — it doesn't tell you whether the build itself was tampered with or whether a dependency is *maliciously* crafted rather than merely vulnerable. A modern pipeline adds three things:
+
+**SBOMs (Software Bill of Materials).** A machine-readable inventory of every component in your software, in a standard format (SPDX or CycloneDX). When the next Log4Shell drops, an SBOM answers "are we affected, and where?" in minutes instead of weeks. Generate one in CI:
+
+```bash
+# Generate a CycloneDX SBOM for a container image with Trivy
+trivy image --format cyclonedx --output sbom.json nginx:latest
+```
+
+**Signing and provenance (Sigstore / Cosign).** Signing an artifact lets consumers verify it came from you and wasn't swapped in transit. Sigstore's Cosign makes this keyless and practical:
+
+```bash
+# Sign a container image, then verify it
+cosign sign myregistry/myapp:1.4.2
+cosign verify myregistry/myapp:1.4.2
+```
+
+Provenance attestations go further, recording *how* and *where* an artifact was built so a consumer can confirm it came from your trusted pipeline, not an attacker's laptop.
+
+**SLSA (Supply-chain Levels for Software Artifacts).** A framework (pronounced "salsa") that defines maturity levels for build integrity — from "you generate provenance" up to "builds are fully reproducible and hardened." It gives teams a concrete ladder to climb rather than a vague aspiration. Treat it as the roadmap that ties SBOMs, signing, and provenance together.
+
+---
+
+## AI in the DevSecOps Pipeline
+
+By 2026, AI tooling is part of the security pipeline, and using it well — and skeptically — is a real skill. Where it genuinely helps:
+
+- **Triage and explanation.** LLM-assisted features in tools like GitHub's security products and Snyk can explain *why* a finding matters and draft a fix, turning a cryptic CVE ID into actionable guidance. This directly attacks the alert-fatigue problem.
+- **Code review assistance.** AI reviewers flag likely issues in pull requests and suggest remediations, catching some classes of bug before a human reviewer looks.
+- **Generating detection and IaC rules.** Drafting a Semgrep rule or a Falco rule from a plain-English description is faster with an assistant.
+
+The limits matter just as much. AI tools **hallucinate** — they invent fixes that don't compile, miss context-dependent vulnerabilities, and produce confident-but-wrong severity calls. And AI *coding* assistants generate insecure code at a meaningful rate, so AI-written code needs *more* scanning, not less. The rule: AI accelerates the security engineer; it doesn't replace the verification step. Every AI-suggested fix goes through the same review and testing as a human's.
+
+---
+
 ## Secrets Management
 
 Hardcoded secrets (API keys, database passwords, private keys, OAuth tokens embedded in source code) are among the most common and most damaging security failures in modern development. They appear in git history even after the developer "removes" them. They get deployed to every environment. They get pushed to public repositories accidentally.
@@ -131,6 +177,17 @@ The correct approach is never putting secrets in code in the first place:
 - **Secrets detection in CI**: Gitleaks, TruffleHog, and git-secrets scan commits and PRs for patterns that look like credentials
 - **Secret management platforms**: HashiCorp Vault, AWS Secrets Manager, Azure Key Vault, and GCP Secret Manager provide centralized, auditable secret storage with fine-grained access control and automatic rotation
 - **Environment variables**: Inject secrets at runtime as environment variables; never hard-code them
+
+{% hint style="info" %}
+**What to actually do when a secret leaks.** Detection is only half the job; the response is what limits damage. The order matters:
+
+1. **Rotate first, investigate second.** Generate a new credential and deploy it immediately. The exposed one must be treated as compromised the moment it hit a repo or log — even a private one.
+2. **Revoke the old credential** so it can no longer authenticate. Rotating without revoking leaves the leaked secret usable.
+3. **Check for abuse.** Review access logs for the exposed credential's activity during the exposure window. Did anyone use it?
+4. **Only then clean history** (purge from git history if needed) — but understand this is cosmetic. By this point the secret is already burned; cleaning history just prevents *re-discovery*, it doesn't undo the exposure.
+
+The hard case is a secret that can't be easily rotated — a hardcoded key in firmware, a credential shared across many systems. Those are exactly the ones worth designing *out* in advance, because incident response on them is brutal. This is the argument for short-lived, automatically-rotated secrets from a vault over long-lived static keys.
+{% endhint %}
 
 ---
 
@@ -178,6 +235,20 @@ Successful DevSecOps programs share common characteristics:
 
 ---
 
+## Measuring DevSecOps
+
+"Are we more secure than last quarter?" needs a real answer, and activity counts ("we ran 10,000 scans") aren't it. A small set of outcome metrics that mature teams track:
+
+- **Mean time to remediate (MTTR) by severity.** How long from a vulnerability being found to being fixed? Trend it. A growing critical-MTTR means the pipeline is finding more than the team can fix.
+- **Escape rate.** What fraction of vulnerabilities were caught *before* production versus found in production? The whole point of shift-left is to push this number up.
+- **Vulnerability backlog age.** How old are your open findings? A pile of year-old "criticals" means the severity ratings have stopped meaning anything.
+- **Pipeline pass/block rate.** How often do security gates actually block a deploy, and for what? Too high frustrates developers; near-zero suggests the gates aren't catching anything.
+- **Coverage.** What percentage of repositories and images are actually scanned? Unscanned services are where incidents come from.
+
+A startup might track just MTTR and coverage; a large enterprise tracks all of these per team. The principle is the same: measure outcomes (did risk go down?), not effort (did we run the tool?).
+
+---
+
 ## DevSecOps as a Career
 
 DevSecOps is one of the fastest-growing specializations in cybersecurity, sitting at the intersection of software engineering and security. The skills required are broad:
@@ -189,6 +260,27 @@ DevSecOps is one of the fastest-growing specializations in cybersecurity, sittin
 - Security fundamentals: vulnerability classes, the OWASP Top 10, secure coding principles
 
 Salaries for DevSecOps engineers in the US range from $120,000 to $180,000 at mid-level, with senior roles and architects reaching $200,000+. The role is remote-friendly and in high demand as organizations accelerate cloud-native development.
+
+---
+
+## Try This
+
+All free, all on your own machine, all genuinely useful as portfolio material:
+
+1. **Scan a real image with Trivy.** Install [Trivy](https://github.com/aquasecurity/trivy) and run `trivy image nginx:latest`. Read the output: how many criticals? Which library? Then run `trivy image --format cyclonedx --output sbom.json nginx:latest` and open the SBOM — you've just generated the artifact that answers "are we affected?" during the next Log4Shell.
+2. **Run Semgrep on real code.** `pip install semgrep`, clone any open-source project, and run `semgrep --config auto`. Triage three findings into real / false-positive / accepted-risk, and write one sentence justifying each. That triage is the actual day-job of an application security engineer.
+3. **Catch a secret.** Install [Gitleaks](https://github.com/gitleaks/gitleaks) and run `gitleaks detect` on a repo (try one of your own first). Then add a fake-looking API key to a test commit and watch it fire. Now you understand both the detection and why "just delete the commit" isn't a fix.
+
+---
+
+## Key Takeaways
+
+- DevSecOps means building security into every pipeline stage (shift-left), because fixing a vulnerability in production costs ~100x what it costs at design.
+- Match the tool to the stage: SAST (source code), SCA (dependencies), DAST (running app), container and IaC scanning (build/deploy), runtime monitoring (production).
+- Beyond your own code, secure the supply chain: SBOMs for visibility, signing and provenance (Sigstore/Cosign) for integrity, SLSA as the maturity roadmap.
+- AI tooling helps with triage, review, and rule-writing, but hallucinates and writes insecure code — it accelerates the engineer, it doesn't replace verification.
+- Tools without culture fail. The killers are alert fatigue, over-blocking, and untriaged backlogs. Measure outcomes (MTTR, escape rate, coverage), not activity.
+- When a secret leaks: rotate, revoke, check for abuse, then clean history — and design long-lived secrets out so this is rare.
 
 ---
 

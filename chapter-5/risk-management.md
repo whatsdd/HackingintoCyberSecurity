@@ -93,9 +93,23 @@ The output is a probability distribution of annual loss expectancy — for examp
 
 This language is meaningful to CFOs, boards, and insurance underwriters in ways that "high risk" is not. FAIR is increasingly required in mature GRC programs and is the basis for the Open FAIR standard maintained by The Open Group.[4]
 
+{% hint style="success" %}
+**A worked FAIR example you can recompute.** Suppose you're estimating the annual risk from phishing leading to a business email compromise (BEC). You don't need expensive tooling — you need estimates and arithmetic.
+
+*Loss Event Frequency (LEF).* Last year your staff received roughly 12 credible phishing attempts that got past filters. Historically about 1 in 4 leads to someone entering credentials, and of those, about half are caught by MFA or quick reporting before any loss. So: 12 × 0.25 × 0.5 ≈ **1.5 successful loss events per year**.
+
+*Loss Magnitude (LM).* When a BEC succeeds, you estimate the fraudulent transfer plus investigation, notification, and downtime costs. You're not certain, so you give a range: minimum $20,000, most likely $90,000, maximum $400,000.
+
+*Annualized Loss Expectancy.* Multiply frequency by magnitude across the range. Most-likely annual loss ≈ 1.5 × $90,000 = **$135,000/year**, with a plausible band running from roughly $30,000 to over $600,000 in a bad year.
+
+Now compare that to the cost of treatment: phishing-resistant MFA and a reporting button might cost $15,000/year and cut the success rate in half. That turns "we should probably do security awareness" into "this control returns roughly 4-to-1." *That's* the conversation FAIR enables — and you just did it with multiplication, not a PhD.
+{% endhint %}
+
 {% hint style="info" %}
 **Free FAIR resources:** The [FAIR Institute](https://www.fairinstitute.org/) provides free membership, introductory training, and community-built quantitative risk calculators. The free FAIR Foundation course is the right starting point for anyone moving from qualitative ratings to financial risk quantification.
 {% endhint %}
+
+**A word of realism: don't quantify everything.** FAIR is powerful, but it needs data and estimation skill that many organizations don't have, and quantifying every risk is a fast route to "analysis fatigue." The pragmatic approach most mature teams actually use is hybrid: qualitative scoring (the 5×5 matrix) to triage the whole register cheaply, then full quantitative analysis reserved for the top five to ten risks where a board decision or a major investment is on the line. Precision is expensive — spend it where the decision is expensive.
 
 ### Step 4: Risk Treatment
 
@@ -159,6 +173,8 @@ Third-party risk management (TPRM) is an extension of the risk management progra
 
 Understanding and managing concentration risk, the risk that too many critical functions depend on a single point of failure, is increasingly a governance-level responsibility.
 {% endhint %}
+
+A practical control has emerged from this wave of supply-chain incidents: the **Software Bill of Materials (SBOM)**, a machine-readable inventory of every component and dependency inside a piece of software. When the next Log4Shell-class vulnerability is announced, the difference between organizations that can answer "are we affected?" in minutes and those that spend weeks manually hunting is whether they have SBOMs for what they run. US Executive Order 14028 and subsequent federal guidance pushed SBOMs from best practice toward baseline expectation, and they're increasingly written into vendor contracts. For third-party risk management, requiring vendors to provide an SBOM — and having a process to act on it — is now part of a credible program. (The mechanics of generating and consuming SBOMs live in Chapter 10.)
 
 ---
 
@@ -224,6 +240,23 @@ NIST SP 800-30 Appendix I provides the closest authoritative reference for this 
 {% hint style="info" %}
 **Start with a spreadsheet, then graduate to a platform.** A well-maintained spreadsheet beats a poorly configured GRC tool. The ISO27k Toolkit Excel risk register is a solid starting point. Once the process is mature and the team understands the workflow, migrate to SimpleRisk or a dedicated vulnerability management platform.
 {% endhint %}
+
+---
+
+## Try This
+
+1. **Fill in one risk register row, properly.** Pick a real risk for any organization you know (say, "ransomware via an unpatched VPN appliance"). Using the [NIST SP 800-30 Rev 1](https://csrc.nist.gov/pubs/sp/800/30/r1/final) Appendix I tables as a guide, fill in: threat source, vulnerability, likelihood, impact, the resulting risk rating, your treatment decision (mitigate/accept/transfer/avoid), and the control. One complete, defensible row teaches more than reading the whole standard — and it's the literal day-job of a risk analyst.
+2. **Quantify one risk with FAIR.** Take the same risk and run the worked example above on it: estimate loss event frequency and a min/likely/max loss magnitude, then compute annualized loss expectancy. Compare it to the cost of one control. Notice how the financial framing changes which risks suddenly look urgent.
+
+---
+
+## Key Takeaways
+
+- Risk = threat × vulnerability × impact. Remove any one and the risk collapses — which is why prioritization beats trying to fix everything.
+- Define risk appetite and tolerance explicitly, or you're implicitly accepting whatever risk exists. That's abdication, not management.
+- The lifecycle is continuous: context, identify, analyze, treat, monitor. The risk register is a living tool, not a one-time document.
+- Qualitative matrices are cheap and subjective; quantitative methods like FAIR translate risk into dollars boards can act on. Use hybrid — quantify only the top handful of risks.
+- Third-party and concentration risk are now front-line concerns. SBOMs are becoming the baseline answer to "are we affected?" when the next widespread vulnerability lands.
 
 ---
 

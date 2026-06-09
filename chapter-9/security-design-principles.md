@@ -142,7 +142,7 @@ Mechanisms shared between multiple users or processes are potential covert chann
 
 Containerization and microservices architectures implement this principle: each service runs in its own isolated environment with its own resources. A vulnerability in one service does not automatically compromise others sharing the same process space.
 
-Multi-tenant cloud environments must carefully implement this principle. Side-channel attacks like Spectre and Meltdown (2018) exploited shared CPU cache to leak information between processes, a direct violation of this principle at the hardware level.[6]
+Multi-tenant cloud environments must carefully implement this principle. Microarchitectural side-channel attacks exploit shared CPU hardware to leak information between processes that should be isolated — a direct violation of this principle at the hardware level. Spectre and Meltdown (2018) opened this class; the line has continued with attacks like Zenbleed and Downfall (2023), each leaking data across boundaries through shared CPU components. The recurring lesson: when a mechanism is shared, isolation is only as strong as the hardware's weakest side channel.[6]
 
 ### 8. Psychological Acceptability (Usable Security)
 
@@ -168,7 +168,7 @@ The 1975 list was developed for timesharing systems. Subsequent decades of exper
 
 No single security control is sufficient. Security architecture should layer independent controls such that the failure of any single layer does not result in a complete compromise. An attacker who bypasses the firewall should still face network segmentation. An attacker who gains a foothold on a workstation should face endpoint detection. An attacker who extracts data should find it encrypted.
 
-Each layer independently reduces the probability of successful attack. Layers that address different threat vectors (network, endpoint, application, data) and are operated by different teams provide the strongest independence.
+Each layer independently reduces the probability of successful attack. The key word is *independent*. Two controls that both stop SQL injection — a web application firewall and parameterized queries — are good practice, but they address the *same* threat, so they aren't truly defense in depth against a different attack. Real depth comes from layers that address *different* attack types and fail for different reasons: network segmentation, endpoint detection, application authorization, and data-at-rest encryption each catch an attacker the others miss. Stacking redundant controls against one threat while leaving another threat single-layered is a common illusion of depth.
 
 ### Zero Trust Architecture
 
@@ -186,6 +186,10 @@ Zero Trust replaces the network perimeter with identity as the new perimeter. NI
 | VPN provides broad network access | Just-in-time, just-enough access to specific resources |
 
 Zero Trust is not a product. It is an architecture. Implementing it requires investment in identity infrastructure (strong MFA everywhere), device health verification (MDM/EDR integration), micro-segmentation (software-defined networking), and continuous monitoring.
+
+{% hint style="warning" %}
+**The honest trade-off.** Zero Trust is genuinely stronger than perimeter security, but it is not free, and it is not always the right first move. Full implementation carries real operational cost: MFA on everything increases user friction, continuous device-health checks need mature endpoint management, and micro-segmentation is complex to design and easy to misconfigure. For a five-person startup with everything in one SaaS-heavy cloud, "turn on MFA everywhere, enforce SSO, and monitor" captures most of the benefit at a fraction of the cost — full micro-segmentation would be over-engineering. The principle to apply is economy of mechanism: adopt Zero Trust *incrementally*, starting with identity and MFA (the highest-leverage pieces), and add segmentation as the organization's size and risk justify the complexity. Zero Trust is a direction to move, not a box to check overnight.
+{% endhint %}
 
 ### Secure by Default
 
@@ -220,6 +224,53 @@ Security design principles sometimes conflict, and resolving those conflicts req
 | Defense in Depth vs. Economy of Mechanism | Adding layers increases complexity | Prefer independent layers that each address different threat vectors; avoid redundant controls |
 
 There is no formula for these trade-offs. Security architecture is engineering judgment applied under constraints. The principles provide the vocabulary and reasoning framework; application requires understanding the specific system, threat model, and organizational context.
+
+---
+
+## Principles Applied to AI Systems
+
+AI and machine-learning systems are now everywhere, and the 1975 principles apply to them — with new wrinkles worth naming, because this is where a lot of design work is heading.
+
+- **Least privilege for AI agents is now a frontline concern.** An LLM-based agent that can call tools, query databases, or execute code is a process that should hold the *minimum* permissions for its task. An agent given broad credentials "so it can help with anything" is the modern over-privileged service account — and prompt injection (Chapter 15) can turn that privilege against you.
+- **Fail-safe defaults meet probabilistic behavior.** Classic systems are deterministic: a check passes or fails. A model's output is probabilistic, so "deny by default" means designing what happens when the model is *uncertain or manipulated* — validating and constraining model outputs before they trigger actions, never trusting them as authorization.
+- **Open design vs. the model black box.** Kerckhoffs's principle says security mustn't depend on the algorithm being secret. With ML, the model's *weights* may be proprietary, but security still can't rest on attackers not understanding how it works — they will probe it.
+- **Complete mediation still applies.** Every action an AI agent takes on a user's behalf should be authorized against that user's permissions at the moment of action, not assumed from the fact that the agent is "trusted."
+
+These are covered in depth in the AI & LLM Security chapter; the point here is that the principles don't change — the threat surface does.
+
+---
+
+## Case Studies: Principles Violated
+
+Principles are abstract until you see what ignoring them costs. Each of these breaches maps cleanly to a violated principle.
+
+| Breach | Principle Violated | What Happened |
+|---|---|---|
+| **Equifax (2017)** | Economy of mechanism / minimize attack surface | An unpatched vulnerability in a complex web framework component (Apache Struts) exposed 147M records. The vulnerable feature was attack surface that careful minimization and patching would have removed. |
+| **Capital One (2019)** | Least privilege | A misconfigured WAF held an over-privileged IAM role that could list and read S3 buckets. A server-side request forgery turned that excess privilege into 100M records exfiltrated. Scoped permissions would have bounded the blast radius. |
+| **Heartbleed (2014)** | Economy of mechanism | An unnecessary "heartbeat" feature in OpenSSL, with a missing length check, leaked server memory including private keys. Complexity created the vulnerability. |
+| **Mirai botnet (2016)** | Secure by default | Hundreds of thousands of IoT devices shipped with default credentials users never changed, enabling a record-setting DDoS. Secure-by-default (forced credential change) would have prevented it at scale. |
+
+The pattern: catastrophic breaches rarely require exotic technique. They exploit a design principle someone decided to skip.
+
+---
+
+## Try This
+
+1. **Audit a system you use against least privilege.** List the apps connected to your Google or GitHub account (in account settings) and the permissions each holds. How many have access far beyond what they need? Revoke the worst offender. You just performed a least-privilege review — the exact task security engineers do at organizational scale.
+2. **Find the principle in a real breach.** Pick any breach writeup from the last year and identify which design principle(s) from this chapter were violated. Write two sentences linking the failure to the principle. This is precisely how post-incident reviews and security-architecture interviews reason.
+3. **Spot the conflict.** Take one system you know and find a real tension between two principles in it (usability vs. least privilege is the most common). Describe how you'd resolve it. Naming trade-offs out loud is what separates an architect from a checklist-follower.
+
+---
+
+## Key Takeaways
+
+- Controls expire; the reasoning behind them doesn't. The Saltzer & Schroeder principles from 1975 still explain why systems built today get breached.
+- The highest-leverage classics: economy of mechanism (simplicity), fail-safe defaults (deny by default), complete mediation (check every access), and least privilege (minimum necessary).
+- Defense in depth requires *independent* layers addressing *different* threats — redundant controls against one threat are an illusion of depth.
+- Zero Trust is stronger than perimeter security but costly; adopt it incrementally, starting with identity and MFA, not all at once.
+- The principles extend to AI systems unchanged — least privilege for agents, fail-safe handling of probabilistic output — even as the threat surface shifts.
+- Most major breaches map to a single skipped principle. Knowing them gives you both a design checklist and a post-incident diagnostic.
 
 ---
 

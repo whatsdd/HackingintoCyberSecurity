@@ -38,6 +38,15 @@ Every single job in cybersecurity requires writing. Penetration test reports. In
 
 Your writing quality directly affects your career trajectory. Clear, concise, technically accurate writing is rare. If you develop it early, it sets you apart. If you neglect it, it caps your growth.
 
+**Working with AI — competently and skeptically**
+
+By 2026 this is a foundation skill, not a nice-to-have. Security teams use LLMs daily: summarizing alerts, drafting detection rules, explaining unfamiliar code, writing first drafts of reports and policies. Interviewers increasingly ask how you use these tools. Two habits matter:
+
+- *Use AI to accelerate learning, not replace it.* Asking an LLM to explain a packet capture line by line is a superpower. Pasting a lab question in and copying the answer teaches you nothing, and it shows immediately in interviews.
+- *Verify everything.* LLMs confidently produce wrong commands, invented CVEs, and insecure code. The professionals who get value from AI are the ones with enough fundamentals to catch the errors. That's the skill being hired.
+
+Treat AI output the way you'd treat advice from a smart stranger on a forum: often useful, never trusted blindly.
+
 ---
 
 ## Skills That Depend On Your Pillar
@@ -65,6 +74,7 @@ These certifications exist to prove foundational knowledge to employers when you
 |---|---|---|
 | **CompTIA Network+** | Networking fundamentals everything else depends on | Skip if you already have a networking background |
 | **CompTIA Security+** | Most widely recognized entry-level cert in the industry | Required or preferred by most employers; get this first |
+| **ISC2 CC** | Entry-level alternative or warm-up to Security+ | $199 exam, no experience required. Lighter than Security+ — useful as a confidence builder, not a substitute |
 
 ### Phase 2: Specialization (once you've chosen a pillar)
 
@@ -120,6 +130,15 @@ If you don't have a GitHub profile yet, that's your first task after reading thi
 
 The people who take longer usually spread attention across too many certifications at once, or study without building hands-on practice alongside the theory.
 {% endhint %}
+
+---
+
+## Key Takeaways
+
+- Five foundation skills cut across every pillar: networking, Linux, scripting, understanding attacks, and clear writing — plus, as of 2026, working with AI tools competently and skeptically.
+- Certification order matters: Security+ first (CC as an optional warm-up), then one pillar-specific cert, then practice until you can demonstrate the skill it claims.
+- The expensive options (SANS, CEH, $15k bootcamps) are not where you start. Free and sub-$500 resources cover the entire path to a first job.
+- One working project on GitHub outweighs a stack of certificates. Build something that runs.
 
 ---
 

@@ -58,6 +58,8 @@ Industry best practice, reflected in frameworks like NIST and ISO 27001, is that
 
 In smaller organizations, the CISO function may be fulfilled by a Director of IT Security, a Security Manager, or even outsourced to a virtual CISO (vCISO), a consultant who provides part-time CISO-level guidance. The function matters more than the title.
 
+A related role has been splitting off in larger and more regulated organizations: the **Chief Privacy Officer (CPO)**. Where the CISO owns the security of information, the CPO owns how personal data is collected, used, and protected in line with privacy law (GDPR, CCPA/CPRA, and the growing US state patchwork). The two roles overlap heavily and must work closely, but the rise of privacy regulation has made them distinct accountabilities rather than one person's side responsibility.
+
 **Primary CISO responsibilities:**
 
 - Developing and maintaining the information security strategy
@@ -69,7 +71,7 @@ In smaller organizations, the CISO function may be fulfilled by a Director of IT
 - Building and managing the security team
 - Managing relationships with external auditors and regulators
 
-The average CISO tenure is 26 months, shorter than almost any other C-suite position.[6] The combination of high accountability, limited authority in many organizations, and constant pressure from both attackers and the business makes burnout common. The professionals who last longest are typically those who have built strong executive relationships and have the organizational standing to actually implement the programs they design.
+CISO tenure has historically been short — older surveys put it around 18 to 26 months, well below other C-suite roles. More recent surveys (Hitch Partners' 2025 leadership survey reported an average of around 39 months) suggest tenures are lengthening as the role matures and gains genuine board access, though figures vary widely by company size and survey methodology, and tenure at small companies remains notably shorter. Either way, the underlying pressures persist: high accountability, limited authority in many organizations, and constant pressure from both attackers and the business make burnout common. The professionals who last longest are typically those who have built strong executive relationships and have the organizational standing to actually implement the programs they design.
 
 ---
 
@@ -100,6 +102,10 @@ ISO 27001 does not prescribe specific technical controls. It prescribes a manage
 The NIST CSF was originally developed for US critical infrastructure but has become the most widely adopted voluntary cybersecurity framework globally. It organizes security activities into six functions: Govern, Identify, Protect, Detect, Respond, and Recover.[9]
 
 CSF 2.0 (released in 2024) added "Govern" as an explicit function, reflecting the industry recognition that governance cannot be separated from technical security. The Govern function addresses organizational context, risk management strategy, roles and responsibilities, policy, and supply chain risk.
+
+{% hint style="info" %}
+**Migrating from CSF 1.1 to 2.0?** The five original functions (Identify, Protect, Detect, Respond, Recover) are unchanged in substance — your existing mappings still apply. Three things changed. First, **Govern** was added as a sixth function that sits across all the others: organizational context, risk strategy, roles, policy, and oversight that were previously scattered (mostly inside Identify) now have an explicit home. Second, **supply chain risk management** was elevated and made far more prominent. Third, the framework's scope is now explicitly *all* organizations, not just critical infrastructure. In practice, migration mostly means re-homing your governance-related controls under Govern and giving supply chain risk the attention 2.0 expects — not redoing your whole program.
+{% endhint %}
 
 The CSF is not certifiable (unlike ISO 27001), but it is used by US federal agencies, large enterprises, and SMBs alike as a communication tool, helping executives, boards, and technical teams share a common language for discussing security posture.
 
@@ -193,6 +199,8 @@ Policies are the formal expression of governance decisions. A complete policy fr
 - Business Continuity and Disaster Recovery Policy
 - Vendor and Third-Party Risk Policy
 
+A governance responsibility that has become explicit since CSF 2.0 and a wave of supply-chain attacks: knowing what software your organization actually runs. A **Software Bill of Materials (SBOM)** — a machine-readable inventory of the components and dependencies inside a piece of software — has moved from best practice toward expectation, driven in the US by Executive Order 14028 and its follow-on guidance. Governance doesn't generate SBOMs (that's a DevSecOps task, covered in Chapter 10), but it owns the *requirement*: deciding that vendors must provide one, that internal builds must produce one, and that someone is accountable for acting on what they reveal.
+
 Policies must be communicated, acknowledged, enforced uniformly, and reviewed regularly. A policy that exists only as a PDF on a shared drive is not a control.
 
 {% hint style="success" %}
@@ -247,6 +255,23 @@ Reading about governance is useful. Having ready-made templates to build from is
 
 ---
 
+## Try This
+
+1. **Run a one-function gap assessment.** Download the free [NIST CSF 2.0](https://www.nist.gov/cyberframework) reference material and pick the **Govern** function. For an organization you know (your employer, a club, even your own household IT), rate each Govern subcategory as Not Started / Partial / Done, and write one sentence on the biggest gap. You've just produced the core artifact of a governance roadmap — and felt why "we have antivirus" is not the same as "we govern security."
+2. **Adapt a real policy.** Open the [SANS Acceptable Use Policy template](https://www.sans.org/information-security-policy/) and tailor it to a small fictional company in 30 minutes: name, scope, what's allowed, consequences. Notice how much of governance is clear writing and explicit decisions, not technology. This is exactly the work an entry-level GRC analyst does, and a tailored policy is portfolio material.
+
+---
+
+## Key Takeaways
+
+- Governance (doing the right things) and management (doing things right) are distinct. Most catastrophic failures, like Equifax, are governance failures — a missing accountability structure, not a missed alert.
+- Security governance is now corporate law, not IT policy: duty of care, SEC disclosure rules, and personal executive liability all apply.
+- Where the CISO reports determines whether oversight is real. Independence from the CIO is the structural ideal; the CPO is increasingly a separate accountability.
+- Know the frameworks by purpose: COBIT (governance structure), ISO 27001 (certifiable management system), NIST CSF 2.0 (posture and communication, now with a Govern function and supply-chain emphasis), SOC 2 (customer assurance).
+- Governance owns the *requirements* — risk appetite, policies, SBOM expectations, and metrics that measure posture rather than activity.
+
+---
+
 ## References
 
 [1] Federal Trade Commission. (2019). *Equifax Data Breach Settlement*. FTC. Retrieved from https://www.ftc.gov/enforcement/refunds/equifax-data-breach-settlement
@@ -259,7 +284,7 @@ Reading about governance is useful. Having ready-made templates to build from is
 
 [5] National Institute of Standards and Technology. (2018). *Framework for Improving Critical Infrastructure Cybersecurity, Version 1.1*. NIST. doi:10.6028/NIST.CSWP.04162018
 
-[6] Heidrick & Struggles. (2023). *2023 Global CISO Survey: The Evolving Role of the CISO*. Heidrick & Struggles International. Retrieved from https://www.heidrick.com/en/insights/boards-governance/2023-global-ciso-survey
+[6] Hitch Partners. (2025). *2025 CISO Security Leadership Survey Results*. Hitch Partners. Retrieved from https://www.hitchpartners.com/ciso-security-leadership-survey-results-25 (reports average current CISO tenure of ~39 months; earlier industry surveys cited 18-26 months)
 
 [7] ISACA. (2018). *COBIT 2019 Framework: Governance and Management Objectives*. ISACA. ISBN 978-1-60420-763-2.
 

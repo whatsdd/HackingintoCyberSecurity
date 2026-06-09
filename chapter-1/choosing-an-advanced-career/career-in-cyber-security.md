@@ -15,6 +15,8 @@ Most careers in the field fall under one of four pillars. Understanding them is 
 | **Security Engineering** | Design and build the systems everyone else relies on | $100k-$200k+ | Security+, cloud cert |
 | **GRC** | Manage risk, compliance, and policy | $70k-$180k | Security+, CISM |
 
+Salary ranges are US figures as of 2026 and vary heavily by city, company size, and remote policy. Other markets run lower in absolute terms — but the skills transfer globally, and remote hiring keeps widening the map.
+
 ---
 
 ## Pillar 1: Offensive Security
@@ -136,6 +138,16 @@ Regulatory frameworks are at the center of much of this work: ISO 27001, SOC 2, 
 
 ---
 
+## The Specialization Cutting Across All Four: AI Security
+
+Since 2023, a fifth area has been growing faster than any of the four pillars: securing AI systems, and using AI to do security work. It isn't a separate pillar because it touches all of them. Offensive folks red-team LLM applications for prompt injection and data leakage. Defenders use AI to triage alerts and hunt threats — and defend against attackers doing the same. Engineers build guardrails around AI agents that hold real credentials. GRC teams now own AI governance, model risk, and compliance with regulations like the EU AI Act.
+
+Two things make this relevant to someone breaking in. First, almost every security job now expects you to work *with* AI tools competently and skeptically. Second, AI security specialists are scarce enough that demonstrable skill — a portfolio of prompt-injection findings, an LLM security writeup — gets attention even without years of experience. This book dedicates a full chapter to it later: the attack surface, the defenses, and the career path.
+
+Don't start here, though. AI security builds on fundamentals — networking, application security, threat modeling. Pick a pillar first, then layer AI security on top of it. That combination is far more employable than either alone.
+
+---
+
 ## Which Pillar Is Right for You?
 
 There's no wrong answer. Most professionals touch multiple pillars over the course of their careers. Many great CISOs started as penetration testers. Many great security architects started as SOC analysts. The pillars are starting points, not life sentences.
@@ -165,6 +177,15 @@ Cybersecurity careers don't follow a single linear track, but here's a rough pic
 | **Leadership** | 10+ years | Security Director, VP of Security, CISO. Deep technical credibility separates great leaders from adequate ones. |
 
 Worth noting: you don't have to become a CISO. Many highly skilled technical professionals build long, well-compensated careers staying hands-on. Staff security engineers, principal penetration testers, and senior threat hunters earn very well and never manage anyone. The field accommodates both paths equally.
+
+---
+
+## Key Takeaways
+
+- Cybersecurity is four distinct career families — offensive, defensive, engineering, and GRC — with different skills, daily work, and entry requirements. Choose deliberately instead of drifting.
+- GRC is the most realistic entry point from a non-technical background; defensive security (SOC) has the most entry-level openings overall.
+- AI security is the fastest-growing specialization, but it layers on top of a pillar — it isn't a substitute for fundamentals.
+- Pillars are starting points, not life sentences. Most careers cross between them, and the senior technical track pays as well as the management track.
 
 ---
 

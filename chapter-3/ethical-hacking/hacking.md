@@ -70,6 +70,10 @@ You do not need to be a software engineer. You do need to write code.
 
 **JavaScript** is increasingly important for web application testing. You need to understand how the DOM works, how JavaScript interacts with the browser security model, and what XSS actually does in execution.
 
+**Go and Rust** are worth recognizing even if you never write them. A growing share of modern security tooling is written in Go (much of the cloud-native and recon ecosystem) or Rust, and so is a growing share of the software you'll be testing. Reading ability comes cheap and pays off; deep proficiency can wait until a specialization demands it.
+
+A note on AI coding assistants: they're genuinely useful for explaining unfamiliar code and drafting boilerplate, and professionals use them daily. But the port-scanner goal below exists precisely because exploitation under pressure requires fluency you can't outsource. Use AI to accelerate understanding, then prove to yourself you can do it unassisted.
+
 A practical goal: by the time you apply for your first penetration testing role, you should be able to write a port scanner from scratch in Python without looking anything up. It does not have to be fast or elegant. It should work.
 
 ---
@@ -134,7 +138,7 @@ Covered in more depth in Chapter 1, but the relevant certifications for offensiv
 
 **PNPT (Practical Network Penetration Tester)** from TCM Security is highly practical and has become well-regarded in the industry. The course content is excellent even if you never take the exam.
 
-**OSCP (Offensive Security Certified Professional)** from Offensive Security is the gold standard for hands-on penetration testing. It is a 24-hour practical exam where you must compromise a series of machines in a lab environment and write a professional report afterward. It is hard. It is expensive (~$1,500). It is worth it if you have the prerequisite skills. Attempting OSCP before you have solid networking, Linux, and scripting fundamentals is a waste of money [15].
+**OSCP (Offensive Security Certified Professional)** from OffSec is the gold standard for hands-on penetration testing. It is a 24-hour practical exam, taken remotely under online proctoring, where you must compromise a series of machines in a lab environment and write a professional report afterward. It is hard. It is expensive (~$1,500+ depending on the lab bundle). It is worth it if you have the prerequisite skills. Attempting OSCP before you have solid networking, Linux, and scripting fundamentals is a waste of money [15]. Since late 2024, passing also grants **OSCP+**, a variant of the credential that expires after three years without continuing education — the lifetime OSCP designation remains, but expect employers to increasingly ask about the maintained version.
 
 Do not start with OSCP. Build the foundation first. Most people who pass OSCP on their first attempt have spent six to twelve months doing Hack The Box machines, building labs, and reading before they sit the exam.
 
@@ -157,6 +161,31 @@ A separate chapter in this book covers CTFs in depth.
 GitHub matters. A repository with your custom scripts, CTF writeups, and home lab documentation is evidence that you know what you are doing. It shows hiring managers things a certificate cannot: that you build things, that you can explain your thinking, and that you work consistently over time.
 
 Writeups are particularly valuable. When you solve a CTF challenge or a Hack The Box machine, write a clear technical walkthrough. Explain what you found, how you approached it, what failed before you found what worked, and how the vulnerability could be remediated. This is exactly what a penetration testing report looks like, and a portfolio of writeups is direct evidence that you can produce one.
+
+---
+
+## Try This: Your First Box, Start to Finish
+
+This is the whole methodology in miniature, free, in one evening:
+
+1. **Set up.** Create a free TryHackMe account and join a beginner room with a deployable target (the *Basic Pentesting* room is a classic; any "easy" room with a machine works). Use the free in-browser AttackBox if you don't have Kali locally.
+2. **Recon.** Run `nmap -sV <target-ip>` and write down every open port and service version *before* doing anything else. Resist the urge to attack the first thing you see.
+3. **Enumerate.** For each service, ask: what is it, what version, what do attackers usually try against it? Look up the service version — is there a known CVE?
+4. **Exploit.** Follow the room's guidance to get a foothold. When something fails (it will), write down *why* you think it failed and what you tried next.
+5. **Write it up.** Produce a one-page writeup: target, findings, steps, what you'd recommend to fix it. Publish it to a GitHub repo. That single document — methodology, evidence, remediation — is a miniature penetration test report and the first entry in your portfolio.
+
+Do this ten times and you will know more practical offensive security than most people who only collected a certificate.
+
+---
+
+## Key Takeaways
+
+- Fundamentals before tools, in order: networking, operating systems (Linux first, then Windows/AD), scripting, web fundamentals, then attack methodology. Tools multiply knowledge; they don't replace it.
+- Python fluency is the benchmark: write a working port scanner from scratch with no references before applying for offensive roles. AI assistants can teach you faster, but can't sit the exam — or the engagement — for you.
+- The methodology is always the same shape: recon, enumerate, exploit, post-exploit, report. Most real-world entry comes from boring failures — default credentials, unpatched software, basic injection.
+- Practice platforms (TryHackMe → Hack The Box → VulnHub/DVWA → your own lab) provide legal targets at every level. There is no excuse to touch systems you don't own.
+- Certification order: Security+ → eJPT → PNPT → OSCP. OSCP before fundamentals is a donation to OffSec, not a career move.
+- Every solved machine should become a writeup. The portfolio is the proof.
 
 ---
 
@@ -184,7 +213,7 @@ Writeups are particularly valuable. When you solve a CTF challenge or a Hack The
 
 [6] Seitz, J. (2021). *Black Hat Python: Python Programming for Hackers and Pentesters* (2nd ed.). No Starch Press. ISBN 978-1718501126.
 
-[7] OWASP Foundation. (2021). *OWASP Top Ten 2021*. Open Web Application Security Project. Retrieved from https://owasp.org/www-project-top-ten/
+[7] OWASP Foundation. (2025). *OWASP Top Ten*. Open Web Application Security Project. Retrieved from https://owasp.org/www-project-top-ten/
 
 [8] PortSwigger. (2023). *Burp Suite Documentation*. PortSwigger Web Security. Retrieved from https://portswigger.net/burp/documentation
 
@@ -202,7 +231,7 @@ Writeups are particularly valuable. When you solve a CTF challenge or a Hack The
 
 [15] Offensive Security. (2023). *PEN-200: Penetration Testing with Kali Linux (OSCP)*. Offensive Security. Retrieved from https://www.offensive-security.com/pwk-oscp/
 
-[16] Chung, S. P., Xu, W., & Lee, W. (2013). Finding the needle: Suppression of false alarms in large intrusion detection data sets. *Proceedings of the IEEE International Symposium on Software Reliability Engineering*, 2013. doi:10.1109/ISSRE.2013.6698933
+[16] Vykopal, J., Švábenský, V., & Chang, E.-C. (2020). Benefits and pitfalls of using capture the flag games in university courses. *Proceedings of the 51st ACM Technical Symposium on Computer Science Education (SIGCSE '20)*, 752-758. doi:10.1145/3328778.3366893
 
 ---
 
