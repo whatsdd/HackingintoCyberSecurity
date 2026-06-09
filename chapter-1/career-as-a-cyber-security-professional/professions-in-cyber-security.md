@@ -11,7 +11,7 @@ Before you invest months building toward this career, you deserve a straight ans
 {% hint style="success" %}
 **Why cybersecurity is a genuinely great career:**
 - The work is never boring. The threat landscape evolves constantly, and you will never run out of things to learn.
-- Job security is real: the industry has never had a significant downturn, and the talent shortage is getting worse
+- Job security is strong once you're in: experienced practitioners stay in demand even through tech downturns. (Honesty requires saying: the *entry* level has gotten more competitive since 2023 — which is exactly why the proof-of-work approach in this book matters.)
 - Salaries are strong at every level: entry-level pays significantly better than comparable roles in most other fields
 - Remote work is standard: the majority of roles are fully remote or hybrid
 - You can self-train your way in: TryHackMe, Hack The Box, free courses, and CTFs mean you can build demonstrable skills without a $50,000 degree
@@ -93,6 +93,18 @@ None of this needs to be polished. It needs to exist and show effort.
 If your GitHub is empty or private, that's your most important task before you send another job application.
 
 And if you don't know where to start with open source: you're reading an open-source book right now. This book lives on GitHub. Fixing a typo, improving a section, adding a resource you found useful is a real open-source contribution. You can put it on your CV. It counts.
+
+---
+
+## The AI-Era Job Hunt
+
+Hiring changed. Your application is now read by software before any human sees it, and your interviewer assumes you have an LLM open in another tab. Work with that reality instead of pretending it away.
+
+**Getting past the machines.** Most companies run applications through an ATS, increasingly with AI-assisted ranking. This means: mirror the exact phrasing of the job posting for skills you genuinely have ("incident response", not "handling security events"), keep formatting simple (no columns, tables, or graphics in the resume file), and tailor every application. Tailoring is fifteen minutes with an LLM: paste the posting and your resume, ask which requirements you're not clearly demonstrating, then fix the gaps *truthfully*. Don't let the model invent experience — interviewers are very good at finding the bullet you can't back up.
+
+**Using AI to prepare — the legitimate edge.** The best free interview prep available is an LLM with a good prompt: "You are a SOC manager interviewing a junior analyst. Ask me one question at a time, push back on weak answers." Do this for an hour and you'll hear your own gaps. Same for negotiating: rehearse the salary conversation against an AI playing a tough recruiter.
+
+**Where the line is.** Covertly using AI *during* a live technical screen is a fast way to get rejected — interviewers notice the cadence, and many companies state policies up front. If a take-home assignment doesn't specify, ask. Using AI openly and well ("I'd draft the query with an assistant, then verify it because LLMs get SPL syntax wrong") routinely impresses interviewers; hiding it never does. Expect at least one interview question about how you use AI tools — have a real answer with a real example.
 
 ---
 
@@ -183,6 +195,38 @@ You don't need to be ready to start. You need to start to get ready.
 {% hint style="success" %}
 **Twelve months is achievable.** People do it regularly. The timeline depends entirely on consistency and quality of practice, not just hours logged. Forty focused hours beats two hundred passive ones. Find a community of people at a similar stage. The cybersecurity practitioner community is unusually open and helpful.
 {% endhint %}
+
+---
+
+## Beyond 30 Days: The 12-Month Roadmap
+
+The 30-day plan gets you moving. Here's the rest of the year, assuming roughly 10–15 focused hours a week. Adjust the pace to your life, not the other way around — consistency beats intensity.
+
+### Months 2–3 (everyone): Foundation and First Certification
+
+- Pass **Security+** (Professor Messer's free videos + practice exams). This is the deadline you set in Week 4 — honor it.
+- Keep daily terminal time. By month 3 you should be writing small Bash and Python scripts without copying them.
+- Start a **learning log**: one short writeup per week of something you broke, built, or finally understood — in a GitHub repo. This becomes your portfolio and your interview material.
+
+### Months 4–12 (by pillar)
+
+| Months | Offensive | Defensive | Engineering | GRC |
+|---|---|---|---|---|
+| **4–6** | TryHackMe Jr Penetration Tester path; first 10 HTB boxes; sit **eJPT** | TryHackMe SOC Level 1 path; build a small detection home lab; start **CySA+ or BTL1** prep | Pick one cloud (AWS/Azure); its fundamentals cert; deploy and harden a small project on it | Read NIST CSF 2.0 and ISO 27001 Annex A controls; write a mock risk register and two policies for an imaginary company |
+| **7–9** | PortSwigger Web Security Academy (all apprentice + practitioner labs); regular CTFs; bug bounty recon on easy programs | Pass CySA+/BTL1; learn one SIEM hands-on (Splunk free / Elastic); write detection rules for 5 ATT&CK techniques | Cloud security cert (e.g. AWS Security Specialty prep); learn Terraform basics; automate one security control end to end | Map a mock company to SOC 2 controls; study **CISA or CRISC** material; volunteer for any audit-adjacent task at your current job |
+| **10–12** | **PNPT or OSCP prep** (only if fundamentals are solid — don't rush it); polish 3 best writeups; apply broadly | Build an end-to-end incident writeup (detection → containment → lessons); apply to SOC roles from month 9 onward | Publish your infrastructure project with documentation; apply to junior security/cloud engineer roles | Get one cert scheduled; turn your mock GRC artifacts into a portfolio repo; apply to analyst roles from month 9 onward |
+
+Three notes on this table. First, **start applying around month 9, not month 12** — the job search itself takes months, interviews are training, and you can keep studying while you apply. Second, every path ends with a **portfolio, not just a cert** — that's deliberate, and it's what separates you from the other two hundred applicants with Security+. Third, if you're employed in IT already, compress this: your existing experience replaces months 2–3, and internal transfers into security teams are the most underrated entry path in the industry.
+
+---
+
+## Key Takeaways
+
+- The honest trade-offs: strong pay, remote-friendly work, and real intellectual challenge — against alert fatigue, on-call, breach pressure, and a continuous learning obligation that never ends.
+- LinkedIn and GitHub are not optional. A specific headline and three working projects beat a polished resume with nothing behind it.
+- Hiring is AI-mediated now: tailor honestly for the ATS, use LLMs hard for preparation, and never use them covertly in live interviews.
+- Show up where the industry lives — BSides, OWASP chapters, local meetups. Conversations beat cold applications.
+- Follow the 12-month roadmap, start applying at month 9, and treat rejections as data. Consistency wins this game.
 
 ---
 

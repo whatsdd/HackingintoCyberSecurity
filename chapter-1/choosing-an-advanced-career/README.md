@@ -13,10 +13,10 @@ This chapter cuts through the noise. By the end of it, you'll understand what th
 Every year, the cybersecurity industry publishes a workforce gap report. Every year, the numbers get worse.
 
 {% hint style="info" %}
-**By the numbers:** In 2024, there were over **4 million unfilled cybersecurity positions** worldwide. Entry-level roles in the US average **$70,000 to $90,000** annually. Mid-level positions cross **$120,000**. Senior engineers and architects regularly earn **$150,000 to $200,000**. CISOs at large enterprises can earn $300,000 to $500,000.
+**By the numbers:** The 2024 ISC2 Workforce Study estimated a gap of more than **4.7 million unfilled cybersecurity positions** worldwide. Entry-level roles in the US typically pay **$60,000 to $95,000** annually depending on region and employer (salary surveys disagree wildly at the entry level — treat any single number with suspicion). Mid-level positions cross **$120,000**. Senior engineers and architects regularly earn **$150,000 to $200,000**. CISOs at large enterprises can earn $300,000 to $500,000. Salaries outside major US metros, and outside the US entirely, run meaningfully lower — but so does competition for remote roles.
 {% endhint %}
 
-Companies aren't being selective. The talent genuinely doesn't exist. Organizations ranging from small businesses to national governments are operating with security teams that are too small, too stretched, and too slow to keep up with the threat landscape.
+There's a nuance worth knowing, because it changes your strategy. ISC2's 2025 study stopped publishing a single gap number and reported that organizations now care more about *missing skills* than missing headcount. Companies aren't struggling to find applicants — entry-level postings get hundreds of them. They're struggling to find applicants who can actually do the work. That's bad news if your plan was a resume and a prayer. It's excellent news if you follow this book's approach, because demonstrated skill is exactly the thing in shortage.
 
 This is your opportunity.
 
@@ -87,6 +87,24 @@ The tools to do this are free or affordable.
 The professionals hiring you know what the entry-level catch-22 looks like. What they're evaluating is whether this person did the work to demonstrate they want this, or just submitted a resume. The ones who built labs, earned certifications, played CTFs, and can talk about specific things they learned stand out immediately.
 
 The next section maps the career paths within cybersecurity so you can choose where to focus that energy.
+
+---
+
+## Try This
+
+Two exercises, under an hour total, that will tell you more than another week of reading:
+
+1. **Take a free lab for a spin.** Create a free [TryHackMe](https://tryhackme.com) account and complete the first room of the *Pre Security* path in your browser. No installs, no risk. Notice how it feels — if "I broke it and now I understand why" gives you a jolt, that's the signal that matters.
+2. **Look at the actual job market.** Open [CyberSeek's heatmap](https://www.cyberseek.org/heatmap.html) and check the demand and average salaries for your region (or any region you'd work remotely for). Then read three real entry-level postings on any job board and write down every skill or tool you don't recognize. That list is your curriculum — this book covers most of it.
+
+---
+
+## Key Takeaways
+
+- The field has a genuine shortage — of **skills**, not applicants. Demonstrated ability is what's scarce, and it can be built for free.
+- Cybersecurity is as much communication and psychology as it is technology. The hooded-figure stereotype describes almost nobody's actual job.
+- No degree is required for most roles. Labs, certifications, CTFs, and projects are credible substitutes that hiring managers actively look for.
+- The entry-level catch-22 is real, and the way through it is proof of work: things you built, broke, and can talk about in specifics.
 
 ---
 
