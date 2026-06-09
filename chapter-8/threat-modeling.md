@@ -86,6 +86,30 @@ Not every STRIDE category applies to every element type:
 
 Running STRIDE on a system with five processes, three data stores, and four data flows produces a structured list of candidate threats. Most will be low-severity or already mitigated. The ones that are not are your findings.
 
+{% hint style="success" %}
+**A worked example: STRIDE on a login flow.** Take the simplest possible system — a user logging into a web app that checks credentials against a database:
+
+```
+[User Browser] --(1) HTTPS login--> [Web App] --(2) SQL lookup--> [Credentials DB]
+   external          | trust boundary           internal
+```
+
+Walk the elements and ask the six questions where they apply. A realistic first pass:
+
+| # | Element / Flow | STRIDE threat | Concrete risk | Mitigation |
+|---|---|---|---|---|
+| 1 | Login flow (1) | **S**poofing | Attacker brute-forces or credential-stuffs the login | Rate limiting, account lockout, MFA |
+| 2 | Login flow (1) | **T**ampering | Attacker on the network alters the request | TLS 1.3 (already on the HTTPS flow) |
+| 3 | Web App | **I**nfo disclosure | Login error reveals whether the username exists | Generic "invalid credentials" message |
+| 4 | SQL lookup (2) | **T**ampering | Unparameterized query allows SQL injection | Parameterized queries / prepared statements |
+| 5 | Credentials DB | **I**nfo disclosure | DB stores passwords in plaintext or fast hashes | Argon2id password hashing (see Chapter 7) |
+| 6 | Web App | **R**epudiation | No record of who logged in or tried to | Authentication audit logging |
+| 7 | Login flow (1) | **D**enial of service | Login endpoint flooded, locking out real users | Rate limiting + CAPTCHA on repeated failures |
+| 8 | Web App | **E**levation of privilege | Session token doesn't bind to user role; user reaches admin functions | Server-side authorization checks, deny by default |
+
+Eight concrete, fixable findings from a two-box diagram — most of which map directly to OWASP Top 10 categories. Notice how the same control (rate limiting, TLS) often answers more than one threat, and how the diagram, not cleverness, is what made the threats discoverable. Then the critical last step: each row becomes a ticket in the issue tracker with an owner, or the exercise was theater.
+{% endhint %}
+
 ### MITRE ATT&CK
 
 MITRE ATT&CK is a knowledge base of adversary tactics, techniques, and procedures (TTPs) based on observed real-world attacks. Where STRIDE provides categories for reasoning about what could go wrong, ATT&CK provides a catalog of what attackers actually do.[4]
@@ -114,6 +138,15 @@ ATT&CK is organized into 14 tactics (the "why" of an attack) with hundreds of te
 For a given system, identify which ATT&CK techniques are relevant. If your system has internet-facing web applications, phishing (T1566) and exploitation of public-facing applications (T1190) are relevant initial access techniques. If your system runs Windows in a domain environment, credential dumping (T1003) and lateral movement via SMB/Pass-the-Hash are relevant.
 
 The ATT&CK Navigator tool allows teams to visually map relevant techniques onto the ATT&CK matrix and document which detections and mitigations are in place for each. This produces a heat map of coverage that makes gaps immediately visible.[5]
+
+**A concrete ATT&CK workflow** (the equivalent of the STRIDE walkthrough above, for defenders):
+
+1. **Scope to your environment.** Don't try to cover all 14 tactics at once. Pick the techniques that match your actual stack — internet-facing web app, Windows AD, cloud, etc. Open ATT&CK Navigator and start a fresh layer.
+2. **Prioritize with real-world data.** Not all techniques are equally likely. Cross-reference against threat intelligence: which techniques are the groups targeting *your industry* actually using? The CISA Known Exploited Vulnerabilities (KEV) catalog and ATT&CK's own group pages tell you what's live, not just theoretically possible.
+3. **Score your coverage per technique.** For each in-scope technique, mark whether you can *prevent* it, *detect* it, or neither. Color the Navigator layer accordingly. Red cells are your gaps.
+4. **Drive work from the gaps.** A technique you can neither prevent nor detect (say, T1003 credential dumping) becomes a detection-engineering or hardening backlog item.
+
+Where STRIDE asks "what could go wrong with this design?", ATT&CK asks "can we stop and see what real attackers do?" Mature teams use both: STRIDE during design, ATT&CK to measure detection coverage of the running system.
 
 ### Attack Trees
 
@@ -248,6 +281,38 @@ Threat modeling is most valuable during design. It loses value as implementation
 | Annual security review | Validate that threat model reflects the current system |
 
 A threat model produced once and never updated is a historical document. Systems change. Threat landscapes change. The threat model should change with them.
+
+### Continuous Threat Modeling
+
+The "threat model once, before launch" approach made sense when software shipped a few times a year. Modern teams deploy daily, and a threat model that's accurate at launch is stale within a sprint. The response is **continuous threat modeling**: small, ongoing increments instead of a single heavyweight exercise.
+
+- **Threat model the change, not the whole system.** When a feature adds a new data flow across a trust boundary — a new third-party API, a new file upload, a new admin endpoint — model *that*, in minutes, during design.
+- **Make it part of the definition of done.** A lightweight checklist on the pull request ("does this add a trust boundary? touch auth? handle untrusted input?") catches most of what matters without a meeting.
+- **Keep the model in version control.** Threat-modeling-as-code tools (pytm, Threagile) let the model live next to the code and update with it, so the diagram never drifts from reality — the single most common way threat models become useless.
+
+### Threat Modeling the Supply Chain
+
+The Target breach that opened this chapter was a supply-chain attack, and they've only grown since — SolarWinds (2020), the 3CX compromise (2023), the XZ Utils backdoor (2024). Yet most threat models stop at the system boundary and treat dependencies as trusted. They shouldn't.
+
+When you threat model, treat each third-party component as an untrusted external entity with a data flow into your system, and ask: What access does this dependency have? What happens if *it* is compromised — a malicious package update, a breached vendor, a poisoned build pipeline? Could a backdoored library exfiltrate data or escalate privilege? This reframing turns "we use library X" into a flow that crosses a trust boundary and gets the same STRIDE scrutiny as any other. The concrete defenses — SBOMs, dependency pinning, build provenance — live in Chapters 10 and 11; the threat-modeling job is to make the supply chain *visible* in the model in the first place.
+
+---
+
+## Try This
+
+1. **Threat model something you use.** Draw a two-or-three-box data flow diagram of a simple app — a to-do app, a login page, a contact form. Mark the trust boundary. Then run STRIDE down every element exactly like the worked login example above, and write at least five findings with a mitigation each. Do it on paper or a whiteboard; the diagram doesn't need to be pretty.
+2. **Do it in code.** Install [pytm](https://github.com/OWASP/pytm) and adapt the example in this chapter to your diagram from exercise 1. Run `tm.process()` and read the generated threat report. Seeing threats fall out of a code definition is the "aha" that makes threat-modeling-as-code click — and the script is portfolio material.
+3. **Map coverage with ATT&CK.** Open the free [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/), pick five techniques relevant to a web app (start with T1190 and T1110), and honestly mark whether you could detect each. Your red cells are exactly what a detection engineer gets paid to fix.
+
+---
+
+## Key Takeaways
+
+- Threat modeling is asking "what could go wrong?" at design time, when fixes are cheap. Target's $200M breach traced to a trust-boundary question that a two-hour session would have raised.
+- Shostack's four questions — what are we building, what can go wrong, what will we do about it, did we do a good job — structure every methodology.
+- The diagram does the work: data flow diagrams with explicit trust boundaries make threats discoverable. Every flow crossing a boundary is attack surface.
+- Match the method to the job: STRIDE for systematic design analysis, ATT&CK for measuring detection coverage, attack trees for explaining a specific goal, PASTA/OCTAVE for business- and org-level risk.
+- A threat model is only real if its findings become tracked tickets — and only stays real if it's continuous, kept in version control, and extended to the supply chain.
 
 ---
 
