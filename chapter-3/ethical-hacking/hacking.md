@@ -213,7 +213,7 @@ Do this ten times and you will know more practical offensive security than most 
 
 [6] Seitz, J. (2021). *Black Hat Python: Python Programming for Hackers and Pentesters* (2nd ed.). No Starch Press. ISBN 978-1718501126.
 
-[7] OWASP Foundation. (2021). *OWASP Top Ten 2021*. Open Web Application Security Project. Retrieved from https://owasp.org/www-project-top-ten/
+[7] OWASP Foundation. (2025). *OWASP Top Ten*. Open Web Application Security Project. Retrieved from https://owasp.org/www-project-top-ten/
 
 [8] PortSwigger. (2023). *Burp Suite Documentation*. PortSwigger Web Security. Retrieved from https://portswigger.net/burp/documentation
 

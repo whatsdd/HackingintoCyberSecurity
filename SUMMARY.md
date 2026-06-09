@@ -62,3 +62,11 @@
 ## CHAPTER 13: Getting Hired
 
 * [Hacking the Interview](chapter-13/hacking-the-interview.md)
+
+## CHAPTER 14: Home Lab and Portfolio
+
+* [Home Lab and Portfolio](chapter-14/home-lab-and-portfolio.md)
+
+## CHAPTER 15: AI and LLM Security
+
+* [AI and LLM Security](chapter-15/ai-and-llm-security.md)

@@ -17,7 +17,9 @@ The book moves in three arcs:
 
 1. **Breaking in (Chapter 1).** What the field actually looks like, which careers exist, what they pay, what skills and certifications matter, and how to get the first job. Start here, whoever you are.
 2. **The knowledge that makes you employable (Chapters 2–11).** Foundations first — core security concepts, then ethical hacking, then the governance/risk/compliance side, then the technical depth: cryptography, threat modeling, design principles, DevSecOps, and secure development. These chapters map to what interviews and entry-level jobs will actually demand of you.
-3. **Proving it (Chapters 12–13).** CTFs to build and demonstrate skill, then the interview process itself — resume, technical screens, negotiation, and your first 90 days.
+3. **Proving it (Chapters 12–15).** CTFs to build and demonstrate skill, the interview process itself (resume, technical screens, negotiation, first 90 days), how to build a home lab and a portfolio that gets you noticed, and AI/LLM security — the fastest-growing specialization in the field.
+
+A note on Chapters 14 and 15: they're numbered last so the core flow stays stable, but don't save them for last. **Chapter 14 (Home Lab and Portfolio) is worth reading early** — right after Chapter 3 — because the lab it helps you build is where you'll practice everything else. **Chapter 15 (AI and LLM Security)** builds on the technical chapters, so read it once you've got the fundamentals down.
 
 ## Reading Paths by Goal
 
@@ -25,16 +27,19 @@ The book moves in three arcs:
 Read Chapter 1, then Chapter 2. If you're still curious after that, you have your answer.
 
 **"I want to be a penetration tester / red teamer."**
-Chapters 1 → 2 → 3 → 7 → 12 → 13. Spend most of your hours practicing, not reading — Chapter 3 and Chapter 12 tell you exactly where.
+Chapters 1 → 2 → 3 → 14 → 7 → 12 → 15 → 13. Spend most of your hours practicing, not reading — Chapters 3, 14, and 12 tell you exactly where.
 
 **"I want GRC — governance, risk, or compliance."**
-Chapters 1 → 2 → 4 → 5 → 6 → 13. This is the most viable path for non-technical backgrounds, and these chapters are written to be your working reference in the first job, not just before it.
+Chapters 1 → 2 → 4 → 5 → 6 → 14 → 13. This is the most viable path for non-technical backgrounds, and these chapters are written to be your working reference in the first job, not just before it. (Chapter 14's portfolio section has a GRC-specific track.)
 
 **"I'm a developer who wants to move into security."**
-Chapters 1 → 8 → 9 → 10 → 11 → 7 → 13. You already have the hardest prerequisite (you can build things); these chapters teach you to break and defend them.
+Chapters 1 → 8 → 9 → 10 → 11 → 7 → 15 → 13. You already have the hardest prerequisite (you can build things); these chapters teach you to break and defend them.
 
 **"I want defense — SOC, detection, incident response."**
-Chapters 1 → 2 → 3 → 8 → 12 → 13. Chapter 3 matters even for defenders: you can't detect what you don't understand.
+Chapters 1 → 2 → 3 → 14 → 8 → 12 → 13. Chapter 3 matters even for defenders: you can't detect what you don't understand, and Chapter 14's detection-lab build is the best practice you can get.
+
+**"I want to work on AI security."**
+Chapters 1 → 2 → 3 → 8 → 9 → 11 → 15. It's a specialization layered on fundamentals — don't skip to Chapter 15 without them.
 
 ## How to Get the Most Out of It
 

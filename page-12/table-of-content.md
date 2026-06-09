@@ -53,3 +53,11 @@ Capture the Flag competitions as a training ground and a hiring signal. The chal
 **Chapter 13: Hacking the Interview**
 
 The last mile: turning skill into an offer. Resume and portfolio strategy, what each interview stage tests, role-specific technical questions with strong answers, scenario questions, salary negotiation, and a 30-60-90 day plan for succeeding once you're in.
+
+**Chapter 14: Home Lab and Portfolio**
+
+The build guide for the two things that get you hired without prior experience: a safe place to practice and the public proof you did. Lab setups for every budget (from $0 browser-based to a dedicated Proxmox box), how to keep a vulnerable lab safely isolated, starter builds for each career pillar, and how to turn it all into a GitHub portfolio that hiring managers actually read. Numbered late, but best read early — right after Chapter 3.
+
+**Chapter 15: AI and LLM Security**
+
+The fastest-growing specialization in the field. Why AI systems are a new kind of attack surface (the instruction/data problem), the OWASP Top 10 for LLM Applications and MITRE ATLAS, how to defend AI systems and agents, AI red teaming as a career, using AI to do security work without being misled by it, and how to break into the specialization. Builds on the technical chapters — read it once you have the fundamentals.
