@@ -42,7 +42,7 @@ The industry uses hat colors as shorthand. These categories are imprecise but co
 
 Ethical hacking lives and dies on written authorization. This is not a soft ethical principle. It is the line between your job and a felony.
 
-In the United States, the Computer Fraud and Abuse Act (CFAA) of 1986 makes unauthorized access to computer systems a federal crime [7]. The law was written broadly and has been criticized for overcriminalization. Aaron Swartz faced charges under it for bulk-downloading academic papers. It remains the primary statute governing computer intrusion.
+In the United States, the Computer Fraud and Abuse Act (CFAA) of 1986 makes unauthorized access to computer systems a federal crime [7]. The law was written broadly and has been criticized for overcriminalization. Aaron Swartz faced charges under it for bulk-downloading academic papers. It remains the primary statute governing computer intrusion. One meaningful improvement: in 2022 the US Department of Justice revised its charging policy to state that good-faith security research should not be prosecuted under the CFAA [12]. That's a policy, not a legal immunity — authorization in writing is still the only real protection.
 
 The United Kingdom has the Computer Misuse Act 1990, which similarly criminalizes unauthorized access and unauthorized modification of computer material [8]. Most countries have equivalent legislation.
 
@@ -84,7 +84,7 @@ Everything is documented. Every finding gets a severity rating, a description of
 
 ## Bug Bounty Programs
 
-Bug bounty programs are a formalized way for organizations to invite external researchers to find vulnerabilities in exchange for monetary rewards. HackerOne and Bugcrowd are the largest platforms, hosting programs from companies including Google, Microsoft, Apple, and the US Department of Defense [10].
+Bug bounty programs are a formalized way for organizations to invite external researchers to find vulnerabilities in exchange for monetary rewards. HackerOne and Bugcrowd are the largest platforms, hosting programs from companies including Google, Microsoft, Apple, and the US Department of Defense [10]. Intigriti and YesWeHack, both strongest in Europe, have grown into serious alternatives with their own exclusive programs — worth registering on more than one platform, since scope quality varies.
 
 Bug bounties are not the same as penetration testing. A penetration test has defined scope, a timeline, and a fixed deliverable. Bug bounties are ongoing, often with broad scope, and researchers are paid per validated finding. The economics can be significant -- researchers regularly earn six-figure annual payouts, and critical vulnerabilities can be worth $100,000 or more on some programs.
 
@@ -108,11 +108,21 @@ The EC-Council Code of Ethics and (ISC)2 Code of Ethics both formalize these pri
 
 ## Is Ethical Hacking a Good Career Path?
 
-Offensive security is in high demand. Penetration testers, red teamers, and bug bounty hunters are consistently underpaid relative to their skill level compared to what the market could bear, but salaries are still competitive: $80,000 to $150,000 for mid-level roles in most markets, higher at specialized shops and large enterprises.
+Offensive security is in high demand. Penetration testers, red teamers, and bug bounty hunters are consistently underpaid relative to their skill level compared to what the market could bear, but salaries are still competitive: as of 2026, roughly $90,000 to $160,000 for mid-level roles in most US markets, with senior and specialized roles (red team, cloud, vulnerability research) well above that at large enterprises and boutique firms.
 
-The work is technically demanding and keeps changing. Defenses improve, attack surfaces shift, and new technology (cloud-native infrastructure, AI systems, IoT) creates new categories of vulnerability. You will not run out of things to learn.
+The work is technically demanding and keeps changing. Defenses improve, attack surfaces shift, and new technology (cloud-native infrastructure, AI systems, IoT) creates new categories of vulnerability. You will not run out of things to learn. The newest specialization is AI red teaming — probing LLM-based applications for prompt injection, data leakage, and unsafe agent behavior. It's covered in its own chapter later in this book, and it's one of the few offensive niches where the field is young enough that newcomers with strong writeups can stand out quickly.
 
 The catch is that entry is harder than most other security paths. Employers want demonstrated skill, not just a certificate. That means building a portfolio: CTF writeups, bug bounty finds, home lab documentation, open source contributions to security tools. The skills chapter covers this in detail.
+
+---
+
+## Key Takeaways
+
+- Authorization is the entire difference between a career and a felony. No signed scope, no test — and "good intentions" have never been a legal defense.
+- The penetration testing lifecycle is a discipline: pre-engagement, recon, scanning, exploitation, post-exploitation, reporting. The report is the product the client pays for.
+- Bug bounty platforms (HackerOne, Bugcrowd, Intigriti, YesWeHack) are a legitimate, legal training ground with real targets and real stakes.
+- Professional ethics go beyond legality: minimum footprint, strict scope discipline, client confidentiality, and immediate disclosure if you stumble on an active compromise.
+- Entry is harder than other security paths and runs on demonstrated skill. The portfolio — writeups, labs, findings — is the credential.
 
 ---
 
@@ -138,7 +148,7 @@ The catch is that entry is harder than most other security paths. Employers want
 
 [5] Caldwell, T. (2011). Ethical hackers: putting on the white hat. *Network Security*, 2011(7), 10-13. doi:10.1016/S1353-4858(11)70075-7
 
-[6] Mandiant. (2022). *APT1: Exposing One of China's Cyber Espionage Units*. Mandiant Intelligence. Retrieved from https://www.mandiant.com/resources/apt1-exposing-one-of-chinas-cyber-espionage-units
+[6] Mandiant. (2013). *APT1: Exposing One of China's Cyber Espionage Units*. Mandiant Intelligence. Retrieved from https://www.mandiant.com/resources/apt1-exposing-one-of-chinas-cyber-espionage-units (foundational report; dated but still the clearest public anatomy of a state-sponsored intrusion group)
 
 [7] United States Congress. (1986). *Computer Fraud and Abuse Act*, 18 U.S.C. § 1030. Retrieved from https://www.law.cornell.edu/uscode/text/18/1030
 
@@ -149,6 +159,8 @@ The catch is that entry is harder than most other security paths. Employers want
 [10] HackerOne. (2023). *The 2023 Hacker-Powered Security Report*. HackerOne. Retrieved from https://www.hackerone.com/resources/hackerone/hacker-powered-security-report
 
 [11] (ISC)2. (2021). *Code of Ethics*. International Information System Security Certification Consortium. Retrieved from https://www.isc2.org/ethics
+
+[12] US Department of Justice. (2022, May 19). *Department of Justice Announces New Policy for Charging Cases under the Computer Fraud and Abuse Act*. Office of Public Affairs. Retrieved from https://www.justice.gov/opa/pr/department-justice-announces-new-policy-charging-cases-under-computer-fraud-and-abuse-act
 
 ---
 
