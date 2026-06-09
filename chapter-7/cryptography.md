@@ -194,7 +194,7 @@ When you connect to `https://yourbank.com`:
 
 The trust model relies on root CAs being trustworthy. When they fail, as happened with the DigiNotar CA breach in 2011, where attackers issued fraudulent certificates for Google and dozens of other domains, the entire PKI model for affected certificates collapses.[7]
 
-Let's Encrypt, launched in 2016, provides free, automated, domain-validated certificates and has dramatically increased HTTPS adoption across the web. As of 2024, over 80% of web traffic is encrypted.[8]
+Let's Encrypt, launched in 2016, provides free, automated, domain-validated certificates and has dramatically increased HTTPS adoption across the web. As of 2025, roughly 95% of page loads in Google Chrome use HTTPS — encrypted transport has gone from the exception to the default.[8]
 
 ---
 
@@ -217,6 +217,18 @@ The session keys are derived using ECDHE, ensuring forward secrecy. After the ha
 
 TLS 1.0 and 1.1 are deprecated. TLS 1.2 is still widely used but should be configured to use only strong cipher suites. Any server still supporting SSLv3 or early TLS versions has a misconfiguration.
 
+**A note on 0-RTT.** TLS 1.3 introduced a "0-RTT" (zero round-trip time) mode that lets a returning client send data in its very first message, eliminating handshake latency. The performance win is real, but it comes with a trade-off: 0-RTT data is vulnerable to replay attacks, because an attacker who captures that early data can resend it. The rule of thumb is to allow 0-RTT only for idempotent requests (a GET that changes nothing), never for actions that move money or change state. It's a clean example of the constant security-versus-performance tension in real protocol design.
+
+---
+
+## When Cryptography Fails in the Real World
+
+Strong algorithms rarely fail because someone broke the math. They fail because of *how* they were used. Two instructive cases:
+
+**WPA2 and the KRACK attack (2017).** WPA2, the Wi-Fi security standard, used solid cryptography — but the protocol's four-way handshake could be manipulated to force reinstallation of an already-used key, resetting the nonce counter. Reusing a nonce with a stream cipher is exactly the catastrophic mistake warned about later in this chapter, and it let attackers decrypt traffic. The lesson: a protocol built on good primitives can still fail if it mishandles key and nonce reuse.
+
+**Flame and MD5-collision certificates (2012).** The Flame espionage malware spread by forging a Microsoft code-signing certificate. It did this with an MD5 hash collision — MD5 was already known to be broken, but it was still in use in parts of the certificate ecosystem. The attackers produced a malicious certificate with the same MD5 hash as a legitimate one, and Windows accepted it as genuine. The lesson: "deprecated but still around" is an attack surface. Broken primitives don't become safe just because removing them is inconvenient.
+
 ---
 
 ## Cryptographic Attacks
@@ -238,15 +250,23 @@ Quantum computers, using Shor's algorithm, can theoretically break RSA and ECC b
 
 That computer does not exist today. But the "harvest now, decrypt later" threat is real: nation-state actors are likely recording encrypted traffic now, intending to decrypt it once quantum computing matures. For data that must remain confidential for 10+ years, the quantum threat is already relevant.
 
-NIST completed its post-quantum cryptography standardization process in 2024, selecting:[10]
+NIST published its first post-quantum cryptography standards in August 2024 as FIPS 203, 204, and 205:[10]
 
-| Algorithm | Purpose | Based On |
-|---|---|---|
-| **CRYSTALS-Kyber (ML-KEM)** | Key encapsulation (replaces ECDH) | Module lattice problems |
-| **CRYSTALS-Dilithium (ML-DSA)** | Digital signatures | Module lattice problems |
-| **SPHINCS+ (SLH-DSA)** | Digital signatures (hash-based alternative) | Hash functions |
+| Algorithm | Standard | Purpose | Based On |
+|---|---|---|---|
+| **ML-KEM** (formerly CRYSTALS-Kyber) | FIPS 203 | Key encapsulation (replaces ECDH) | Module lattice problems |
+| **ML-DSA** (formerly CRYSTALS-Dilithium) | FIPS 204 | Digital signatures | Module lattice problems |
+| **SLH-DSA** (formerly SPHINCS+) | FIPS 205 | Digital signatures (hash-based alternative) | Hash functions |
 
-TLS 1.3 and major cloud providers are already beginning hybrid deployments, running classical and post-quantum algorithms simultaneously during the transition period.
+**Why lattices?** RSA and ECC rest on factoring and discrete logarithms — problems a large quantum computer solves efficiently with Shor's algorithm. The new key-exchange and signature standards rest instead on *lattice* problems: roughly, given a grid of points defined by a set of vectors, find the grid point closest to a target, or the shortest non-zero vector. In high dimensions this is brutally hard, and crucially, no efficient quantum algorithm is known for it. You don't need the math to use the algorithms — but knowing *why* they're believed quantum-resistant (a different hard problem, not a faster version of the old one) is what separates understanding from buzzword-dropping.
+
+{% hint style="success" %}
+**What this means for you, practically.** The honest near-term answer for most practitioners is: you don't need to rip out RSA and ECC tomorrow, but you do need a plan.
+
+- **If you handle long-lived secrets** (data that must stay confidential for 10+ years — medical records, state secrets, some financial data), the "harvest now, decrypt later" threat is *already* live. Prioritize migration for these.
+- **Use hybrid modes where available.** Modern browsers and major cloud/CDN providers already negotiate hybrid key exchange (a classical curve *plus* ML-KEM) in TLS, so a break in either one alone doesn't expose the session. Turn it on where your stack supports it.
+- **Inventory your cryptography now.** You can't migrate what you can't find. Knowing where RSA/ECC live in your systems — and which libraries you'd need to update — is the cheap first step every organization should already be taking. This is also where **cryptographic agility** matters: systems designed so an algorithm can be swapped without re-architecting are the ones that will survive this transition cheaply.
+{% endhint %}
 
 ---
 
@@ -274,6 +294,48 @@ Cryptography is complex enough that implementing it from scratch is almost alway
 - Trust "military-grade encryption" as a marketing claim without verifying the actual algorithm
 {% endhint %}
 
+### Key Management: Where Crypto Actually Breaks
+
+Choosing AES-256 is the easy part. The hard part — and where most real-world failures happen — is managing the keys. Strong encryption with badly managed keys is just a harder-to-spot vulnerability.
+
+- **Keys need a lifecycle.** Generation (from a cryptographically secure random source), distribution, rotation, and revocation/destruction. A key that's never rotated is a key that, once leaked, exposes everything ever encrypted with it.
+- **Use a key hierarchy.** Don't encrypt data directly with one master key. Encrypt data with short-lived *data keys*, and encrypt those data keys with a *key-encryption key* held in a hardened store. This is "envelope encryption," and it's what cloud KMS services implement. Rotating the top-level key then doesn't require re-encrypting all your data.
+- **Don't store keys next to the data they protect**, and never in source code or config files committed to git. Use a dedicated key store: AWS KMS, GCP Cloud KMS, Azure Key Vault, or HashiCorp Vault. For the highest assurance, a hardware security module (HSM) keeps keys in tamper-resistant hardware that never exposes them in plaintext.
+
+The recurring lesson of this chapter applies one level up: the algorithms are sound; the *operations around them* are where systems fail.
+
+---
+
+## Try This
+
+1. **Hash and verify a file (5 minutes, Python).** Cryptography stops being abstract the moment you run it:
+   ```python
+   import hashlib
+
+   def sha256_of(path):
+       h = hashlib.sha256()
+       with open(path, "rb") as f:
+           for chunk in iter(lambda: f.read(8192), b""):
+               h.update(chunk)
+       return h.hexdigest()
+
+   print(sha256_of("somefile.iso"))
+   ```
+   Run it on any file, change a single byte, and run it again. Watch the entire digest change — that's the avalanche effect, and it's why hashes detect tampering. This is exactly the check you'd do to verify a downloaded Kali ISO against its published hash.
+2. **Inspect a real certificate.** In your browser, click the padlock on any HTTPS site and view the certificate. Find: the issuing CA, the expiry date, the public-key algorithm (RSA or ECC?), and the certificate chain back to a root. You're looking at PKI doing its job in real time.
+3. **Break something on purpose.** Do the first set of [Cryptopals](https://cryptopals.com) challenges. Implementing an attack on weak crypto teaches the concepts far more durably than reading about them.
+
+---
+
+## Key Takeaways
+
+- Kerckhoffs's principle governs everything: security comes from the secrecy of the key, not the algorithm. "Security through obscurity" has a long losing record.
+- Symmetric (AES) is fast and solves bulk encryption; asymmetric (RSA/ECC) solves key distribution and signatures. Real systems use both — TLS being the canonical example.
+- Hashing is not encryption. Use SHA-256/SHA-3 for integrity, and slow, memory-hard functions (Argon2id) for passwords — never fast hashes for password storage.
+- Cryptography fails in practice through misuse — nonce reuse (KRACK), deprecated primitives left in place (Flame/MD5), and bad key management — far more often than through broken math.
+- The post-quantum transition is underway: NIST's ML-KEM/ML-DSA/SLH-DSA standards are published, hybrid TLS is rolling out, and the right move now is to inventory your crypto and prioritize long-lived secrets.
+- Never roll your own crypto. Use vetted libraries, authenticated encryption (AES-GCM), TLS 1.3, and a real key-management service.
+
 ---
 
 ## References
@@ -292,11 +354,11 @@ Cryptography is complex enough that implementing it from scratch is almost alway
 
 [7] Langley, A. (2011). *Distrust of the Netherlands DigiNotar CA*. Google Security Blog. Retrieved from https://security.googleblog.com/2011/09/update-on-diginotar.html
 
-[8] Let's Encrypt. (2024). *Let's Encrypt Stats*. Internet Security Research Group. Retrieved from https://letsencrypt.org/stats/
+[8] Google. (2025). *HTTPS encryption on the web*. Google Transparency Report. Retrieved from https://transparencyreport.google.com/https/overview
 
 [9] Rescorla, E. (2018). *The Transport Layer Security (TLS) Protocol Version 1.3*. RFC 8446. Internet Engineering Task Force. doi:10.17487/RFC8446
 
-[10] National Institute of Standards and Technology. (2024). *Post-Quantum Cryptography Standardization*. NIST. Retrieved from https://csrc.nist.gov/projects/post-quantum-cryptography
+[10] National Institute of Standards and Technology. (2024). *FIPS 203 (ML-KEM), FIPS 204 (ML-DSA), and FIPS 205 (SLH-DSA): Post-Quantum Cryptography Standards*. NIST. Retrieved from https://csrc.nist.gov/projects/post-quantum-cryptography
 
 ---
 
