@@ -56,6 +56,10 @@ GDPR is the most expansive data protection regulation in force. It applies to a 
 
 **Penalties:** Up to €20 million or 4% of global annual revenue, whichever is higher. In 2023, Meta was fined €1.2 billion for transferring EU user data to the US without adequate safeguards.[3]
 
+{% hint style="warning" %}
+**Cross-border data transfers are a moving target.** That €1.2 billion Meta fine was about *where data went*, not how it was secured. The legal basis for moving EU personal data to the US has been repeatedly struck down: the Court of Justice of the EU invalidated Safe Harbor in 2015 and Privacy Shield in 2020 (the "Schrems II" decision). The current mechanism, the EU-US Data Privacy Framework adopted in 2023, faces ongoing legal challenges, and Standard Contractual Clauses now require a documented transfer impact assessment. For any organization moving personal data across the Atlantic, "is our transfer mechanism still valid?" is a question with no permanent answer — track it actively.
+{% endhint %}
+
 ### HIPAA (Health Insurance Portability and Accountability Act)
 
 **Who it applies to:** US healthcare providers, health plans, healthcare clearinghouses (covered entities), and their business associates (vendors who process protected health information on their behalf).
@@ -78,7 +82,9 @@ HIPAA mandates specific controls for electronic protected health information (eP
 
 PCI-DSS is maintained by the Payment Card Industry Security Standards Council (a consortium of Visa, Mastercard, American Express, Discover, and JCB) and is contractually required by card network agreements rather than law.[5]
 
-**The 12 requirements (PCI-DSS v4.0, 2022):**
+The current version is **PCI DSS v4.0.1** (a June 2024 clarifying revision of v4.0). A timeline point that matters in practice: the standard's "future-dated" requirements — 51 of the new controls introduced in v4.0 — were best-practice recommendations until **March 31, 2025**, after which they became mandatory. As of 2026 there is no grace period left; an assessment now tests against the full v4.0.1 requirement set. You may still encounter legacy systems built to the older v3.2.1, but they are out of compliance.
+
+**The 12 requirements (PCI DSS v4.0.1):**
 
 | Domain | Requirements |
 |---|---|
@@ -128,13 +134,31 @@ Certification is awarded by accredited certification bodies after a two-stage au
 
 **Who it applies to:** US Department of Defense contractors and subcontractors handling Controlled Unclassified Information (CUI).
 
-CMMC 2.0 (released 2021) establishes three maturity levels, with Level 2 requiring an independent third-party assessment against NIST SP 800-171's 110 security requirements. CMMC is not optional for DoD contractors — it will be a contract requirement, and organizations without the appropriate CMMC level will be ineligible for DoD contracts.[8]
+CMMC 2.0 establishes three maturity levels, with Level 2 requiring an independent third-party assessment against NIST SP 800-171's 110 security requirements. CMMC is no longer a future possibility — the final acquisition rule (48 CFR) took effect on **November 10, 2025**, beginning a phased rollout that incorporates CMMC clauses into new DoD contracts and option years. Contractors without the CMMC level required by a given contract are ineligible to win it. If you're entering GRC in the defense industrial base, this is now live, not pending.[8]
 
 ### FedRAMP (Federal Risk and Authorization Management Program)
 
 **Who it applies to:** Cloud service providers seeking to sell to US federal agencies.
 
 FedRAMP standardizes cloud security assessment, authorization, and monitoring for federal systems. It is based on NIST SP 800-53 controls, with three impact levels (Low, Moderate, High) determining which control set applies. Authorization requires a significant investment: third-party assessment organization (3PAO) audit, agency sponsorship, and ongoing continuous monitoring.[9]
+
+---
+
+## The Frameworks at a Glance
+
+It's easy to lose the forest for the trees. This matrix is the one-screen summary of who each framework applies to and how it's verified.
+
+| Framework | Applies To | Legal or Contractual? | How Compliance Is Proven |
+|---|---|---|---|
+| **GDPR** | Anyone processing EU residents' personal data | Law (EU regulation) | No certification — ongoing obligation enforced by regulators |
+| **HIPAA** | US healthcare entities and their business associates | Law (US federal) | No certification — enforced by HHS; risk assessment evidence expected |
+| **PCI DSS** | Anyone handling payment card data | Contractual (card networks) | Self-Assessment Questionnaire or external Report on Compliance, by volume |
+| **SOC 2** | Cloud/SaaS service providers | Voluntary (market-driven) | Independent CPA audit; Type II report over a period |
+| **ISO 27001** | Any organization, any sector | Voluntary (often contract-required) | Accredited certification body audit; 3-year cycle |
+| **CMMC** | US DoD contractors handling CUI | Contractual (now in DFARS) | Self-assessment (L1) or third-party assessment (L2+) |
+| **FedRAMP** | Cloud providers selling to US federal agencies | Required to sell to gov | 3PAO audit + agency authorization + continuous monitoring |
+
+The pattern worth internalizing: regulations (GDPR, HIPAA) are *obligations you can be punished for breaking but can't get a certificate for*, while standards (ISO 27001, SOC 2, CMMC, FedRAMP) are *things you get formally assessed and credentialed against*. The controls underneath them overlap heavily — which is the whole point of the multi-framework section below.
 
 ---
 
@@ -185,7 +209,7 @@ Evidence must be:
 - Authentic (not modified)
 - Accessible (retrievable when auditors request it)
 
-GRC platforms — Vanta, Drata, Tugboat Logic, OneTrust, ServiceNow GRC — automate evidence collection by integrating with cloud platforms, identity providers, and security tools to pull compliance evidence continuously rather than in manual point-in-time snapshots.
+GRC platforms — Vanta, Drata, Secureframe, OneTrust, ServiceNow GRC — automate evidence collection by integrating with cloud platforms, identity providers, and security tools to pull compliance evidence continuously rather than in manual point-in-time snapshots. (The category has consolidated; older tools like Tugboat Logic were absorbed into larger vendors, so always check what's current when evaluating.) "Current" evidence increasingly means real-time or daily automated snapshots, not a folder of screenshots assembled the week before an audit.
 
 ---
 
@@ -267,6 +291,23 @@ Compliance requires documentation. These free resources give you a starting poin
 - HIPAA compliance? Start with the HHS Risk Assessment Tool and SANS healthcare-specific templates.
 - PCI-DSS? Download the appropriate SAQ from the PCI SSC Document Library first to scope your obligations before building any controls.
 {% endhint %}
+
+---
+
+## Try This
+
+1. **Map one control across frameworks.** Take a single control you understand — multi-factor authentication is ideal — and find where it appears in three different frameworks (e.g. PCI DSS Req 8, ISO 27001 Annex A, SOC 2 CC6.1). Write the requirement number and the exact wording from each. You've just done the core motion of integrated compliance: implement once, satisfy many. This is also a great interview talking point.
+2. **Scope a real obligation.** Pick a fictional small business (a healthcare app, an EU-facing SaaS, an online shop) and list every framework it's subject to and why. Then download the relevant starter doc — the [HHS HIPAA Risk Assessment Tool](https://www.hhs.gov/hipaa/for-professionals/security/guidance/index.html), a [PCI SAQ](https://www.pcisecuritystandards.org/document_library/), or the [GDPR.eu checklist](https://gdpr.eu/checklist/) — and complete the first section. Scoping obligations correctly is the single most valuable thing a junior GRC analyst does.
+
+---
+
+## Key Takeaways
+
+- Compliance is the floor, not the ceiling. British Airways was PCI compliant and still breached and fined — a control that exists on paper isn't a control that reduces risk.
+- Distinguish regulations you're punished for breaking (GDPR, HIPAA) from standards you're certified against (ISO 27001, SOC 2, CMMC, FedRAMP). The verification model differs fundamentally.
+- Know the 2025–2026 status: PCI DSS v4.0.1 future-dated requirements are now mandatory, CMMC is live in DoD contracts, and EU-US data transfer mechanisms remain legally contested.
+- Compliance is a continuous lifecycle, and evidence is its currency — increasingly automated and continuous, not assembled the week before an audit.
+- Most organizations face several frameworks at once. Implement overlapping controls once (MFA, encryption, access reviews, training) and map them to every applicable framework.
 
 ---
 
