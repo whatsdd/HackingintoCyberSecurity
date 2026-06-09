@@ -85,37 +85,18 @@ Writing abuse cases forces developers to think about the attacker's perspective 
 
 ## Phase 2: Threat Modeling
 
-Threat modeling is the systematic process of identifying what can go wrong in a system, why it can go wrong, and what to do about it. It is performed during the design phase, on diagrams of the system architecture before implementation, when changing designs is cheap.
+Threat modeling is the systematic process of identifying what can go wrong in a system, why it can go wrong, and what to do about it. It is performed during the design phase, before implementation, when changing designs is cheap.
 
-The output of threat modeling is a prioritized list of threats and corresponding mitigations: design-level security requirements that feed back into the engineering work.
+This book covers threat modeling in depth in **Chapter 8** — STRIDE, the data flow diagram, the four questions, and a full worked example. Rather than repeat it, this section focuses on what threat modeling looks like *inside a developer's workflow*, where it's smaller and more frequent than the big up-front system model.
 
-### The STRIDE Model
+**Threat model the feature, not the whole system.** As a developer, you rarely design a system from scratch; you add a feature to an existing one. The high-leverage habit is a five-minute threat model of *your change* during design or PR:
 
-STRIDE is the most widely used threat categorization framework, developed at Microsoft. For each component and data flow in a system, the analyst asks whether six types of threat are possible:[6]
+- Does this change introduce a new **trust boundary**? (a new external API call, a new file upload, a new user-supplied parameter that reaches a query)
+- Does it touch **authentication or authorization**? If so, is the check on the server, and does it deny by default?
+- Does it handle **untrusted input**? Where does that input end up — a database query, a shell command, an HTML page, a log?
+- What's the **worst thing** an attacker who controls this input could do?
 
-| Threat | Property Violated | Example |
-|---|---|---|
-| **Spoofing** | Authentication | Attacker impersonates another user by forging identity tokens |
-| **Tampering** | Integrity | Attacker modifies data in transit or at rest |
-| **Repudiation** | Non-repudiation | User denies having performed an action; no audit log exists to prove otherwise |
-| **Information Disclosure** | Confidentiality | Sensitive data exposed through error messages, misconfigured storage, or side channels |
-| **Denial of Service** | Availability | Attacker exhausts resources, making the system unavailable to legitimate users |
-| **Elevation of Privilege** | Authorization | Attacker gains higher permissions than intended |
-
-### How to Threat Model
-
-1. **Define scope**: What are we modeling? (A specific feature, an API, an entire system)
-2. **Decompose the system**: Draw a Data Flow Diagram (DFD) showing components, data stores, data flows, and trust boundaries
-3. **Identify threats**: For each element in the DFD, apply STRIDE to generate candidate threats
-4. **Rate threats**: Use DREAD or a risk matrix to prioritize (likelihood × impact)
-5. **Define mitigations**: For each rated threat, specify the control that addresses it
-6. **Validate**: Ensure mitigations are implemented and verify they address the threat
-
-{% hint style="success" %}
-**Practical tip:** Threat modeling does not require a specialist or a two-day workshop. A one-hour whiteboard session with a developer, architect, and someone familiar with attack techniques, using a simple diagram and the STRIDE mnemonic as a checklist, produces actionable findings that a purely technical code review will miss.
-
-The question "what could go wrong if an attacker controls this input?" asked during design prevents far more vulnerabilities than the same question asked during a post-release penetration test.
-{% endhint %}
+Run those four questions against the STRIDE categories (Chapter 8) and most feature-level vulnerabilities surface before the code is written. The question "what could go wrong if an attacker controls this input?" asked during design prevents far more vulnerabilities than the same question asked during a post-release penetration test.
 
 ---
 
@@ -167,6 +148,64 @@ Do not rely on a single security control. Layer controls so that the failure of 
 
 Systems should be secure out of the box without requiring administrators to take additional action. Insecure features should require explicit opt-in, not opt-out. Default passwords should not exist. Debug endpoints should be disabled by default in production builds.
 
+### Vulnerable vs. Fixed: Three Patterns You'll Actually Write
+
+Principles stick when you see the code. Here are three of the most common web vulnerabilities, each as a before/after pair.
+
+**Injection (A05) — the broken-then-fixed query you already saw above**, but the same shape applies to OS commands:
+
+```python
+# VULNERABLE: shell command built from user input
+import os
+os.system("ping -c 1 " + user_host)   # user_host = "x; rm -rf /"
+
+# FIXED: pass arguments as a list; no shell interpretation
+import subprocess
+subprocess.run(["ping", "-c", "1", user_host], check=True)
+```
+
+**Broken Access Control (A01) — the #1 risk, and almost always missing server-side authorization:**
+
+```python
+# VULNERABLE: authenticated, but never checks ownership (IDOR)
+@app.get("/api/invoices/{invoice_id}")
+def get_invoice(invoice_id, user=Depends(current_user)):
+    return db.get_invoice(invoice_id)        # any logged-in user reads any invoice
+
+# FIXED: verify the resource belongs to the caller
+@app.get("/api/invoices/{invoice_id}")
+def get_invoice(invoice_id, user=Depends(current_user)):
+    invoice = db.get_invoice(invoice_id)
+    if invoice.owner_id != user.id:
+        raise HTTPException(status_code=404)  # 404, not 403 — don't confirm it exists
+    return invoice
+```
+
+**Cross-Site Scripting (a form of Injection) — unescaped output:**
+
+```javascript
+// VULNERABLE: untrusted data written straight into the DOM
+element.innerHTML = userComment;          // <img src=x onerror=alert(1)>
+
+// FIXED: use textContent (no HTML parsing), or a vetted sanitizer for rich text
+element.textContent = userComment;
+// for rich HTML: element.innerHTML = DOMPurify.sanitize(userComment);
+```
+
+### Don't Hand-Roll Validation — Use Your Framework's Tools
+
+"Validate all input" is good advice that's easy to do badly. Every major ecosystem has vetted libraries; use them instead of ad-hoc regex:
+
+| Language / Stack | Use For Validation / Safety |
+|---|---|
+| **Python** | `pydantic` for schema validation; ORM parameterization (SQLAlchemy, Django ORM); `bleach`/`nh3` for HTML sanitization |
+| **JavaScript / TypeScript** | `zod` or `joi` for schema validation; `DOMPurify` for HTML; parameterized queries via the DB driver or an ORM (Prisma) |
+| **Java** | Bean Validation (Jakarta `@Valid`); prepared statements / JPA; OWASP Java Encoder for output |
+| **Go** | `validator` struct tags; `database/sql` parameterized queries; `html/template` (auto-escapes by default) |
+| **Ruby / Rails** | Strong Parameters; ActiveRecord parameterization; Rails' default view auto-escaping |
+
+The pattern across all of them: lean on the framework's parameterization and auto-escaping, validate with a schema library, and reserve custom validation for genuine business rules.
+
 ---
 
 ## Phase 4: Dependency Management
@@ -179,11 +218,17 @@ Modern applications are 80 to 95% open-source code. Every dependency you include
 Run SCA (Software Composition Analysis) tools (Snyk, Dependabot, OWASP Dependency-Check) as part of your build process. Know what you are shipping.
 {% endhint %}
 
+**The threat is no longer just *vulnerable* dependencies — it's *malicious* ones.** The 2024 XZ Utils backdoor (CVE-2024-3094) changed how seriously teams take this. An attacker spent **years** building trust as a volunteer maintainer of a widely-used compression library, then slipped in an obfuscated backdoor that nearly reached production Linux distributions worldwide. A CVE scanner would not have caught it, because the vulnerability was deliberately planted, not accidentally introduced. This raises the bar for vetting:
+
+- **Assess the maintainer and project health, not just the code.** Is it actively maintained by more than one person? Is maintenance suddenly being handed to an unknown contributor? Sudden maintainer changes on a critical low-level library are now a recognized red flag.
+- **Watch for unusual update behavior.** A dependency that suddenly adds obfuscated code, build-time scripts, or new network calls deserves scrutiny.
+- **Use tools built for this.** Standard SCA finds known CVEs; tools like Socket and OpenSSF Scorecard assess *supply-chain* risk signals (suspicious install scripts, maintainer changes, project health) that CVE databases miss.
+
 Dependency management best practices:
 
 - Pin dependency versions exactly (not ranges) to ensure reproducible builds and control when you take updates
 - Automate vulnerability scanning in the CI/CD pipeline
-- Review dependencies before adding them: Does this library have a security track record? Is it actively maintained? What is its download source? (Supply chain attacks via typosquatting are real)
+- Review dependencies before adding them: Does this library have a security track record? Is it actively maintained by a healthy community? What is its download source? (Supply chain attacks via typosquatting are real)
 - Remove unused dependencies: every unused package is risk without benefit
 
 ---
@@ -221,22 +266,67 @@ Code review is one of the most cost-effective security activities. A developer f
 
 ---
 
+## Authentication and Authorization: Use the Standards
+
+Two of the OWASP Top 10 categories (Broken Access Control, Authentication Failures) come down to getting identity right — and the single best move is to *not build it yourself*. Rolling your own authentication is the secure-coding equivalent of rolling your own crypto.
+
+- **Authentication** answers "who are you?" Delegate it where you can: OpenID Connect (OIDC), built on top of OAuth 2.0, lets you authenticate users via an identity provider (Google, Okta, Entra ID, Auth0) so you never store passwords at all. If you must handle passwords, store them with Argon2id (Chapter 7) and offer MFA.
+- **Authorization** answers "what are you allowed to do?" This is *yours* to enforce — no identity provider can do it for you — and it must happen **server-side on every request** (complete mediation, Chapter 9). Use a clear model: role-based access control (RBAC) for most apps, attribute-based (ABAC) or a policy engine (OPA, Cedar) when rules get complex.
+- **OAuth 2.0 is for authorization (delegated access), not authentication.** A common, dangerous mistake is using a raw OAuth access token as proof of identity. Use OIDC's `id_token` for "who is this user," and access tokens only for "what may this client call." Getting this distinction right prevents a whole class of account-takeover bugs.
+
+The takeaway: treat authentication as a solved problem you integrate, and spend your effort on authorization, which only you can get right for your domain.
+
+---
+
+## Secure Coding in the Age of AI Assistants
+
+By 2026, most developers write code with an AI assistant. That's fine — but it shifts where the security risk lives, and a secure developer adjusts.
+
+- **AI-generated code is not secure by default.** Multiple studies have found that code from AI assistants contains vulnerabilities at rates comparable to (sometimes worse than) human-written code — and developers using assistants sometimes write *less* secure code while feeling *more* confident. The model reproduces the patterns in its training data, insecure ones included.
+- **Review AI output more carefully, not less.** Treat a code suggestion like a pull request from a fast but junior contributor who doesn't know your threat model. The vulnerable-vs-fixed patterns earlier in this chapter are exactly what to check for: is input parameterized, is access checked server-side, is output escaped?
+- **Run it through the same gates.** AI-written code goes through the same SAST, SCA, and code review as everything else. If anything, lean harder on automated scanning, since AI lets you produce code faster than you can manually review it.
+- **Never paste secrets or sensitive code into untrusted tools.** Know your organization's policy on what can go into which assistant.
+
+The skill that's now scarce and valuable: enough security fundamentals to catch what the AI gets wrong. That's what this chapter builds.
+
+---
+
 ## OWASP Top 10 for Developers
 
-The OWASP Top 10 is the most widely referenced categorization of critical web application security risks.[9] Every developer building web applications needs to understand these categories well enough to recognize and prevent them in their own code.
+The OWASP Top 10 is the most widely referenced categorization of critical web application security risks.[9] Every developer building web applications needs to understand these categories well enough to recognize and prevent them in their own code. The list below reflects the **2025 edition** (finalized in early 2026); note the changes from the long-standing 2021 list — Security Misconfiguration rose to #2, Software Supply Chain Failures entered as its own category at #3 (broadening the old "Vulnerable Components"), and Mishandling of Exceptional Conditions is new at #10.
 
 | Rank | Category | Prevent It By |
 |---|---|---|
-| A01 | Broken Access Control | Enforce authorization checks server-side; deny by default |
-| A02 | Cryptographic Failures | Use TLS everywhere; encrypt sensitive data at rest; use modern algorithms |
-| A03 | Injection | Parameterized queries; input validation; output encoding |
-| A04 | Insecure Design | Threat modeling; abuse cases; security requirements before implementation |
-| A05 | Security Misconfiguration | Secure defaults; IaC scanning; remove unnecessary features |
-| A06 | Vulnerable Components | SCA scanning; dependency management; timely patching |
+| A01 | Broken Access Control (now includes SSRF) | Enforce authorization checks server-side; deny by default; validate/allowlist outbound URLs |
+| A02 | Security Misconfiguration | Secure defaults; IaC scanning; remove unnecessary features and default accounts |
+| A03 | Software Supply Chain Failures | SCA scanning; SBOMs; dependency pinning; verify provenance of components and build tooling |
+| A04 | Cryptographic Failures | Use TLS everywhere; encrypt sensitive data at rest; use modern algorithms (see Chapter 7) |
+| A05 | Injection | Parameterized queries; input validation; output encoding |
+| A06 | Insecure Design | Threat modeling; abuse cases; security requirements before implementation |
 | A07 | Authentication Failures | MFA; secure password storage (bcrypt/Argon2); account lockout |
-| A08 | Software and Data Integrity | Code signing; verify integrity of updates; CI/CD pipeline security |
-| A09 | Security Logging Failures | Log authentication events, access failures, privilege changes |
-| A10 | Server-Side Request Forgery | Validate and allowlist URLs; restrict outbound connections |
+| A08 | Software and Data Integrity Failures | Code signing; verify integrity of updates; CI/CD pipeline security |
+| A09 | Security Logging and Alerting Failures | Log authentication events, access failures, privilege changes; alert on them |
+| A10 | Mishandling of Exceptional Conditions | Fail securely; don't leak internals in errors; handle edge cases and "fail open" risks |
+
+---
+
+## Try This
+
+1. **Find and fix the vulnerability.** Take the vulnerable code samples in this chapter (or write your own three-line login query) and, in your language of choice, write both the broken and the fixed version. Then prove the fix: try the injection/IDOR payload against both. Nothing teaches secure coding like watching your own exploit stop working.
+2. **Do the OWASP labs.** Work through the [PortSwigger Web Security Academy](https://portswigger.net/web-security) labs for Broken Access Control and SQL Injection — free, hands-on, and the single best developer security training available. Each lab is a vulnerability you'll then recognize instantly in real code.
+3. **Audit an AI suggestion.** Ask an AI assistant to "write a login endpoint in [your framework]." Then review its output against this chapter: does it parameterize queries, hash passwords properly, check authorization, and avoid leaking errors? Document what it got wrong. This is the exact skill employers now test for.
+
+---
+
+## Key Takeaways
+
+- Security vulnerabilities are software defects, and like all defects they're far cheaper to prevent early. Security has to live with the developers, not in a gate at the end.
+- Threat model your *change*, not just the whole system: new trust boundary? touches auth? handles untrusted input? worst case? (Full method in Chapter 8.)
+- The recurring fixes are concrete and learnable: parameterize queries, escape output, check authorization server-side on every request, fail securely. Use your framework's vetted libraries instead of hand-rolling.
+- Dependencies are most of your code and now a top risk — not just vulnerable components (Log4Shell) but maliciously planted ones (XZ Utils). Vet maintainer health, not just CVEs.
+- Don't build authentication; integrate OIDC and spend your effort on authorization. Don't confuse OAuth (authorization) with authentication.
+- AI writes insecure code confidently. Review its output harder, run it through the same gates, and value the fundamentals that let you catch its mistakes.
+- Know the OWASP Top 10 2025 — it's both a checklist and a shared vocabulary every security interview assumes.
 
 ---
 
@@ -258,7 +348,7 @@ The OWASP Top 10 is the most widely referenced categorization of critical web ap
 
 [8] Serebryany, K. (2017). *OSS-Fuzz: Five months later, and rewarding projects*. Google Security Blog. Retrieved from https://security.googleblog.com/2017/05/oss-fuzz-five-months-later-and.html
 
-[9] OWASP Foundation. (2021). *OWASP Top Ten 2021*. Open Web Application Security Project. Retrieved from https://owasp.org/www-project-top-ten/
+[9] OWASP Foundation. (2025). *OWASP Top Ten 2025*. Open Web Application Security Project. Retrieved from https://owasp.org/Top10/
 
 ---
 
@@ -266,7 +356,7 @@ The OWASP Top 10 is the most widely referenced categorization of critical web ap
 
 | Resource | What It Covers |
 |---|---|
-| [OWASP Top 10](https://owasp.org/www-project-top-ten/) | The definitive reference for critical web vulnerability categories; free, regularly updated |
+| [OWASP Top 10 (2025)](https://owasp.org/Top10/) | The definitive reference for critical web vulnerability categories; free, regularly updated |
 | [PortSwigger Web Security Academy](https://portswigger.net/web-security) | Free, hands-on labs for every OWASP Top 10 category; best free developer security training available |
 | [OWASP SAMM](https://owaspsamm.org) | Framework for measuring and improving software security program maturity |
 | Shostack, *Threat Modeling: Designing for Security* (Wiley, 2014) | The most complete book on threat modeling; written by the developer of STRIDE |
