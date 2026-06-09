@@ -182,6 +182,20 @@ If you get stuck: state what you would do next if you had more time, what additi
 
 ---
 
+## The AI-Era Interview
+
+Hiring changed on both sides of the table, and addressing it directly is now part of being a strong candidate.
+
+**Your application is screened by software first.** Most resumes pass through an applicant tracking system, increasingly with AI-assisted ranking, before a human sees them. Practical implications: mirror the job description's exact skill terms where they're true, keep the resume format simple and parseable (no tables or text boxes — already advised above), and tailor each application. The tailoring itself is a fifteen-minute task with an LLM: paste the posting and your resume, ask which requirements you're not clearly demonstrating, then fix the *real* gaps — never invent experience the interview will expose.
+
+**Expect to be asked how you use AI.** "How would you use AI tools in this role?" is now a common question across SOC, pentest, and GRC interviews. The strong answer shows both leverage and skepticism, with a concrete example: *"I'd use an LLM to draft a Splunk query or explain an unfamiliar log fast, but I verify the output because models get SPL syntax and CVE details wrong. It's an accelerator, not an authority."* That mirrors exactly how practitioners actually work (Chapters 1, 10, 11) and signals maturity. "I don't use AI" reads as out of touch; "I'd just ask ChatGPT" reads as reckless.
+
+**Don't covertly use AI during live screens.** Interviewers notice the tell-tale pause-and-paste cadence, and many companies now state explicit policies. Using AI *openly* when a take-home or pairing exercise allows it ("I'd reach for an assistant here, then check it") is fine and often appreciated; hiding it is a fast rejection. For take-homes that don't specify, ask.
+
+**Use AI to prepare — this is the legitimate edge.** The best free mock interviewer available is an LLM with a good prompt: *"You're a SOC manager interviewing a junior analyst. Ask one question at a time and push back on weak answers."* An hour of that surfaces your gaps before a real interviewer does. Rehearse salary negotiation the same way.
+
+---
+
 ## Questions to Ask
 
 The questions you ask reveal as much as the answers you give. Always ask questions. Having no questions signals either disinterest or poor preparation.
@@ -248,6 +262,14 @@ Accepting an offer is not the end of the process. The first 90 days determine wh
 - Have a direct conversation with your manager about expectations and how you are tracking
 - Establish your working rhythm: what you own, how you report, what decisions you make independently
 
+### On Imposter Syndrome and the First-Job Skill Gap
+
+Almost everyone entering security feels like a fraud at first. This is so common it's nearly universal — the field is enormous, your colleagues seem to know everything, and you were hired partly on potential. Two things help.
+
+First, separate the feeling from the facts. Imposter syndrome is the *feeling* of not belonging despite evidence that you do (you were hired; you passed the technical screen). The genuine *skill gap* between what school or self-study taught and what the job demands is real and different — and the fix for it is the same thing that got you here: deliberate, visible learning. Keep a list of every term, tool, and acronym you don't recognize, and close one item a day. Within months the list shrinks and the feeling fades with it.
+
+Second, expect specific gaps and treat them as normal. The first time you see your company's actual SIEM, codebase, or compliance evidence, it will be messier than any tutorial. Nobody expects a new hire to know the internal systems — they expect you to ask good questions and learn fast. Asking "can you walk me through how we do X here?" is a sign of competence, not weakness. The new hire who pretends to understand and gets it wrong is the one who struggles; the one who asks and then remembers is the one who gets trusted with more.
+
 ---
 
 ## Handling Rejection
@@ -266,13 +288,24 @@ One no is not the market's verdict on your career. It is one company's decision 
 
 ---
 
+## Key Takeaways
+
+- The interview is a system: it tests whether you can do the job and communicate it. If the skills are real, the interview is mostly a communication challenge — so build the skills first.
+- The resume's only job is to earn a screen. Keep it one page, ATS-parseable, and quantified; tailor it to each posting using the job description's own language (truthfully).
+- Technical interviews test knowledge, judgment (scenarios), and hands-on methodology. Narrate your reasoning, structure scenario answers (assess → act → communicate → escalate → document), and never bluff — one follow-up exposes it.
+- The AI-era interview is real: applications are machine-screened, you'll be asked how you use AI (show leverage *and* skepticism), and covert AI use in live screens gets you rejected. Use AI hard for preparation instead.
+- Always negotiate, never accept on the spot, and negotiate the whole package against a researched range and a known walk-away number.
+- The first 90 days matter: listen, then deliver. Imposter syndrome is near-universal — close your unknowns one a day, and ask questions without shame.
+
+---
+
 ## References
 
 [1] Cabaj, K., Domingos, D., Kotulski, Z., & Respicio, A. (2018). Cybersecurity education: Evolution of the discipline and analysis of master programs. *Computers & Security*, 75, 24-35. doi:10.1016/j.cose.2018.01.015
 
 [2] Payscale. (2024). *Cybersecurity salaries: By role and experience*. PayScale. Retrieved from https://www.payscale.com/research/US/Skill=Information_Security/Salary
 
-[3] LinkedIn. (2024). *Jobs on the Rise: Cybersecurity*. LinkedIn Economic Graph. Retrieved from https://www.linkedin.com/pulse/
+[3] US Bureau of Labor Statistics. (2025). *Information Security Analysts: Occupational Outlook Handbook*. BLS. Retrieved from https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm
 
 [4] Glassdoor. (2024). *Information Security Analyst Salaries*. Glassdoor. Retrieved from https://www.glassdoor.com
 
